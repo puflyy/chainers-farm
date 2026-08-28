@@ -640,7 +640,8 @@ class PanelHandler(BaseHTTPRequestHandler):
         self.wfile.write(b'{"success":true}')
 
 def start_server():
-    server = HTTPServer(("127.0.0.1", 5000), PanelHandler)
+    port = int(os.environ.get("PORT", 5000))
+    server = HTTPServer(("0.0.0.0", port), PanelHandler)
     server.serve_forever()
 
 # === BOT MOTORU ===
