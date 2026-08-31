@@ -129,6 +129,15 @@ SEEDS_DB = {
         "code_key": "common_pineapple_seeds",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="38" rx="14" ry="18" fill="#f0932b"/><path d="M32 4c-4 6-2 14-2 14s-8-4-12 2c6 2 10 8 10 8s-6 0-8 6c6 0 10-2 12-4" fill="#2ed573"/><path d="M22 28l20 20m-20 0l20-20m-22 10h24" stroke="#d35400" stroke-width="2"/></svg>'
     },
+    "Melon": {
+        "seed_id": "683dbe2ba9ec974575a4bf2a",
+        "duration": 18000,
+        "time_str": "5 saat",
+        "tier": 1,
+        "bp_min": "0.57",
+        "code_key": "common_melon_seeds",
+        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="34" rx="18" ry="14" fill="#fbc531"/><path d="M14 34c4 4 10 6 18 6s14-2 18-6" stroke="#e1b12c" stroke-width="2" fill="none"/><path d="M32 14c0 6-2 6-4 6" stroke="#4cd137" stroke-width="3" fill="none" stroke-linecap="round"/></svg>'
+    },
     "Sunflower": {
         "seed_id": "673e0c942c7bfd708b3524b9",
         "duration": 3600,
@@ -229,7 +238,7 @@ SEEDS_DB = {
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><polygon points="32,8 38,24 54,24 40,34 46,50 32,40 18,50 24,34 10,24 26,24" fill="#a0522d"/></svg>'
     },
     "Patisson": {
-        "seed_id": "patisson_dynamic_id",
+        "seed_id": "69285140f803f06b82ab22e0",
         "duration": 14400,
         "time_str": "4 saat",
         "tier": 1,
