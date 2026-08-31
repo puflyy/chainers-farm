@@ -40,10 +40,10 @@ URL_HARVEST = "https://chainers.io/api/farm/control/collect-harvest"
 URL_PLANT = "https://chainers.io/api/farm/control/plant-seed"
 GARDEN_ID = "6862e5b80db08304717fd919"
 CONFIG_FILE = "farm_targets.json"
+SEEDS_FILE = "seeds_db.json"
 
-# === DOĞRULANMIŞ TOHUM VERİ TABANI ===
-SEEDS_DB = {
-    # Seviye 3
+# === BAŞLANGIÇ TOHUM VERİ TABANI ===
+DEFAULT_SEEDS_DB = {
     "Rare Marigold": {
         "seed_id": "65d38d0cda839cd1e0f7ec67",
         "duration": 120,
@@ -62,8 +62,6 @@ SEEDS_DB = {
         "code_key": "rare_peas_seeds",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#1e90ff"/><circle cx="26" cy="30" r="4" fill="#00d2d3"/><circle cx="34" cy="32" r="4" fill="#00d2d3"/><circle cx="42" cy="32" r="4" fill="#00d2d3"/></svg>'
     },
-
-    # Seviye 2
     "Broccoli": {
         "seed_id": "67dc227a59b878f195998d76",
         "duration": 19680,
@@ -91,8 +89,6 @@ SEEDS_DB = {
         "code_key": "uncommon_peas_seeds",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#27ae60"/><circle cx="26" cy="30" r="4" fill="#2ecc71"/><circle cx="34" cy="32" r="4" fill="#2ecc71"/><circle cx="42" cy="32" r="4" fill="#2ecc71"/></svg>'
     },
-
-    # Seviye 1
     "Sugarcane": {
         "seed_id": "6a6b1e1913ccd7c96918bf6b",
         "duration": 28500,
@@ -248,7 +244,30 @@ SEEDS_DB = {
     }
 }
 
-SEED_ID_TO_NAME = {v["seed_id"]: k for k, v in SEEDS_DB.items()}
+SEEDS_DB = {}
+SEED_ID_TO_NAME = {}
+
+def load_seeds():
+    global SEEDS_DB, SEED_ID_TO_NAME
+    if os.path.exists(SEEDS_FILE):
+        try:
+            with open(SEEDS_FILE, "r", encoding="utf-8") as f:
+                SEEDS_DB = json.load(f)
+        except Exception:
+            SEEDS_DB = dict(DEFAULT_SEEDS_DB)
+    else:
+        SEEDS_DB = dict(DEFAULT_SEEDS_DB)
+        save_seeds()
+    
+    SEED_ID_TO_NAME = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
+
+def save_seeds():
+    global SEED_ID_TO_NAME
+    with open(SEEDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(SEEDS_DB, f, indent=4, ensure_ascii=False)
+    SEED_ID_TO_NAME = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
+
+load_seeds()
 
 VALID_BED_IDS = {
     "6862f39a269206e9f5c678f8", # Lv2 Broccoli
@@ -272,7 +291,6 @@ TOTAL_ACTIONS = 0
 NEXT_BREAK_ACTION = random.randint(12, 18)
 
 def sync_dynamic_seeds():
-    """Canlı envanterden yeni tohum gelirse dinamik olarak ID'leri günceller."""
     stock_dict = {}
     for url in (URL_INVENTORY_SHORT, URL_INVENTORY):
         try:
@@ -326,8 +344,11 @@ HTML_PAGE = """<!DOCTYPE html>
         * { box-sizing: border-box; }
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background:#0f111a; color:#f1f2f6; margin:0; padding:25px; }
         .container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.55fr 1fr; gap: 25px; }
-        .panel-card { background:#1a1c29; border-radius:12px; padding:25px; box-shadow:0 8px 24px rgba(0,0,0,0.4); border: 1px solid #282b3d; }
-        h2 { margin-top:0; font-size:22px; color:#fff; display:flex; align-items:center; gap:10px; }
+        .panel-card { background:#1a1c29; border-radius:12px; padding:25px; box-shadow:0 8px 24px rgba(0,0,0,0.4); border: 1px solid #282b3d; position:relative; }
+        .card-header-flex { display:flex; justify-content:space-between; align-items:center; margin-bottom: 5px; }
+        h2 { margin-top:0; font-size:22px; color:#fff; display:flex; align-items:center; gap:10px; margin-bottom: 0; }
+        .btn-add-seed { background:#10b981; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-weight:bold; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; transition:0.2s; }
+        .btn-add-seed:hover { background:#059669; }
         .subtext { color:#8f94a6; font-size:14px; margin-bottom:20px; line-height: 1.5; }
         table { width:100%; border-collapse:collapse; }
         th, td { padding:14px 10px; border-bottom:1px solid #282b3d; text-align:left; vertical-align:middle; }
@@ -338,6 +359,8 @@ HTML_PAGE = """<!DOCTYPE html>
         .badge-lv1 { background:#4b5563; color:#fff; }
         .badge-lv2 { background:#f59e0b; color:#fff; }
         .badge-lv3 { background:#3b82f6; color:#fff; }
+        .badge-lv4 { background:#e056fd; color:#fff; }
+        .badge-lv5 { background:#f1c40f; color:#000; }
         .countdown-cell { font-weight:bold; color:#00d2d3; font-variant-numeric: tabular-nums; }
         .ready { color:#10b981 !important; }
         select { width:100%; padding:8px 10px; border-radius:6px; background:#0f111a; color:#fff; border:1px solid #374151; font-weight:bold; outline:none; }
@@ -347,7 +370,10 @@ HTML_PAGE = """<!DOCTYPE html>
         .catalog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:12px; max-height: 560px; overflow-y: auto; padding-right: 5px; }
         .crop-card { background:#0f111a; border: 1px solid #282b3d; border-radius:10px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:0.2s; position:relative; }
         .crop-card:hover { border-color:#57606f; background:#141724; transform:scale(1.02); }
-        .crop-icon-wrapper { width:52px; height:52px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border-radius:50%; margin-bottom:8px; }
+        .btn-del-seed { position:absolute; top:4px; right:4px; width:20px; height:20px; background:#ef4444; color:#fff; border:none; border-radius:50%; font-weight:bold; font-size:13px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0.7; transition:0.2s; }
+        .btn-del-seed:hover { opacity:1; transform:scale(1.1); background:#dc2626; }
+        .crop-icon-wrapper { width:52px; height:52px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border-radius:50%; margin-bottom:8px; overflow:hidden; }
+        .crop-icon-wrapper img { width:44px; height:44px; object-fit:contain; }
         .crop-title { font-size:13px; font-weight:bold; margin-bottom:3px; }
         .crop-time { font-size:11px; color:#9ca3af; margin-bottom:4px; }
         .bp-badge { font-size:11px; font-weight:bold; color:#f59e0b; background:rgba(245,158,11,0.1); padding:2px 6px; border-radius:4px; margin-bottom:4px; }
@@ -357,6 +383,21 @@ HTML_PAGE = """<!DOCTYPE html>
         .token-input:focus { border-color:#3b82f6; }
         .btn-token { background:#3b82f6; color:#fff; border:none; padding:12px 20px; border-radius:8px; font-weight:bold; font-size:14px; cursor:pointer; margin-top:10px; }
         .btn-token:hover { background:#2563eb; }
+
+        /* Modal / Pop-up Stilleri */
+        .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:none; justify-content:center; align-items:center; z-index:9999; }
+        .modal { background:#1a1c29; border:1px solid #374151; border-radius:12px; padding:25px; width:90%; max-width:420px; box-shadow:0 10px 30px rgba(0,0,0,0.8); }
+        .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
+        .modal-header h3 { margin:0; font-size:18px; color:#fff; }
+        .modal-close { background:none; border:none; color:#8f94a6; font-size:20px; cursor:pointer; }
+        .modal-form-group { margin-bottom:12px; }
+        .modal-form-group label { display:block; font-size:12px; color:#8f94a6; margin-bottom:5px; text-transform:uppercase; font-weight:bold; }
+        .modal-form-group input, .modal-form-group select { width:100%; padding:10px; border-radius:6px; background:#0f111a; border:1px solid #374151; color:#fff; font-size:14px; outline:none; }
+        .modal-form-group input:focus { border-color:#10b981; }
+        .time-inputs { display:flex; gap:10px; }
+        .time-inputs input { flex:1; }
+        .btn-modal-submit { width:100%; background:#10b981; color:#fff; border:none; padding:12px; border-radius:8px; font-weight:bold; font-size:15px; cursor:pointer; margin-top:10px; transition:0.2s; }
+        .btn-modal-submit:hover { background:#059669; }
     </style>
 </head>
 <body>
@@ -385,7 +426,10 @@ HTML_PAGE = """<!DOCTYPE html>
 
         <!-- Sağ: Envanter & Ekin Kataloğu -->
         <div class="panel-card">
-            <h2>📦 Envanter & Tohum Kataloğu</h2>
+            <div class="card-header-flex">
+                <h2>📦 Tohum Kataloğu</h2>
+                <button type="button" class="btn-add-seed" onclick="openModal()">➕ Tohum Ekle</button>
+            </div>
             <div class="subtext">Deponuzdaki tohumlar ve <b>dakika başı BP verimleri</b>.</div>
             <div class="catalog-grid">
                 __CATALOG_HTML__
@@ -406,8 +450,91 @@ HTML_PAGE = """<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- Tohum Ekleme Modal / Popup -->
+    <div id="seedModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>🌱 Yeni Tohum Ekle / Düzenle</h3>
+                <button type="button" class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <form id="newSeedForm">
+                <div class="modal-form-group">
+                    <label>Tohum Adı</label>
+                    <input type="text" name="seed_name" placeholder="Örn: Melon" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Seviye (Tier)</label>
+                    <select name="tier">
+                        <option value="1">Lv 1 (Common - Gri)</option>
+                        <option value="2">Lv 2 (Uncommon - Yeşil)</option>
+                        <option value="3">Lv 3 (Rare - Mavi)</option>
+                        <option value="4">Lv 4 (Epic - Pembe)</option>
+                        <option value="5">Lv 5 (Legendary - Sarı)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Büyüme Süresi</label>
+                    <div class="time-inputs">
+                        <input type="number" name="hours" placeholder="Saat" min="0" value="0">
+                        <input type="number" name="minutes" placeholder="Dakika" min="0" value="0">
+                    </div>
+                </div>
+                <div class="modal-form-group">
+                    <label>BP / Dakika Verimi</label>
+                    <input type="text" name="bp_min" placeholder="Örn: 0.57" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Görsel Linki (İsteğe Bağlı URL)</label>
+                    <input type="text" name="image_url" placeholder="https://... (Boş bırakılırsa otomatik paket atanır)">
+                </div>
+                <div class="modal-form-group">
+                    <label>Item ID (Seed ID)</label>
+                    <input type="text" name="seed_id" placeholder="Örn: 683dbe2ba9ec974575a4bf2a">
+                </div>
+                <div class="modal-form-group">
+                    <label>Ekin Kodu (Item Code)</label>
+                    <input type="text" name="code_key" placeholder="Örn: common_melon_seeds">
+                </div>
+                <button type="submit" id="btnAddSeedSubmit" class="btn-modal-submit">Ekle & Kaydet</button>
+            </form>
+        </div>
+    </div>
+
     <script>
         let sortDirections = { level: 1, time: 1, bp: 1 };
+
+        function openModal() { document.getElementById('seedModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('seedModal').style.display = 'none'; }
+
+        function deleteSeed(seedName) {
+            if (confirm(seedName + ' tohumunu katalogdan silmek istediğinize emin misiniz?')) {
+                fetch('/delete_seed', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'seed_name=' + encodeURIComponent(seedName)
+                }).then(() => {
+                    location.reload();
+                });
+            }
+        }
+
+        document.getElementById('newSeedForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnAddSeedSubmit');
+            btn.textContent = '⏳ Ekleniyor...';
+            const formData = new URLSearchParams(new FormData(this)).toString();
+            fetch('/add_seed', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            }).then(() => {
+                btn.textContent = '✓ Eklendi!';
+                setTimeout(() => {
+                    closeModal();
+                    location.reload();
+                }, 500);
+            });
+        });
 
         function updateTicks() {
             const selects = Array.from(document.querySelectorAll('#farmBody select'));
@@ -559,7 +686,7 @@ class PanelHandler(BaseHTTPRequestHandler):
             
             sorted_all_available = sorted(
                 SEEDS_DB.items(),
-                key=lambda item: (-item[1]["tier"], -float(item[1]["bp_min"]))
+                key=lambda item: (-item[1].get("tier", 1), -float(item[1].get("bp_min", 0)))
             )
 
             rows_html = ""
@@ -583,7 +710,7 @@ class PanelHandler(BaseHTTPRequestHandler):
                 options = ""
                 for s_name, s_meta in sorted_all_available:
                     sel = "selected" if s_name == target else ""
-                    options += f"<option value='{s_name}' data-bp='{s_meta['bp_min']}' {sel}>[Lv{s_meta['tier']}] {s_name} ({s_meta['time_str']} - {s_meta['bp_min']} BP/dk)</option>"
+                    options += f"<option value='{s_name}' data-bp='{s_meta.get('bp_min', 0)}' {sel}>[Lv{s_meta.get('tier', 1)}] {s_name} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)</option>"
                 
                 rows_html += f"""<tr data-level='{level_num}'>
                     <td>{tier_badge}</td>
@@ -598,21 +725,20 @@ class PanelHandler(BaseHTTPRequestHandler):
             
             catalog_html = ""
             for name, meta in sorted_all_available:
-                if meta["tier"] == 3:
-                    t_badge = "<span class='badge badge-lv3'>Lv 3</span>"
-                elif meta["tier"] == 2:
-                    t_badge = "<span class='badge badge-lv2'>Lv 2</span>"
-                else:
-                    t_badge = "<span class='badge badge-lv1'>Lv 1</span>"
+                tier = meta.get("tier", 1)
+                t_badge = f"<span class='badge badge-lv{tier}'>Lv {tier}</span>"
 
                 stock_count = stock_map.get(meta.get("seed_id"), 0)
+                icon_content = meta.get("icon", '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#10b981"/></svg>')
+                
                 catalog_html += f"""<div class="crop-card">
+                    <button type="button" class="btn-del-seed" title="Tohumu Sil" onclick="deleteSeed('{name}')">×</button>
                     <div class="crop-icon-wrapper">
-                        {meta['icon']}
+                        {icon_content}
                     </div>
                     <div class="crop-title">{name} {t_badge}</div>
-                    <div class="crop-time">⏱ {meta['time_str']}</div>
-                    <div class="bp-badge">⭐ {meta['bp_min']} BP/dk</div>
+                    <div class="crop-time">⏱ {meta.get('time_str', '')}</div>
+                    <div class="bp-badge">⭐ {meta.get('bp_min', 0)} BP/dk</div>
                     <div class="stock-badge">Stok: {stock_count}</div>
                 </div>"""
             
@@ -633,6 +759,66 @@ class PanelHandler(BaseHTTPRequestHandler):
                     BED_TARGETS[b_id] = val[0]
             save_targets()
             log("💾 Panelden yeni ekin hedefleri kaydedildi!")
+
+        elif self.path == "/add_seed":
+            s_name = params.get("seed_name", [""])[0].strip()
+            if s_name:
+                tier = int(params.get("tier", [1])[0])
+                hours = int(params.get("hours", [0])[0] or 0)
+                minutes = int(params.get("minutes", [0])[0] or 0)
+                total_seconds = (hours * 3600) + (minutes * 60)
+                if total_seconds <= 0:
+                    total_seconds = 120
+                
+                time_str_parts = []
+                if hours > 0:
+                    time_str_parts.append(f"{hours} sa")
+                if minutes > 0:
+                    time_str_parts.append(f"{minutes} dk")
+                time_str = " ".join(time_str_parts) if time_str_parts else f"{total_seconds} sn"
+                
+                bp_min = params.get("bp_min", ["0.50"])[0].strip()
+                image_url = params.get("image_url", [""])[0].strip()
+                seed_id = params.get("seed_id", [""])[0].strip() or f"custom_{s_name.lower().replace(' ', '_')}"
+                code_key = params.get("code_key", [""])[0].strip().lower() or f"common_{s_name.lower().replace(' ', '_')}_seeds"
+
+                # Görsel belirleme: URL girildiyse img, girilmediyse seviye renkli SVG paket
+                if image_url:
+                    icon_markup = f'<img src="{image_url}" alt="{s_name}">'
+                else:
+                    tier_colors = {
+                        1: "#9ca3af", # Gri
+                        2: "#10b981", # Yeşil
+                        3: "#3b82f6", # Mavi
+                        4: "#ec4899", # Pembe
+                        5: "#f59e0b"  # Sarı
+                    }
+                    c = tier_colors.get(tier, "#10b981")
+                    icon_markup = f'''<svg viewBox="0 0 64 64" width="44" height="44">
+                        <rect x="14" y="14" width="36" height="42" rx="6" fill="{c}" opacity="0.85"/>
+                        <path d="M14 24h36" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+                        <circle cx="32" cy="38" r="8" fill="#ffffff" opacity="0.9"/>
+                        <path d="M32 33c-3 4 0 7 3 7" stroke="{c}" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>'''
+
+                SEEDS_DB[s_name] = {
+                    "seed_id": seed_id,
+                    "duration": total_seconds,
+                    "time_str": time_str,
+                    "tier": tier,
+                    "bp_min": bp_min,
+                    "code_key": code_key,
+                    "icon": icon_markup
+                }
+                save_seeds()
+                log(f"🌱 Panelden yeni tohum eklendi/güncellendi: {s_name} (Lv{tier})")
+
+        elif self.path == "/delete_seed":
+            s_name = params.get("seed_name", [""])[0].strip()
+            if s_name in SEEDS_DB:
+                del SEEDS_DB[s_name]
+                save_seeds()
+                log(f"🗑️ Panelden tohum silindi: {s_name}")
 
         elif self.path == "/update_token":
             raw_curl = params.get("curl_data", [""])[0]
@@ -720,6 +906,7 @@ def live_countdown(target_name, seconds):
 def run_farm():
     global TOTAL_ACTIONS, NEXT_BREAK_ACTION
     load_targets()
+    load_seeds()
     sync_dynamic_seeds()
     threading.Thread(target=start_server, daemon=True).start()
     log("🌐 Canlı Envanter & Tarla Paneli: http://localhost:5000")
