@@ -7,7 +7,7 @@ import threading
 import requests
 from urllib.parse import parse_qs
 from datetime import datetime, timezone
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 
 # === GÜVENLİK VE OTURUM BAŞLIKLARI ===
 HEADERS = {
@@ -845,7 +845,7 @@ class PanelHandler(BaseHTTPRequestHandler):
 
 def start_server():
     port = int(os.environ.get("PORT", 5000))
-    server = HTTPServer(("0.0.0.0", port), PanelHandler)
+    server = ThreadingHTTPServer(("0.0.0.0", port), PanelHandler)
     server.serve_forever()
 
 # === BOT MOTORU ===
