@@ -41,6 +41,38 @@ URL_PLANT = "https://chainers.io/api/farm/control/plant-seed"
 GARDEN_ID = "6862e5b80db08304717fd919"
 CONFIG_FILE = "farm_targets.json"
 SEEDS_FILE = "seeds_db.json"
+BEDS_FILE = "beds_db.json"
+
+# === BAŞLANGIÇ YATAK TANIMLARI ===
+DEFAULT_BEDS = {
+    "6862f39a269206e9f5c678f8": {"level": 2},
+    "6a8c41395b50ac4ade330786": {"level": 2},
+    "686784908aeeff0efa28d316": {"level": 1},
+    "6a8ecc892cf15a50df3261fb": {"level": 1},
+    "6a8ecc892cf15a50df32620b": {"level": 1},
+    "6a8ecc892cf15a50df326207": {"level": 1},
+    "6a8ecc892cf15a50df326203": {"level": 1}
+}
+
+ACTIVE_BEDS = {}
+
+def load_beds():
+    global ACTIVE_BEDS
+    if os.path.exists(BEDS_FILE):
+        try:
+            with open(BEDS_FILE, "r", encoding="utf-8") as f:
+                ACTIVE_BEDS = json.load(f)
+        except Exception:
+            ACTIVE_BEDS = dict(DEFAULT_BEDS)
+    else:
+        ACTIVE_BEDS = dict(DEFAULT_BEDS)
+        save_beds()
+
+def save_beds():
+    with open(BEDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(ACTIVE_BEDS, f, indent=4, ensure_ascii=False)
+
+load_beds()
 
 # === BAŞLANGIÇ TOHUM VERİ TABANI ===
 DEFAULT_SEEDS_DB = {
@@ -269,23 +301,6 @@ def save_seeds():
 
 load_seeds()
 
-VALID_BED_IDS = {
-    "6862f39a269206e9f5c678f8", # Lv2 Broccoli
-    "6a8c41395b50ac4ade330786", # Lv2 Dragon Fruit
-    "686784908aeeff0efa28d316", # Lv1 Ginger
-    "6a8a457c2cf15a50df8aaaad", # Lv1 Pineapple
-    "6a8ecc892cf15a50df3261ff", # Lv1 Watermelon
-    "6a8ecc892cf15a50df3261fb", # Lv1 Chili Pepper
-    "6a8ecc892cf15a50df32620b", # Lv1 Onion
-    "6a8ecc892cf15a50df326207", # Lv1 Strawberry
-    "6a8ecc892cf15a50df326203"  # Lv1 Sunflower
-}
-
-LV2_BED_IDS = {
-    "6862f39a269206e9f5c678f8",
-    "6a8c41395b50ac4ade330786"
-}
-
 BED_TARGETS = {}
 TOTAL_ACTIONS = 0
 NEXT_BREAK_ACTION = random.randint(12, 18)
@@ -347,8 +362,8 @@ HTML_PAGE = """<!DOCTYPE html>
         .panel-card { background:#1a1c29; border-radius:12px; padding:25px; box-shadow:0 8px 24px rgba(0,0,0,0.4); border: 1px solid #282b3d; position:relative; }
         .card-header-flex { display:flex; justify-content:space-between; align-items:center; margin-bottom: 5px; }
         h2 { margin-top:0; font-size:22px; color:#fff; display:flex; align-items:center; gap:10px; margin-bottom: 0; }
-        .btn-add-seed { background:#10b981; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-weight:bold; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; transition:0.2s; }
-        .btn-add-seed:hover { background:#059669; }
+        .btn-add { background:#10b981; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-weight:bold; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; transition:0.2s; }
+        .btn-add:hover { background:#059669; }
         .subtext { color:#8f94a6; font-size:14px; margin-bottom:20px; line-height: 1.5; }
         table { width:100%; border-collapse:collapse; }
         th, td { padding:14px 10px; border-bottom:1px solid #282b3d; text-align:left; vertical-align:middle; }
@@ -367,6 +382,8 @@ HTML_PAGE = """<!DOCTYPE html>
         select:focus { border-color:#10b981; }
         .btn-save { background:#10b981; color:#fff; border:none; padding:14px; border-radius:8px; font-weight:bold; font-size:15px; cursor:pointer; width:100%; margin-top:20px; transition:0.2s; }
         .btn-save:hover { background:#059669; }
+        .btn-del-bed { background:none; border:none; color:#ef4444; font-weight:bold; font-size:16px; cursor:pointer; padding:0 4px; transition:0.2s; }
+        .btn-del-bed:hover { color:#dc2626; transform:scale(1.2); }
         .catalog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:12px; max-height: 560px; overflow-y: auto; padding-right: 5px; }
         .crop-card { background:#0f111a; border: 1px solid #282b3d; border-radius:10px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:0.2s; position:relative; }
         .crop-card:hover { border-color:#57606f; background:#141724; transform:scale(1.02); }
@@ -384,7 +401,7 @@ HTML_PAGE = """<!DOCTYPE html>
         .btn-token { background:#3b82f6; color:#fff; border:none; padding:12px 20px; border-radius:8px; font-weight:bold; font-size:14px; cursor:pointer; margin-top:10px; }
         .btn-token:hover { background:#2563eb; }
 
-        /* Modal / Pop-up Stilleri */
+        /* Pop-up Stilleri */
         .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:none; justify-content:center; align-items:center; z-index:9999; }
         .modal { background:#1a1c29; border:1px solid #374151; border-radius:12px; padding:25px; width:90%; max-width:420px; box-shadow:0 10px 30px rgba(0,0,0,0.8); }
         .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
@@ -404,12 +421,16 @@ HTML_PAGE = """<!DOCTYPE html>
     <div class="container">
         <!-- Sol: Aktif Yataklar -->
         <div class="panel-card">
-            <h2>🌾 Tarla Yönetimi</h2>
+            <div class="card-header-flex">
+                <h2>🌾 Tarla Yönetimi</h2>
+                <button type="button" class="btn-add" onclick="openBedModal()">➕ Tarla Ekle</button>
+            </div>
             <div class="subtext">Başlıklara tıklayarak <b>Seviye</b>, <b>Kalan Süre</b> ve <b>BP/dk Verimi</b>ne göre sıralayabilirsiniz.</div>
             <form id="targetsForm">
                 <table id="farmTable">
                     <thead>
                         <tr>
+                            <th style="width:30px;"></th>
                             <th class="sortable" onclick="sortTable('level')">SEVİYE <span id="sort-icon-level">▲</span></th>
                             <th>TOHUM ADI</th>
                             <th class="sortable" onclick="sortTable('time')">KALAN SÜRE <span id="sort-icon-time">↕</span></th>
@@ -428,7 +449,7 @@ HTML_PAGE = """<!DOCTYPE html>
         <div class="panel-card">
             <div class="card-header-flex">
                 <h2>📦 Tohum Kataloğu</h2>
-                <button type="button" class="btn-add-seed" onclick="openModal()">➕ Tohum Ekle</button>
+                <button type="button" class="btn-add" onclick="openSeedModal()">➕ Tohum Ekle</button>
             </div>
             <div class="subtext">Deponuzdaki tohumlar ve <b>dakika başı BP verimleri</b>.</div>
             <div class="catalog-grid">
@@ -450,12 +471,42 @@ HTML_PAGE = """<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- Tohum Ekleme Modal / Popup -->
+    <!-- Tarla Ekleme Modal (Otomatik Taramalı) -->
+    <div id="bedModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>🌾 Yeni Tarla (Yatak) Ekle</h3>
+                <button type="button" class="modal-close" onclick="closeBedModal()">×</button>
+            </div>
+            <form id="newBedForm">
+                <div class="modal-form-group">
+                    <label>Oyunda Bulunan Yeni Tarlalar</label>
+                    <select id="untrackedBedsSelect" name="bed_select" onchange="onBedSelectChange(this)">
+                        <option value="">Tarlalar taranıyor...</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Yatak ID (userBedsID)</label>
+                    <input type="text" id="inputBedId" name="bed_id" placeholder="Yukarıdan seçin veya manuel girin" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Tarla Seviyesi</label>
+                    <select id="inputBedLevel" name="level">
+                        <option value="1">Lv 1 (Tekli Yatak)</option>
+                        <option value="2">Lv 2 (Birleştirilmiş Yatak)</option>
+                    </select>
+                </div>
+                <button type="submit" id="btnAddBedSubmit" class="btn-modal-submit">Tarlayı Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tohum Ekleme Modal -->
     <div id="seedModal" class="modal-overlay">
         <div class="modal">
             <div class="modal-header">
                 <h3>🌱 Yeni Tohum Ekle / Düzenle</h3>
-                <button type="button" class="modal-close" onclick="closeModal()">×</button>
+                <button type="button" class="modal-close" onclick="closeSeedModal()">×</button>
             </div>
             <form id="newSeedForm">
                 <div class="modal-form-group">
@@ -503,8 +554,52 @@ HTML_PAGE = """<!DOCTYPE html>
     <script>
         let sortDirections = { level: 1, time: 1, bp: 1 };
 
-        function openModal() { document.getElementById('seedModal').style.display = 'flex'; }
-        function closeModal() { document.getElementById('seedModal').style.display = 'none'; }
+        function openBedModal() { 
+            document.getElementById('bedModal').style.display = 'flex';
+            const selectEl = document.getElementById('untrackedBedsSelect');
+            selectEl.innerHTML = '<option value="">Tarlalar taranıyor...</option>';
+
+            fetch('/untracked_beds')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        selectEl.innerHTML = '<option value="">Oyunda eklenmemiş yeni tarla bulunamadı</option>';
+                    } else {
+                        let opts = '<option value="">Bir tarla seçin (Otomatik dolar)...</option>';
+                        data.forEach(item => {
+                            opts += `<option value="${item.id}" data-lvl="${item.level}">${item.label}</option>`;
+                        });
+                        selectEl.innerHTML = opts;
+                    }
+                })
+                .catch(() => {
+                    selectEl.innerHTML = '<option value="">Tarama hatası oluştu</option>';
+                });
+        }
+
+        function onBedSelectChange(el) {
+            const opt = el.options[el.selectedIndex];
+            if (opt && opt.value) {
+                document.getElementById('inputBedId').value = opt.value;
+                document.getElementById('inputBedLevel').value = opt.getAttribute('data-lvl') || "1";
+            }
+        }
+
+        function closeBedModal() { document.getElementById('bedModal').style.display = 'none'; }
+        function openSeedModal() { document.getElementById('seedModal').style.display = 'flex'; }
+        function closeSeedModal() { document.getElementById('seedModal').style.display = 'none'; }
+
+        function deleteBed(bedId) {
+            if (confirm('Bu tarlayı panelden silmek istediğinize emin misiniz?')) {
+                fetch('/delete_bed', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'bed_id=' + encodeURIComponent(bedId)
+                }).then(() => {
+                    location.reload();
+                });
+            }
+        }
 
         function deleteSeed(seedName) {
             if (confirm(seedName + ' tohumunu katalogdan silmek istediğinize emin misiniz?')) {
@@ -518,6 +613,24 @@ HTML_PAGE = """<!DOCTYPE html>
             }
         }
 
+        document.getElementById('newBedForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnAddBedSubmit');
+            btn.textContent = '⏳ Ekleniyor...';
+            const formData = new URLSearchParams(new FormData(this)).toString();
+            fetch('/add_bed', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            }).then(() => {
+                btn.textContent = '✓ Eklendi!';
+                setTimeout(() => {
+                    closeBedModal();
+                    location.reload();
+                }, 500);
+            });
+        });
+
         document.getElementById('newSeedForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnAddSeedSubmit');
@@ -530,7 +643,7 @@ HTML_PAGE = """<!DOCTYPE html>
             }).then(() => {
                 btn.textContent = '✓ Eklendi!';
                 setTimeout(() => {
-                    closeModal();
+                    closeSeedModal();
                     location.reload();
                 }, 500);
             });
@@ -678,8 +791,8 @@ class PanelHandler(BaseHTTPRequestHandler):
             self.end_headers()
             
             raw_beds = fetch_live_garden() or []
-            beds = [b for b in raw_beds if b.get("userBedsID") in VALID_BED_IDS]
-            beds.sort(key=lambda x: 0 if x.get("userBedsID") in LV2_BED_IDS else 1)
+            beds = [b for b in raw_beds if b.get("userBedsID") in ACTIVE_BEDS]
+            beds.sort(key=lambda x: 0 if ACTIVE_BEDS.get(x.get("userBedsID"), {}).get("level", 1) == 2 else 1)
             
             stock_map = sync_dynamic_seeds()
             now_ts = datetime.now(timezone.utc).timestamp()
@@ -692,9 +805,8 @@ class PanelHandler(BaseHTTPRequestHandler):
             rows_html = ""
             for idx, bed in enumerate(beds):
                 b_id = bed.get("userBedsID")
-                is_lv2 = b_id in LV2_BED_IDS
-                level_num = 2 if is_lv2 else 1
-                tier_badge = "<span class='badge badge-lv2'>Lv 2</span>" if is_lv2 else "<span class='badge badge-lv1'>Lv 1</span>"
+                level_num = ACTIVE_BEDS.get(b_id, {}).get("level", 1)
+                tier_badge = f"<span class='badge badge-lv{level_num}'>Lv {level_num}</span>"
                 
                 p_seed = bed.get("plantedSeed", {})
                 cur_name = SEED_ID_TO_NAME.get(p_seed.get("seedID"), "Boş")
@@ -713,6 +825,7 @@ class PanelHandler(BaseHTTPRequestHandler):
                     options += f"<option value='{s_name}' data-bp='{s_meta.get('bp_min', 0)}' {sel}>[Lv{s_meta.get('tier', 1)}] {s_name} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)</option>"
                 
                 rows_html += f"""<tr data-level='{level_num}'>
+                    <td><button type="button" class="btn-del-bed" title="Tarlayı Sil" onclick="deleteBed('{b_id}')">×</button></td>
                     <td>{tier_badge}</td>
                     <td><b>{cur_name}</b></td>
                     <td class='countdown-cell' id='timer-{idx}' data-remaining='{rem_seconds}'>Hesaplanıyor...</td>
@@ -744,6 +857,26 @@ class PanelHandler(BaseHTTPRequestHandler):
             
             full_html = HTML_PAGE.replace("__ROWS_HTML__", rows_html).replace("__CATALOG_HTML__", catalog_html)
             self.wfile.write(full_html.encode("utf-8"))
+
+        elif self.path == "/untracked_beds":
+            raw_beds = fetch_live_garden() or []
+            untracked = []
+            for b in raw_beds:
+                b_id = b.get("userBedsID")
+                code = b.get("itemCode", "")
+                if "vegetable_plot" in code and b_id not in ACTIVE_BEDS:
+                    lvl = 2 if "uncommon" in code else 1
+                    status = "Boş" if not b.get("plantedSeed") else "Ekili"
+                    untracked.append({
+                        "id": b_id,
+                        "level": lvl,
+                        "label": f"[Lv {lvl}] Yeni Tarla (...{b_id[-6:]}) - {status}"
+                    })
+            
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(json.dumps(untracked).encode("utf-8"))
         else:
             self.send_response(404)
             self.end_headers()
@@ -755,10 +888,28 @@ class PanelHandler(BaseHTTPRequestHandler):
 
         if self.path == "/save":
             for b_id, val in params.items():
-                if b_id in VALID_BED_IDS:
+                if b_id in ACTIVE_BEDS:
                     BED_TARGETS[b_id] = val[0]
             save_targets()
             log("💾 Panelden yeni ekin hedefleri kaydedildi!")
+
+        elif self.path == "/add_bed":
+            b_id = params.get("bed_id", [""])[0].strip()
+            level = int(params.get("level", [1])[0])
+            if b_id:
+                ACTIVE_BEDS[b_id] = {"level": level}
+                save_beds()
+                log(f"🌾 Panelden yeni tarla eklendi: {b_id} (Lv {level})")
+
+        elif self.path == "/delete_bed":
+            b_id = params.get("bed_id", [""])[0].strip()
+            if b_id in ACTIVE_BEDS:
+                del ACTIVE_BEDS[b_id]
+                save_beds()
+                if b_id in BED_TARGETS:
+                    del BED_TARGETS[b_id]
+                    save_targets()
+                log(f"🗑️ Panelden tarla silindi: {b_id}")
 
         elif self.path == "/add_seed":
             s_name = params.get("seed_name", [""])[0].strip()
@@ -782,16 +933,15 @@ class PanelHandler(BaseHTTPRequestHandler):
                 seed_id = params.get("seed_id", [""])[0].strip() or f"custom_{s_name.lower().replace(' ', '_')}"
                 code_key = params.get("code_key", [""])[0].strip().lower() or f"common_{s_name.lower().replace(' ', '_')}_seeds"
 
-                # Görsel belirleme: URL girildiyse img, girilmediyse seviye renkli SVG paket
                 if image_url:
                     icon_markup = f'<img src="{image_url}" alt="{s_name}">'
                 else:
                     tier_colors = {
-                        1: "#9ca3af", # Gri
-                        2: "#10b981", # Yeşil
-                        3: "#3b82f6", # Mavi
-                        4: "#ec4899", # Pembe
-                        5: "#f59e0b"  # Sarı
+                        1: "#9ca3af",
+                        2: "#10b981",
+                        3: "#3b82f6",
+                        4: "#ec4899",
+                        5: "#f59e0b"
                     }
                     c = tier_colors.get(tier, "#10b981")
                     icon_markup = f'''<svg viewBox="0 0 64 64" width="44" height="44">
@@ -907,6 +1057,7 @@ def run_farm():
     global TOTAL_ACTIONS, NEXT_BREAK_ACTION
     load_targets()
     load_seeds()
+    load_beds()
     sync_dynamic_seeds()
     threading.Thread(target=start_server, daemon=True).start()
     log("🌐 Canlı Envanter & Tarla Paneli: http://localhost:5000")
@@ -925,7 +1076,7 @@ def run_farm():
             time.sleep(random.uniform(5.0, 8.0))
             continue
 
-        beds = [b for b in raw_beds if b.get("userBedsID") in VALID_BED_IDS]
+        beds = [b for b in raw_beds if b.get("userBedsID") in ACTIVE_BEDS]
         now_ts = datetime.now(timezone.utc).timestamp()
         crop_locations = {}
         ready_beds = []
