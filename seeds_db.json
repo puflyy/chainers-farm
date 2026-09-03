@@ -1,0 +1,200 @@
+{
+    "Rare Marigold": {
+        "seed_id": "65d38d0cda839cd1e0f7ec67",
+        "duration": 120,
+        "time_str": "2 dk",
+        "tier": 3,
+        "bp_min": "3.50",
+        "code_key": "rare_marigold_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><circle cx=\"32\" cy=\"32\" r=\"16\" fill=\"#3b82f6\"/><circle cx=\"32\" cy=\"32\" r=\"8\" fill=\"#ffa502\"/></svg>"
+    },
+    "Rare Peas": {
+        "seed_id": "673e0c942c7bfd708b35246b",
+        "duration": 240,
+        "time_str": "4 dk",
+        "tier": 3,
+        "bp_min": "0.75",
+        "code_key": "rare_peas_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M16 22c12-8 32-2 36 20-8 12-28 14-36-20z\" fill=\"#1e90ff\"/><circle cx=\"26\" cy=\"30\" r=\"4\" fill=\"#00d2d3\"/><circle cx=\"34\" cy=\"32\" r=\"4\" fill=\"#00d2d3\"/><circle cx=\"42\" cy=\"32\" r=\"4\" fill=\"#00d2d3\"/></svg>"
+    },
+    "Broccoli": {
+        "seed_id": "67dc227a59b878f195998d76",
+        "duration": 19680,
+        "time_str": "5 sa 28 dk",
+        "tier": 2,
+        "bp_min": "0.85",
+        "code_key": "uncommon_broccoli_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M28 38h8v16h-8z\" fill=\"#badc58\"/><circle cx=\"32\" cy=\"22\" r=\"12\" fill=\"#6ab04c\"/><circle cx=\"22\" cy=\"28\" r=\"10\" fill=\"#6ab04c\"/><circle cx=\"42\" cy=\"28\" r=\"10\" fill=\"#6ab04c\"/></svg>"
+    },
+    "Uncommon Corn": {
+        "seed_id": "673e0c942c7bfd708b35240b",
+        "duration": 360,
+        "time_str": "6 dk",
+        "tier": 2,
+        "bp_min": "0.50",
+        "code_key": "uncommon_corn_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z\" fill=\"#2ecc71\"/><path d=\"M22 28c4 10 6 18 10 22-8-2-12-10-10-22z\" fill=\"#badc58\"/><path d=\"M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z\" fill=\"#badc58\"/></svg>"
+    },
+    "Uncommon Peas": {
+        "seed_id": "673e0c942c7bfd708b352465",
+        "duration": 240,
+        "time_str": "4 dk",
+        "tier": 2,
+        "bp_min": "0.50",
+        "code_key": "uncommon_peas_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M16 22c12-8 32-2 36 20-8 12-28 14-36-20z\" fill=\"#27ae60\"/><circle cx=\"26\" cy=\"30\" r=\"4\" fill=\"#2ecc71\"/><circle cx=\"34\" cy=\"32\" r=\"4\" fill=\"#2ecc71\"/><circle cx=\"42\" cy=\"32\" r=\"4\" fill=\"#2ecc71\"/></svg>"
+    },
+    "Sugarcane": {
+        "seed_id": "6a6b1e1913ccd7c96918bf6b",
+        "duration": 28500,
+        "time_str": "7 sa 55 dk",
+        "tier": 1,
+        "bp_min": "27.00",
+        "code_key": "common_sugarcane_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><rect x=\"22\" y=\"10\" width=\"6\" height=\"44\" rx=\"2\" fill=\"#2ed573\"/><rect x=\"34\" y=\"16\" width=\"6\" height=\"38\" rx=\"2\" fill=\"#2ed573\"/></svg>"
+    },
+    "Dragon Fruit": {
+        "seed_id": "69945ab309abeb19e22a83f9",
+        "duration": 90000,
+        "time_str": "1g 1sa",
+        "tier": 1,
+        "bp_min": "0.90",
+        "code_key": "common_dragon_fruit_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M32 12c-14 0-20 16-16 32 3 12 16 16 16 16s13-4 16-16c4-16-2-32-16-32z\" fill=\"#ff4757\"/><path d=\"M32 12c-4 6-12 8-12 8s4 8 2 14c4-2 8-8 10-14 0 0 4 6 8 8-2-6 0-12-2-14-2-2-6-4-6-12z\" fill=\"#2ed573\"/></svg>"
+    },
+    "Pineapple": {
+        "seed_id": "68824771915623f3dcc1fafd",
+        "duration": 25200,
+        "time_str": "7 saat",
+        "tier": 1,
+        "bp_min": "0.60",
+        "code_key": "common_pineapple_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><ellipse cx=\"32\" cy=\"38\" rx=\"14\" ry=\"18\" fill=\"#f0932b\"/><path d=\"M32 4c-4 6-2 14-2 14s-8-4-12 2c6 2 10 8 10 8s-6 0-8 6c6 0 10-2 12-4\" fill=\"#2ed573\"/><path d=\"M22 28l20 20m-20 0l20-20m-22 10h24\" stroke=\"#d35400\" stroke-width=\"2\"/></svg>"
+    },
+    "Melon": {
+        "seed_id": "683dbe2ba9ec974575a4bf2a",
+        "duration": 18000,
+        "time_str": "5 saat",
+        "tier": 1,
+        "bp_min": "0.57",
+        "code_key": "common_melon_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><ellipse cx=\"32\" cy=\"34\" rx=\"18\" ry=\"14\" fill=\"#fbc531\"/><path d=\"M14 34c4 4 10 6 18 6s14-2 18-6\" stroke=\"#e1b12c\" stroke-width=\"2\" fill=\"none\"/><path d=\"M32 14c0 6-2 6-4 6\" stroke=\"#4cd137\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+    },
+    "Sunflower": {
+        "seed_id": "673e0c942c7bfd708b3524b9",
+        "duration": 3600,
+        "time_str": "1 saat",
+        "tier": 1,
+        "bp_min": "0.53",
+        "code_key": "common_sunflower_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><circle cx=\"32\" cy=\"32\" r=\"14\" fill=\"#ffa502\"/><circle cx=\"32\" cy=\"32\" r=\"8\" fill=\"#573820\"/></svg>"
+    },
+    "Strawberry": {
+        "seed_id": "673e0c942c7bfd708b352441",
+        "duration": 120,
+        "time_str": "2 dk",
+        "tier": 1,
+        "bp_min": "0.50",
+        "code_key": "common_strawberry_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M32 14c-12 0-22 10-18 28 3 14 18 20 18 20s15-6 18-20c4-18-6-28-18-28z\" fill=\"#ff4757\"/><path d=\"M32 6c-3 4-8 6-12 6 0 4 3 8 7 8 5-2 5-8 5-14zm0 0c3 4 8 6 12 6 0 4-3 8-7 8-5-2-5-8-5-14z\" fill=\"#2ed573\"/><circle cx=\"26\" cy=\"26\" r=\"1.5\" fill=\"#ffa502\"/><circle cx=\"38\" cy=\"26\" r=\"1.5\" fill=\"#ffa502\"/><circle cx=\"32\" cy=\"34\" r=\"1.5\" fill=\"#ffa502\"/><circle cx=\"32\" cy=\"48\" r=\"1.5\" fill=\"#ffa502\"/></svg>"
+    },
+    "Eggplant": {
+        "seed_id": "673e0c942c7bfd708b352423",
+        "duration": 1020,
+        "time_str": "17 dk",
+        "tier": 1,
+        "bp_min": "0.47",
+        "code_key": "common_eggplant_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M36 18c-8 0-16 10-14 26 2 12 10 16 16 16s14-6 12-18c-2-12-6-24-14-24z\" fill=\"#683cb0\"/><path d=\"M38 12c-2 2-6 3-10 2 1 4 4 6 8 6 4 0 5-4 4-8z\" fill=\"#2ed573\"/></svg>"
+    },
+    "Onion": {
+        "seed_id": "67dc227a59b878f195998dca",
+        "duration": 900,
+        "time_str": "15 dk",
+        "tier": 1,
+        "bp_min": "0.47",
+        "code_key": "common_onion_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M32 10c0 0-16 12-16 28 0 12 7 20 16 20s16-8 16-20c0-16-16-28-16-28z\" fill=\"#e056fd\"/><path d=\"M32 6v10m-4-6l4 6 4-6\" stroke=\"#2ed573\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M26 26c-4 6-4 16 0 24m12-24c4 6 4 16 0 24\" stroke=\"#be2edd\" stroke-width=\"2\" fill=\"none\"/></svg>"
+    },
+    "Bell Pepper": {
+        "seed_id": "67dc227a59b878f195998de8",
+        "duration": 3780,
+        "time_str": "1 sa 3 dk",
+        "tier": 1,
+        "bp_min": "0.46",
+        "code_key": "common_bell_pepper_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M24 20c-6 0-10 8-8 24 2 12 8 16 16 16s14-4 16-16c2-16-2-24-8-24-4 0-6 4-8 4s-4-4-8-4z\" fill=\"#e74c3c\"/><path d=\"M32 10v10\" stroke=\"#2ed573\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg>"
+    },
+    "Watermelon": {
+        "seed_id": "673e0c942c7bfd708b35247d",
+        "duration": 6720,
+        "time_str": "1 sa 52 dk",
+        "tier": 1,
+        "bp_min": "0.46",
+        "code_key": "common_watermelon_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M12 24c0 16 9 28 20 28s20-12 20-28H12z\" fill=\"#2ed573\"/><path d=\"M15 26c0 13 8 23 17 23s17-10 17-23H15z\" fill=\"#ff4757\"/><circle cx=\"24\" cy=\"34\" r=\"1.5\" fill=\"#2f3542\"/><circle cx=\"32\" cy=\"38\" r=\"1.5\" fill=\"#2f3542\"/><circle cx=\"40\" cy=\"34\" r=\"1.5\" fill=\"#2f3542\"/></svg>"
+    },
+    "Chili Pepper": {
+        "seed_id": "67dc227a59b878f195998e06",
+        "duration": 10860,
+        "time_str": "3 sa 1 dk",
+        "tier": 1,
+        "bp_min": "0.45",
+        "code_key": "common_chili_pepper_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M38 14c-12 0-22 10-18 26 3 14 12 18 16 18 2 0 4-4 2-10-2-8 4-18 8-22 2-3 0-8-8-12z\" fill=\"#eb4d4b\"/><path d=\"M38 14c3-3 8-5 12-4-2 4-6 6-10 6\" fill=\"#6ab04c\"/></svg>"
+    },
+    "Ginger": {
+        "seed_id": "67dc227a59b878f195998e66",
+        "duration": 28140,
+        "time_str": "7 sa 49 dk",
+        "tier": 2,
+        "bp_min": "0.86",
+        "code_key": "uncommon_ginger_seeds",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/ginger/uncommon/images/ginger_uncommon_previewimageurl.webp\" alt=\"Ginger\">"
+    },
+    "Corn": {
+        "seed_id": "673e0c942c7bfd708b352405",
+        "duration": 360,
+        "time_str": "6 dk",
+        "tier": 1,
+        "bp_min": "0.33",
+        "code_key": "common_corn_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z\" fill=\"#f1c40f\"/><path d=\"M22 28c4 10 6 18 10 22-8-2-12-10-10-22z\" fill=\"#2ed573\"/><path d=\"M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z\" fill=\"#2ed573\"/></svg>"
+    },
+    "Peas": {
+        "seed_id": "673e0c942c7bfd708b35245f",
+        "duration": 240,
+        "time_str": "4 dk",
+        "tier": 1,
+        "bp_min": "0.25",
+        "code_key": "common_peas_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M16 22c12-8 32-2 36 20-8 12-28 14-36-20z\" fill=\"#6ab04c\"/><circle cx=\"26\" cy=\"30\" r=\"4\" fill=\"#badc58\"/><circle cx=\"34\" cy=\"32\" r=\"4\" fill=\"#badc58\"/><circle cx=\"42\" cy=\"32\" r=\"4\" fill=\"#badc58\"/></svg>"
+    },
+    "Star Anise": {
+        "seed_id": "6970f73d4297528ed0eb352d",
+        "duration": 720,
+        "time_str": "12 dk",
+        "tier": 1,
+        "bp_min": "0.17",
+        "code_key": "common_star_anise_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><polygon points=\"32,8 38,24 54,24 40,34 46,50 32,40 18,50 24,34 10,24 26,24\" fill=\"#a0522d\"/></svg>"
+    },
+    "Patisson": {
+        "seed_id": "69285140f803f06b82ab22e0",
+        "duration": 14400,
+        "time_str": "4 saat",
+        "tier": 1,
+        "bp_min": "0.10",
+        "code_key": "common_patisson_seeds",
+        "icon": "<svg viewBox=\"0 0 64 64\" width=\"44\" height=\"44\"><path d=\"M32 14c-14 0-22 10-22 20 0 10 8 18 22 18s22-8 22-18c0-10-8-20-22-20z\" fill=\"#f6e58d\"/><path d=\"M32 8v8\" stroke=\"#6ab04c\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"32\" cy=\"34\" r=\"4\" fill=\"#f0932b\"/></svg>"
+    },
+    "White lilly": {
+        "seed_id": "6801032feafb0e6b32164706",
+        "duration": 18000,
+        "time_str": "5 sa",
+        "tier": 2,
+        "bp_min": "1.33",
+        "code_key": "uncommon_white_lily_seeds",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/lily/uncommon/images/lily_uncommon_previewimageurl.webp\" alt=\"White lilly\">"
+    }
+}
