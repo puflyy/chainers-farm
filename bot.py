@@ -76,228 +76,336 @@ load_beds()
 
 # === BAŞLANGIÇ TOHUM VERİ TABANI ===
 DEFAULT_SEEDS_DB = {
-    "Rare Marigold": {
+    "65d38d0cda839cd1e0f7ec67": {
+        "name": "Rare Marigold",
         "seed_id": "65d38d0cda839cd1e0f7ec67",
         "duration": 120,
+        "hours": 0,
+        "minutes": 2,
         "time_str": "2 dk",
         "tier": 3,
         "bp_min": "3.50",
         "code_key": "rare_marigold_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#3b82f6"/><circle cx="32" cy="32" r="8" fill="#ffa502"/></svg>'
     },
-    "Rare Peas": {
+    "673e0c942c7bfd708b35246b": {
+        "name": "Rare Peas",
         "seed_id": "673e0c942c7bfd708b35246b",
         "duration": 240,
+        "hours": 0,
+        "minutes": 4,
         "time_str": "4 dk",
         "tier": 3,
         "bp_min": "0.75",
         "code_key": "rare_peas_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#1e90ff"/><circle cx="26" cy="30" r="4" fill="#00d2d3"/><circle cx="34" cy="32" r="4" fill="#00d2d3"/><circle cx="42" cy="32" r="4" fill="#00d2d3"/></svg>'
     },
-    "Broccoli": {
+    "67dc227a59b878f195998d76": {
+        "name": "Broccoli",
         "seed_id": "67dc227a59b878f195998d76",
         "duration": 19680,
+        "hours": 5,
+        "minutes": 28,
         "time_str": "5 sa 28 dk",
         "tier": 2,
         "bp_min": "0.85",
         "code_key": "uncommon_broccoli_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M28 38h8v16h-8z" fill="#badc58"/><circle cx="32" cy="22" r="12" fill="#6ab04c"/><circle cx="22" cy="28" r="10" fill="#6ab04c"/><circle cx="42" cy="28" r="10" fill="#6ab04c"/></svg>'
     },
-    "Uncommon Corn": {
+    "673e0c942c7bfd708b35240b": {
+        "name": "Uncommon Corn",
         "seed_id": "673e0c942c7bfd708b35240b",
         "duration": 360,
+        "hours": 0,
+        "minutes": 6,
         "time_str": "6 dk",
         "tier": 2,
         "bp_min": "0.50",
         "code_key": "uncommon_corn_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z" fill="#2ecc71"/><path d="M22 28c4 10 6 18 10 22-8-2-12-10-10-22z" fill="#badc58"/><path d="M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z" fill="#badc58"/></svg>'
     },
-    "Uncommon Peas": {
+    "673e0c942c7bfd708b352465": {
+        "name": "Uncommon Peas",
         "seed_id": "673e0c942c7bfd708b352465",
         "duration": 240,
+        "hours": 0,
+        "minutes": 4,
         "time_str": "4 dk",
         "tier": 2,
         "bp_min": "0.50",
         "code_key": "uncommon_peas_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#27ae60"/><circle cx="26" cy="30" r="4" fill="#2ecc71"/><circle cx="34" cy="32" r="4" fill="#2ecc71"/><circle cx="42" cy="32" r="4" fill="#2ecc71"/></svg>'
     },
-    "Sugarcane": {
+    "6a6b1e1913ccd7c96918bf6b": {
+        "name": "Sugarcane",
         "seed_id": "6a6b1e1913ccd7c96918bf6b",
         "duration": 28500,
+        "hours": 7,
+        "minutes": 55,
         "time_str": "7 sa 55 dk",
         "tier": 1,
         "bp_min": "27.00",
         "code_key": "common_sugarcane_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><rect x="22" y="10" width="6" height="44" rx="2" fill="#2ed573"/><rect x="34" y="16" width="6" height="38" rx="2" fill="#2ed573"/></svg>'
     },
-    "Dragon Fruit": {
+    "69945ab309abeb19e22a83f9": {
+        "name": "Dragon Fruit",
         "seed_id": "69945ab309abeb19e22a83f9",
         "duration": 90000,
+        "hours": 25,
+        "minutes": 0,
         "time_str": "1g 1sa",
         "tier": 1,
         "bp_min": "0.90",
         "code_key": "common_dragon_fruit_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 12c-14 0-20 16-16 32 3 12 16 16 16 16s13-4 16-16c4-16-2-32-16-32z" fill="#ff4757"/><path d="M32 12c-4 6-12 8-12 8s4 8 2 14c4-2 8-8 10-14 0 0 4 6 8 8-2-6 0-12-2-14-2-2-6-4-6-12z" fill="#2ed573"/></svg>'
     },
-    "White Lily": {
+    "6801032feafb0e6b32164700": {
+        "name": "White Lily",
         "seed_id": "6801032feafb0e6b32164700",
         "duration": 18000,
+        "hours": 5,
+        "minutes": 0,
         "time_str": "5 saat",
         "tier": 1,
         "bp_min": "0.63",
         "code_key": "common_white_lily_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 16c-6 10-12 14-12 24 0 10 12 14 12 14s12-4 12-14c0-10-6-14-12-24z" fill="#f1f2f6"/><circle cx="32" cy="38" r="3" fill="#ffa502"/></svg>'
     },
-    "Pineapple": {
+    "68824771915623f3dcc1fafd": {
+        "name": "Pineapple",
         "seed_id": "68824771915623f3dcc1fafd",
         "duration": 25200,
+        "hours": 7,
+        "minutes": 0,
         "time_str": "7 saat",
         "tier": 1,
         "bp_min": "0.60",
         "code_key": "common_pineapple_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="38" rx="14" ry="18" fill="#f0932b"/><path d="M32 4c-4 6-2 14-2 14s-8-4-12 2c6 2 10 8 10 8s-6 0-8 6c6 0 10-2 12-4" fill="#2ed573"/><path d="M22 28l20 20m-20 0l20-20m-22 10h24" stroke="#d35400" stroke-width="2"/></svg>'
     },
-    "Melon": {
+    "683dbe2ba9ec974575a4bf2a": {
+        "name": "Melon",
         "seed_id": "683dbe2ba9ec974575a4bf2a",
         "duration": 18000,
+        "hours": 5,
+        "minutes": 0,
         "time_str": "5 saat",
         "tier": 1,
         "bp_min": "0.57",
         "code_key": "common_melon_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="34" rx="18" ry="14" fill="#fbc531"/><path d="M14 34c4 4 10 6 18 6s14-2 18-6" stroke="#e1b12c" stroke-width="2" fill="none"/><path d="M32 14c0 6-2 6-4 6" stroke="#4cd137" stroke-width="3" fill="none" stroke-linecap="round"/></svg>'
     },
-    "Sunflower": {
+    "673e0c942c7bfd708b3524b9": {
+        "name": "Sunflower",
         "seed_id": "673e0c942c7bfd708b3524b9",
         "duration": 3600,
+        "hours": 1,
+        "minutes": 0,
         "time_str": "1 saat",
         "tier": 1,
         "bp_min": "0.53",
         "code_key": "common_sunflower_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="14" fill="#ffa502"/><circle cx="32" cy="32" r="8" fill="#573820"/></svg>'
     },
-    "Strawberry": {
+    "673e0c942c7bfd708b352441": {
+        "name": "Strawberry",
         "seed_id": "673e0c942c7bfd708b352441",
         "duration": 120,
+        "hours": 0,
+        "minutes": 2,
         "time_str": "2 dk",
         "tier": 1,
         "bp_min": "0.50",
         "code_key": "common_strawberry_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 14c-12 0-22 10-18 28 3 14 18 20 18 20s15-6 18-20c4-18-6-28-18-28z" fill="#ff4757"/><path d="M32 6c-3 4-8 6-12 6 0 4 3 8 7 8 5-2 5-8 5-14zm0 0c3 4 8 6 12 6 0 4-3 8-7 8-5-2-5-8-5-14z" fill="#2ed573"/><circle cx="26" cy="26" r="1.5" fill="#ffa502"/><circle cx="38" cy="26" r="1.5" fill="#ffa502"/><circle cx="32" cy="34" r="1.5" fill="#ffa502"/><circle cx="32" cy="48" r="1.5" fill="#ffa502"/></svg>'
     },
-    "Eggplant": {
+    "673e0c942c7bfd708b352423": {
+        "name": "Eggplant",
         "seed_id": "673e0c942c7bfd708b352423",
         "duration": 1020,
+        "hours": 0,
+        "minutes": 17,
         "time_str": "17 dk",
         "tier": 1,
         "bp_min": "0.47",
         "code_key": "common_eggplant_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M36 18c-8 0-16 10-14 26 2 12 10 16 16 16s14-6 12-18c-2-12-6-24-14-24z" fill="#683cb0"/><path d="M38 12c-2 2-6 3-10 2 1 4 4 6 8 6 4 0 5-4 4-8z" fill="#2ed573"/></svg>'
     },
-    "Onion": {
+    "67dc227a59b878f195998dca": {
+        "name": "Onion",
         "seed_id": "67dc227a59b878f195998dca",
         "duration": 900,
+        "hours": 0,
+        "minutes": 15,
         "time_str": "15 dk",
         "tier": 1,
         "bp_min": "0.47",
         "code_key": "common_onion_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 10c0 0-16 12-16 28 0 12 7 20 16 20s16-8 16-20c0-16-16-28-16-28z" fill="#e056fd"/><path d="M32 6v10m-4-6l4 6 4-6" stroke="#2ed573" stroke-width="3" stroke-linecap="round"/><path d="M26 26c-4 6-4 16 0 24m12-24c4 6 4 16 0 24" stroke="#be2edd" stroke-width="2" fill="none"/></svg>'
     },
-    "Bell Pepper": {
+    "67dc227a59b878f195998de8": {
+        "name": "Bell Pepper",
         "seed_id": "67dc227a59b878f195998de8",
         "duration": 3780,
+        "hours": 1,
+        "minutes": 3,
         "time_str": "1 sa 3 dk",
         "tier": 1,
         "bp_min": "0.46",
         "code_key": "common_bell_pepper_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M24 20c-6 0-10 8-8 24 2 12 8 16 16 16s14-4 16-16c2-16-2-24-8-24-4 0-6 4-8 4s-4-4-8-4z" fill="#e74c3c"/><path d="M32 10v10" stroke="#2ed573" stroke-width="4" stroke-linecap="round"/></svg>'
     },
-    "Watermelon": {
+    "673e0c942c7bfd708b35247d": {
+        "name": "Watermelon",
         "seed_id": "673e0c942c7bfd708b35247d",
         "duration": 6720,
+        "hours": 1,
+        "minutes": 52,
         "time_str": "1 sa 52 dk",
         "tier": 1,
         "bp_min": "0.46",
         "code_key": "common_watermelon_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M12 24c0 16 9 28 20 28s20-12 20-28H12z" fill="#2ed573"/><path d="M15 26c0 13 8 23 17 23s17-10 17-23H15z" fill="#ff4757"/><circle cx="24" cy="34" r="1.5" fill="#2f3542"/><circle cx="32" cy="38" r="1.5" fill="#2f3542"/><circle cx="40" cy="34" r="1.5" fill="#2f3542"/></svg>'
     },
-    "Chili Pepper": {
+    "67dc227a59b878f195998e06": {
+        "name": "Chili Pepper",
         "seed_id": "67dc227a59b878f195998e06",
         "duration": 10860,
+        "hours": 3,
+        "minutes": 1,
         "time_str": "3 sa 1 dk",
         "tier": 1,
         "bp_min": "0.45",
         "code_key": "common_chili_pepper_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M38 14c-12 0-22 10-18 26 3 14 12 18 16 18 2 0 4-4 2-10-2-8 4-18 8-22 2-3 0-8-8-12z" fill="#eb4d4b"/><path d="M38 14c3-3 8-5 12-4-2 4-6 6-10 6" fill="#6ab04c"/></svg>'
     },
-    "Ginger": {
+    "67dc227a59b878f195998e60": {
+        "name": "Ginger",
         "seed_id": "67dc227a59b878f195998e60",
         "duration": 28140,
+        "hours": 7,
+        "minutes": 49,
         "time_str": "7 sa 49 dk",
         "tier": 1,
         "bp_min": "0.42",
         "code_key": "common_ginger_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><rect x="22" y="24" width="20" height="26" rx="10" fill="#eccc68"/><circle cx="20" cy="28" r="8" fill="#eccc68"/><circle cx="44" cy="34" r="8" fill="#eccc68"/><circle cx="32" cy="18" r="7" fill="#eccc68"/></svg>'
     },
-    "Corn": {
+    "673e0c942c7bfd708b352405": {
+        "name": "Corn",
         "seed_id": "673e0c942c7bfd708b352405",
         "duration": 360,
+        "hours": 0,
+        "minutes": 6,
         "time_str": "6 dk",
         "tier": 1,
         "bp_min": "0.33",
         "code_key": "common_corn_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z" fill="#f1c40f"/><path d="M22 28c4 10 6 18 10 22-8-2-12-10-10-22z" fill="#2ed573"/><path d="M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z" fill="#2ed573"/></svg>'
     },
-    "Peas": {
+    "673e0c942c7bfd708b35245f": {
+        "name": "Peas",
         "seed_id": "673e0c942c7bfd708b35245f",
         "duration": 240,
+        "hours": 0,
+        "minutes": 4,
         "time_str": "4 dk",
         "tier": 1,
         "bp_min": "0.25",
         "code_key": "common_peas_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#6ab04c"/><circle cx="26" cy="30" r="4" fill="#badc58"/><circle cx="34" cy="32" r="4" fill="#badc58"/><circle cx="42" cy="32" r="4" fill="#badc58"/></svg>'
     },
-    "Star Anise": {
+    "6970f73d4297528ed0eb352d": {
+        "name": "Star Anise",
         "seed_id": "6970f73d4297528ed0eb352d",
         "duration": 720,
+        "hours": 0,
+        "minutes": 12,
         "time_str": "12 dk",
         "tier": 1,
         "bp_min": "0.17",
         "code_key": "common_star_anise_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><polygon points="32,8 38,24 54,24 40,34 46,50 32,40 18,50 24,34 10,24 26,24" fill="#a0522d"/></svg>'
     },
-    "Patisson": {
+    "69285140f803f06b82ab22e0": {
+        "name": "Patisson",
         "seed_id": "69285140f803f06b82ab22e0",
         "duration": 14400,
+        "hours": 4,
+        "minutes": 0,
         "time_str": "4 saat",
         "tier": 1,
         "bp_min": "0.10",
         "code_key": "common_patisson_seeds",
+        "image_url": "",
         "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 14c-14 0-22 10-22 20 0 10 8 18 22 18s22-8 22-18c0-10-8-20-22-20z" fill="#f6e58d"/><path d="M32 8v8" stroke="#6ab04c" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="34" r="4" fill="#f0932b"/></svg>'
     }
 }
 
 SEEDS_DB = {}
 SEED_ID_TO_NAME = {}
+SEED_ID_TO_KEY = {}
+
+def normalize_seeds_db(raw_db):
+    normalized = {}
+    for k, v in raw_db.items():
+        s_id = v.get("seed_id", k)
+        s_name = v.get("name", k)
+        dur = v.get("duration", 120)
+        h = v.get("hours", dur // 3600)
+        m = v.get("minutes", (dur % 3600) // 60)
+        unique_key = s_id if s_id else f"{s_name}_{v.get('tier', 1)}"
+        v["name"] = s_name
+        v["seed_id"] = s_id
+        v["hours"] = h
+        v["minutes"] = m
+        normalized[unique_key] = v
+    return normalized
 
 def load_seeds():
-    global SEEDS_DB, SEED_ID_TO_NAME
+    global SEEDS_DB, SEED_ID_TO_NAME, SEED_ID_TO_KEY
     if os.path.exists(SEEDS_FILE):
         try:
             with open(SEEDS_FILE, "r", encoding="utf-8") as f:
-                SEEDS_DB = json.load(f)
+                loaded = json.load(f)
+                SEEDS_DB = normalize_seeds_db(loaded)
         except Exception:
             SEEDS_DB = dict(DEFAULT_SEEDS_DB)
     else:
         SEEDS_DB = dict(DEFAULT_SEEDS_DB)
         save_seeds()
-    
-    SEED_ID_TO_NAME = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
+
+    SEED_ID_TO_NAME = {v["seed_id"]: v["name"] for k, v in SEEDS_DB.items() if "seed_id" in v}
+    SEED_ID_TO_KEY = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
 
 def save_seeds():
-    global SEED_ID_TO_NAME
+    global SEED_ID_TO_NAME, SEED_ID_TO_KEY
     with open(SEEDS_FILE, "w", encoding="utf-8") as f:
         json.dump(SEEDS_DB, f, indent=4, ensure_ascii=False)
-    SEED_ID_TO_NAME = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
+    SEED_ID_TO_NAME = {v["seed_id"]: v["name"] for k, v in SEEDS_DB.items() if "seed_id" in v}
+    SEED_ID_TO_KEY = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
 
 load_seeds()
 
@@ -320,10 +428,11 @@ def sync_dynamic_seeds():
                         count = item.get("count", 0)
                         if i_id:
                             stock_dict[i_id] = count
-                            for c_name, c_meta in SEEDS_DB.items():
+                            for c_key, c_meta in SEEDS_DB.items():
                                 if c_meta.get("code_key") == i_code:
                                     c_meta["seed_id"] = i_id
-                                    SEED_ID_TO_NAME[i_id] = c_name
+                                    SEED_ID_TO_NAME[i_id] = c_meta["name"]
+                                    SEED_ID_TO_KEY[i_id] = c_key
         except Exception:
             pass
     return stock_dict
@@ -387,8 +496,12 @@ HTML_PAGE = """<!DOCTYPE html>
         .catalog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:12px; max-height: 560px; overflow-y: auto; padding-right: 5px; }
         .crop-card { background:#0f111a; border: 1px solid #282b3d; border-radius:10px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:0.2s; position:relative; }
         .crop-card:hover { border-color:#57606f; background:#141724; transform:scale(1.02); }
-        .btn-del-seed { position:absolute; top:4px; right:4px; width:20px; height:20px; background:#ef4444; color:#fff; border:none; border-radius:50%; font-weight:bold; font-size:13px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0.7; transition:0.2s; }
+        .card-actions { position:absolute; top:4px; right:4px; display:flex; flex-direction:column; gap:3px; z-index:5; }
+        .btn-action-seed { width:20px; height:20px; border:none; border-radius:50%; font-weight:bold; font-size:11px; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0.8; transition:0.2s; }
+        .btn-del-seed { background:#ef4444; color:#fff; }
         .btn-del-seed:hover { opacity:1; transform:scale(1.1); background:#dc2626; }
+        .btn-edit-seed { background:#3b82f6; color:#fff; }
+        .btn-edit-seed:hover { opacity:1; transform:scale(1.1); background:#2563eb; }
         .crop-icon-wrapper { width:52px; height:52px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border-radius:50%; margin-bottom:8px; overflow:hidden; }
         .crop-icon-wrapper img { width:44px; height:44px; object-fit:contain; }
         .crop-title { font-size:13px; font-weight:bold; margin-bottom:3px; }
@@ -471,7 +584,7 @@ HTML_PAGE = """<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- Tarla Ekleme Modal (Otomatik Taramalı) -->
+    <!-- Tarla Ekleme Modal -->
     <div id="bedModal" class="modal-overlay">
         <div class="modal">
             <div class="modal-header">
@@ -501,21 +614,22 @@ HTML_PAGE = """<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- Tohum Ekleme Modal -->
+    <!-- Tohum Ekleme / Düzenleme Modal -->
     <div id="seedModal" class="modal-overlay">
         <div class="modal">
             <div class="modal-header">
-                <h3>🌱 Yeni Tohum Ekle / Düzenle</h3>
+                <h3 id="seedModalTitle">🌱 Yeni Tohum Ekle</h3>
                 <button type="button" class="modal-close" onclick="closeSeedModal()">×</button>
             </div>
             <form id="newSeedForm">
+                <input type="hidden" id="inputSeedKey" name="original_key" value="">
                 <div class="modal-form-group">
                     <label>Tohum Adı</label>
-                    <input type="text" name="seed_name" placeholder="Örn: Melon" required>
+                    <input type="text" id="inputSeedName" name="seed_name" placeholder="Örn: Sunflower" required>
                 </div>
                 <div class="modal-form-group">
                     <label>Seviye (Tier)</label>
-                    <select name="tier">
+                    <select id="inputSeedTier" name="tier">
                         <option value="1">Lv 1 (Common - Gri)</option>
                         <option value="2">Lv 2 (Uncommon - Yeşil)</option>
                         <option value="3">Lv 3 (Rare - Mavi)</option>
@@ -526,27 +640,27 @@ HTML_PAGE = """<!DOCTYPE html>
                 <div class="modal-form-group">
                     <label>Büyüme Süresi</label>
                     <div class="time-inputs">
-                        <input type="number" name="hours" placeholder="Saat" min="0" value="0">
-                        <input type="number" name="minutes" placeholder="Dakika" min="0" value="0">
+                        <input type="number" id="inputSeedHours" name="hours" placeholder="Saat" min="0" value="0">
+                        <input type="number" id="inputSeedMinutes" name="minutes" placeholder="Dakika" min="0" value="0">
                     </div>
                 </div>
                 <div class="modal-form-group">
                     <label>BP / Dakika Verimi</label>
-                    <input type="text" name="bp_min" placeholder="Örn: 0.57" required>
+                    <input type="text" id="inputSeedBp" name="bp_min" placeholder="Örn: 0.53" required>
                 </div>
                 <div class="modal-form-group">
                     <label>Görsel Linki (İsteğe Bağlı URL)</label>
-                    <input type="text" name="image_url" placeholder="https://... (Boş bırakılırsa otomatik paket atanır)">
+                    <input type="text" id="inputSeedImage" name="image_url" placeholder="https://... (Boş bırakılırsa paket atanır)">
                 </div>
                 <div class="modal-form-group">
                     <label>Item ID (Seed ID)</label>
-                    <input type="text" name="seed_id" placeholder="Örn: 683dbe2ba9ec974575a4bf2a">
+                    <input type="text" id="inputSeedId" name="seed_id" placeholder="Örn: 673e0c942c7bfd708b3524b9">
                 </div>
                 <div class="modal-form-group">
                     <label>Ekin Kodu (Item Code)</label>
-                    <input type="text" name="code_key" placeholder="Örn: common_melon_seeds">
+                    <input type="text" id="inputSeedCode" name="code_key" placeholder="Örn: common_sunflower_seeds">
                 </div>
-                <button type="submit" id="btnAddSeedSubmit" class="btn-modal-submit">Ekle & Kaydet</button>
+                <button type="submit" id="btnAddSeedSubmit" class="btn-modal-submit">Kaydet</button>
             </form>
         </div>
     </div>
@@ -586,7 +700,28 @@ HTML_PAGE = """<!DOCTYPE html>
         }
 
         function closeBedModal() { document.getElementById('bedModal').style.display = 'none'; }
-        function openSeedModal() { document.getElementById('seedModal').style.display = 'flex'; }
+
+        function openSeedModal() {
+            document.getElementById('seedModalTitle').textContent = '🌱 Yeni Tohum Ekle';
+            document.getElementById('inputSeedKey').value = '';
+            document.getElementById('newSeedForm').reset();
+            document.getElementById('seedModal').style.display = 'flex';
+        }
+
+        function editSeed(btn) {
+            document.getElementById('seedModalTitle').textContent = '✏️ Tohumu Düzenle';
+            document.getElementById('inputSeedKey').value = btn.getAttribute('data-key') || '';
+            document.getElementById('inputSeedName').value = btn.getAttribute('data-name') || '';
+            document.getElementById('inputSeedTier').value = btn.getAttribute('data-tier') || '1';
+            document.getElementById('inputSeedHours').value = btn.getAttribute('data-hours') || '0';
+            document.getElementById('inputSeedMinutes').value = btn.getAttribute('data-minutes') || '0';
+            document.getElementById('inputSeedBp').value = btn.getAttribute('data-bp') || '';
+            document.getElementById('inputSeedImage').value = btn.getAttribute('data-img') || '';
+            document.getElementById('inputSeedId').value = btn.getAttribute('data-id') || '';
+            document.getElementById('inputSeedCode').value = btn.getAttribute('data-code') || '';
+            document.getElementById('seedModal').style.display = 'flex';
+        }
+
         function closeSeedModal() { document.getElementById('seedModal').style.display = 'none'; }
 
         function deleteBed(bedId) {
@@ -601,12 +736,12 @@ HTML_PAGE = """<!DOCTYPE html>
             }
         }
 
-        function deleteSeed(seedName) {
+        function deleteSeed(seedKey, seedName) {
             if (confirm(seedName + ' tohumunu katalogdan silmek istediğinize emin misiniz?')) {
                 fetch('/delete_seed', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'seed_name=' + encodeURIComponent(seedName)
+                    body: 'seed_key=' + encodeURIComponent(seedKey)
                 }).then(() => {
                     location.reload();
                 });
@@ -634,14 +769,14 @@ HTML_PAGE = """<!DOCTYPE html>
         document.getElementById('newSeedForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnAddSeedSubmit');
-            btn.textContent = '⏳ Ekleniyor...';
+            btn.textContent = '⏳ Kaydediliyor...';
             const formData = new URLSearchParams(new FormData(this)).toString();
             fetch('/add_seed', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: formData
             }).then(() => {
-                btn.textContent = '✓ Eklendi!';
+                btn.textContent = '✓ Kaydedildi!';
                 setTimeout(() => {
                     closeSeedModal();
                     location.reload();
@@ -651,7 +786,7 @@ HTML_PAGE = """<!DOCTYPE html>
 
         function updateTicks() {
             const selects = Array.from(document.querySelectorAll('#farmBody select'));
-            const selectedValues = new Set(selects.map(s => s.value));
+            const selectedValues = new Set(selects.map(s => s.value).filter(v => v !== 'Boş'));
 
             selects.forEach(sel => {
                 Array.from(sel.options).forEach(opt => {
@@ -660,7 +795,7 @@ HTML_PAGE = """<!DOCTYPE html>
                         baseText = opt.textContent.replace(' ✓', '').trim();
                         opt.setAttribute('data-raw-text', baseText);
                     }
-                    if (selectedValues.has(opt.value)) {
+                    if (opt.value !== 'Boş' && selectedValues.has(opt.value)) {
                         opt.textContent = baseText + ' ✓';
                     } else {
                         opt.textContent = baseText;
@@ -692,8 +827,8 @@ HTML_PAGE = """<!DOCTYPE html>
                     const selB = b.querySelector('select');
                     const optA = selA.options[selA.selectedIndex];
                     const optB = selB.options[selB.selectedIndex];
-                    valA = parseFloat(optA.getAttribute('data-bp') || 0);
-                    valB = parseFloat(optB.getAttribute('data-bp') || 0);
+                    valA = parseFloat(optA.getAttribute('data-bp') || -1);
+                    valB = parseFloat(optB.getAttribute('data-bp') || -1);
                 }
                 return dir === 1 ? valB - valA : valA - valB;
             });
@@ -797,7 +932,14 @@ class PanelHandler(BaseHTTPRequestHandler):
             stock_map = sync_dynamic_seeds()
             now_ts = datetime.now(timezone.utc).timestamp()
             
-            sorted_all_available = sorted(
+            # Dropdown ve verim için doğrudan BP/dk sıralaması (En yüksekten en düşüğe)
+            sorted_by_bp = sorted(
+                SEEDS_DB.items(),
+                key=lambda item: -float(item[1].get("bp_min", 0))
+            )
+
+            # Katalog görünümü için Seviye -> BP/dk sıralaması
+            sorted_catalog = sorted(
                 SEEDS_DB.items(),
                 key=lambda item: (-item[1].get("tier", 1), -float(item[1].get("bp_min", 0)))
             )
@@ -809,20 +951,30 @@ class PanelHandler(BaseHTTPRequestHandler):
                 tier_badge = f"<span class='badge badge-lv{level_num}'>Lv {level_num}</span>"
                 
                 p_seed = bed.get("plantedSeed", {})
-                cur_name = SEED_ID_TO_NAME.get(p_seed.get("seedID"), "Boş")
+                cur_seed_id = p_seed.get("seedID")
+                cur_name = SEED_ID_TO_NAME.get(cur_seed_id, "Boş")
+                cur_key = SEED_ID_TO_KEY.get(cur_seed_id, "")
+                
                 date_str = p_seed.get("dateGrowth")
                 rem_seconds = 0
                 if date_str:
                     fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
                     rem_seconds = max(0, int(fts - now_ts))
                 
-                default_target = cur_name if cur_name in SEEDS_DB else "Strawberry"
-                target = BED_TARGETS.get(b_id, default_target)
+                target = BED_TARGETS.get(b_id)
+                if not target:
+                    if cur_key and cur_key in SEEDS_DB:
+                        target = cur_key
+                    else:
+                        target = next((k for k, v in SEEDS_DB.items() if v.get("name") == "Strawberry"), "Boş")
                 
-                options = ""
-                for s_name, s_meta in sorted_all_available:
-                    sel = "selected" if s_name == target else ""
-                    options += f"<option value='{s_name}' data-bp='{s_meta.get('bp_min', 0)}' {sel}>[Lv{s_meta.get('tier', 1)}] {s_name} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)</option>"
+                # En başa 'Boş' seçeneği
+                sel_empty = "selected" if target == "Boş" else ""
+                options = f"<option value='Boş' data-bp='-1' {sel_empty}>[Boş / Hedef Yok]</option>"
+                
+                for s_key, s_meta in sorted_by_bp:
+                    sel = "selected" if s_key == target or s_meta.get("name") == target else ""
+                    options += f"<option value='{s_key}' data-bp='{s_meta.get('bp_min', 0)}' {sel}>[Lv{s_meta.get('tier', 1)}] {s_meta.get('name')} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)</option>"
                 
                 rows_html += f"""<tr data-level='{level_num}'>
                     <td><button type="button" class="btn-del-bed" title="Tarlayı Sil" onclick="deleteBed('{b_id}')">×</button></td>
@@ -837,19 +989,35 @@ class PanelHandler(BaseHTTPRequestHandler):
                 </tr>"""
             
             catalog_html = ""
-            for name, meta in sorted_all_available:
+            for key, meta in sorted_catalog:
                 tier = meta.get("tier", 1)
                 t_badge = f"<span class='badge badge-lv{tier}'>Lv {tier}</span>"
-
                 stock_count = stock_map.get(meta.get("seed_id"), 0)
                 icon_content = meta.get("icon", '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#10b981"/></svg>')
                 
+                name_escaped = meta.get('name', '').replace('"', '&quot;')
+                img_escaped = meta.get('image_url', '').replace('"', '&quot;')
+                code_escaped = meta.get('code_key', '').replace('"', '&quot;')
+                
                 catalog_html += f"""<div class="crop-card">
-                    <button type="button" class="btn-del-seed" title="Tohumu Sil" onclick="deleteSeed('{name}')">×</button>
+                    <div class="card-actions">
+                        <button type="button" class="btn-action-seed btn-del-seed" title="Tohumu Sil" onclick="deleteSeed('{key}', '{name_escaped}')">×</button>
+                        <button type="button" class="btn-action-seed btn-edit-seed" title="Düzenle" 
+                            data-key="{key}" 
+                            data-name="{name_escaped}" 
+                            data-tier="{tier}" 
+                            data-hours="{meta.get('hours', 0)}" 
+                            data-minutes="{meta.get('minutes', 0)}" 
+                            data-bp="{meta.get('bp_min', 0)}" 
+                            data-img="{img_escaped}" 
+                            data-id="{meta.get('seed_id', '')}" 
+                            data-code="{code_escaped}" 
+                            onclick="editSeed(this)">✏️</button>
+                    </div>
                     <div class="crop-icon-wrapper">
                         {icon_content}
                     </div>
-                    <div class="crop-title">{name} {t_badge}</div>
+                    <div class="crop-title">{meta.get('name')} {t_badge}</div>
                     <div class="crop-time">⏱ {meta.get('time_str', '')}</div>
                     <div class="bp-badge">⭐ {meta.get('bp_min', 0)} BP/dk</div>
                     <div class="stock-badge">Stok: {stock_count}</div>
@@ -912,6 +1080,7 @@ class PanelHandler(BaseHTTPRequestHandler):
                 log(f"🗑️ Panelden tarla silindi: {b_id}")
 
         elif self.path == "/add_seed":
+            original_key = params.get("original_key", [""])[0].strip()
             s_name = params.get("seed_name", [""])[0].strip()
             if s_name:
                 tier = int(params.get("tier", [1])[0])
@@ -930,8 +1099,19 @@ class PanelHandler(BaseHTTPRequestHandler):
                 
                 bp_min = params.get("bp_min", ["0.50"])[0].strip()
                 image_url = params.get("image_url", [""])[0].strip()
-                seed_id = params.get("seed_id", [""])[0].strip() or f"custom_{s_name.lower().replace(' ', '_')}"
-                code_key = params.get("code_key", [""])[0].strip().lower() or f"common_{s_name.lower().replace(' ', '_')}_seeds"
+                seed_id = params.get("seed_id", [""])[0].strip()
+                code_key = params.get("code_key", [""])[0].strip().lower()
+
+                # Düzenlenen tohumun eski anahtarını temizle
+                if original_key and original_key in SEEDS_DB:
+                    del SEEDS_DB[original_key]
+
+                # Benzersiz anahtar oluştur: seed_id varsa kullanılır, yoksa isim_tier şeklinde kaydedilir
+                new_key = seed_id if seed_id else f"{s_name.lower().replace(' ', '_')}_lv{tier}"
+                if not seed_id:
+                    seed_id = f"custom_{new_key}"
+                if not code_key:
+                    code_key = f"common_{new_key}_seeds"
 
                 if image_url:
                     icon_markup = f'<img src="{image_url}" alt="{s_name}">'
@@ -951,24 +1131,28 @@ class PanelHandler(BaseHTTPRequestHandler):
                         <path d="M32 33c-3 4 0 7 3 7" stroke="{c}" stroke-width="2" fill="none" stroke-linecap="round"/>
                     </svg>'''
 
-                SEEDS_DB[s_name] = {
+                SEEDS_DB[new_key] = {
+                    "name": s_name,
                     "seed_id": seed_id,
                     "duration": total_seconds,
+                    "hours": hours,
+                    "minutes": minutes,
                     "time_str": time_str,
                     "tier": tier,
                     "bp_min": bp_min,
                     "code_key": code_key,
+                    "image_url": image_url,
                     "icon": icon_markup
                 }
                 save_seeds()
-                log(f"🌱 Panelden yeni tohum eklendi/güncellendi: {s_name} (Lv{tier})")
+                log(f"🌱 Panelden tohum kaydedildi: {s_name} (Lv{tier}) [Anahtar: {new_key}]")
 
         elif self.path == "/delete_seed":
-            s_name = params.get("seed_name", [""])[0].strip()
-            if s_name in SEEDS_DB:
-                del SEEDS_DB[s_name]
+            s_key = params.get("seed_key", [""])[0].strip()
+            if s_key in SEEDS_DB:
+                del SEEDS_DB[s_key]
                 save_seeds()
-                log(f"🗑️ Panelden tohum silindi: {s_name}")
+                log(f"🗑️ Panelden tohum silindi: {s_key}")
 
         elif self.path == "/update_token":
             raw_curl = params.get("curl_data", [""])[0]
@@ -1053,6 +1237,16 @@ def live_countdown(target_name, seconds):
         seconds -= 1
     print("\n")
 
+def get_seed_meta(key_or_name):
+    if not key_or_name or key_or_name == "Boş":
+        return None
+    if key_or_name in SEEDS_DB:
+        return SEEDS_DB[key_or_name]
+    for k, v in SEEDS_DB.items():
+        if v.get("name") == key_or_name:
+            return v
+    return None
+
 def run_farm():
     global TOTAL_ACTIONS, NEXT_BREAK_ACTION
     load_targets()
@@ -1084,7 +1278,8 @@ def run_farm():
 
         for bed in beds:
             p_seed = bed.get("plantedSeed", {})
-            s_name = SEED_ID_TO_NAME.get(p_seed.get("seedID"))
+            cur_seed_id = p_seed.get("seedID")
+            s_name = SEED_ID_TO_NAME.get(cur_seed_id)
             date_str = p_seed.get("dateGrowth")
             diff = 0
             if date_str:
@@ -1099,9 +1294,10 @@ def run_farm():
             p_seed = bed.get("plantedSeed", {})
             cur_seed_id = p_seed.get("seedID")
             cur_name = SEED_ID_TO_NAME.get(cur_seed_id, "Boş")
+            cur_key = SEED_ID_TO_KEY.get(cur_seed_id, "")
             
-            default_target = cur_name if cur_name in SEEDS_DB else "Strawberry"
-            target_name = BED_TARGETS.get(b_id, default_target)
+            default_target = cur_key if cur_key in SEEDS_DB else "Boş"
+            target_key = BED_TARGETS.get(b_id, default_target)
             
             farming_id = p_seed.get("userFarmingID")
             date_str = p_seed.get("dateGrowth")
@@ -1116,7 +1312,7 @@ def run_farm():
                     "bed_id": b_id,
                     "farming_id": farming_id,
                     "cur_name": cur_name,
-                    "target_name": target_name
+                    "target_key": target_key
                 })
             else:
                 active_crops.append({"name": cur_name, "diff": diff})
@@ -1144,27 +1340,40 @@ def run_farm():
                     TOTAL_ACTIONS += 1
                     human_delay(30.0, 90.0)
 
-                target = rb["target_name"]
-                if target not in SEEDS_DB:
-                    target = "Strawberry"
-
-                plant_choice = target
+                target_key = rb["target_key"]
                 
-                if target in crop_locations and crop_locations[target] > 0:
-                    rem_time = crop_locations[target]
-                    straw_dur = SEEDS_DB["Strawberry"]["duration"] if "Strawberry" in SEEDS_DB else 120
-                    
-                    if rem_time >= straw_dur:
-                        log(f"⏳ {target} başka yatakta büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
-                        plant_choice = "Strawberry"
-                    else:
-                        log(f"🛑 {target} hasadına {rem_time} sn kaldı! Strawberry süresi aşacağı için yatak bekletiliyor.")
-                        plant_choice = None
+                # 'Boş' hedef seçildiyse bu yatağa yeni ekim yapılmaz
+                if target_key == "Boş":
+                    log(f"⏹️ Yatak ({rb['bed_id'][-6:]}) için hedef 'Boş' seçili, ekim yapılmadan bırakılıyor.")
+                    continue
 
-                if plant_choice and plant_choice in SEEDS_DB:
-                    s_id = SEEDS_DB[plant_choice]["seed_id"]
-                    log(f"🌱 {plant_choice} ekiliyor...")
-                    success = plant_seed(rb["bed_id"], s_id, plant_choice)
+                meta = get_seed_meta(target_key)
+                if not meta:
+                    meta = get_seed_meta("Strawberry")
+
+                if not meta:
+                    continue
+
+                target_name = meta["name"]
+                plant_choice_meta = meta
+                
+                if target_name in crop_locations and crop_locations[target_name] > 0:
+                    rem_time = crop_locations[target_name]
+                    straw_meta = get_seed_meta("Strawberry")
+                    straw_dur = straw_meta["duration"] if straw_meta else 120
+                    
+                    if rem_time >= straw_dur and straw_meta:
+                        log(f"⏳ {target_name} başka yatakta büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
+                        plant_choice_meta = straw_meta
+                    else:
+                        log(f"🛑 {target_name} hasadına {rem_time} sn kaldı! Strawberry süresi aşacağı için yatak bekletiliyor.")
+                        plant_choice_meta = None
+
+                if plant_choice_meta and "seed_id" in plant_choice_meta:
+                    s_id = plant_choice_meta["seed_id"]
+                    p_name = plant_choice_meta["name"]
+                    log(f"🌱 {p_name} ekiliyor...")
+                    success = plant_seed(rb["bed_id"], s_id, p_name)
                     if success:
                         TOTAL_ACTIONS += 1
                     human_delay(30.0, 90.0)
