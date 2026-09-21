@@ -43,7 +43,6 @@ CONFIG_FILE = "farm_targets.json"
 SEEDS_FILE = "seeds_db.json"
 BEDS_FILE = "beds_db.json"
 
-# === BAŞLANGIÇ YATAK TANIMLARI ===
 DEFAULT_BEDS = {
     "6862f39a269206e9f5c678f8": {"level": 2},
     "6a8c41395b50ac4ade330786": {"level": 2},
@@ -74,293 +73,72 @@ def save_beds():
 
 load_beds()
 
-# === BAŞLANGIÇ TOHUM VERİ TABANI ===
 DEFAULT_SEEDS_DB = {
     "65d38d0cda839cd1e0f7ec67": {
-        "name": "Rare Marigold",
-        "seed_id": "65d38d0cda839cd1e0f7ec67",
-        "duration": 120,
-        "hours": 0,
-        "minutes": 2,
-        "time_str": "2 dk",
-        "tier": 3,
-        "bp_min": "3.50",
-        "code_key": "rare_marigold_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#3b82f6"/><circle cx="32" cy="32" r="8" fill="#ffa502"/></svg>'
+        "name": "Rare Marigold", "seed_id": "65d38d0cda839cd1e0f7ec67", "duration": 120, "hours": 0, "minutes": 2, "time_str": "2 dk", "tier": 3, "bp_min": "3.50", "stock": 1, "code_key": "rare_marigold_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#3b82f6"/><circle cx="32" cy="32" r="8" fill="#ffa502"/></svg>'
     },
     "673e0c942c7bfd708b35246b": {
-        "name": "Rare Peas",
-        "seed_id": "673e0c942c7bfd708b35246b",
-        "duration": 240,
-        "hours": 0,
-        "minutes": 4,
-        "time_str": "4 dk",
-        "tier": 3,
-        "bp_min": "0.75",
-        "code_key": "rare_peas_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#1e90ff"/><circle cx="26" cy="30" r="4" fill="#00d2d3"/><circle cx="34" cy="32" r="4" fill="#00d2d3"/><circle cx="42" cy="32" r="4" fill="#00d2d3"/></svg>'
+        "name": "Rare Peas", "seed_id": "673e0c942c7bfd708b35246b", "duration": 240, "hours": 0, "minutes": 4, "time_str": "4 dk", "tier": 3, "bp_min": "0.75", "stock": 1, "code_key": "rare_peas_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#1e90ff"/><circle cx="26" cy="30" r="4" fill="#00d2d3"/><circle cx="34" cy="32" r="4" fill="#00d2d3"/><circle cx="42" cy="32" r="4" fill="#00d2d3"/></svg>'
     },
     "67dc227a59b878f195998d76": {
-        "name": "Broccoli",
-        "seed_id": "67dc227a59b878f195998d76",
-        "duration": 19680,
-        "hours": 5,
-        "minutes": 28,
-        "time_str": "5 sa 28 dk",
-        "tier": 2,
-        "bp_min": "0.85",
-        "code_key": "uncommon_broccoli_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M28 38h8v16h-8z" fill="#badc58"/><circle cx="32" cy="22" r="12" fill="#6ab04c"/><circle cx="22" cy="28" r="10" fill="#6ab04c"/><circle cx="42" cy="28" r="10" fill="#6ab04c"/></svg>'
+        "name": "Broccoli", "seed_id": "67dc227a59b878f195998d76", "duration": 19680, "hours": 5, "minutes": 28, "time_str": "5 sa 28 dk", "tier": 2, "bp_min": "0.85", "stock": 1, "code_key": "uncommon_broccoli_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M28 38h8v16h-8z" fill="#badc58"/><circle cx="32" cy="22" r="12" fill="#6ab04c"/><circle cx="22" cy="28" r="10" fill="#6ab04c"/><circle cx="42" cy="28" r="10" fill="#6ab04c"/></svg>'
     },
     "673e0c942c7bfd708b35240b": {
-        "name": "Uncommon Corn",
-        "seed_id": "673e0c942c7bfd708b35240b",
-        "duration": 360,
-        "hours": 0,
-        "minutes": 6,
-        "time_str": "6 dk",
-        "tier": 2,
-        "bp_min": "0.50",
-        "code_key": "uncommon_corn_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z" fill="#2ecc71"/><path d="M22 28c4 10 6 18 10 22-8-2-12-10-10-22z" fill="#badc58"/><path d="M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z" fill="#badc58"/></svg>'
+        "name": "Uncommon Corn", "seed_id": "673e0c942c7bfd708b35240b", "duration": 360, "hours": 0, "minutes": 6, "time_str": "6 dk", "tier": 2, "bp_min": "0.50", "stock": 1, "code_key": "uncommon_corn_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z" fill="#2ecc71"/><path d="M22 28c4 10 6 18 10 22-8-2-12-10-10-22z" fill="#badc58"/><path d="M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z" fill="#badc58"/></svg>'
     },
     "673e0c942c7bfd708b352465": {
-        "name": "Uncommon Peas",
-        "seed_id": "673e0c942c7bfd708b352465",
-        "duration": 240,
-        "hours": 0,
-        "minutes": 4,
-        "time_str": "4 dk",
-        "tier": 2,
-        "bp_min": "0.50",
-        "code_key": "uncommon_peas_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#27ae60"/><circle cx="26" cy="30" r="4" fill="#2ecc71"/><circle cx="34" cy="32" r="4" fill="#2ecc71"/><circle cx="42" cy="32" r="4" fill="#2ecc71"/></svg>'
+        "name": "Uncommon Peas", "seed_id": "673e0c942c7bfd708b352465", "duration": 240, "hours": 0, "minutes": 4, "time_str": "4 dk", "tier": 2, "bp_min": "0.50", "stock": 1, "code_key": "uncommon_peas_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#27ae60"/><circle cx="26" cy="30" r="4" fill="#2ecc71"/><circle cx="34" cy="32" r="4" fill="#2ecc71"/><circle cx="42" cy="32" r="4" fill="#2ecc71"/></svg>'
     },
     "6a6b1e1913ccd7c96918bf6b": {
-        "name": "Sugarcane",
-        "seed_id": "6a6b1e1913ccd7c96918bf6b",
-        "duration": 28500,
-        "hours": 7,
-        "minutes": 55,
-        "time_str": "7 sa 55 dk",
-        "tier": 1,
-        "bp_min": "27.00",
-        "code_key": "common_sugarcane_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><rect x="22" y="10" width="6" height="44" rx="2" fill="#2ed573"/><rect x="34" y="16" width="6" height="38" rx="2" fill="#2ed573"/></svg>'
+        "name": "Sugarcane", "seed_id": "6a6b1e1913ccd7c96918bf6b", "duration": 28500, "hours": 7, "minutes": 55, "time_str": "7 sa 55 dk", "tier": 1, "bp_min": "27.00", "stock": 1, "code_key": "common_sugarcane_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><rect x="22" y="10" width="6" height="44" rx="2" fill="#2ed573"/><rect x="34" y="16" width="6" height="38" rx="2" fill="#2ed573"/></svg>'
     },
     "69945ab309abeb19e22a83f9": {
-        "name": "Dragon Fruit",
-        "seed_id": "69945ab309abeb19e22a83f9",
-        "duration": 90000,
-        "hours": 25,
-        "minutes": 0,
-        "time_str": "1g 1sa",
-        "tier": 1,
-        "bp_min": "0.90",
-        "code_key": "common_dragon_fruit_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 12c-14 0-20 16-16 32 3 12 16 16 16 16s13-4 16-16c4-16-2-32-16-32z" fill="#ff4757"/><path d="M32 12c-4 6-12 8-12 8s4 8 2 14c4-2 8-8 10-14 0 0 4 6 8 8-2-6 0-12-2-14-2-2-6-4-6-12z" fill="#2ed573"/></svg>'
+        "name": "Dragon Fruit", "seed_id": "69945ab309abeb19e22a83f9", "duration": 90000, "hours": 25, "minutes": 0, "time_str": "1g 1sa", "tier": 1, "bp_min": "0.90", "stock": 1, "code_key": "common_dragon_fruit_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 12c-14 0-20 16-16 32 3 12 16 16 16 16s13-4 16-16c4-16-2-32-16-32z" fill="#ff4757"/><path d="M32 12c-4 6-12 8-12 8s4 8 2 14c4-2 8-8 10-14 0 0 4 6 8 8-2-6 0-12-2-14-2-2-6-4-6-12z" fill="#2ed573"/></svg>'
     },
     "6801032feafb0e6b32164700": {
-        "name": "White Lily",
-        "seed_id": "6801032feafb0e6b32164700",
-        "duration": 18000,
-        "hours": 5,
-        "minutes": 0,
-        "time_str": "5 saat",
-        "tier": 1,
-        "bp_min": "0.63",
-        "code_key": "common_white_lily_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 16c-6 10-12 14-12 24 0 10 12 14 12 14s12-4 12-14c0-10-6-14-12-24z" fill="#f1f2f6"/><circle cx="32" cy="38" r="3" fill="#ffa502"/></svg>'
+        "name": "White Lily", "seed_id": "6801032feafb0e6b32164700", "duration": 18000, "hours": 5, "minutes": 0, "time_str": "5 saat", "tier": 1, "bp_min": "0.63", "stock": 1, "code_key": "common_white_lily_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 16c-6 10-12 14-12 24 0 10 12 14 12 14s12-4 12-14c0-10-6-14-12-24z" fill="#f1f2f6"/><circle cx="32" cy="38" r="3" fill="#ffa502"/></svg>'
     },
     "68824771915623f3dcc1fafd": {
-        "name": "Pineapple",
-        "seed_id": "68824771915623f3dcc1fafd",
-        "duration": 25200,
-        "hours": 7,
-        "minutes": 0,
-        "time_str": "7 saat",
-        "tier": 1,
-        "bp_min": "0.60",
-        "code_key": "common_pineapple_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="38" rx="14" ry="18" fill="#f0932b"/><path d="M32 4c-4 6-2 14-2 14s-8-4-12 2c6 2 10 8 10 8s-6 0-8 6c6 0 10-2 12-4" fill="#2ed573"/><path d="M22 28l20 20m-20 0l20-20m-22 10h24" stroke="#d35400" stroke-width="2"/></svg>'
+        "name": "Pineapple", "seed_id": "68824771915623f3dcc1fafd", "duration": 25200, "hours": 7, "minutes": 0, "time_str": "7 saat", "tier": 1, "bp_min": "0.60", "stock": 1, "code_key": "common_pineapple_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="38" rx="14" ry="18" fill="#f0932b"/><path d="M32 4c-4 6-2 14-2 14s-8-4-12 2c6 2 10 8 10 8s-6 0-8 6c6 0 10-2 12-4" fill="#2ed573"/><path d="M22 28l20 20m-20 0l20-20m-22 10h24" stroke="#d35400" stroke-width="2"/></svg>'
     },
     "683dbe2ba9ec974575a4bf2a": {
-        "name": "Melon",
-        "seed_id": "683dbe2ba9ec974575a4bf2a",
-        "duration": 18000,
-        "hours": 5,
-        "minutes": 0,
-        "time_str": "5 saat",
-        "tier": 1,
-        "bp_min": "0.57",
-        "code_key": "common_melon_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="34" rx="18" ry="14" fill="#fbc531"/><path d="M14 34c4 4 10 6 18 6s14-2 18-6" stroke="#e1b12c" stroke-width="2" fill="none"/><path d="M32 14c0 6-2 6-4 6" stroke="#4cd137" stroke-width="3" fill="none" stroke-linecap="round"/></svg>'
+        "name": "Melon", "seed_id": "683dbe2ba9ec974575a4bf2a", "duration": 18000, "hours": 5, "minutes": 0, "time_str": "5 saat", "tier": 1, "bp_min": "0.57", "stock": 1, "code_key": "common_melon_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><ellipse cx="32" cy="34" rx="18" ry="14" fill="#fbc531"/><path d="M14 34c4 4 10 6 18 6s14-2 18-6" stroke="#e1b12c" stroke-width="2" fill="none"/><path d="M32 14c0 6-2 6-4 6" stroke="#4cd137" stroke-width="3" fill="none" stroke-linecap="round"/></svg>'
     },
     "673e0c942c7bfd708b3524b9": {
-        "name": "Sunflower",
-        "seed_id": "673e0c942c7bfd708b3524b9",
-        "duration": 3600,
-        "hours": 1,
-        "minutes": 0,
-        "time_str": "1 saat",
-        "tier": 1,
-        "bp_min": "0.53",
-        "code_key": "common_sunflower_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="14" fill="#ffa502"/><circle cx="32" cy="32" r="8" fill="#573820"/></svg>'
+        "name": "Sunflower", "seed_id": "673e0c942c7bfd708b3524b9", "duration": 3600, "hours": 1, "minutes": 0, "time_str": "1 saat", "tier": 1, "bp_min": "0.53", "stock": 1, "code_key": "common_sunflower_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="14" fill="#ffa502"/><circle cx="32" cy="32" r="8" fill="#573820"/></svg>'
     },
     "673e0c942c7bfd708b352441": {
-        "name": "Strawberry",
-        "seed_id": "673e0c942c7bfd708b352441",
-        "duration": 120,
-        "hours": 0,
-        "minutes": 2,
-        "time_str": "2 dk",
-        "tier": 1,
-        "bp_min": "0.50",
-        "code_key": "common_strawberry_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 14c-12 0-22 10-18 28 3 14 18 20 18 20s15-6 18-20c4-18-6-28-18-28z" fill="#ff4757"/><path d="M32 6c-3 4-8 6-12 6 0 4 3 8 7 8 5-2 5-8 5-14zm0 0c3 4 8 6 12 6 0 4-3 8-7 8-5-2-5-8-5-14z" fill="#2ed573"/><circle cx="26" cy="26" r="1.5" fill="#ffa502"/><circle cx="38" cy="26" r="1.5" fill="#ffa502"/><circle cx="32" cy="34" r="1.5" fill="#ffa502"/><circle cx="32" cy="48" r="1.5" fill="#ffa502"/></svg>'
+        "name": "Strawberry", "seed_id": "673e0c942c7bfd708b352441", "duration": 120, "hours": 0, "minutes": 2, "time_str": "2 dk", "tier": 1, "bp_min": "0.50", "stock": 1, "code_key": "common_strawberry_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 14c-12 0-22 10-18 28 3 14 18 20 18 20s15-6 18-20c4-18-6-28-18-28z" fill="#ff4757"/><path d="M32 6c-3 4-8 6-12 6 0 4 3 8 7 8 5-2 5-8 5-14zm0 0c3 4 8 6 12 6 0 4-3 8-7 8-5-2-5-8-5-14z" fill="#2ed573"/><circle cx="26" cy="26" r="1.5" fill="#ffa502"/><circle cx="38" cy="26" r="1.5" fill="#ffa502"/><circle cx="32" cy="34" r="1.5" fill="#ffa502"/><circle cx="32" cy="48" r="1.5" fill="#ffa502"/></svg>'
     },
     "673e0c942c7bfd708b352423": {
-        "name": "Eggplant",
-        "seed_id": "673e0c942c7bfd708b352423",
-        "duration": 1020,
-        "hours": 0,
-        "minutes": 17,
-        "time_str": "17 dk",
-        "tier": 1,
-        "bp_min": "0.47",
-        "code_key": "common_eggplant_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M36 18c-8 0-16 10-14 26 2 12 10 16 16 16s14-6 12-18c-2-12-6-24-14-24z" fill="#683cb0"/><path d="M38 12c-2 2-6 3-10 2 1 4 4 6 8 6 4 0 5-4 4-8z" fill="#2ed573"/></svg>'
+        "name": "Eggplant", "seed_id": "673e0c942c7bfd708b352423", "duration": 1020, "hours": 0, "minutes": 17, "time_str": "17 dk", "tier": 1, "bp_min": "0.47", "stock": 1, "code_key": "common_eggplant_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M36 18c-8 0-16 10-14 26 2 12 10 16 16 16s14-6 12-18c-2-12-6-24-14-24z" fill="#683cb0"/><path d="M38 12c-2 2-6 3-10 2 1 4 4 6 8 6 4 0 5-4 4-8z" fill="#2ed573"/></svg>'
     },
     "67dc227a59b878f195998dca": {
-        "name": "Onion",
-        "seed_id": "67dc227a59b878f195998dca",
-        "duration": 900,
-        "hours": 0,
-        "minutes": 15,
-        "time_str": "15 dk",
-        "tier": 1,
-        "bp_min": "0.47",
-        "code_key": "common_onion_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 10c0 0-16 12-16 28 0 12 7 20 16 20s16-8 16-20c0-16-16-28-16-28z" fill="#e056fd"/><path d="M32 6v10m-4-6l4 6 4-6" stroke="#2ed573" stroke-width="3" stroke-linecap="round"/><path d="M26 26c-4 6-4 16 0 24m12-24c4 6 4 16 0 24" stroke="#be2edd" stroke-width="2" fill="none"/></svg>'
+        "name": "Onion", "seed_id": "67dc227a59b878f195998dca", "duration": 900, "hours": 0, "minutes": 15, "time_str": "15 dk", "tier": 1, "bp_min": "0.47", "stock": 1, "code_key": "common_onion_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 10c0 0-16 12-16 28 0 12 7 20 16 20s16-8 16-20c0-16-16-28-16-28z" fill="#e056fd"/><path d="M32 6v10m-4-6l4 6 4-6" stroke="#2ed573" stroke-width="3" stroke-linecap="round"/><path d="M26 26c-4 6-4 16 0 24m12-24c4 6 4 16 0 24" stroke="#be2edd" stroke-width="2" fill="none"/></svg>'
     },
     "67dc227a59b878f195998de8": {
-        "name": "Bell Pepper",
-        "seed_id": "67dc227a59b878f195998de8",
-        "duration": 3780,
-        "hours": 1,
-        "minutes": 3,
-        "time_str": "1 sa 3 dk",
-        "tier": 1,
-        "bp_min": "0.46",
-        "code_key": "common_bell_pepper_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M24 20c-6 0-10 8-8 24 2 12 8 16 16 16s14-4 16-16c2-16-2-24-8-24-4 0-6 4-8 4s-4-4-8-4z" fill="#e74c3c"/><path d="M32 10v10" stroke="#2ed573" stroke-width="4" stroke-linecap="round"/></svg>'
+        "name": "Bell Pepper", "seed_id": "67dc227a59b878f195998de8", "duration": 3780, "hours": 1, "minutes": 3, "time_str": "1 sa 3 dk", "tier": 1, "bp_min": "0.46", "stock": 1, "code_key": "common_bell_pepper_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M24 20c-6 0-10 8-8 24 2 12 8 16 16 16s14-4 16-16c2-16-2-24-8-24-4 0-6 4-8 4s-4-4-8-4z" fill="#e74c3c"/><path d="M32 10v10" stroke="#2ed573" stroke-width="4" stroke-linecap="round"/></svg>'
     },
     "673e0c942c7bfd708b35247d": {
-        "name": "Watermelon",
-        "seed_id": "673e0c942c7bfd708b35247d",
-        "duration": 6720,
-        "hours": 1,
-        "minutes": 52,
-        "time_str": "1 sa 52 dk",
-        "tier": 1,
-        "bp_min": "0.46",
-        "code_key": "common_watermelon_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M12 24c0 16 9 28 20 28s20-12 20-28H12z" fill="#2ed573"/><path d="M15 26c0 13 8 23 17 23s17-10 17-23H15z" fill="#ff4757"/><circle cx="24" cy="34" r="1.5" fill="#2f3542"/><circle cx="32" cy="38" r="1.5" fill="#2f3542"/><circle cx="40" cy="34" r="1.5" fill="#2f3542"/></svg>'
+        "name": "Watermelon", "seed_id": "673e0c942c7bfd708b35247d", "duration": 6720, "hours": 1, "minutes": 52, "time_str": "1 sa 52 dk", "tier": 1, "bp_min": "0.46", "stock": 1, "code_key": "common_watermelon_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M12 24c0 16 9 28 20 28s20-12 20-28H12z" fill="#2ed573"/><path d="M15 26c0 13 8 23 17 23s17-10 17-23H15z" fill="#ff4757"/><circle cx="24" cy="34" r="1.5" fill="#2f3542"/><circle cx="32" cy="38" r="1.5" fill="#2f3542"/><circle cx="40" cy="34" r="1.5" fill="#2f3542"/></svg>'
     },
     "67dc227a59b878f195998e06": {
-        "name": "Chili Pepper",
-        "seed_id": "67dc227a59b878f195998e06",
-        "duration": 10860,
-        "hours": 3,
-        "minutes": 1,
-        "time_str": "3 sa 1 dk",
-        "tier": 1,
-        "bp_min": "0.45",
-        "code_key": "common_chili_pepper_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M38 14c-12 0-22 10-18 26 3 14 12 18 16 18 2 0 4-4 2-10-2-8 4-18 8-22 2-3 0-8-8-12z" fill="#eb4d4b"/><path d="M38 14c3-3 8-5 12-4-2 4-6 6-10 6" fill="#6ab04c"/></svg>'
+        "name": "Chili Pepper", "seed_id": "67dc227a59b878f195998e06", "duration": 10860, "hours": 3, "minutes": 1, "time_str": "3 sa 1 dk", "tier": 1, "bp_min": "0.45", "stock": 1, "code_key": "common_chili_pepper_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M38 14c-12 0-22 10-18 26 3 14 12 18 16 18 2 0 4-4 2-10-2-8 4-18 8-22 2-3 0-8-8-12z" fill="#eb4d4b"/><path d="M38 14c3-3 8-5 12-4-2 4-6 6-10 6" fill="#6ab04c"/></svg>'
     },
     "67dc227a59b878f195998e60": {
-        "name": "Ginger",
-        "seed_id": "67dc227a59b878f195998e60",
-        "duration": 28140,
-        "hours": 7,
-        "minutes": 49,
-        "time_str": "7 sa 49 dk",
-        "tier": 1,
-        "bp_min": "0.42",
-        "code_key": "common_ginger_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><rect x="22" y="24" width="20" height="26" rx="10" fill="#eccc68"/><circle cx="20" cy="28" r="8" fill="#eccc68"/><circle cx="44" cy="34" r="8" fill="#eccc68"/><circle cx="32" cy="18" r="7" fill="#eccc68"/></svg>'
+        "name": "Ginger", "seed_id": "67dc227a59b878f195998e60", "duration": 28140, "hours": 7, "minutes": 49, "time_str": "7 sa 49 dk", "tier": 1, "bp_min": "0.42", "stock": 1, "code_key": "common_ginger_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><rect x="22" y="24" width="20" height="26" rx="10" fill="#eccc68"/><circle cx="20" cy="28" r="8" fill="#eccc68"/><circle cx="44" cy="34" r="8" fill="#eccc68"/><circle cx="32" cy="18" r="7" fill="#eccc68"/></svg>'
     },
     "673e0c942c7bfd708b352405": {
-        "name": "Corn",
-        "seed_id": "673e0c942c7bfd708b352405",
-        "duration": 360,
-        "hours": 0,
-        "minutes": 6,
-        "time_str": "6 dk",
-        "tier": 1,
-        "bp_min": "0.33",
-        "code_key": "common_corn_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z" fill="#f1c40f"/><path d="M22 28c4 10 6 18 10 22-8-2-12-10-10-22z" fill="#2ed573"/><path d="M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z" fill="#2ed573"/></svg>'
+        "name": "Corn", "seed_id": "673e0c942c7bfd708b352405", "duration": 360, "hours": 0, "minutes": 6, "time_str": "6 dk", "tier": 1, "bp_min": "0.33", "stock": 1, "code_key": "common_corn_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M26 14c-4 12 2 28 8 36 6-8 12-24 8-36-8-2-8-2-16 0z" fill="#f1c40f"/><path d="M22 28c4 10 6 18 10 22-8-2-12-10-10-22z" fill="#2ed573"/><path d="M42 28c-4 10-6 18-10 22 8-2 12-10 10-22z" fill="#2ed573"/></svg>'
     },
     "673e0c942c7bfd708b35245f": {
-        "name": "Peas",
-        "seed_id": "673e0c942c7bfd708b35245f",
-        "duration": 240,
-        "hours": 0,
-        "minutes": 4,
-        "time_str": "4 dk",
-        "tier": 1,
-        "bp_min": "0.25",
-        "code_key": "common_peas_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#6ab04c"/><circle cx="26" cy="30" r="4" fill="#badc58"/><circle cx="34" cy="32" r="4" fill="#badc58"/><circle cx="42" cy="32" r="4" fill="#badc58"/></svg>'
+        "name": "Peas", "seed_id": "673e0c942c7bfd708b35245f", "duration": 240, "hours": 0, "minutes": 4, "time_str": "4 dk", "tier": 1, "bp_min": "0.25", "stock": 1, "code_key": "common_peas_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M16 22c12-8 32-2 36 20-8 12-28 14-36-20z" fill="#6ab04c"/><circle cx="26" cy="30" r="4" fill="#badc58"/><circle cx="34" cy="32" r="4" fill="#badc58"/><circle cx="42" cy="32" r="4" fill="#badc58"/></svg>'
     },
     "6970f73d4297528ed0eb352d": {
-        "name": "Star Anise",
-        "seed_id": "6970f73d4297528ed0eb352d",
-        "duration": 720,
-        "hours": 0,
-        "minutes": 12,
-        "time_str": "12 dk",
-        "tier": 1,
-        "bp_min": "0.17",
-        "code_key": "common_star_anise_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><polygon points="32,8 38,24 54,24 40,34 46,50 32,40 18,50 24,34 10,24 26,24" fill="#a0522d"/></svg>'
+        "name": "Star Anise", "seed_id": "6970f73d4297528ed0eb352d", "duration": 720, "hours": 0, "minutes": 12, "time_str": "12 dk", "tier": 1, "bp_min": "0.17", "stock": 1, "code_key": "common_star_anise_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><polygon points="32,8 38,24 54,24 40,34 46,50 32,40 18,50 24,34 10,24 26,24" fill="#a0522d"/></svg>'
     },
     "69285140f803f06b82ab22e0": {
-        "name": "Patisson",
-        "seed_id": "69285140f803f06b82ab22e0",
-        "duration": 14400,
-        "hours": 4,
-        "minutes": 0,
-        "time_str": "4 saat",
-        "tier": 1,
-        "bp_min": "0.10",
-        "code_key": "common_patisson_seeds",
-        "image_url": "",
-        "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 14c-14 0-22 10-22 20 0 10 8 18 22 18s22-8 22-18c0-10-8-20-22-20z" fill="#f6e58d"/><path d="M32 8v8" stroke="#6ab04c" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="34" r="4" fill="#f0932b"/></svg>'
+        "name": "Patisson", "seed_id": "69285140f803f06b82ab22e0", "duration": 14400, "hours": 4, "minutes": 0, "time_str": "4 saat", "tier": 1, "bp_min": "0.10", "stock": 1, "code_key": "common_patisson_seeds", "image_url": "", "icon": '<svg viewBox="0 0 64 64" width="44" height="44"><path d="M32 14c-14 0-22 10-22 20 0 10 8 18 22 18s22-8 22-18c0-10-8-20-22-20z" fill="#f6e58d"/><path d="M32 8v8" stroke="#6ab04c" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="34" r="4" fill="#f0932b"/></svg>'
     }
 }
 
@@ -376,11 +154,13 @@ def normalize_seeds_db(raw_db):
         dur = v.get("duration", 120)
         h = v.get("hours", dur // 3600)
         m = v.get("minutes", (dur % 3600) // 60)
+        stock = int(v.get("stock", 1))
         unique_key = s_id if s_id else f"{s_name}_{v.get('tier', 1)}"
         v["name"] = s_name
         v["seed_id"] = s_id
         v["hours"] = h
         v["minutes"] = m
+        v["stock"] = max(0, stock)
         normalized[unique_key] = v
     return normalized
 
@@ -494,7 +274,7 @@ HTML_PAGE = """<!DOCTYPE html>
         .btn-del-bed { background:none; border:none; color:#ef4444; font-weight:bold; font-size:16px; cursor:pointer; padding:0 4px; transition:0.2s; }
         .btn-del-bed:hover { color:#dc2626; transform:scale(1.2); }
         .catalog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:12px; max-height: 560px; overflow-y: auto; padding-right: 5px; }
-        .crop-card { background:#0f111a; border: 1px solid #282b3d; border-radius:10px; padding:12px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:0.2s; position:relative; }
+        .crop-card { background:#0f111a; border: 1px solid #282b3d; border-radius:10px; padding:12px 8px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:0.2s; position:relative; }
         .crop-card:hover { border-color:#57606f; background:#141724; transform:scale(1.02); }
         .card-actions { position:absolute; top:4px; right:4px; display:flex; flex-direction:column; gap:3px; z-index:5; }
         .btn-action-seed { width:20px; height:20px; border:none; border-radius:50%; font-weight:bold; font-size:11px; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0.8; transition:0.2s; }
@@ -506,15 +286,20 @@ HTML_PAGE = """<!DOCTYPE html>
         .crop-icon-wrapper img { width:44px; height:44px; object-fit:contain; }
         .crop-title { font-size:13px; font-weight:bold; margin-bottom:3px; }
         .crop-time { font-size:11px; color:#9ca3af; margin-bottom:4px; }
-        .bp-badge { font-size:11px; font-weight:bold; color:#f59e0b; background:rgba(245,158,11,0.1); padding:2px 6px; border-radius:4px; margin-bottom:4px; }
-        .stock-badge { font-size:11px; font-weight:bold; color:#10b981; background:rgba(16,185,129,0.1); padding:2px 6px; border-radius:4px; }
+        .bp-badge { font-size:11px; font-weight:bold; color:#f59e0b; background:rgba(245,158,11,0.1); padding:2px 6px; border-radius:4px; margin-bottom:6px; }
+        
+        /* Stok Kontrol Butonları */
+        .stock-control { display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(16,185,129,0.1); padding:3px 6px; border-radius:6px; width:100%; }
+        .stock-btn { background:#10b981; color:#fff; border:none; border-radius:4px; width:18px; height:18px; font-size:12px; font-weight:bold; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:0.1s; }
+        .stock-btn:hover { background:#059669; }
+        .stock-value { font-size:11px; font-weight:bold; color:#10b981; min-width:40px; text-align:center; }
+
         .token-box { margin-top: 25px; grid-column: span 2; background:#1a1c29; border-radius:12px; padding:20px; border: 1px solid #282b3d; }
         .token-input { width:100%; height:65px; background:#0f111a; border:1px solid #374151; color:#a4a6b3; padding:10px; border-radius:8px; font-family:monospace; font-size:12px; resize:none; outline:none; }
         .token-input:focus { border-color:#3b82f6; }
         .btn-token { background:#3b82f6; color:#fff; border:none; padding:12px 20px; border-radius:8px; font-weight:bold; font-size:14px; cursor:pointer; margin-top:10px; }
         .btn-token:hover { background:#2563eb; }
 
-        /* Pop-up Stilleri */
         .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:none; justify-content:center; align-items:center; z-index:9999; }
         .modal { background:#1a1c29; border:1px solid #374151; border-radius:12px; padding:25px; width:90%; max-width:420px; box-shadow:0 10px 30px rgba(0,0,0,0.8); }
         .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
@@ -724,6 +509,16 @@ HTML_PAGE = """<!DOCTYPE html>
 
         function closeSeedModal() { document.getElementById('seedModal').style.display = 'none'; }
 
+        function changeStock(seedKey, delta) {
+            fetch('/update_stock', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'seed_key=' + encodeURIComponent(seedKey) + '&delta=' + delta
+            }).then(() => {
+                location.reload();
+            });
+        }
+
         function deleteBed(bedId) {
             if (confirm('Bu tarlayı panelden silmek istediğinize emin misiniz?')) {
                 fetch('/delete_bed', {
@@ -929,20 +724,32 @@ class PanelHandler(BaseHTTPRequestHandler):
             beds = [b for b in raw_beds if b.get("userBedsID") in ACTIVE_BEDS]
             beds.sort(key=lambda x: 0 if ACTIVE_BEDS.get(x.get("userBedsID"), {}).get("level", 1) == 2 else 1)
             
-            stock_map = sync_dynamic_seeds()
+            sync_dynamic_seeds()
             now_ts = datetime.now(timezone.utc).timestamp()
             
-            # Dropdown ve verim için doğrudan BP/dk sıralaması (En yüksekten en düşüğe)
             sorted_by_bp = sorted(
                 SEEDS_DB.items(),
                 key=lambda item: -float(item[1].get("bp_min", 0))
             )
 
-            # Katalog görünümü için Seviye -> BP/dk sıralaması
             sorted_catalog = sorted(
                 SEEDS_DB.items(),
                 key=lambda item: (-item[1].get("tier", 1), -float(item[1].get("bp_min", 0)))
             )
+
+            # Dropdown seçeneklerini oluştur: Stok adedi kadar bağımsız yuva (#1, #2...) ekle
+            dropdown_options_meta = []
+            for s_key, s_meta in sorted_by_bp:
+                stk = max(1, int(s_meta.get("stock", 1)))
+                for slot in range(1, stk + 1):
+                    slot_val = f"{s_key}__slot{slot}"
+                    slot_label_suffix = f" #{slot}" if stk > 1 else ""
+                    dropdown_options_meta.append({
+                        "value": slot_val,
+                        "base_key": s_key,
+                        "bp": s_meta.get("bp_min", 0),
+                        "text": f"[Lv{s_meta.get('tier', 1)}] {s_meta.get('name')}{slot_label_suffix} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)"
+                    })
 
             rows_html = ""
             for idx, bed in enumerate(beds):
@@ -961,20 +768,21 @@ class PanelHandler(BaseHTTPRequestHandler):
                     fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
                     rem_seconds = max(0, int(fts - now_ts))
                 
-                target = BED_TARGETS.get(b_id)
-                if not target:
+                target_saved = BED_TARGETS.get(b_id)
+                if not target_saved:
                     if cur_key and cur_key in SEEDS_DB:
-                        target = cur_key
+                        target_saved = f"{cur_key}__slot1"
                     else:
-                        target = next((k for k, v in SEEDS_DB.items() if v.get("name") == "Strawberry"), "Boş")
-                
-                # En başa 'Boş' seçeneği
-                sel_empty = "selected" if target == "Boş" else ""
+                        target_saved = "Boş"
+
+                sel_empty = "selected" if target_saved == "Boş" else ""
                 options = f"<option value='Boş' data-bp='-1' {sel_empty}>[Boş / Hedef Yok]</option>"
                 
-                for s_key, s_meta in sorted_by_bp:
-                    sel = "selected" if s_key == target or s_meta.get("name") == target else ""
-                    options += f"<option value='{s_key}' data-bp='{s_meta.get('bp_min', 0)}' {sel}>[Lv{s_meta.get('tier', 1)}] {s_meta.get('name')} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)</option>"
+                for opt in dropdown_options_meta:
+                    sel = ""
+                    if opt["value"] == target_saved or (target_saved == opt["base_key"] and opt["value"].endswith("__slot1")):
+                        sel = "selected"
+                    options += f"<option value='{opt['value']}' data-bp='{opt['bp']}' {sel}>{opt['text']}</option>"
                 
                 rows_html += f"""<tr data-level='{level_num}'>
                     <td><button type="button" class="btn-del-bed" title="Tarlayı Sil" onclick="deleteBed('{b_id}')">×</button></td>
@@ -992,7 +800,7 @@ class PanelHandler(BaseHTTPRequestHandler):
             for key, meta in sorted_catalog:
                 tier = meta.get("tier", 1)
                 t_badge = f"<span class='badge badge-lv{tier}'>Lv {tier}</span>"
-                stock_count = stock_map.get(meta.get("seed_id"), 0)
+                stock_count = int(meta.get("stock", 1))
                 icon_content = meta.get("icon", '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#10b981"/></svg>')
                 
                 name_escaped = meta.get('name', '').replace('"', '&quot;')
@@ -1020,7 +828,11 @@ class PanelHandler(BaseHTTPRequestHandler):
                     <div class="crop-title">{meta.get('name')} {t_badge}</div>
                     <div class="crop-time">⏱ {meta.get('time_str', '')}</div>
                     <div class="bp-badge">⭐ {meta.get('bp_min', 0)} BP/dk</div>
-                    <div class="stock-badge">Stok: {stock_count}</div>
+                    <div class="stock-control">
+                        <button type="button" class="stock-btn" onclick="changeStock('{key}', -1)">-</button>
+                        <span class="stock-value">Stok: {stock_count}</span>
+                        <button type="button" class="stock-btn" onclick="changeStock('{key}', 1)">+</button>
+                    </div>
                 </div>"""
             
             full_html = HTML_PAGE.replace("__ROWS_HTML__", rows_html).replace("__CATALOG_HTML__", catalog_html)
@@ -1060,6 +872,16 @@ class PanelHandler(BaseHTTPRequestHandler):
                     BED_TARGETS[b_id] = val[0]
             save_targets()
             log("💾 Panelden yeni ekin hedefleri kaydedildi!")
+
+        elif self.path == "/update_stock":
+            s_key = params.get("seed_key", [""])[0].strip()
+            delta = int(params.get("delta", [0])[0])
+            if s_key in SEEDS_DB:
+                cur_stk = int(SEEDS_DB[s_key].get("stock", 1))
+                new_stk = max(0, cur_stk + delta)
+                SEEDS_DB[s_key]["stock"] = new_stk
+                save_seeds()
+                log(f"📦 Stok güncellendi: {SEEDS_DB[s_key]['name']} -> {new_stk}")
 
         elif self.path == "/add_bed":
             b_id = params.get("bed_id", [""])[0].strip()
@@ -1102,11 +924,11 @@ class PanelHandler(BaseHTTPRequestHandler):
                 seed_id = params.get("seed_id", [""])[0].strip()
                 code_key = params.get("code_key", [""])[0].strip().lower()
 
-                # Düzenlenen tohumun eski anahtarını temizle
+                old_stock = 1
                 if original_key and original_key in SEEDS_DB:
+                    old_stock = SEEDS_DB[original_key].get("stock", 1)
                     del SEEDS_DB[original_key]
 
-                # Benzersiz anahtar oluştur: seed_id varsa kullanılır, yoksa isim_tier şeklinde kaydedilir
                 new_key = seed_id if seed_id else f"{s_name.lower().replace(' ', '_')}_lv{tier}"
                 if not seed_id:
                     seed_id = f"custom_{new_key}"
@@ -1117,11 +939,7 @@ class PanelHandler(BaseHTTPRequestHandler):
                     icon_markup = f'<img src="{image_url}" alt="{s_name}">'
                 else:
                     tier_colors = {
-                        1: "#9ca3af",
-                        2: "#10b981",
-                        3: "#3b82f6",
-                        4: "#ec4899",
-                        5: "#f59e0b"
+                        1: "#9ca3af", 2: "#10b981", 3: "#3b82f6", 4: "#ec4899", 5: "#f59e0b"
                     }
                     c = tier_colors.get(tier, "#10b981")
                     icon_markup = f'''<svg viewBox="0 0 64 64" width="44" height="44">
@@ -1140,6 +958,7 @@ class PanelHandler(BaseHTTPRequestHandler):
                     "time_str": time_str,
                     "tier": tier,
                     "bp_min": bp_min,
+                    "stock": old_stock,
                     "code_key": code_key,
                     "image_url": image_url,
                     "icon": icon_markup
@@ -1240,10 +1059,11 @@ def live_countdown(target_name, seconds):
 def get_seed_meta(key_or_name):
     if not key_or_name or key_or_name == "Boş":
         return None
-    if key_or_name in SEEDS_DB:
-        return SEEDS_DB[key_or_name]
+    clean_key = key_or_name.split("__slot")[0]
+    if clean_key in SEEDS_DB:
+        return SEEDS_DB[clean_key]
     for k, v in SEEDS_DB.items():
-        if v.get("name") == key_or_name:
+        if v.get("name") == clean_key or k == clean_key:
             return v
     return None
 
@@ -1272,7 +1092,10 @@ def run_farm():
 
         beds = [b for b in raw_beds if b.get("userBedsID") in ACTIVE_BEDS]
         now_ts = datetime.now(timezone.utc).timestamp()
-        crop_locations = {}
+        
+        # Tarlalarda şu anda büyümekte olan tohumların sayıları ve kalan süreleri
+        active_crop_counts = {}
+        active_crop_min_time = {}
         ready_beds = []
         active_crops = []
 
@@ -1286,8 +1109,10 @@ def run_farm():
                 fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
                 diff = max(0, int(fts - now_ts))
             
-            if s_name:
-                crop_locations[s_name] = diff
+            if s_name and diff > 0:
+                active_crop_counts[s_name] = active_crop_counts.get(s_name, 0) + 1
+                if s_name not in active_crop_min_time or diff < active_crop_min_time[s_name]:
+                    active_crop_min_time[s_name] = diff
 
         for bed in beds:
             b_id = bed.get("userBedsID")
@@ -1296,7 +1121,7 @@ def run_farm():
             cur_name = SEED_ID_TO_NAME.get(cur_seed_id, "Boş")
             cur_key = SEED_ID_TO_KEY.get(cur_seed_id, "")
             
-            default_target = cur_key if cur_key in SEEDS_DB else "Boş"
+            default_target = f"{cur_key}__slot1" if cur_key in SEEDS_DB else "Boş"
             target_key = BED_TARGETS.get(b_id, default_target)
             
             farming_id = p_seed.get("userFarmingID")
@@ -1341,8 +1166,6 @@ def run_farm():
                     human_delay(30.0, 90.0)
 
                 target_key = rb["target_key"]
-                
-                # 'Boş' hedef seçildiyse bu yatağa yeni ekim yapılmaz
                 if target_key == "Boş":
                     log(f"⏹️ Yatak ({rb['bed_id'][-6:]}) için hedef 'Boş' seçili, ekim yapılmadan bırakılıyor.")
                     continue
@@ -1357,13 +1180,18 @@ def run_farm():
                 target_name = meta["name"]
                 plant_choice_meta = meta
                 
-                if target_name in crop_locations and crop_locations[target_name] > 0:
-                    rem_time = crop_locations[target_name]
+                # Ekinin stok limiti kontrolü: Tarlalarda büyüyen sayı eldeki stoktan fazla/eşit mi?
+                allowed_stock = max(1, int(meta.get("stock", 1)))
+                current_growing = active_crop_counts.get(target_name, 0)
+
+                if current_growing >= allowed_stock:
+                    # Tüm kopyaları şu anda tarlalarda ekili; Strawberry ara dolgu koruması devreye girer
+                    rem_time = active_crop_min_time.get(target_name, 0)
                     straw_meta = get_seed_meta("Strawberry")
                     straw_dur = straw_meta["duration"] if straw_meta else 120
                     
                     if rem_time >= straw_dur and straw_meta:
-                        log(f"⏳ {target_name} başka yatakta büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
+                        log(f"⏳ {target_name} ({allowed_stock} adet) şu an tarlalarda büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
                         plant_choice_meta = straw_meta
                     else:
                         log(f"🛑 {target_name} hasadına {rem_time} sn kaldı! Strawberry süresi aşacağı için yatak bekletiliyor.")
@@ -1376,6 +1204,8 @@ def run_farm():
                     success = plant_seed(rb["bed_id"], s_id, p_name)
                     if success:
                         TOTAL_ACTIONS += 1
+                        # Ekilen tohumu büyüyenler listesine kaydet
+                        active_crop_counts[p_name] = active_crop_counts.get(p_name, 0) + 1
                     human_delay(30.0, 90.0)
 
             time.sleep(2)
