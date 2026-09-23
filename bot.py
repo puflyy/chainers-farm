@@ -288,7 +288,6 @@ HTML_PAGE = """<!DOCTYPE html>
         .crop-time { font-size:11px; color:#9ca3af; margin-bottom:4px; }
         .bp-badge { font-size:11px; font-weight:bold; color:#f59e0b; background:rgba(245,158,11,0.1); padding:2px 6px; border-radius:4px; margin-bottom:6px; }
         
-        /* Stok Kontrol Butonları */
         .stock-control { display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(16,185,129,0.1); padding:3px 6px; border-radius:6px; width:100%; }
         .stock-btn { background:#10b981; color:#fff; border:none; border-radius:4px; width:18px; height:18px; font-size:12px; font-weight:bold; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:0.1s; }
         .stock-btn:hover { background:#059669; }
@@ -737,7 +736,6 @@ class PanelHandler(BaseHTTPRequestHandler):
                 key=lambda item: (-item[1].get("tier", 1), -float(item[1].get("bp_min", 0)))
             )
 
-            # Dropdown seçeneklerini oluştur: Stok adedi kadar bağımsız yuva (#1, #2...) ekle
             dropdown_options_meta = []
             for s_key, s_meta in sorted_by_bp:
                 stk = max(1, int(s_meta.get("stock", 1)))
@@ -1093,7 +1091,7 @@ def run_farm():
         beds = [b for b in raw_beds if b.get("userBedsID") in ACTIVE_BEDS]
         now_ts = datetime.now(timezone.utc).timestamp()
         
-        # Tarlalarda şu anda büyümekte olan tohumların sayıları ve kalan süreleri
+        # Tarlalarda şu anda büyümekte olan tohumların isim + seviye kimlikleri
         active_crop_counts = {}
         active_crop_min_time = {}
         ready_beds = []
@@ -1103,16 +1101,21 @@ def run_farm():
             p_seed = bed.get("plantedSeed", {})
             cur_seed_id = p_seed.get("seedID")
             s_name = SEED_ID_TO_NAME.get(cur_seed_id)
+            cur_key = SEED_ID_TO_KEY.get(cur_seed_id, "")
+            cur_tier = SEEDS_DB.get(cur_key, {}).get("tier", 1)
+            
             date_str = p_seed.get("dateGrowth")
             diff = 0
             if date_str:
                 fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
                 diff = max(0, int(fts - now_ts))
             
+            # Benzersiz kimlik: İsim + Seviye (Örn: White Lily_Lv2)
             if s_name and diff > 0:
-                active_crop_counts[s_name] = active_crop_counts.get(s_name, 0) + 1
-                if s_name not in active_crop_min_time or diff < active_crop_min_time[s_name]:
-                    active_crop_min_time[s_name] = diff
+                crop_ident = f"{s_name}_Lv{cur_tier}"
+                active_crop_counts[crop_ident] = active_crop_counts.get(crop_ident, 0) + 1
+                if crop_ident not in active_crop_min_time or diff < active_crop_min_time[crop_ident]:
+                    active_crop_min_time[crop_ident] = diff
 
         for bed in beds:
             b_id = bed.get("userBedsID")
@@ -1178,34 +1181,38 @@ def run_farm():
                     continue
 
                 target_name = meta["name"]
+                target_tier = meta.get("tier", 1)
+                crop_ident = f"{target_name}_Lv{target_tier}"
                 plant_choice_meta = meta
                 
-                # Ekinin stok limiti kontrolü: Tarlalarda büyüyen sayı eldeki stoktan fazla/eşit mi?
+                # Ekinin seviyesine özel stok kontrolü
                 allowed_stock = max(1, int(meta.get("stock", 1)))
-                current_growing = active_crop_counts.get(target_name, 0)
+                current_growing = active_crop_counts.get(crop_ident, 0)
 
                 if current_growing >= allowed_stock:
-                    # Tüm kopyaları şu anda tarlalarda ekili; Strawberry ara dolgu koruması devreye girer
-                    rem_time = active_crop_min_time.get(target_name, 0)
+                    # Yalnızca aynı seviyedeki tohumun kopyaları büyüyorsa Strawberry ara dolgusu devreye girer
+                    rem_time = active_crop_min_time.get(crop_ident, 0)
                     straw_meta = get_seed_meta("Strawberry")
                     straw_dur = straw_meta["duration"] if straw_meta else 120
                     
                     if rem_time >= straw_dur and straw_meta:
-                        log(f"⏳ {target_name} ({allowed_stock} adet) şu an tarlalarda büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
+                        log(f"⏳ [Lv{target_tier}] {target_name} ({allowed_stock} adet) şu an tarlalarda büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
                         plant_choice_meta = straw_meta
                     else:
-                        log(f"🛑 {target_name} hasadına {rem_time} sn kaldı! Strawberry süresi aşacağı için yatak bekletiliyor.")
+                        log(f"🛑 [Lv{target_tier}] {target_name} hasadına {rem_time} sn kaldı! Strawberry süresi aşacağı için yatak bekletiliyor.")
                         plant_choice_meta = None
 
                 if plant_choice_meta and "seed_id" in plant_choice_meta:
                     s_id = plant_choice_meta["seed_id"]
                     p_name = plant_choice_meta["name"]
-                    log(f"🌱 {p_name} ekiliyor...")
+                    p_tier = plant_choice_meta.get("tier", 1)
+                    p_ident = f"{p_name}_Lv{p_tier}"
+                    
+                    log(f"🌱 [Lv{p_tier}] {p_name} ekiliyor...")
                     success = plant_seed(rb["bed_id"], s_id, p_name)
                     if success:
                         TOTAL_ACTIONS += 1
-                        # Ekilen tohumu büyüyenler listesine kaydet
-                        active_crop_counts[p_name] = active_crop_counts.get(p_name, 0) + 1
+                        active_crop_counts[p_ident] = active_crop_counts.get(p_ident, 0) + 1
                     human_delay(30.0, 90.0)
 
             time.sleep(2)
