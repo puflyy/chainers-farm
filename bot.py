@@ -288,6 +288,7 @@ HTML_PAGE = """<!DOCTYPE html>
         .crop-time { font-size:11px; color:#9ca3af; margin-bottom:4px; }
         .bp-badge { font-size:11px; font-weight:bold; color:#f59e0b; background:rgba(245,158,11,0.1); padding:2px 6px; border-radius:4px; margin-bottom:6px; }
         
+        /* Stok Kontrol Butonları */
         .stock-control { display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(16,185,129,0.1); padding:3px 6px; border-radius:6px; width:100%; }
         .stock-btn { background:#10b981; color:#fff; border:none; border-radius:4px; width:18px; height:18px; font-size:12px; font-weight:bold; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:0.1s; }
         .stock-btn:hover { background:#059669; }
@@ -368,7 +369,7 @@ HTML_PAGE = """<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- Tarla Ekleme Modal -->
+    <!-- Tarla Ekleme Modal (1'den 5'e Tüm Seviyeler) -->
     <div id="bedModal" class="modal-overlay">
         <div class="modal">
             <div class="modal-header">
@@ -389,8 +390,11 @@ HTML_PAGE = """<!DOCTYPE html>
                 <div class="modal-form-group">
                     <label>Tarla Seviyesi</label>
                     <select id="inputBedLevel" name="level">
-                        <option value="1">Lv 1 (Tekli Yatak)</option>
-                        <option value="2">Lv 2 (Birleştirilmiş Yatak)</option>
+                        <option value="1">Lv 1 (Common - Gri)</option>
+                        <option value="2">Lv 2 (Uncommon - Sarı/Yeşil)</option>
+                        <option value="3">Lv 3 (Rare - Mavi)</option>
+                        <option value="4">Lv 4 (Epic - Pembe)</option>
+                        <option value="5">Lv 5 (Legendary - Altın)</option>
                     </select>
                 </div>
                 <button type="submit" id="btnAddBedSubmit" class="btn-modal-submit">Tarlayı Ekle</button>
@@ -721,7 +725,8 @@ class PanelHandler(BaseHTTPRequestHandler):
             
             raw_beds = fetch_live_garden() or []
             beds = [b for b in raw_beds if b.get("userBedsID") in ACTIVE_BEDS]
-            beds.sort(key=lambda x: 0 if ACTIVE_BEDS.get(x.get("userBedsID"), {}).get("level", 1) == 2 else 1)
+            # Seviyeye göre azalan sıralama (En yüksek seviyeli yataklar en üstte)
+            beds.sort(key=lambda x: -ACTIVE_BEDS.get(x.get("userBedsID"), {}).get("level", 1))
             
             sync_dynamic_seeds()
             now_ts = datetime.now(timezone.utc).timestamp()
@@ -841,9 +846,20 @@ class PanelHandler(BaseHTTPRequestHandler):
             untracked = []
             for b in raw_beds:
                 b_id = b.get("userBedsID")
-                code = b.get("itemCode", "")
+                code = b.get("itemCode", "").lower()
                 if "vegetable_plot" in code and b_id not in ACTIVE_BEDS:
-                    lvl = 2 if "uncommon" in code else 1
+                    # 1'den 5'e tüm seviyelerin akıllı tespiti
+                    if "legendary" in code:
+                        lvl = 5
+                    elif "epic" in code:
+                        lvl = 4
+                    elif "rare" in code:
+                        lvl = 3
+                    elif "uncommon" in code:
+                        lvl = 2
+                    else:
+                        lvl = 1
+
                     status = "Boş" if not b.get("plantedSeed") else "Ekili"
                     untracked.append({
                         "id": b_id,
@@ -1190,7 +1206,7 @@ def run_farm():
                 current_growing = active_crop_counts.get(crop_ident, 0)
 
                 if current_growing >= allowed_stock:
-                    # Yalnızca aynı seviyedeki tohumun kopyaları büyüyorsa Strawberry ara dolgusu devreye girer
+                    # Sadece aynı seviyedeki tohumun kopyaları büyüyorsa Strawberry ara dolgusu devreye girer
                     rem_time = active_crop_min_time.get(crop_ident, 0)
                     straw_meta = get_seed_meta("Strawberry")
                     straw_dur = straw_meta["duration"] if straw_meta else 120
