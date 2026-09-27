@@ -1,0 +1,1239 @@
+import os
+import re
+import json
+import time
+import random
+import base64
+import threading
+import requests
+from urllib.parse import parse_qs
+from datetime import datetime, timezone
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+
+# === GITHUB SENKRONIZASYON AYARLARI ===
+GITHUB_REPO = "puflyy/chainers-farm"
+GITHUB_FILE_PATH = "seeds_db.json"
+GITHUB_TOKEN = ""
+
+# === GÜVENLİK VE OTURUM BAŞLIKLARI ===
+HEADERS_FILE = "headers.json"
+
+BASE_HEADERS = {
+    "accept": "application/json",
+    "accept-language": "tr-TR,tr;q=0.7",
+    "content-type": "application/json",
+    "origin": "https://static.chainers.io",
+    "priority": "u=1, i",
+    "referer": "https://static.chainers.io/",
+    "sec-ch-ua": '"Chromium";v="152", "Not?A_Brand";v="24", "Brave";v="152"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"Windows"',
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site",
+    "sec-gpc": "1",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+}
+
+SESSION = requests.Session()
+SESSION.headers.update(BASE_HEADERS)
+
+def reload_session_headers():
+    if os.path.exists(HEADERS_FILE):
+        try:
+            with open(HEADERS_FILE, "r", encoding="utf-8") as f:
+                saved = json.load(f)
+                SESSION.headers.update(saved)
+        except Exception:
+            pass
+
+reload_session_headers()
+
+URL_GARDENS = "https://chainers.io/api/farm/user/gardens"
+URL_HARVEST = "https://chainers.io/api/farm/control/collect-harvest"
+URL_PLANT = "https://chainers.io/api/farm/control/plant-seed"
+
+CONFIG_FILE = "farm_targets.json"
+SEEDS_FILE = "seeds_db.json"
+BEDS_FILE = "beds_db.json"
+LIBRARY_FILE = "crops_library.json"
+
+GARDEN_ID = None
+ACTIVE_BEDS = {}
+
+def load_beds():
+    global ACTIVE_BEDS
+    if os.path.exists(BEDS_FILE):
+        try:
+            with open(BEDS_FILE, "r", encoding="utf-8") as f:
+                ACTIVE_BEDS = json.load(f)
+        except Exception:
+            ACTIVE_BEDS = {}
+
+def save_beds():
+    with open(BEDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(ACTIVE_BEDS, f, indent=4, ensure_ascii=False)
+
+load_beds()
+
+def load_library():
+    if os.path.exists(LIBRARY_FILE):
+        try:
+            with open(LIBRARY_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+CROPS_LIBRARY = load_library()
+
+SEEDS_DB = {}
+SEED_ID_TO_NAME = {}
+SEED_ID_TO_KEY = {}
+
+def sync_seeds_to_github():
+    if not GITHUB_TOKEN or GITHUB_TOKEN.startswith("BURAYA"):
+        return
+
+    def _worker():
+        try:
+            url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}"
+            headers = {
+                "Authorization": f"token {GITHUB_TOKEN}",
+                "Accept": "application/vnd.github.v3+json"
+            }
+            sha = None
+            res = requests.get(url, headers=headers, timeout=10)
+            if res.status_code == 200:
+                sha = res.json().get("sha")
+
+            with open(SEEDS_FILE, "r", encoding="utf-8") as f:
+                content_str = f.read()
+            content_b64 = base64.b64encode(content_str.encode("utf-8")).decode("utf-8")
+
+            payload = {
+                "message": "🌱 Otomatik Tohum Senkronizasyonu (Panel)",
+                "content": content_b64
+            }
+            if sha:
+                payload["sha"] = sha
+
+            put_res = requests.put(url, headers=headers, json=payload, timeout=10)
+            if put_res.status_code in (200, 201):
+                log("☁️ Tohum kataloğu başarıyla GitHub reposuna yedeklendi!")
+        except Exception:
+            pass
+
+    threading.Thread(target=_worker, daemon=True).start()
+
+def load_seeds():
+    global SEEDS_DB, SEED_ID_TO_NAME, SEED_ID_TO_KEY
+    if os.path.exists(SEEDS_FILE):
+        try:
+            with open(SEEDS_FILE, "r", encoding="utf-8") as f:
+                SEEDS_DB = json.load(f)
+        except Exception:
+            SEEDS_DB = {}
+    SEED_ID_TO_NAME = {v["seed_id"]: v["name"] for k, v in SEEDS_DB.items() if "seed_id" in v}
+    SEED_ID_TO_KEY = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
+
+def save_seeds():
+    global SEED_ID_TO_NAME, SEED_ID_TO_KEY
+    with open(SEEDS_FILE, "w", encoding="utf-8") as f:
+        json.dump(SEEDS_DB, f, indent=4, ensure_ascii=False)
+    SEED_ID_TO_NAME = {v["seed_id"]: v["name"] for k, v in SEEDS_DB.items() if "seed_id" in v}
+    SEED_ID_TO_KEY = {v["seed_id"]: k for k, v in SEEDS_DB.items() if "seed_id" in v}
+    sync_seeds_to_github()
+
+load_seeds()
+
+BED_TARGETS = {}
+TOTAL_ACTIONS = 0
+NEXT_BREAK_ACTION = random.randint(12, 18)
+
+def load_targets():
+    global BED_TARGETS
+    if os.path.exists(CONFIG_FILE):
+        try:
+            with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+                BED_TARGETS = json.load(f)
+        except Exception:
+            BED_TARGETS = {}
+
+def save_targets():
+    with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+        json.dump(BED_TARGETS, f, indent=4, ensure_ascii=False)
+
+def log(msg):
+    print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)
+
+def human_delay(min_s=30.0, max_s=90.0):
+    wait_time = random.uniform(min_s, max_s)
+    log(f"🌱 Tohum hazırlığı: {wait_time:.1f} saniye bekleniyor...")
+    time.sleep(wait_time)
+
+def fetch_live_garden():
+    global GARDEN_ID, ACTIVE_BEDS
+    try:
+        res = SESSION.get(URL_GARDENS, timeout=10)
+        if res.status_code == 200:
+            data = res.json().get("data", [])
+            if data:
+                GARDEN_ID = data[0].get("userGardensID")
+                raw_placed = data[0].get("placedBeds", [])
+                
+                # Hayalet tarlaları temizle
+                valid_beds = []
+                for b in raw_placed:
+                    code = b.get("itemCode", "").lower()
+                    if "plot" in code and "pool" not in code:
+                        valid_beds.append(b)
+
+                # Eğer beds_db boşsa otomatik doldur
+                if not ACTIVE_BEDS:
+                    for b in valid_beds:
+                        b_id = b.get("userBedsID")
+                        code = b.get("itemCode", "").lower()
+                        lvl = 1
+                        if "rare" in code: lvl = 3
+                        elif "uncommon" in code: lvl = 2
+                        elif "epic" in code: lvl = 4
+                        elif "legendary" in code: lvl = 5
+                        ACTIVE_BEDS[b_id] = {"level": lvl}
+                    save_beds()
+
+                # Sadece kayıtlı yatakları döndür
+                filtered = [b for b in valid_beds if b.get("userBedsID") in ACTIVE_BEDS]
+                return filtered
+        elif res.status_code in (401, 403):
+            log("❌ [401/403] Oturum/Token Süresi Dolmuş! Panelden cURL yapıştırıp güncelleyin.")
+        else:
+            log(f"⚠️ Bahçe API Hatası ({res.status_code}): {res.text[:120]}")
+    except Exception as e:
+        log(f"⚠️ Bağlantı Hatası: {e}")
+    return None
+
+def harvest_crop(farming_id):
+    if not farming_id:
+        return False
+    try:
+        res = SESSION.post(URL_HARVEST, json={"userFarmingID": farming_id}, timeout=10)
+        return res.status_code == 200
+    except Exception:
+        return False
+
+def plant_seed(bed_id, seed_id, seed_name=""):
+    if not GARDEN_ID:
+        return False
+    payload = {
+        "userGardensID": GARDEN_ID,
+        "userBedsID": bed_id,
+        "seedID": seed_id
+    }
+    try:
+        res = SESSION.post(URL_PLANT, json=payload, timeout=10)
+        if res.status_code == 200:
+            return True
+        else:
+            log(f"❌ Ekim Hatası [{seed_name}] (Kod {res.status_code}): {res.text}")
+            return False
+    except Exception as e:
+        log(f"❌ İstek Hatası: {e}")
+        return False
+
+def live_countdown(target_name, seconds):
+    while seconds > 0:
+        h = int(seconds // 3600)
+        m = int((seconds % 3600) // 60)
+        s = int(seconds % 60)
+        time_str = f"{h:02d}:{m:02d}:{s:02d}" if h > 0 else f"{m:02d}:{s:02d}"
+        print(f"\r⏳ [{target_name}] Hasadına Kalan Canlı Süre: {time_str} ", end="", flush=True)
+        time.sleep(1)
+        seconds -= 1
+    print("\n")
+
+def get_seed_meta(key_or_name):
+    if not key_or_name or key_or_name == "Boş":
+        return None
+    clean_key = key_or_name.split("__slot")[0]
+    if clean_key in SEEDS_DB:
+        return SEEDS_DB[clean_key]
+    for k, v in SEEDS_DB.items():
+        if v.get("name") == clean_key or k == clean_key:
+            return v
+    return None
+
+def build_options_meta():
+    sorted_by_bp = sorted(
+        SEEDS_DB.items(),
+        key=lambda item: -float(item[1].get("bp_min", 0))
+    )
+    opts = []
+    for s_key, s_meta in sorted_by_bp:
+        stk = max(1, int(s_meta.get("stock", 1)))
+        for slot in range(1, stk + 1):
+            slot_val = f"{s_key}__slot{slot}"
+            slot_label_suffix = f" #{slot}" if stk > 1 else ""
+            opts.append({
+                "value": slot_val,
+                "base_key": s_key,
+                "bp": s_meta.get("bp_min", 0),
+                "text": f"[Lv{s_meta.get('tier', 1)}] {s_meta.get('name')}{slot_label_suffix} ({s_meta.get('time_str', '')} - {s_meta.get('bp_min', 0)} BP/dk)"
+            })
+    return opts
+
+# === WEB PANELİ ===
+HTML_PAGE = """<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Chainers Akıllı Tarla & Envanter Paneli</title>
+    <meta charset="utf-8">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background:#0f111a; color:#f1f2f6; margin:0; padding:25px; }
+        .container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.55fr 1fr; gap: 25px; }
+        .panel-card { background:#1a1c29; border-radius:12px; padding:25px; box-shadow:0 8px 24px rgba(0,0,0,0.4); border: 1px solid #282b3d; position:relative; }
+        .card-header-flex { display:flex; justify-content:space-between; align-items:center; margin-bottom: 5px; }
+        h2 { margin-top:0; font-size:22px; color:#fff; display:flex; align-items:center; gap:10px; margin-bottom: 0; }
+        .btn-add { background:#10b981; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-weight:bold; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; transition:0.2s; }
+        .btn-add:hover { background:#059669; }
+        .subtext { color:#8f94a6; font-size:14px; margin-bottom:20px; line-height: 1.5; }
+        table { width:100%; border-collapse:collapse; }
+        th, td { padding:14px 10px; border-bottom:1px solid #282b3d; text-align:left; vertical-align:middle; }
+        th { color:#8f94a6; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; user-select:none; }
+        th.sortable { cursor:pointer; transition:0.2s; }
+        th.sortable:hover { color:#10b981; }
+        .badge { padding:4px 8px; border-radius:5px; font-weight:bold; font-size:12px; }
+        .badge-lv1 { background:#4b5563; color:#fff; }
+        .badge-lv2 { background:#10b981; color:#fff; }
+        .badge-lv3 { background:#3b82f6; color:#fff; }
+        .badge-lv4 { background:#e056fd; color:#fff; }
+        .badge-lv5 { background:#f59e0b; color:#000; }
+        .countdown-cell { font-weight:bold; color:#00d2d3; font-variant-numeric: tabular-nums; }
+        .ready { color:#10b981 !important; }
+        select { width:100%; padding:8px 10px; border-radius:6px; background:#0f111a; color:#fff; border:1px solid #374151; font-weight:bold; outline:none; }
+        select:focus { border-color:#10b981; }
+        .btn-save { background:#10b981; color:#fff; border:none; padding:14px; border-radius:8px; font-weight:bold; font-size:15px; cursor:pointer; width:100%; margin-top:20px; transition:0.2s; }
+        .btn-save:hover { background:#059669; }
+        .catalog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap:12px; max-height: 560px; overflow-y: auto; padding-right: 5px; }
+        .crop-card { background:#0f111a; border: 1px solid #282b3d; border-radius:10px; padding:12px 8px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:0.2s; position:relative; }
+        .crop-card:hover { border-color:#57606f; background:#141724; transform:scale(1.02); }
+        .card-actions { position:absolute; top:4px; right:4px; display:flex; flex-direction:column; gap:3px; z-index:5; }
+        .btn-action-seed { width:20px; height:20px; border:none; border-radius:50%; font-weight:bold; font-size:11px; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0.8; transition:0.2s; }
+        .btn-del-seed { background:#ef4444; color:#fff; }
+        .btn-del-seed:hover { opacity:1; transform:scale(1.1); background:#dc2626; }
+        .btn-edit-seed { background:#3b82f6; color:#fff; }
+        .btn-edit-seed:hover { opacity:1; transform:scale(1.1); background:#2563eb; }
+        .crop-icon-wrapper { width:52px; height:52px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.04); border-radius:50%; margin-bottom:8px; overflow:hidden; }
+        .crop-icon-wrapper img { width:44px; height:44px; object-fit:contain; }
+        .crop-title { font-size:13px; font-weight:bold; margin-bottom:3px; }
+        .crop-time { font-size:11px; color:#9ca3af; margin-bottom:4px; }
+        .bp-badge { font-size:11px; font-weight:bold; color:#f59e0b; background:rgba(245,158,11,0.1); padding:2px 6px; border-radius:4px; margin-bottom:6px; }
+        
+        .stock-control { display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(16,185,129,0.1); padding:3px 6px; border-radius:6px; width:100%; }
+        .stock-btn { background:#10b981; color:#fff; border:none; border-radius:4px; width:18px; height:18px; font-size:12px; font-weight:bold; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:0.1s; }
+        .stock-btn:hover { background:#059669; }
+        .stock-value { font-size:11px; font-weight:bold; color:#10b981; min-width:40px; text-align:center; }
+
+        .token-box { margin-top: 25px; grid-column: span 2; background:#1a1c29; border-radius:12px; padding:20px; border: 1px solid #282b3d; }
+        .token-input { width:100%; height:65px; background:#0f111a; border:1px solid #374151; color:#a4a6b3; padding:10px; border-radius:8px; font-family:monospace; font-size:12px; resize:none; outline:none; }
+        .token-input:focus { border-color:#3b82f6; }
+        .btn-token { background:#3b82f6; color:#fff; border:none; padding:12px 20px; border-radius:8px; font-weight:bold; font-size:14px; cursor:pointer; margin-top:10px; }
+        .btn-token:hover { background:#2563eb; }
+
+        .modal-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:none; justify-content:center; align-items:center; z-index:9999; }
+        .modal { background:#1a1c29; border:1px solid #374151; border-radius:12px; padding:25px; width:90%; max-width:440px; box-shadow:0 10px 30px rgba(0,0,0,0.8); }
+        .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
+        .modal-header h3 { margin:0; font-size:18px; color:#fff; }
+        .modal-close { background:none; border:none; color:#8f94a6; font-size:20px; cursor:pointer; }
+        .modal-form-group { margin-bottom:12px; }
+        .modal-form-group label { display:block; font-size:12px; color:#8f94a6; margin-bottom:5px; text-transform:uppercase; font-weight:bold; }
+        .modal-form-group input, .modal-form-group select { width:100%; padding:10px; border-radius:6px; background:#0f111a; border:1px solid #374151; color:#fff; font-size:14px; outline:none; }
+        .modal-form-group input:focus { border-color:#10b981; }
+        .time-inputs { display:flex; gap:10px; }
+        .time-inputs input { flex:1; }
+        .btn-modal-submit { width:100%; background:#10b981; color:#fff; border:none; padding:12px; border-radius:8px; font-weight:bold; font-size:15px; cursor:pointer; margin-top:10px; transition:0.2s; }
+        .btn-modal-submit:hover { background:#059669; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sol: Aktif Yataklar -->
+        <div class="panel-card">
+            <div class="card-header-flex">
+                <h2>🌾 Tarla Yönetimi</h2>
+                <button type="button" class="btn-add" onclick="openBedModal()">➕ Tarla Ekle</button>
+            </div>
+            <div class="subtext">Başlıklara tıklayarak sıralayabilir, ekin hedeflerinizi belirleyebilirsiniz.</div>
+            <form id="targetsForm">
+                <table id="farmTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" onclick="sortTable('level')">SEVİYE <span id="sort-icon-level">▲</span></th>
+                            <th>TOHUM ADI</th>
+                            <th class="sortable" onclick="sortTable('time')">KALAN SÜRE <span id="sort-icon-time">↕</span></th>
+                            <th class="sortable" onclick="sortTable('bp')">HEDEF (VERİM: BP/DK) <span id="sort-icon-bp">↕</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="farmBody">
+                        __ROWS_HTML__
+                    </tbody>
+                </table>
+                <button type="submit" id="btnSave" class="btn-save">💾 Hedefleri Kaydet</button>
+            </form>
+        </div>
+
+        <!-- Sağ: Envanter & Ekin Kataloğu -->
+        <div class="panel-card">
+            <div class="card-header-flex">
+                <h2>📦 Tohum Kataloğu</h2>
+                <button type="button" class="btn-add" onclick="openSeedModal()">➕ Tohum Ekle</button>
+            </div>
+            <div class="subtext">Deponuzdaki tohumlar ve <b>dakika başı BP verimleri</b>.</div>
+            <div class="catalog-grid" id="catalogGrid">
+                __CATALOG_HTML__
+            </div>
+        </div>
+
+        <!-- Alt: Canlı Token Güncelleyici -->
+        <div class="token-box">
+            <h3 style="margin-top:0;font-size:16px;">🔑 Canlı Oturum / cURL Yenileme (Kalıcı Olarak Kaydeder)</h3>
+            <div class="subtext" style="margin-bottom:10px;">
+                Token süresi bittiğinde: <b>F12</b> → <b>Network</b> → Sayfayı yenileyin (F5) → Filtreye <b>gardens</b> yazın → 
+                Gelen <code style="color:#00d2d3;">gardens</code> isteğine <b>Sağ Tık → Copy → Copy as cURL (bash)</b> deyin → Yapıştırıp butona basın.
+            </div>
+            <form id="tokenForm">
+                <textarea id="curlData" name="curl_data" class="token-input" placeholder="curl --url 'https://chainers.io/api/farm/user/gardens' -H 'authorization: Bearer ...'"></textarea>
+                <button type="submit" id="btnToken" class="btn-token">🔄 Oturumu & Tokenı Güncelle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Otomatik Tarla Bulma Modalı -->
+    <div id="bedModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>🌾 Yeni Tarla (Yatak) Ekle</h3>
+                <button type="button" class="modal-close" onclick="closeBedModal()">×</button>
+            </div>
+            <form id="newBedForm">
+                <div class="modal-form-group">
+                    <label>Oyunda Bulunan Yeni Tarlalar</label>
+                    <select id="untrackedBedsSelect" name="bed_select" onchange="onBedSelectChange(this)">
+                        <option value="">Tarlalar taranıyor...</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Yatak ID (userBedsID)</label>
+                    <input type="text" id="inputBedId" name="bed_id" placeholder="Yukarıdan seçin veya manuel girin" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Tarla Seviyesi</label>
+                    <select id="inputBedLevel" name="level">
+                        <option value="1">Lv 1 (Common - Gri)</option>
+                        <option value="2">Lv 2 (Uncommon - Yeşil)</option>
+                        <option value="3">Lv 3 (Rare - Mavi)</option>
+                        <option value="4">Lv 4 (Epic - Pembe)</option>
+                        <option value="5">Lv 5 (Legendary - Altın)</option>
+                    </select>
+                </div>
+                <button type="submit" id="btnAddBedSubmit" class="btn-modal-submit">Tarlayı Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5 Seviyeli Akıllı Tohum Ekleme Modal -->
+    <div id="seedModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="seedModalTitle">🌱 Yeni Tohum Ekle</h3>
+                <button type="button" class="modal-close" onclick="closeSeedModal()">×</button>
+            </div>
+            <form id="newSeedForm">
+                <input type="hidden" id="inputSeedKey" name="original_key" value="">
+
+                <div class="modal-form-group" id="librarySelectGroup">
+                    <label style="color:#00d2d3;">⚡ Kütüphaneden Ekin Seçin (Otomatik Doldurur)</label>
+                    <select id="libraryCropSelect" onchange="onLibrarySelectChange()">
+                        <option value="">Bir ekin seçin...</option>
+                        __LIBRARY_OPTIONS__
+                    </select>
+                </div>
+
+                <div class="modal-form-group">
+                    <label>Tohum Adı</label>
+                    <input type="text" id="inputSeedName" name="seed_name" placeholder="Örn: Melon" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Seviye (Tier)</label>
+                    <select id="inputSeedTier" name="tier" onchange="onTierChange()">
+                        <option value="1">Lv 1 (Common - Gri)</option>
+                        <option value="2">Lv 2 (Uncommon - Yeşil)</option>
+                        <option value="3">Lv 3 (Rare - Mavi)</option>
+                        <option value="4">Lv 4 (Epic - Pembe)</option>
+                        <option value="5">Lv 5 (Legendary - Sarı)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Büyüme Süresi</label>
+                    <div class="time-inputs">
+                        <input type="number" id="inputSeedHours" name="hours" placeholder="Saat" min="0" value="0">
+                        <input type="number" id="inputSeedMinutes" name="minutes" placeholder="Dakika" min="0" value="0">
+                    </div>
+                </div>
+                <div class="modal-form-group">
+                    <label>BP / Dakika Verimi</label>
+                    <input type="text" id="inputSeedBp" name="bp_min" placeholder="Örn: 2.36" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Görsel Linki</label>
+                    <input type="text" id="inputSeedImage" name="image_url" placeholder="https://...">
+                </div>
+                <div class="modal-form-group">
+                    <label style="color:#f59e0b;">🔑 Item ID (Seed ID) - Envanterdeki 24 Haneli Kod</label>
+                    <input type="text" id="inputSeedId" name="seed_id" placeholder="Envanterdeki 24 haneli itemID" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Ekin Kodu (Item Code)</label>
+                    <input type="text" id="inputSeedCode" name="code_key" placeholder="Örn: rare_melon_seeds">
+                </div>
+                <button type="submit" id="btnAddSeedSubmit" class="btn-modal-submit">Kaydet</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const CROPS_LIB = __LIBRARY_JSON__;
+        let sortDirections = { level: 1, time: 1, bp: 1 };
+
+        function onLibrarySelectChange() {
+            const cropName = document.getElementById('libraryCropSelect').value;
+            if (!cropName || !CROPS_LIB[cropName]) return;
+
+            const cData = CROPS_LIB[cropName];
+            const tier = document.getElementById('inputSeedTier').value || "1";
+            
+            document.getElementById('inputSeedName').value = cropName;
+            document.getElementById('inputSeedImage').value = cData.image || '';
+
+            if (cData.tiers && cData.tiers[tier]) {
+                const tInfo = cData.tiers[tier];
+                document.getElementById('inputSeedHours').value = tInfo.hours || 0;
+                document.getElementById('inputSeedMinutes').value = tInfo.minutes || 0;
+                document.getElementById('inputSeedBp').value = tInfo.bp_min || '0.50';
+                document.getElementById('inputSeedCode').value = tInfo.code || '';
+            }
+        }
+
+        function onTierChange() {
+            onLibrarySelectChange();
+        }
+
+        function openBedModal() { 
+            document.getElementById('bedModal').style.display = 'flex';
+            const selectEl = document.getElementById('untrackedBedsSelect');
+            selectEl.innerHTML = '<option value="">Tarlalar taranıyor...</option>';
+
+            fetch('/untracked_beds')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        selectEl.innerHTML = '<option value="">Oyunda eklenmemiş yeni tarla bulunamadı</option>';
+                    } else {
+                        let opts = '<option value="">Bir tarla seçin (Otomatik dolar)...</option>';
+                        data.forEach(item => {
+                            opts += `<option value="${item.id}" data-lvl="${item.level}">${item.label}</option>`;
+                        });
+                        selectEl.innerHTML = opts;
+                    }
+                })
+                .catch(() => {
+                    selectEl.innerHTML = '<option value="">Tarama hatası oluştu</option>';
+                });
+        }
+
+        function onBedSelectChange(el) {
+            const opt = el.options[el.selectedIndex];
+            if (opt && opt.value) {
+                document.getElementById('inputBedId').value = opt.value;
+                document.getElementById('inputBedLevel').value = opt.getAttribute('data-lvl') || "1";
+            }
+        }
+
+        function closeBedModal() { document.getElementById('bedModal').style.display = 'none'; }
+
+        function openSeedModal() {
+            document.getElementById('seedModalTitle').textContent = '🌱 Yeni Tohum Ekle';
+            document.getElementById('inputSeedKey').value = '';
+            document.getElementById('newSeedForm').reset();
+            document.getElementById('librarySelectGroup').style.display = 'block';
+            document.getElementById('seedModal').style.display = 'flex';
+        }
+
+        function editSeed(btn) {
+            document.getElementById('seedModalTitle').textContent = '✏️ Tohumu Düzenle';
+            document.getElementById('librarySelectGroup').style.display = 'none';
+            document.getElementById('inputSeedKey').value = btn.getAttribute('data-key') || '';
+            document.getElementById('inputSeedName').value = btn.getAttribute('data-name') || '';
+            document.getElementById('inputSeedTier').value = btn.getAttribute('data-tier') || '1';
+            document.getElementById('inputSeedHours').value = btn.getAttribute('data-hours') || '0';
+            document.getElementById('inputSeedMinutes').value = btn.getAttribute('data-minutes') || '0';
+            document.getElementById('inputSeedBp').value = btn.getAttribute('data-bp') || '';
+            document.getElementById('inputSeedImage').value = btn.getAttribute('data-img') || '';
+            document.getElementById('inputSeedId').value = btn.getAttribute('data-id') || '';
+            document.getElementById('inputSeedCode').value = btn.getAttribute('data-code') || '';
+            document.getElementById('seedModal').style.display = 'flex';
+        }
+
+        function closeSeedModal() { document.getElementById('seedModal').style.display = 'none'; }
+
+        // STOK DEĞİŞTİĞİNDE AÇILIR MENÜLERİ DE CANLI GÜNCELLEYEN FONKSİYON
+        function rebuildDropdowns(optionsList) {
+            const selects = document.querySelectorAll('#farmBody select');
+            selects.forEach(sel => {
+                const currentVal = sel.value;
+                sel.innerHTML = '<option value="Boş" data-bp="-1">[Boş / Hedef Yok]</option>';
+                optionsList.forEach(opt => {
+                    const optionEl = document.createElement('option');
+                    optionEl.value = opt.value;
+                    optionEl.setAttribute('data-bp', opt.bp);
+                    optionEl.textContent = opt.text;
+                    if (opt.value === currentVal) {
+                        optionEl.selected = true;
+                    }
+                    sel.appendChild(optionEl);
+                });
+            });
+            updateTicks();
+        }
+
+        function changeStock(seedKey, delta) {
+            fetch('/update_stock', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'seed_key=' + encodeURIComponent(seedKey) + '&delta=' + delta
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    const valEl = document.getElementById('stock-val-' + seedKey);
+                    if (valEl) valEl.textContent = 'Stok: ' + data.new_stock;
+                    if (data.options) {
+                        rebuildDropdowns(data.options);
+                    }
+                }
+            });
+        }
+
+        function deleteSeed(seedKey, seedName) {
+            if (confirm(seedName + ' tohumunu katalogdan silmek istediğinize emin misiniz?')) {
+                fetch('/delete_seed', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'seed_key=' + encodeURIComponent(seedKey)
+                }).then(() => {
+                    const card = document.getElementById('seed-card-' + seedKey);
+                    if (card) card.remove();
+                    location.reload();
+                });
+            }
+        }
+
+        document.getElementById('newBedForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnAddBedSubmit');
+            btn.textContent = '⏳ Ekleniyor...';
+            const formData = new URLSearchParams(new FormData(this)).toString();
+            fetch('/add_bed', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            }).then(() => {
+                btn.textContent = '✓ Eklendi!';
+                setTimeout(() => {
+                    closeBedModal();
+                    location.reload();
+                }, 500);
+            });
+        });
+
+        document.getElementById('newSeedForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnAddSeedSubmit');
+            btn.textContent = '⏳ Kaydediliyor...';
+            const formData = new URLSearchParams(new FormData(this)).toString();
+
+            fetch('/add_seed', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            })
+            .then(r => r.json())
+            .then(res => {
+                btn.textContent = '✓ Kaydedildi!';
+                setTimeout(() => {
+                    closeSeedModal();
+                    location.reload();
+                }, 500);
+            });
+        });
+
+        // TİK (✓) İŞARETİ GÜNCELLEYİCİ
+        function updateTicks() {
+            const selects = Array.from(document.querySelectorAll('#farmBody select'));
+            const selectedValues = new Set(selects.map(s => s.value).filter(v => v !== 'Boş'));
+
+            selects.forEach(sel => {
+                Array.from(sel.options).forEach(opt => {
+                    let baseText = opt.getAttribute('data-raw-text');
+                    if (!baseText) {
+                        baseText = opt.textContent.replace(' ✓', '').trim();
+                        opt.setAttribute('data-raw-text', baseText);
+                    }
+                    if (opt.value !== 'Boş' && selectedValues.has(opt.value)) {
+                        opt.textContent = baseText + ' ✓';
+                    } else {
+                        opt.textContent = baseText;
+                    }
+                });
+            });
+        }
+
+        function sortTable(type) {
+            const tbody = document.getElementById('farmBody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const dir = sortDirections[type];
+
+            ['level', 'time', 'bp'].forEach(k => {
+                document.getElementById('sort-icon-' + k).textContent = '↕';
+            });
+            document.getElementById('sort-icon-' + type).textContent = dir === 1 ? '▼' : '▲';
+
+            rows.sort((a, b) => {
+                let valA, valB;
+                if (type === 'level') {
+                    valA = parseInt(a.getAttribute('data-level'), 10);
+                    valB = parseInt(b.getAttribute('data-level'), 10);
+                } else if (type === 'time') {
+                    valA = parseInt(a.querySelector('.countdown-cell').getAttribute('data-remaining') || 0, 10);
+                    valB = parseInt(b.querySelector('.countdown-cell').getAttribute('data-remaining') || 0, 10);
+                } else if (type === 'bp') {
+                    const selA = a.querySelector('select');
+                    const selB = b.querySelector('select');
+                    const optA = selA.options[selA.selectedIndex];
+                    const optB = selB.options[selB.selectedIndex];
+                    valA = parseFloat(optA.getAttribute('data-bp') || -1);
+                    valB = parseFloat(optB.getAttribute('data-bp') || -1);
+                }
+                return dir === 1 ? valB - valA : valA - valB;
+            });
+
+            sortDirections[type] = dir === 1 ? -1 : 1;
+            rows.forEach(r => tbody.appendChild(r));
+            updateTicks();
+        }
+
+        function formatDuration(rem) {
+            if (rem <= 0) return 'Hazır';
+            const d = Math.floor(rem / 86400);
+            const h = Math.floor((rem % 86400) / 3600);
+            const m = Math.floor((rem % 3600) / 60);
+            const s = rem % 60;
+            const sStr = (s < 10 ? '0' : '') + s;
+
+            if (d > 0) return d + ' gün ' + h + ' sa ' + m + ' dk ' + sStr + ' sn';
+            if (h > 0) return h + ' sa ' + m + ' dk ' + sStr + ' sn';
+            return m + ' dk ' + sStr + ' sn';
+        }
+
+        function updateTimers() {
+            const cells = document.querySelectorAll('.countdown-cell');
+            cells.forEach(cell => {
+                let rem = parseInt(cell.getAttribute('data-remaining'), 10);
+                if (isNaN(rem) || rem <= 0) {
+                    cell.textContent = 'Hazır';
+                    cell.classList.add('ready');
+                } else {
+                    cell.textContent = formatDuration(rem);
+                    cell.setAttribute('data-remaining', rem - 1);
+                }
+            });
+        }
+        setInterval(updateTimers, 1000);
+        updateTimers();
+
+        document.getElementById('targetsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnSave');
+            btn.textContent = '⏳ Kaydediliyor...';
+            const formData = new URLSearchParams(new FormData(this)).toString();
+            fetch('/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            }).then(() => {
+                btn.textContent = '✓ Başarıyla Kaydedildi!';
+                updateTicks();
+                setTimeout(() => { btn.textContent = '💾 Hedefleri Kaydet'; }, 2000);
+            });
+        });
+
+        document.getElementById('tokenForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnToken');
+            btn.textContent = '⏳ Güncelleniyor...';
+            const formData = new URLSearchParams(new FormData(this)).toString();
+            fetch('/update_token', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            }).then(() => {
+                btn.textContent = '✓ Token Başarıyla Güncellendi & Kaydedildi!';
+                document.getElementById('curlData').value = '';
+                setTimeout(() => { 
+                    btn.textContent = '🔄 Oturumu & Tokenı Güncelle'; 
+                    location.reload();
+                }, 1000);
+            });
+        });
+
+        document.querySelectorAll('#farmBody select').forEach(sel => {
+            sel.addEventListener('change', updateTicks);
+        });
+        updateTicks();
+    </script>
+</body>
+</html>"""
+
+class PanelHandler(BaseHTTPRequestHandler):
+    def log_message(self, format, *args):
+        pass
+
+    def do_GET(self):
+        if self.path in ("/", ""):
+            self.send_response(200)
+            self.send_header("Content-type", "text/html; charset=utf-8")
+            self.end_headers()
+            
+            beds = fetch_live_garden() or []
+            beds.sort(key=lambda x: -ACTIVE_BEDS.get(x.get("userBedsID"), {}).get("level", 1))
+            
+            now_ts = datetime.now(timezone.utc).timestamp()
+            dropdown_options_meta = build_options_meta()
+
+            sorted_catalog = sorted(
+                SEEDS_DB.items(),
+                key=lambda item: (-item[1].get("tier", 1), -float(item[1].get("bp_min", 0)))
+            )
+
+            rows_html = ""
+            for idx, bed in enumerate(beds):
+                b_id = bed.get("userBedsID")
+                level_num = ACTIVE_BEDS.get(b_id, {}).get("level", 1)
+                tier_badge = f"<span class='badge badge-lv{level_num}'>Lv {level_num}</span>"
+                
+                p_seed = bed.get("plantedSeed", {})
+                cur_seed_id = p_seed.get("seedID")
+                cur_name = SEED_ID_TO_NAME.get(cur_seed_id, "Boş")
+                
+                date_str = p_seed.get("dateGrowth")
+                rem_seconds = 0
+                if date_str:
+                    fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
+                    rem_seconds = max(0, int(fts - now_ts))
+                
+                target_saved = BED_TARGETS.get(b_id, "Boş")
+
+                sel_empty = "selected" if target_saved == "Boş" else ""
+                options = f"<option value='Boş' data-bp='-1' {sel_empty}>[Boş / Hedef Yok]</option>"
+                
+                for opt in dropdown_options_meta:
+                    sel = ""
+                    if opt["value"] == target_saved or (target_saved == opt["base_key"] and opt["value"].endswith("__slot1")):
+                        sel = "selected"
+                    options += f"<option value='{opt['value']}' data-bp='{opt['bp']}' {sel}>{opt['text']}</option>"
+                
+                rows_html += f"""<tr id='bed-row-{b_id}' data-level='{level_num}'>
+                    <td>{tier_badge}</td>
+                    <td><b>{cur_name}</b></td>
+                    <td class='countdown-cell' id='timer-{idx}' data-remaining='{rem_seconds}'>Hesaplanıyor...</td>
+                    <td>
+                        <select name="{b_id}">
+                            {options}
+                        </select>
+                    </td>
+                </tr>"""
+            
+            catalog_html = ""
+            for key, meta in sorted_catalog:
+                tier = meta.get("tier", 1)
+                t_badge = f"<span class='badge badge-lv{tier}'>Lv {tier}</span>"
+                stock_count = int(meta.get("stock", 1))
+                icon_content = meta.get("icon", '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#10b981"/></svg>')
+                
+                name_escaped = meta.get('name', '').replace('"', '&quot;')
+                img_escaped = meta.get('image_url', '').replace('"', '&quot;')
+                code_escaped = meta.get('code_key', '').replace('"', '&quot;')
+                
+                catalog_html += f"""<div class="crop-card" id="seed-card-{key}">
+                    <div class="card-actions">
+                        <button type="button" class="btn-action-seed btn-del-seed" title="Tohumu Sil" onclick="deleteSeed('{key}', '{name_escaped}')">×</button>
+                        <button type="button" class="btn-action-seed btn-edit-seed" title="Düzenle" 
+                            data-key="{key}" 
+                            data-name="{name_escaped}" 
+                            data-tier="{tier}" 
+                            data-hours="{meta.get('hours', 0)}" 
+                            data-minutes="{meta.get('minutes', 0)}" 
+                            data-bp="{meta.get('bp_min', 0)}" 
+                            data-img="{img_escaped}" 
+                            data-id="{meta.get('seed_id', '')}" 
+                            data-code="{code_escaped}" 
+                            onclick="editSeed(this)">✏️</button>
+                    </div>
+                    <div class="crop-icon-wrapper">
+                        {icon_content}
+                    </div>
+                    <div class="crop-title">{meta.get('name')} {t_badge}</div>
+                    <div class="crop-time">⏱ {meta.get('time_str', '')}</div>
+                    <div class="bp-badge">⭐ {meta.get('bp_min', 0)} BP/dk</div>
+                    <div class="stock-control">
+                        <button type="button" class="stock-btn" onclick="changeStock('{key}', -1)">-</button>
+                        <span class="stock-value" id="stock-val-{key}">Stok: {stock_count}</span>
+                        <button type="button" class="stock-btn" onclick="changeStock('{key}', 1)">+</button>
+                    </div>
+                </div>"""
+            
+            lib_options_html = ""
+            for c_name in sorted(CROPS_LIBRARY.keys()):
+                lib_options_html += f'<option value="{c_name}">{c_name}</option>'
+
+            full_html = HTML_PAGE.replace("__ROWS_HTML__", rows_html).replace("__CATALOG_HTML__", catalog_html)
+            full_html = full_html.replace("__LIBRARY_OPTIONS__", lib_options_html)
+            full_html = full_html.replace("__LIBRARY_JSON__", json.dumps(CROPS_LIBRARY, ensure_ascii=False))
+            self.wfile.write(full_html.encode("utf-8"))
+
+        elif self.path == "/untracked_beds":
+            raw_beds = []
+            try:
+                res = SESSION.get(URL_GARDENS, timeout=5)
+                if res.status_code == 200:
+                    raw_beds = res.json().get("data", [])[0].get("placedBeds", [])
+            except Exception:
+                pass
+
+            untracked = []
+            for b in raw_beds:
+                b_id = b.get("userBedsID")
+                code = b.get("itemCode", "").lower()
+                if "plot" in code and "pool" not in code and b_id not in ACTIVE_BEDS:
+                    lvl = 1
+                    if "rare" in code: lvl = 3
+                    elif "uncommon" in code: lvl = 2
+                    elif "epic" in code: lvl = 4
+                    elif "legendary" in code: lvl = 5
+
+                    status = "Boş" if not b.get("plantedSeed") else "Ekili"
+                    untracked.append({
+                        "id": b_id,
+                        "level": lvl,
+                        "label": f"[Lv {lvl}] Yeni Tarla (...{b_id[-6:]}) - {status}"
+                    })
+            
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(json.dumps(untracked).encode("utf-8"))
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def do_POST(self):
+        content_length = int(self.headers.get('Content-Length', 0))
+        post_data = self.rfile.read(content_length).decode('utf-8')
+        params = parse_qs(post_data)
+
+        if self.path == "/save":
+            for b_id in ACTIVE_BEDS.keys():
+                BED_TARGETS[b_id] = params.get(b_id, ["Boş"])[0]
+            save_targets()
+            log("💾 Panelden yeni ekin hedefleri kaydedildi!")
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b'{"success":true}')
+
+        elif self.path == "/update_stock":
+            s_key = params.get("seed_key", [""])[0].strip()
+            delta = int(params.get("delta", [0])[0])
+            new_stk = 1
+            if s_key in SEEDS_DB:
+                cur_stk = int(SEEDS_DB[s_key].get("stock", 1))
+                new_stk = max(0, cur_stk + delta)
+                SEEDS_DB[s_key]["stock"] = new_stk
+                save_seeds()
+                log(f"📦 Stok güncellendi: {SEEDS_DB[s_key]['name']} -> {new_stk}")
+            
+            new_opts = build_options_meta()
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": True, "new_stock": new_stk, "options": new_opts}).encode("utf-8"))
+
+        elif self.path == "/add_bed":
+            b_id = params.get("bed_id", [""])[0].strip()
+            level = int(params.get("level", [1])[0])
+            if b_id:
+                ACTIVE_BEDS[b_id] = {"level": level}
+                save_beds()
+                log(f"🌾 Panelden yeni tarla eklendi: {b_id} (Lv {level})")
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b'{"success":true}')
+
+        elif self.path == "/add_seed":
+            original_key = params.get("original_key", [""])[0].strip()
+            s_name = params.get("seed_name", [""])[0].strip()
+            saved_meta = {}
+            new_key = ""
+            if s_name:
+                tier = int(params.get("tier", [1])[0])
+                hours = int(params.get("hours", [0])[0] or 0)
+                minutes = int(params.get("minutes", [0])[0] or 0)
+                total_seconds = (hours * 3600) + (minutes * 60)
+                if total_seconds <= 0: total_seconds = 120
+                
+                time_str = f"{hours} sa {minutes} dk" if hours > 0 else f"{minutes} dk"
+                bp_min = params.get("bp_min", ["0.50"])[0].strip()
+                image_url = params.get("image_url", [""])[0].strip()
+                seed_id = params.get("seed_id", [""])[0].strip()
+                code_key = params.get("code_key", [""])[0].strip().lower()
+
+                old_stock = 1
+                if original_key and original_key in SEEDS_DB:
+                    old_stock = SEEDS_DB[original_key].get("stock", 1)
+                    del SEEDS_DB[original_key]
+
+                new_key = seed_id if seed_id else f"{s_name.lower().replace(' ', '_')}_lv{tier}"
+                icon_markup = f'<img src="{image_url}" alt="{s_name}">' if image_url else '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#10b981"/></svg>'
+
+                saved_meta = {
+                    "name": s_name,
+                    "seed_id": seed_id,
+                    "duration": total_seconds,
+                    "hours": hours,
+                    "minutes": minutes,
+                    "time_str": time_str,
+                    "tier": tier,
+                    "bp_min": bp_min,
+                    "stock": old_stock,
+                    "code_key": code_key,
+                    "image_url": image_url,
+                    "icon": icon_markup
+                }
+                SEEDS_DB[new_key] = saved_meta
+                save_seeds()
+                log(f"🌱 Panelden tohum kaydedildi: {s_name} (Lv{tier})")
+
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": True, "key": new_key or original_key, "seed": saved_meta}).encode("utf-8"))
+
+        elif self.path == "/delete_seed":
+            s_key = params.get("seed_key", [""])[0].strip()
+            if s_key in SEEDS_DB:
+                del SEEDS_DB[s_key]
+                save_seeds()
+                log(f"🗑️ Panelden tohum silindi: {s_key}")
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b'{"success":true}')
+
+        elif self.path == "/update_token":
+            raw_curl = params.get("curl_data", [""])[0]
+            if raw_curl:
+                auth_match = re.search(r"authorization:\s*(Bearer\s+[^\s'\"]+)", raw_curl, re.IGNORECASE)
+                csrf_match = re.search(r"x-csrf:\s*(\{[^\r\n']+\})", raw_curl, re.IGNORECASE)
+                token_match = re.search(r"x-request-token-id:\s*([^\s'\"]+)", raw_curl, re.IGNORECASE)
+                
+                updated_headers = {}
+                if auth_match: updated_headers["authorization"] = auth_match.group(1).strip()
+                if csrf_match: updated_headers["x-csrf"] = csrf_match.group(1).strip()
+                if token_match: updated_headers["x-request-token-id"] = token_match.group(1).strip()
+
+                SESSION.headers.update(updated_headers)
+                
+                with open(HEADERS_FILE, "w", encoding="utf-8") as f:
+                    json.dump(updated_headers, f, indent=4)
+
+                log("🔑 Canlı Panel Üzerinden Oturum Başlıkları / Token Başarıyla Güncellendi ve Kaydedildi!")
+
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b'{"success":true}')
+
+def start_server():
+    port = int(os.environ.get("PORT", 5000))
+    server = ThreadingHTTPServer(("0.0.0.0", port), PanelHandler)
+    server.serve_forever()
+
+def run_farm():
+    global TOTAL_ACTIONS, NEXT_BREAK_ACTION
+    load_targets()
+    load_seeds()
+    threading.Thread(target=start_server, daemon=True).start()
+    log("🌐 Canlı Envanter & Tarla Paneli: http://localhost:5000")
+    log("🛡️ Anti-Bot Güvenlik Katmanı ve Canlı Token Güncelleyici Devrede!")
+
+    while True:
+        if TOTAL_ACTIONS >= NEXT_BREAK_ACTION:
+            break_time = random.randint(120, 300)
+            log(f"☕ Anti-Bot: Doğal oyuncu molası veriliyor ({break_time // 60} dakika)...")
+            time.sleep(break_time)
+            TOTAL_ACTIONS = 0
+            NEXT_BREAK_ACTION = random.randint(12, 18)
+
+        beds = fetch_live_garden()
+        if beds is None:
+            time.sleep(8)
+            continue
+
+        now_ts = datetime.now(timezone.utc).timestamp()
+        
+        active_crop_counts = {}
+        active_crop_min_time = {}
+        ready_beds = []
+        active_crops = []
+
+        for bed in beds:
+            p_seed = bed.get("plantedSeed", {})
+            cur_seed_id = p_seed.get("seedID")
+            s_name = SEED_ID_TO_NAME.get(cur_seed_id)
+            cur_key = SEED_ID_TO_KEY.get(cur_seed_id, "")
+            cur_tier = SEEDS_DB.get(cur_key, {}).get("tier", 1)
+            
+            date_str = p_seed.get("dateGrowth")
+            diff = 0
+            if date_str:
+                fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
+                diff = max(0, int(fts - now_ts))
+            
+            if s_name and diff > 0:
+                crop_ident = f"{s_name}_Lv{cur_tier}"
+                active_crop_counts[crop_ident] = active_crop_counts.get(crop_ident, 0) + 1
+                if crop_ident not in active_crop_min_time or diff < active_crop_min_time[crop_ident]:
+                    active_crop_min_time[crop_ident] = diff
+
+        for bed in beds:
+            b_id = bed.get("userBedsID")
+            p_seed = bed.get("plantedSeed", {})
+            cur_seed_id = p_seed.get("seedID")
+            cur_name = SEED_ID_TO_NAME.get(cur_seed_id, "Boş")
+            
+            target_key = BED_TARGETS.get(b_id, "Boş")
+            farming_id = p_seed.get("userFarmingID")
+            date_str = p_seed.get("dateGrowth")
+            
+            diff = 0
+            if date_str:
+                fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
+                diff = fts - now_ts
+
+            if not p_seed or diff <= 0:
+                ready_beds.append({
+                    "bed_id": b_id,
+                    "farming_id": farming_id,
+                    "cur_name": cur_name,
+                    "target_key": target_key
+                })
+            else:
+                active_crops.append({"name": cur_name, "diff": diff})
+
+        print("\n" + "="*50, flush=True)
+        for c in active_crops:
+            h = int(c["diff"] // 3600)
+            m = int((c["diff"] % 3600) // 60)
+            s = int(c["diff"] % 60)
+            time_txt = f"{h} sa {m} dk {s} sn" if h > 0 else f"{m} dk {s} sn"
+            log(f"🌱 {c['name']:<16} -> Kalan: {time_txt}")
+        print("="*50, flush=True)
+
+        if ready_beds:
+            jitter = random.uniform(30.0, 90.0)
+            log(f"🕒 Ekin hazır! Doğal insan tepkisi için {int(jitter)} sn bekleniyor...")
+            time.sleep(jitter)
+
+            for rb in ready_beds:
+                if rb["farming_id"]:
+                    log(f"⚡ {rb['cur_name']} hasat ediliyor...")
+                    harvest_crop(rb["farming_id"])
+                    TOTAL_ACTIONS += 1
+                    human_delay(30.0, 60.0)
+
+                target_key = rb["target_key"]
+                if not target_key or target_key == "Boş":
+                    log(f"⏹️ Yatak ({rb['bed_id'][-6:]}) için hedef 'Boş' seçili, ekim yapılmadan bırakılıyor.")
+                    continue
+
+                meta = get_seed_meta(target_key)
+                if not meta:
+                    log(f"⚠️ Hedef tohum ({target_key}) bulunamadı, ekim atlanıyor.")
+                    continue
+
+                target_name = meta["name"]
+                target_tier = meta.get("tier", 1)
+                crop_ident = f"{target_name}_Lv{target_tier}"
+                plant_choice_meta = meta
+                
+                allowed_stock = max(1, int(meta.get("stock", 1)))
+                current_growing = active_crop_counts.get(crop_ident, 0)
+
+                # Akıllı Ara Dolgu: Stok doluluğunda Strawberry devreye girer
+                if current_growing >= allowed_stock:
+                    rem_time = active_crop_min_time.get(crop_ident, 0)
+                    straw_meta = get_seed_meta("Strawberry")
+                    straw_dur = straw_meta["duration"] if straw_meta else 120
+                    
+                    if rem_time >= straw_dur and straw_meta:
+                        log(f"⏳ [Lv{target_tier}] {target_name} ({allowed_stock} adet) şu an tarlalarda büyüyor ({rem_time} sn kaldı). Ara dolgu olarak Strawberry ekiliyor.")
+                        plant_choice_meta = straw_meta
+                    else:
+                        log(f"🛑 [Lv{target_tier}] {target_name} hasadına {rem_time} sn kaldı! Strawberry süresi aşacağı için yatak bekletiliyor.")
+                        plant_choice_meta = None
+
+                if plant_choice_meta and "seed_id" in plant_choice_meta:
+                    s_id = plant_choice_meta["seed_id"]
+                    p_name = plant_choice_meta["name"]
+                    p_tier = plant_choice_meta.get("tier", 1)
+                    p_ident = f"{p_name}_Lv{p_tier}"
+                    
+                    log(f"🌱 [Lv{p_tier}] {p_name} ekiliyor...")
+                    success = plant_seed(rb["bed_id"], s_id, p_name)
+                    if success:
+                        TOTAL_ACTIONS += 1
+                        active_crop_counts[p_ident] = active_crop_counts.get(p_ident, 0) + 1
+                    human_delay(30.0, 60.0)
+
+            time.sleep(2)
+            continue
+
+        if active_crops:
+            target_crop = min(active_crops, key=lambda x: x["diff"])
+            sleep_time = max(int(target_crop["diff"]) + random.randint(10, 30), 5)
+            live_countdown(target_crop["name"], sleep_time)
+        else:
+            time.sleep(random.uniform(10.0, 20.0))
+
+if __name__ == "__main__":
+    run_farm()
+
+# Tokenı gizli dosyadan dinamik okuma
+if os.path.exists("token.txt"):
+    try:
+        with open("token.txt", "r", encoding="utf-8") as f:
+            GITHUB_TOKEN = f.read().strip()
+    except Exception:
+        pass

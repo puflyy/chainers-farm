@@ -1,0 +1,1752 @@
+{
+  "Juveni̇le trout": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/trout/shared/images/trout_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "25.40",
+        "code": "common_juveni̇le_trout_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 30,
+        "bp_min": "25.60",
+        "code": "uncommon_juveni̇le_trout_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 59,
+        "bp_min": "26.32",
+        "code": "rare_juveni̇le_trout_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 57,
+        "bp_min": "26.96",
+        "code": "epic_juveni̇le_trout_seeds"
+      },
+      "5": {
+        "hours": 3,
+        "minutes": 54,
+        "bp_min": "27.45",
+        "code": "legendary_juveni̇le_trout_seeds"
+      }
+    }
+  },
+  "Juveni̇le spectral trout": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/spectral_trout/shared/images/spectral_trout_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 29,
+        "bp_min": "26.14",
+        "code": "common_juveni̇le_spectral_trout_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 59,
+        "bp_min": "26.58",
+        "code": "uncommon_juveni̇le_spectral_trout_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 57,
+        "bp_min": "26.85",
+        "code": "rare_juveni̇le_spectral_trout_seeds"
+      },
+      "4": {
+        "hours": 3,
+        "minutes": 54,
+        "bp_min": "27.33",
+        "code": "epic_juveni̇le_spectral_trout_seeds"
+      },
+      "5": {
+        "hours": 7,
+        "minutes": 47,
+        "bp_min": "27.65",
+        "code": "legendary_juveni̇le_spectral_trout_seeds"
+      }
+    }
+  },
+  "Sugarcane": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/sugarcane/shared/images/sugarcane_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 7,
+        "minutes": 55,
+        "bp_min": "26.95",
+        "code": "common_sugarcane_seeds"
+      },
+      "2": {
+        "hours": 9,
+        "minutes": 24,
+        "bp_min": "27.50",
+        "code": "uncommon_sugarcane_seeds"
+      },
+      "3": {
+        "hours": 11,
+        "minutes": 24,
+        "bp_min": "28.00",
+        "code": "rare_sugarcane_seeds"
+      },
+      "4": {
+        "hours": 13,
+        "minutes": 54,
+        "bp_min": "29.00",
+        "code": "epic_sugarcane_seeds"
+      },
+      "5": {
+        "hours": 16,
+        "minutes": 54,
+        "bp_min": "31.00",
+        "code": "legendary_sugarcane_seeds"
+      }
+    }
+  },
+  "Corn": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/corn/shared/images/corn_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 6,
+        "bp_min": "0.33",
+        "code": "common_corn_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 6,
+        "bp_min": "0.50",
+        "code": "uncommon_corn_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 6,
+        "bp_min": "0.67",
+        "code": "rare_corn_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 6,
+        "bp_min": "0.83",
+        "code": "epic_corn_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 6,
+        "bp_min": "1.50",
+        "code": "legendary_corn_seeds"
+      }
+    }
+  },
+  "Cabbage": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/cabbage/shared/images/cabbage_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 13,
+        "bp_min": "0.23",
+        "code": "common_cabbage_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 13,
+        "bp_min": "0.38",
+        "code": "uncommon_cabbage_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 13,
+        "bp_min": "0.62",
+        "code": "rare_cabbage_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 13,
+        "bp_min": "1.00",
+        "code": "epic_cabbage_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 13,
+        "bp_min": "1.62",
+        "code": "legendary_cabbage_seeds"
+      }
+    }
+  },
+  "Peas": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/peas/shared/images/peas_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 4,
+        "bp_min": "0.25",
+        "code": "common_peas_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 4,
+        "bp_min": "0.50",
+        "code": "uncommon_peas_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 4,
+        "bp_min": "0.75",
+        "code": "rare_peas_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 4,
+        "bp_min": "1.00",
+        "code": "epic_peas_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 4,
+        "bp_min": "1.75",
+        "code": "legendary_peas_seeds"
+      }
+    }
+  },
+  "Radi̇sh": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/radish/shared/images/radish_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 8,
+        "bp_min": "0.25",
+        "code": "common_radi̇sh_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 8,
+        "bp_min": "0.50",
+        "code": "uncommon_radi̇sh_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 8,
+        "bp_min": "0.75",
+        "code": "rare_radi̇sh_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 8,
+        "bp_min": "1.25",
+        "code": "epic_radi̇sh_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 8,
+        "bp_min": "2.00",
+        "code": "legendary_radi̇sh_seeds"
+      }
+    }
+  },
+  "Garli̇c": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 18,
+        "bp_min": "0.46",
+        "code": "common_garli̇c_seeds"
+      },
+      "2": {
+        "hours": 1,
+        "minutes": 18,
+        "bp_min": "0.76",
+        "code": "uncommon_garli̇c_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 18,
+        "bp_min": "1.50",
+        "code": "rare_garli̇c_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 18,
+        "bp_min": "2.97",
+        "code": "epic_garli̇c_seeds"
+      },
+      "5": {
+        "hours": 1,
+        "minutes": 18,
+        "bp_min": "5.19",
+        "code": "legendary_garli̇c_seeds"
+      }
+    }
+  },
+  "Bell pepper": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 3,
+        "bp_min": "0.46",
+        "code": "common_bell_pepper_seeds"
+      },
+      "2": {
+        "hours": 1,
+        "minutes": 3,
+        "bp_min": "0.92",
+        "code": "uncommon_bell_pepper_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 3,
+        "bp_min": "1.89",
+        "code": "rare_bell_pepper_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 3,
+        "bp_min": "3.71",
+        "code": "epic_bell_pepper_seeds"
+      },
+      "5": {
+        "hours": 1,
+        "minutes": 3,
+        "bp_min": "5.32",
+        "code": "legendary_bell_pepper_seeds"
+      }
+    }
+  },
+  "Strawberry": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "0.50",
+        "code": "common_strawberry_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "1.00",
+        "code": "uncommon_strawberry_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "1.50",
+        "code": "rare_strawberry_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "3.50",
+        "code": "epic_strawberry_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "6.50",
+        "code": "legendary_strawberry_seeds"
+      }
+    }
+  },
+  "Gi̇nger": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 7,
+        "minutes": 49,
+        "bp_min": "0.42",
+        "code": "common_gi̇nger_seeds"
+      },
+      "2": {
+        "hours": 7,
+        "minutes": 49,
+        "bp_min": "0.86",
+        "code": "uncommon_gi̇nger_seeds"
+      },
+      "3": {
+        "hours": 7,
+        "minutes": 49,
+        "bp_min": "1.69",
+        "code": "rare_gi̇nger_seeds"
+      },
+      "4": {
+        "hours": 7,
+        "minutes": 49,
+        "bp_min": "3.38",
+        "code": "epic_gi̇nger_seeds"
+      },
+      "5": {
+        "hours": 7,
+        "minutes": 49,
+        "bp_min": "6.74",
+        "code": "legendary_gi̇nger_seeds"
+      }
+    }
+  },
+  "Cauli̇flower": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 32,
+        "bp_min": "0.47",
+        "code": "common_cauli̇flower_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 32,
+        "bp_min": "0.84",
+        "code": "uncommon_cauli̇flower_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 32,
+        "bp_min": "1.91",
+        "code": "rare_cauli̇flower_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 32,
+        "bp_min": "3.53",
+        "code": "epic_cauli̇flower_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 32,
+        "bp_min": "6.84",
+        "code": "legendary_cauli̇flower_seeds"
+      }
+    }
+  },
+  "Broccoli̇": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 5,
+        "minutes": 28,
+        "bp_min": "0.43",
+        "code": "common_broccoli̇_seeds"
+      },
+      "2": {
+        "hours": 5,
+        "minutes": 28,
+        "bp_min": "0.85",
+        "code": "uncommon_broccoli̇_seeds"
+      },
+      "3": {
+        "hours": 5,
+        "minutes": 28,
+        "bp_min": "1.73",
+        "code": "rare_broccoli̇_seeds"
+      },
+      "4": {
+        "hours": 5,
+        "minutes": 28,
+        "bp_min": "3.47",
+        "code": "epic_broccoli̇_seeds"
+      },
+      "5": {
+        "hours": 5,
+        "minutes": 28,
+        "bp_min": "6.96",
+        "code": "legendary_broccoli̇_seeds"
+      }
+    }
+  },
+  "Sweet potato": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 4,
+        "minutes": 4,
+        "bp_min": "0.44",
+        "code": "common_sweet_potato_seeds"
+      },
+      "2": {
+        "hours": 4,
+        "minutes": 4,
+        "bp_min": "0.88",
+        "code": "uncommon_sweet_potato_seeds"
+      },
+      "3": {
+        "hours": 4,
+        "minutes": 4,
+        "bp_min": "1.73",
+        "code": "rare_sweet_potato_seeds"
+      },
+      "4": {
+        "hours": 4,
+        "minutes": 4,
+        "bp_min": "3.47",
+        "code": "epic_sweet_potato_seeds"
+      },
+      "5": {
+        "hours": 4,
+        "minutes": 4,
+        "bp_min": "6.97",
+        "code": "legendary_sweet_potato_seeds"
+      }
+    }
+  },
+  "Chi̇li̇ pepper": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 3,
+        "minutes": 1,
+        "bp_min": "0.45",
+        "code": "common_chi̇li̇_pepper_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 1,
+        "bp_min": "0.88",
+        "code": "uncommon_chi̇li̇_pepper_seeds"
+      },
+      "3": {
+        "hours": 3,
+        "minutes": 1,
+        "bp_min": "1.77",
+        "code": "rare_chi̇li̇_pepper_seeds"
+      },
+      "4": {
+        "hours": 3,
+        "minutes": 1,
+        "bp_min": "3.52",
+        "code": "epic_chi̇li̇_pepper_seeds"
+      },
+      "5": {
+        "hours": 3,
+        "minutes": 1,
+        "bp_min": "7.10",
+        "code": "legendary_chi̇li̇_pepper_seeds"
+      }
+    }
+  },
+  "Dai̇kon": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/daikon/shared/images/daikon_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 3,
+        "minutes": 35,
+        "bp_min": "0.44",
+        "code": "common_dai̇kon_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 35,
+        "bp_min": "0.88",
+        "code": "uncommon_dai̇kon_seeds"
+      },
+      "3": {
+        "hours": 3,
+        "minutes": 35,
+        "bp_min": "1.75",
+        "code": "rare_dai̇kon_seeds"
+      },
+      "4": {
+        "hours": 3,
+        "minutes": 35,
+        "bp_min": "3.53",
+        "code": "epic_dai̇kon_seeds"
+      },
+      "5": {
+        "hours": 3,
+        "minutes": 35,
+        "bp_min": "7.13",
+        "code": "legendary_dai̇kon_seeds"
+      }
+    }
+  },
+  "Snowdrop": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/snowdrop/shared/images/snowdrop_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 2,
+        "minutes": 36,
+        "bp_min": "0.45",
+        "code": "common_snowdrop_seeds"
+      },
+      "2": {
+        "hours": 2,
+        "minutes": 36,
+        "bp_min": "0.90",
+        "code": "uncommon_snowdrop_seeds"
+      },
+      "3": {
+        "hours": 2,
+        "minutes": 36,
+        "bp_min": "1.77",
+        "code": "rare_snowdrop_seeds"
+      },
+      "4": {
+        "hours": 2,
+        "minutes": 36,
+        "bp_min": "3.59",
+        "code": "epic_snowdrop_seeds"
+      },
+      "5": {
+        "hours": 2,
+        "minutes": 36,
+        "bp_min": "7.15",
+        "code": "legendary_snowdrop_seeds"
+      }
+    }
+  },
+  "Mangold": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 30,
+        "bp_min": "0.46",
+        "code": "common_mangold_seeds"
+      },
+      "2": {
+        "hours": 1,
+        "minutes": 30,
+        "bp_min": "0.89",
+        "code": "uncommon_mangold_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 30,
+        "bp_min": "1.81",
+        "code": "rare_mangold_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 30,
+        "bp_min": "3.61",
+        "code": "epic_mangold_seeds"
+      },
+      "5": {
+        "hours": 1,
+        "minutes": 30,
+        "bp_min": "7.18",
+        "code": "legendary_mangold_seeds"
+      }
+    }
+  },
+  "Oni̇on": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/onion/shared/images/onion_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "0.47",
+        "code": "common_oni̇on_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "0.87",
+        "code": "uncommon_oni̇on_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "1.73",
+        "code": "rare_oni̇on_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "3.47",
+        "code": "epic_oni̇on_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "7.20",
+        "code": "legendary_oni̇on_seeds"
+      }
+    }
+  },
+  "Watermelon": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 52,
+        "bp_min": "0.46",
+        "code": "common_watermelon_seeds"
+      },
+      "2": {
+        "hours": 1,
+        "minutes": 52,
+        "bp_min": "0.89",
+        "code": "uncommon_watermelon_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 52,
+        "bp_min": "1.75",
+        "code": "rare_watermelon_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 52,
+        "bp_min": "3.68",
+        "code": "epic_watermelon_seeds"
+      },
+      "5": {
+        "hours": 1,
+        "minutes": 52,
+        "bp_min": "7.37",
+        "code": "legendary_watermelon_seeds"
+      }
+    }
+  },
+  "Leek": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/leek/shared/images/leek_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 45,
+        "bp_min": "0.47",
+        "code": "common_leek_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 45,
+        "bp_min": "0.96",
+        "code": "uncommon_leek_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 45,
+        "bp_min": "1.82",
+        "code": "rare_leek_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 45,
+        "bp_min": "3.67",
+        "code": "epic_leek_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 45,
+        "bp_min": "7.49",
+        "code": "legendary_leek_seeds"
+      }
+    }
+  },
+  "Eggplant": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/eggplant/shared/images/eggplant_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 17,
+        "bp_min": "0.47",
+        "code": "common_eggplant_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 17,
+        "bp_min": "1.06",
+        "code": "uncommon_eggplant_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 17,
+        "bp_min": "1.76",
+        "code": "rare_eggplant_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 17,
+        "bp_min": "3.59",
+        "code": "epic_eggplant_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 17,
+        "bp_min": "7.59",
+        "code": "legendary_eggplant_seeds"
+      }
+    }
+  },
+  "Spi̇nach": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 23,
+        "bp_min": "0.48",
+        "code": "common_spi̇nach_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 23,
+        "bp_min": "0.96",
+        "code": "uncommon_spi̇nach_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 23,
+        "bp_min": "2.00",
+        "code": "rare_spi̇nach_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 23,
+        "bp_min": "3.87",
+        "code": "epic_spi̇nach_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 23,
+        "bp_min": "7.78",
+        "code": "legendary_spi̇nach_seeds"
+      }
+    }
+  },
+  "Holly": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/holly/shared/images/holly_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "0.51",
+        "code": "common_holly_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "1.02",
+        "code": "uncommon_holly_seeds"
+      },
+      "3": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "2.07",
+        "code": "rare_holly_seeds"
+      },
+      "4": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "4.15",
+        "code": "epic_holly_seeds"
+      },
+      "5": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "8.32",
+        "code": "legendary_holly_seeds"
+      }
+    }
+  },
+  "Physali̇s": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/physalis/shared/images/physalis_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 2,
+        "minutes": 53,
+        "bp_min": "0.80",
+        "code": "common_physali̇s_seeds"
+      },
+      "2": {
+        "hours": 8,
+        "minutes": 39,
+        "bp_min": "2.40",
+        "code": "uncommon_physali̇s_seeds"
+      },
+      "3": {
+        "hours": 8,
+        "minutes": 45,
+        "bp_min": "8.40",
+        "code": "rare_physali̇s_seeds"
+      },
+      "4": {
+        "hours": 10,
+        "minutes": 0,
+        "bp_min": "25.50",
+        "code": "epic_physali̇s_seeds"
+      },
+      "5": {
+        "hours": 12,
+        "minutes": 6,
+        "bp_min": "26.17",
+        "code": "legendary_physali̇s_seeds"
+      }
+    }
+  },
+  "Basi̇l": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/basil/shared/images/basil_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 25,
+        "bp_min": "1.48",
+        "code": "common_basi̇l_seeds"
+      },
+      "2": {
+        "hours": 6,
+        "minutes": 30,
+        "bp_min": "24.60",
+        "code": "uncommon_basi̇l_seeds"
+      },
+      "3": {
+        "hours": 8,
+        "minutes": 0,
+        "bp_min": "25.40",
+        "code": "rare_basi̇l_seeds"
+      },
+      "4": {
+        "hours": 9,
+        "minutes": 30,
+        "bp_min": "26.50",
+        "code": "epic_basi̇l_seeds"
+      },
+      "5": {
+        "hours": 11,
+        "minutes": 0,
+        "bp_min": "26.90",
+        "code": "legendary_basi̇l_seeds"
+      }
+    }
+  },
+  "Fi̇ery barberry": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/fiery_barberry/shared/images/fiery_barberry_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 20,
+        "minutes": 0,
+        "bp_min": "1.14",
+        "code": "common_fi̇ery_barberry_seeds"
+      },
+      "2": {
+        "hours": 16,
+        "minutes": 0,
+        "bp_min": "4.57",
+        "code": "uncommon_fi̇ery_barberry_seeds"
+      },
+      "3": {
+        "hours": 13,
+        "minutes": 0,
+        "bp_min": "13.70",
+        "code": "rare_fi̇ery_barberry_seeds"
+      },
+      "4": {
+        "hours": 11,
+        "minutes": 0,
+        "bp_min": "27.40",
+        "code": "epic_fi̇ery_barberry_seeds"
+      },
+      "5": {
+        "hours": 14,
+        "minutes": 30,
+        "bp_min": "28.05",
+        "code": "legendary_fi̇ery_barberry_seeds"
+      }
+    }
+  },
+  "Li̇ght tree": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 6,
+        "minutes": 8,
+        "bp_min": "1.80",
+        "code": "common_li̇ght_tree_seeds"
+      },
+      "2": {
+        "hours": 7,
+        "minutes": 9,
+        "bp_min": "5.59",
+        "code": "uncommon_li̇ght_tree_seeds"
+      },
+      "3": {
+        "hours": 9,
+        "minutes": 11,
+        "bp_min": "28.46",
+        "code": "rare_li̇ght_tree_seeds"
+      },
+      "4": {
+        "hours": 12,
+        "minutes": 4,
+        "bp_min": "29.06",
+        "code": "epic_li̇ght_tree_seeds"
+      },
+      "5": {
+        "hours": 15,
+        "minutes": 7,
+        "bp_min": "30.02",
+        "code": "legendary_li̇ght_tree_seeds"
+      }
+    }
+  },
+  "Fern": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/mirror_fern/shared/images/mirror_fern_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 2,
+        "minutes": 18,
+        "bp_min": "40.00",
+        "code": "common_fern_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 28,
+        "bp_min": "40.92",
+        "code": "uncommon_fern_seeds"
+      },
+      "3": {
+        "hours": 5,
+        "minutes": 12,
+        "bp_min": "42.92",
+        "code": "rare_fern_seeds"
+      },
+      "4": {
+        "hours": 7,
+        "minutes": 48,
+        "bp_min": "45.94",
+        "code": "epic_fern_seeds"
+      },
+      "5": {
+        "hours": 11,
+        "minutes": 42,
+        "bp_min": "49.96",
+        "code": "legendary_fern_seeds"
+      }
+    }
+  },
+  "Cucumber": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/cucumber/shared/images/cucumber_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "0.73",
+        "code": "common_cucumber_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 14,
+        "bp_min": "1.14",
+        "code": "uncommon_cucumber_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 13,
+        "bp_min": "2.46",
+        "code": "rare_cucumber_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 12,
+        "bp_min": "5.42",
+        "code": "epic_cucumber_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 10,
+        "bp_min": "10.70",
+        "code": "legendary_cucumber_seeds"
+      }
+    }
+  },
+  "Mi̇nt": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/mint/shared/images/mint_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "0.50",
+        "code": "common_mi̇nt_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 55,
+        "bp_min": "1.35",
+        "code": "uncommon_mi̇nt_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 50,
+        "bp_min": "2.80",
+        "code": "rare_mi̇nt_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 40,
+        "bp_min": "6.25",
+        "code": "epic_mi̇nt_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 30,
+        "bp_min": "12.00",
+        "code": "legendary_mi̇nt_seeds"
+      }
+    }
+  },
+  "Blueberry": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/blueberry/shared/images/blueberry_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 30,
+        "bp_min": "0.52",
+        "code": "common_blueberry_seeds"
+      },
+      "2": {
+        "hours": 1,
+        "minutes": 25,
+        "bp_min": "0.98",
+        "code": "uncommon_blueberry_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 20,
+        "bp_min": "3.13",
+        "code": "rare_blueberry_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 10,
+        "bp_min": "6.79",
+        "code": "epic_blueberry_seeds"
+      },
+      "5": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "13.78",
+        "code": "legendary_blueberry_seeds"
+      }
+    }
+  },
+  "Black lotus": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/black_lotus/shared/images/black_lotus_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "0.56",
+        "code": "common_black_lotus_seeds"
+      },
+      "2": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "1.25",
+        "code": "uncommon_black_lotus_seeds"
+      },
+      "3": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "2.92",
+        "code": "rare_black_lotus_seeds"
+      },
+      "4": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "6.67",
+        "code": "epic_black_lotus_seeds"
+      },
+      "5": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "13.96",
+        "code": "legendary_black_lotus_seeds"
+      }
+    }
+  },
+  "Purple carrot": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/purple_carrot/shared/images/purple_carrot_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "0.53",
+        "code": "common_purple_carrot_seeds"
+      },
+      "2": {
+        "hours": 2,
+        "minutes": 30,
+        "bp_min": "1.04",
+        "code": "uncommon_purple_carrot_seeds"
+      },
+      "3": {
+        "hours": 2,
+        "minutes": 20,
+        "bp_min": "2.00",
+        "code": "rare_purple_carrot_seeds"
+      },
+      "4": {
+        "hours": 2,
+        "minutes": 10,
+        "bp_min": "7.23",
+        "code": "epic_purple_carrot_seeds"
+      },
+      "5": {
+        "hours": 2,
+        "minutes": 0,
+        "bp_min": "14.44",
+        "code": "legendary_purple_carrot_seeds"
+      }
+    }
+  },
+  "Sunflower": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "0.53",
+        "code": "common_sunflower_seeds"
+      },
+      "2": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "1.17",
+        "code": "uncommon_sunflower_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "2.77",
+        "code": "rare_sunflower_seeds"
+      },
+      "4": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "6.27",
+        "code": "epic_sunflower_seeds"
+      },
+      "5": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "14.57",
+        "code": "legendary_sunflower_seeds"
+      }
+    }
+  },
+  "Melon": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "0.57",
+        "code": "common_melon_seeds"
+      },
+      "2": {
+        "hours": 4,
+        "minutes": 50,
+        "bp_min": "1.10",
+        "code": "uncommon_melon_seeds"
+      },
+      "3": {
+        "hours": 4,
+        "minutes": 40,
+        "bp_min": "2.36",
+        "code": "rare_melon_seeds"
+      },
+      "4": {
+        "hours": 4,
+        "minutes": 20,
+        "bp_min": "4.62",
+        "code": "epic_melon_seeds"
+      },
+      "5": {
+        "hours": 4,
+        "minutes": 0,
+        "bp_min": "15.00",
+        "code": "legendary_melon_seeds"
+      }
+    }
+  },
+  "Pi̇neapple": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 7,
+        "minutes": 0,
+        "bp_min": "0.60",
+        "code": "common_pi̇neapple_seeds"
+      },
+      "2": {
+        "hours": 6,
+        "minutes": 30,
+        "bp_min": "1.28",
+        "code": "uncommon_pi̇neapple_seeds"
+      },
+      "3": {
+        "hours": 6,
+        "minutes": 0,
+        "bp_min": "2.78",
+        "code": "rare_pi̇neapple_seeds"
+      },
+      "4": {
+        "hours": 5,
+        "minutes": 30,
+        "bp_min": "6.06",
+        "code": "epic_pi̇neapple_seeds"
+      },
+      "5": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "15.03",
+        "code": "legendary_pi̇neapple_seeds"
+      }
+    }
+  },
+  "Whi̇te li̇ly": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "0.63",
+        "code": "common_whi̇te_li̇ly_seeds"
+      },
+      "2": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "1.33",
+        "code": "uncommon_whi̇te_li̇ly_seeds"
+      },
+      "3": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "3.23",
+        "code": "rare_whi̇te_li̇ly_seeds"
+      },
+      "4": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "7.23",
+        "code": "epic_whi̇te_li̇ly_seeds"
+      },
+      "5": {
+        "hours": 5,
+        "minutes": 0,
+        "bp_min": "15.32",
+        "code": "legendary_whi̇te_li̇ly_seeds"
+      }
+    }
+  },
+  "Jack pumpki̇n": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 24,
+        "minutes": 0,
+        "bp_min": "0.52",
+        "code": "common_jack_pumpki̇n_seeds"
+      },
+      "2": {
+        "hours": 20,
+        "minutes": 0,
+        "bp_min": "1.21",
+        "code": "uncommon_jack_pumpki̇n_seeds"
+      },
+      "3": {
+        "hours": 16,
+        "minutes": 0,
+        "bp_min": "3.19",
+        "code": "rare_jack_pumpki̇n_seeds"
+      },
+      "4": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "7.24",
+        "code": "epic_jack_pumpki̇n_seeds"
+      },
+      "5": {
+        "hours": 8,
+        "minutes": 0,
+        "bp_min": "15.33",
+        "code": "legendary_jack_pumpki̇n_seeds"
+      }
+    }
+  },
+  "Pati̇sson": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 4,
+        "minutes": 0,
+        "bp_min": "0.10",
+        "code": "common_pati̇sson_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 50,
+        "bp_min": "0.50",
+        "code": "uncommon_pati̇sson_seeds"
+      },
+      "3": {
+        "hours": 3,
+        "minutes": 40,
+        "bp_min": "2.40",
+        "code": "rare_pati̇sson_seeds"
+      },
+      "4": {
+        "hours": 3,
+        "minutes": 30,
+        "bp_min": "7.50",
+        "code": "epic_pati̇sson_seeds"
+      },
+      "5": {
+        "hours": 3,
+        "minutes": 20,
+        "bp_min": "15.45",
+        "code": "legendary_pati̇sson_seeds"
+      }
+    }
+  },
+  "Star ani̇se": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/star_anise/shared/images/star_anise_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 12,
+        "bp_min": "0.17",
+        "code": "common_star_ani̇se_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 29,
+        "bp_min": "0.55",
+        "code": "uncommon_star_ani̇se_seeds"
+      },
+      "3": {
+        "hours": 1,
+        "minutes": 24,
+        "bp_min": "1.69",
+        "code": "rare_star_ani̇se_seeds"
+      },
+      "4": {
+        "hours": 4,
+        "minutes": 10,
+        "bp_min": "5.16",
+        "code": "epic_star_ani̇se_seeds"
+      },
+      "5": {
+        "hours": 12,
+        "minutes": 30,
+        "bp_min": "15.50",
+        "code": "legendary_star_ani̇se_seeds"
+      }
+    }
+  },
+  "Dragon frui̇t": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 25,
+        "minutes": 0,
+        "bp_min": "0.90",
+        "code": "common_dragon_frui̇t_seeds"
+      },
+      "2": {
+        "hours": 21,
+        "minutes": 0,
+        "bp_min": "1.83",
+        "code": "uncommon_dragon_frui̇t_seeds"
+      },
+      "3": {
+        "hours": 17,
+        "minutes": 0,
+        "bp_min": "3.68",
+        "code": "rare_dragon_frui̇t_seeds"
+      },
+      "4": {
+        "hours": 13,
+        "minutes": 0,
+        "bp_min": "7.69",
+        "code": "epic_dragon_frui̇t_seeds"
+      },
+      "5": {
+        "hours": 9,
+        "minutes": 0,
+        "bp_min": "15.56",
+        "code": "legendary_dragon_frui̇t_seeds"
+      }
+    }
+  },
+  "Lavender": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/lavender/shared/images/lavender_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 15,
+        "bp_min": "16.27",
+        "code": "common_lavender_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 15,
+        "bp_min": "18.00",
+        "code": "uncommon_lavender_seeds"
+      },
+      "3": {
+        "hours": 6,
+        "minutes": 30,
+        "bp_min": "19.25",
+        "code": "rare_lavender_seeds"
+      },
+      "4": {
+        "hours": 9,
+        "minutes": 45,
+        "bp_min": "21.50",
+        "code": "epic_lavender_seeds"
+      },
+      "5": {
+        "hours": 13,
+        "minutes": 0,
+        "bp_min": "24.00",
+        "code": "legendary_lavender_seeds"
+      }
+    }
+  },
+  "Jasmi̇ne": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/jasmine/shared/images/jasmine_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 0,
+        "bp_min": "16.00",
+        "code": "common_jasmi̇ne_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "17.50",
+        "code": "uncommon_jasmi̇ne_seeds"
+      },
+      "3": {
+        "hours": 5,
+        "minutes": 15,
+        "bp_min": "19.50",
+        "code": "rare_jasmi̇ne_seeds"
+      },
+      "4": {
+        "hours": 7,
+        "minutes": 30,
+        "bp_min": "22.00",
+        "code": "epic_jasmi̇ne_seeds"
+      },
+      "5": {
+        "hours": 10,
+        "minutes": 0,
+        "bp_min": "25.00",
+        "code": "legendary_jasmi̇ne_seeds"
+      }
+    }
+  },
+  "Gomphrena": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/gomphrena/shared/images/gomphrena_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 1,
+        "minutes": 45,
+        "bp_min": "15.75",
+        "code": "common_gomphrena_seeds"
+      },
+      "2": {
+        "hours": 2,
+        "minutes": 45,
+        "bp_min": "17.00",
+        "code": "uncommon_gomphrena_seeds"
+      },
+      "3": {
+        "hours": 4,
+        "minutes": 0,
+        "bp_min": "19.75",
+        "code": "rare_gomphrena_seeds"
+      },
+      "4": {
+        "hours": 5,
+        "minutes": 15,
+        "bp_min": "22.50",
+        "code": "epic_gomphrena_seeds"
+      },
+      "5": {
+        "hours": 7,
+        "minutes": 0,
+        "bp_min": "26.00",
+        "code": "legendary_gomphrena_seeds"
+      }
+    }
+  },
+  "Bamboo": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/bamboo/shared/images/bamboo_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 13,
+        "minutes": 0,
+        "bp_min": "0.11",
+        "code": "common_bamboo_seeds"
+      },
+      "2": {
+        "hours": 12,
+        "minutes": 50,
+        "bp_min": "0.25",
+        "code": "uncommon_bamboo_seeds"
+      },
+      "3": {
+        "hours": 12,
+        "minutes": 40,
+        "bp_min": "2.85",
+        "code": "rare_bamboo_seeds"
+      },
+      "4": {
+        "hours": 12,
+        "minutes": 20,
+        "bp_min": "7.80",
+        "code": "epic_bamboo_seeds"
+      },
+      "5": {
+        "hours": 12,
+        "minutes": 0,
+        "bp_min": "20.60",
+        "code": "legendary_bamboo_seeds"
+      }
+    }
+  },
+  "Hyaci̇nth": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/hyacinths/shared/images/hyacinths_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 4,
+        "minutes": 0,
+        "bp_min": "0.15",
+        "code": "common_hyaci̇nth_seeds"
+      },
+      "2": {
+        "hours": 3,
+        "minutes": 50,
+        "bp_min": "0.45",
+        "code": "uncommon_hyaci̇nth_seeds"
+      },
+      "3": {
+        "hours": 3,
+        "minutes": 35,
+        "bp_min": "3.05",
+        "code": "rare_hyaci̇nth_seeds"
+      },
+      "4": {
+        "hours": 3,
+        "minutes": 20,
+        "bp_min": "8.20",
+        "code": "epic_hyaci̇nth_seeds"
+      },
+      "5": {
+        "hours": 3,
+        "minutes": 0,
+        "bp_min": "21.10",
+        "code": "legendary_hyaci̇nth_seeds"
+      }
+    }
+  },
+  "Mari̇gold": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/marigold/shared/images/marigold_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 3,
+        "bp_min": "0.33",
+        "code": "common_mari̇gold_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 3,
+        "bp_min": "0.67",
+        "code": "uncommon_mari̇gold_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "3.50",
+        "code": "rare_mari̇gold_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 2,
+        "bp_min": "6.50",
+        "code": "epic_mari̇gold_seeds"
+      },
+      "5": {
+        "hours": 0,
+        "minutes": 1,
+        "bp_min": "22.00",
+        "code": "legendary_mari̇gold_seeds"
+      }
+    }
+  },
+  "Tomato": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/tomato/shared/images/tomato_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 5,
+        "minutes": 40,
+        "bp_min": "0.17",
+        "code": "common_tomato_seeds"
+      },
+      "2": {
+        "hours": 5,
+        "minutes": 35,
+        "bp_min": "0.60",
+        "code": "uncommon_tomato_seeds"
+      },
+      "3": {
+        "hours": 5,
+        "minutes": 30,
+        "bp_min": "3.75",
+        "code": "rare_tomato_seeds"
+      },
+      "4": {
+        "hours": 5,
+        "minutes": 25,
+        "bp_min": "8.05",
+        "code": "epic_tomato_seeds"
+      },
+      "5": {
+        "hours": 5,
+        "minutes": 20,
+        "bp_min": "22.10",
+        "code": "legendary_tomato_seeds"
+      }
+    }
+  },
+  "Protoflower": {
+    "image": "https://api.minaryganar.com/assets/chainers/seeds/proto_flower/shared/images/proto_flower_shared_icon.webp",
+    "tiers": {
+      "1": {
+        "hours": 0,
+        "minutes": 1,
+        "bp_min": "6.00",
+        "code": "common_protoflower_seeds"
+      },
+      "2": {
+        "hours": 0,
+        "minutes": 1,
+        "bp_min": "27.00",
+        "code": "uncommon_protoflower_seeds"
+      },
+      "3": {
+        "hours": 0,
+        "minutes": 5,
+        "bp_min": "28.00",
+        "code": "rare_protoflower_seeds"
+      },
+      "4": {
+        "hours": 0,
+        "minutes": 30,
+        "bp_min": "29.00",
+        "code": "epic_protoflower_seeds"
+      },
+      "5": {
+        "hours": 4,
+        "minutes": 0,
+        "bp_min": "30.00",
+        "code": "legendary_protoflower_seeds"
+      }
+    }
+  }
+}
