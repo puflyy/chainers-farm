@@ -1,0 +1,52 @@
+{
+    "common_bee_food": {
+        "name": "Bee Food",
+        "food_id": "6a73475964ee63b1f4561ca1",
+        "tier": 1,
+        "time_str": "2h 30m",
+        "bp_min": 25.44,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/honey/common/images/honey_common_previewimageurl.webp",
+        "stock": 15,
+        "code_key": "common_bee_food"
+    },
+    "legendary_jacks_piggy_food": {
+        "name": "Jacks piggy Food",
+        "food_id": "69b9558333072e7b647f38d0",
+        "tier": 5,
+        "time_str": "30m",
+        "bp_min": 250.0,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/jack_truffle/legendary/images/jack_truffle_legendary_previewimageurl.webp",
+        "stock": 10,
+        "code_key": "legendary_jacks_piggy_food"
+    },
+    "common_otter_food": {
+        "name": "Otter Food",
+        "food_id": "6a6b1b0ab16630f880986663",
+        "tier": 1,
+        "time_str": "10h 8m",
+        "bp_min": 51.51,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/shell/common/images/shell_common_previewimageurl.webp",
+        "stock": 23,
+        "code_key": "common_otter_food"
+    },
+    "common_ectoplasm_food": {
+        "name": "Ectoplasm Food",
+        "food_id": "6abce61e4256b50d4349e7ee",
+        "tier": 1,
+        "time_str": "30m",
+        "bp_min": 49.93,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/common/images/ectoplasm_common_previewimageurl.webp",
+        "stock": 5,
+        "code_key": "common_ectoplasm_food"
+    },
+    "common_firebird_food": {
+        "name": "Firebird Food",
+        "food_id": "6a9014f3b52f06fb05edff76",
+        "tier": 1,
+        "time_str": "5h 53m",
+        "bp_min": 85.18,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/fire_feathers/common/images/fire_feathers_common_previewimageurl.webp",
+        "stock": 73,
+        "code_key": "common_firebird_food"
+    }
+}

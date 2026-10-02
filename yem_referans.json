@@ -1,0 +1,515 @@
+[
+  {
+    "hayvan_oyun_adi": "White Chicken",
+    "kod_anahtari": "domestic_bird",
+    "yem_koku": "Bird",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Bird Food",
+        "item_code": "common_bird_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/common/images/egg_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "0.6"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Bird Food",
+        "item_code": "uncommon_bird_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/uncommon/images/egg_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "2.1"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Bird Food",
+        "item_code": "rare_bird_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/rare/images/egg_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "3.03"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Bird Food",
+        "item_code": "epic_bird_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/epic/images/egg_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "4.1"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Bird Food",
+        "item_code": "legendary_bird_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/legendary/images/egg_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "7.47"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Brown Goat",
+    "kod_anahtari": "cattle",
+    "yem_koku": "Cattle",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Cattle Food",
+        "item_code": "common_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/milk/common/images/milk_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "6.01"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Cattle Food",
+        "item_code": "uncommon_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/milk/uncommon/images/milk_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "7.77"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Cattle Food",
+        "item_code": "rare_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/milk/rare/images/milk_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "13.78"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Cattle Food",
+        "item_code": "epic_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/milk/epic/images/milk_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "45"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Cattle Food",
+        "item_code": "legendary_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/milk/legendary/images/milk_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "150"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Chinchilla",
+    "kod_anahtari": "fuzzies",
+    "yem_koku": "Fuzzies",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Fuzzies Food",
+        "item_code": "common_fuzzies_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/wool/common/images/wool_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "5.8"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Fuzzies Food",
+        "item_code": "uncommon_fuzzies_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/wool/uncommon/images/wool_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "9.54"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Fuzzies Food",
+        "item_code": "rare_fuzzies_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/wool/rare/images/wool_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "15.33"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Fuzzies Food",
+        "item_code": "epic_fuzzies_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/wool/epic/images/wool_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "50"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Fuzzies Food",
+        "item_code": "legendary_fuzzies_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/wool/legendary/images/wool_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "200"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Rookie Dasher",
+    "kod_anahtari": "deers",
+    "yem_koku": "Deer",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Deer Food",
+        "item_code": "common_deer_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/gingerbread/common/images/gingerbread_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "16.59"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Deer Food",
+        "item_code": "uncommon_deer_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/gingerbread/uncommon/images/gingerbread_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "17.57"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Deer Food",
+        "item_code": "rare_deer_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/gingerbread/rare/images/gingerbread_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "19.79"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Deer Food",
+        "item_code": "epic_deer_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/gingerbread/epic/images/gingerbread_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "20.48"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Deer Food",
+        "item_code": "legendary_deer_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/gingerbread/legendary/images/gingerbread_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "400"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Charlotte",
+    "kod_anahtari": "piggies",
+    "yem_koku": "Piggy",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Cattle Food",
+        "item_code": "common_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/truffle/common/images/truffle_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "18.33"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Cattle Food",
+        "item_code": "uncommon_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/truffle/uncommon/images/truffle_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "22.23"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Cattle Food",
+        "item_code": "rare_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/truffle/rare/images/truffle_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "23.93"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Cattle Food",
+        "item_code": "epic_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/truffle/epic/images/truffle_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "80"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Cattle Food",
+        "item_code": "legendary_cattle_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/truffle/legendary/images/truffle_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "250"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Charlotte (Jack)",
+    "kod_anahtari": "jack_truffle",
+    "yem_koku": "Jacks piggy",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Jacks piggy Food",
+        "item_code": "common_jacks_piggy_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/jack_truffle/common/images/jack_truffle_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "25.52"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Jacks piggy Food",
+        "item_code": "uncommon_jacks_piggy_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/jack_truffle/uncommon/images/jack_truffle_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "25.93"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Jacks piggy Food",
+        "item_code": "rare_jacks_piggy_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/jack_truffle/rare/images/jack_truffle_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "26.3"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Jacks piggy Food",
+        "item_code": "epic_jacks_piggy_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/jack_truffle/epic/images/jack_truffle_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "80"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Jacks piggy Food",
+        "item_code": "legendary_jacks_piggy_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/jack_truffle/legendary/images/jack_truffle_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "250"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Max Peace (Proto)",
+    "kod_anahtari": "proto_peacock",
+    "yem_koku": "Proto Peacock",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Proto Peacock Food",
+        "item_code": "common_proto_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_egg/common/images/peacock_egg_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "23.65"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Proto Peacock Food",
+        "item_code": "uncommon_proto_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_egg/uncommon/images/peacock_egg_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "23.89"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Proto Peacock Food",
+        "item_code": "rare_proto_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_egg/rare/images/peacock_egg_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "24.7"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Proto Peacock Food",
+        "item_code": "epic_proto_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_egg/epic/images/peacock_egg_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "25.71"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Proto Peacock Food",
+        "item_code": "legendary_proto_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_egg/legendary/images/peacock_egg_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "29.72"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Ghosty",
+    "kod_anahtari": "ghosts",
+    "yem_koku": "Ectoplasm",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Ectoplasm Food",
+        "item_code": "common_ectoplasm_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/common/images/ectoplasm_common_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "49.93"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Ectoplasm Food",
+        "item_code": "uncommon_ectoplasm_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/uncommon/images/ectoplasm_uncommon_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "61.21"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Ectoplasm Food",
+        "item_code": "rare_ectoplasm_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/rare/images/ectoplasm_rare_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "70.98"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Ectoplasm Food",
+        "item_code": "epic_ectoplasm_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/epic/images/ectoplasm_epic_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "109.79"
+      },
+      {
+        "nadirlik": "Legendary",
+        "yem_tam_adi": "Legendary Ectoplasm Food",
+        "item_code": "legendary_ectoplasm_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/legendary/images/ectoplasm_legendary_previewimageurl.webp",
+        "sure": "30m",
+        "bp_dk": "116.5"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Max Peace",
+    "kod_anahtari": "peacocks",
+    "yem_koku": "Peacock",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Peacock Food",
+        "item_code": "common_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_feather/common/images/peacock_feather_common_previewimageurl.webp",
+        "sure": "4h 12m",
+        "bp_dk": "23.06"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Peacock Food",
+        "item_code": "uncommon_peacock_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/peacock_feather/uncommon/images/peacock_feather_uncommon_previewimageurl.webp",
+        "sure": "3h 50m",
+        "bp_dk": "165.83"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Worker Bees",
+    "kod_anahtari": "bees",
+    "yem_koku": "Bee",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Bee Food",
+        "item_code": "common_bee_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/honey/common/images/honey_common_previewimageurl.webp",
+        "sure": "2h 30m",
+        "bp_dk": "25.44"
+      },
+      {
+        "nadirlik": "Uncommon",
+        "yem_tam_adi": "Uncommon Bee Food",
+        "item_code": "uncommon_bee_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/honey/uncommon/images/honey_uncommon_previewimageurl.webp",
+        "sure": "3h 30m",
+        "bp_dk": "69.38"
+      },
+      {
+        "nadirlik": "Rare",
+        "yem_tam_adi": "Rare Bee Food",
+        "item_code": "rare_bee_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/honey/rare/images/honey_rare_previewimageurl.webp",
+        "sure": "4h 30m",
+        "bp_dk": "68.29"
+      },
+      {
+        "nadirlik": "Epic",
+        "yem_tam_adi": "Epic Bee Food",
+        "item_code": "epic_bee_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/honey/epic/images/honey_epic_previewimageurl.webp",
+        "sure": "6h 30m",
+        "bp_dk": "78.62"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Otto",
+    "kod_anahtari": "otters",
+    "yem_koku": "Otter",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Otter Food",
+        "item_code": "common_otter_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/shell/common/images/shell_common_previewimageurl.webp",
+        "sure": "10h 8m",
+        "bp_dk": "51.51"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Pyronet",
+    "kod_anahtari": "firebird",
+    "yem_koku": "Firebird",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Firebird Food",
+        "item_code": "common_firebird_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/fire_feathers/common/images/fire_feathers_common_previewimageurl.webp",
+        "sure": "5h 53m",
+        "bp_dk": "85.18"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Cthulhu Watcher",
+    "kod_anahtari": "mirror_watchers",
+    "yem_koku": "Spectral Watcher",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Spectral Watcher Food",
+        "item_code": "common_spectral_watcher_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/veilstone/common/images/veilstone_common_previewimageurl.webp",
+        "sure": "3h 48m",
+        "bp_dk": "107.63"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Rookie Dasher (Basil)",
+    "kod_anahtari": "basil_deer",
+    "yem_koku": "Basil Deer",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Basil Deer Food",
+        "item_code": "common_basil_deer_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/lollipops/common/images/lollipops_common_previewimageurl.webp",
+        "sure": "3h 50m",
+        "bp_dk": "114.8"
+      }
+    ]
+  },
+  {
+    "hayvan_oyun_adi": "Charlotte (Physalis)",
+    "kod_anahtari": "white_truffles",
+    "yem_koku": "Physalis Piggy",
+    "yemler": [
+      {
+        "nadirlik": "Common",
+        "yem_tam_adi": "Common Physalis Piggy Food",
+        "item_code": "common_physalis_piggy_food",
+        "gorsel": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/white_truffles/common/images/white_truffles_common_previewimageurl.webp",
+        "sure": "3h 50m",
+        "bp_dk": "125.63"
+      }
+    ]
+  }
+]

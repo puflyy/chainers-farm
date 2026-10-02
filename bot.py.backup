@@ -2,62 +2,6 @@ import os
 import re
 import json
 import time
-
-# ==========================================
-# 🔄 AKILLI GİTHUB YEDEKLEME SİSTEMİ (6 SAAT)
-# ==========================================
-import subprocess
-
-LAST_BACKUP_FILE = "last_backup.json"
-BACKUP_INTERVAL = 6 * 3600  # 6 Saat (saniye cinsinden)
-
-def get_last_backup_time():
-    if os.path.exists(LAST_BACKUP_FILE):
-        try:
-            with open(LAST_BACKUP_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                return data.get("timestamp", 0)
-        except Exception:
-            return 0
-    return 0
-
-def save_last_backup_time(ts):
-    try:
-        with open(LAST_BACKUP_FILE, "w", encoding="utf-8") as f:
-            json.dump({"timestamp": ts, "last_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}, f, indent=2)
-    except Exception:
-        pass
-
-def trigger_git_backup(reason="6 Saatlik Rutin Yedekleme"):
-    def _run():
-        now = time.time()
-        log(f"📦 GitHub Yedeklemesi Başlatılıyor [{reason}]...")
-        try:
-            # Kritik dosyaları ve tüm veritabanlarını ekle
-            subprocess.run(["git", "add", "."], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            commit_msg = f"backup: Otomatik Veri & Ayar Yedeklemesi ({datetime.now().strftime('%d.%m.%Y %H:%M')})"
-            subprocess.run(["git", "commit", "-m", commit_msg], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            res = subprocess.run(["git", "push"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            if res.returncode == 0:
-                save_last_backup_time(now)
-                log("✅ GitHub Yedeklemesi Başarıyla Tamamlandı! (Tüm hayvan, ekin ve ayarlar güncel)")
-            else:
-                log(f"⚠️ Git push uyarı verdi (değişiklik yok veya bağlantı hatası): {res.stderr.strip()[:100]}")
-        except Exception as e:
-            # Commit edilecek değişiklik yoksa hata vermez
-            save_last_backup_time(now)
-            log("ℹ️ Yedekleme kontrol edildi (kaydedilecek yeni veri değişikliği yok).")
-
-    threading.Thread(target=_run, daemon=True).start()
-
-def check_auto_backup():
-    last_ts = get_last_backup_time()
-    now = time.time()
-    diff = now - last_ts
-    if diff >= BACKUP_INTERVAL or last_ts == 0:
-        hrs = round(diff / 3600, 1) if last_ts != 0 else "İlk Kurulum"
-        trigger_git_backup(reason=f"Geçen Süre: {hrs} saat")
-
 import random
 import base64
 import threading
@@ -113,15 +57,6 @@ CONFIG_FILE = "farm_targets.json"
 SEEDS_FILE = "seeds_db.json"
 BEDS_FILE = "beds_db.json"
 LIBRARY_FILE = "crops_library.json"
-ANIMALS_FILE = "animals_db.json"
-ANIMAL_TARGETS_FILE = "animal_targets.json"
-FOODS_FILE = "foods_db.json"
-YEM_REF_FILE = "yem_referans.json"
-
-ACTIVE_ANIMALS = {}
-ANIMAL_TARGETS = {}
-FOODS_DB = {}
-YEM_REF_LIB = []
 
 GARDEN_ID = None
 ACTIVE_BEDS = {}
@@ -215,115 +150,6 @@ load_seeds()
 BED_TARGETS = {}
 TOTAL_ACTIONS = 0
 NEXT_BREAK_ACTION = random.randint(12, 18)
-
-
-ANIMAL_NAME_MAP = {
-    "domestic_bird": "White Chicken",
-    "bees": "Worker Bees",
-    "firebird": "Pyronet",
-    "cattle": "Brown Goat",
-    "fuzzies": "Chinchilla",
-    "deers": "Rookie Dasher",
-    "gingerbread": "Rookie Dasher",
-    "piggies": "Charlotte",
-    "truffle": "Charlotte",
-    "white_truffles": "Charlotte (Physalis)",
-    "jack_truffle": "Charlotte (Jack)",
-    "peacocks": "Max Peace",
-    "peacock_egg": "Max Peace",
-    "peacock_feather": "Max Peace",
-    "proto_peacock": "Max Peace (Proto)",
-    "ghosts": "Ghosty",
-    "ectoplasm": "Ghosty",
-    "otters": "Otto",
-    "shell": "Otto",
-    "mirror_watchers": "Cthulhu Watcher",
-    "veilstone": "Cthulhu Watcher",
-    "basil_deer": "Rookie Dasher (Basil)"
-}
-
-def load_animals():
-    global ACTIVE_ANIMALS, ANIMAL_TARGETS, FOODS_DB, YEM_REF_LIB
-    if os.path.exists(ANIMALS_FILE):
-        try:
-            with open(ANIMALS_FILE, "r", encoding="utf-8") as f:
-                ACTIVE_ANIMALS = json.load(f)
-        except Exception:
-            ACTIVE_ANIMALS = {}
-    if os.path.exists(ANIMAL_TARGETS_FILE):
-        try:
-            with open(ANIMAL_TARGETS_FILE, "r", encoding="utf-8") as f:
-                ANIMAL_TARGETS = json.load(f)
-        except Exception:
-            ANIMAL_TARGETS = {}
-    if os.path.exists(FOODS_FILE):
-        try:
-            with open(FOODS_FILE, "r", encoding="utf-8") as f:
-                FOODS_DB = json.load(f)
-        except Exception:
-            FOODS_DB = {}
-    if os.path.exists(YEM_REF_FILE):
-        try:
-            with open(YEM_REF_FILE, "r", encoding="utf-8") as f:
-                YEM_REF_LIB = json.load(f)
-        except Exception:
-            YEM_REF_LIB = []
-
-def save_animals():
-    with open(ANIMALS_FILE, "w", encoding="utf-8") as f:
-        json.dump(ACTIVE_ANIMALS, f, indent=4, ensure_ascii=False)
-
-def save_animal_targets():
-    with open(ANIMAL_TARGETS_FILE, "w", encoding="utf-8") as f:
-        json.dump(ANIMAL_TARGETS, f, indent=4, ensure_ascii=False)
-
-def save_foods():
-    with open(FOODS_FILE, "w", encoding="utf-8") as f:
-        json.dump(FOODS_DB, f, indent=4, ensure_ascii=False)
-
-
-ANIMAL_TO_EXACT_ROOT = {
-    "white chicken": "domestic_bird",
-    "worker bees": "bees",
-    "pyronet": "firebird",
-    "brown goat": "cattle",
-    "chinchilla": "fuzzies",
-    "rookie dasher": "deers",
-    "charlotte": "piggies",
-    "max peace": "peacocks",
-    "ghosty": "ghosts",
-    "otto": "otters",
-    "cthulhu watcher": "mirror_watchers"
-}
-
-def get_animal_name_from_code(code_str):
-    c = code_str.lower()
-    for k, name in ANIMAL_NAME_MAP.items():
-        if k in c:
-            return name
-    return "Bilinmeyen Hayvan"
-
-def get_animal_level_from_code(code_str):
-    c = code_str.lower()
-    if "legendary" in c: return 5
-    if "epic" in c: return 4
-    if "rare" in c: return 3
-    if "uncommon" in c: return 2
-    return 1
-
-def fetch_live_animals():
-    global ACTIVE_ANIMALS
-    try:
-        res = SESSION.get(URL_GARDENS, timeout=10)
-        if res.status_code == 200:
-            data = res.json().get("data", [])
-            if data:
-                raw_placed = data[0].get("placedBeds", [])
-                valid = [b for b in raw_placed if "plot" not in b.get("itemCode", "").lower() and "pool" not in b.get("itemCode", "").lower()]
-                return [b for b in valid if b.get("userBedsID") in ACTIVE_ANIMALS]
-    except Exception:
-        pass
-    return []
 
 def load_targets():
     global BED_TARGETS
@@ -528,21 +354,6 @@ HTML_PAGE = """<!DOCTYPE html>
         .time-inputs input { flex:1; }
         .btn-modal-submit { width:100%; background:#10b981; color:#fff; border:none; padding:12px; border-radius:8px; font-weight:bold; font-size:15px; cursor:pointer; margin-top:10px; transition:0.2s; }
         .btn-modal-submit:hover { background:#059669; }
-    
-        #foodCatalogGrid {
-            overflow-y: scroll !important;
-            scrollbar-gutter: stable;
-        }
-        #foodCatalogGrid .crop-card .card-actions {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.15s ease-in-out;
-        }
-        #foodCatalogGrid .crop-card:hover .card-actions {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
     </style>
 </head>
 <body>
@@ -584,45 +395,6 @@ HTML_PAGE = """<!DOCTYPE html>
             </div>
         </div>
 
-        
-        <!-- Hayvan Yönetimi Paneli -->
-        <div class="panel-card">
-            <div class="card-header-flex">
-                <h2>🐾 Hayvan Yönetimi</h2>
-                <button type="button" class="btn-add" onclick="openAnimalModal()">➕ Hayvan Ekle</button>
-            </div>
-            <div class="subtext">Çiftliğinizdeki kayıtlı hayvanlar ve hedeflenen yemler.</div>
-            <form id="animalTargetsForm">
-                <table class="farm-table" id="animalTable">
-                    <thead>
-                        <tr>
-                            <th class="sortable" onclick="sortAnimalTable('level')">SEVİYE <span id="sort-animal-icon-level">▲</span></th>
-                            <th>HAYVAN ADI</th>
-                            <th class="sortable" onclick="sortAnimalTable('time')">KALAN SÜRE <span id="sort-animal-icon-time">↕</span></th>
-                            <th class="sortable" onclick="sortAnimalTable('bp')">HEDEF (VERİM: BP/DK) <span id="sort-animal-icon-bp">↕</span></th>
-                            <th>İŞLEM</th>
-                        </tr>
-                    </thead>
-                    <tbody id="animalBody">
-                        __ANIMAL_ROWS_HTML__
-                    </tbody>
-                </table>
-                <button type="submit" id="btnSaveAnimals" class="btn-save">💾 Hayvan Hedeflerini Kaydet</button>
-            </form>
-        </div>
-
-        <!-- Yem Kataloğu Paneli -->
-        <div class="panel-card">
-            <div class="card-header-flex">
-                <h2>🥩 Yem Kataloğu</h2>
-                <button type="button" class="btn-add" onclick="openFoodModal()">➕ Yem Ekle</button>
-            </div>
-            <div class="subtext">Deponuzdaki yemler ve dakika başı BP verimleri.</div>
-            <div class="catalog-grid" id="foodCatalogGrid">
-                __FOOD_CATALOG_HTML__
-            </div>
-        </div>
-
         <!-- Alt: Canlı Token Güncelleyici -->
         <div class="token-box">
             <h3 style="margin-top:0;font-size:16px;">🔑 Canlı Oturum / cURL Yenileme (Kalıcı Olarak Kaydeder)</h3>
@@ -633,113 +405,6 @@ HTML_PAGE = """<!DOCTYPE html>
             <form id="tokenForm">
                 <textarea id="curlData" name="curl_data" class="token-input" placeholder="curl --url 'https://chainers.io/api/farm/user/gardens' -H 'authorization: Bearer ...'"></textarea>
                 <button type="submit" id="btnToken" class="btn-token">🔄 Oturumu & Tokenı Güncelle</button>
-            </form>
-        </div>
-    </div>
-
-    
-    <!-- Otomatik Hayvan Bulma Modalı -->
-    <div id="animalModal" class="modal-overlay">
-        <div class="modal">
-            <div class="modal-header">
-                <h3>🐾 Yeni Hayvan Ekle</h3>
-                <button type="button" class="modal-close" onclick="closeAnimalModal()">×</button>
-            </div>
-            <form id="newAnimalForm">
-                <div class="modal-form-group">
-                    <label>Oyunda Kurulu Hayvanlar</label>
-                    <select id="untrackedAnimalsSelect" onchange="onAnimalSelectChange(this)">
-                        <option value="">Hayvanlar taranıyor...</option>
-                    </select>
-                </div>
-                <div class="modal-form-group">
-                    <label>Hayvan Yatak ID (userBedsID)</label>
-                    <input type="text" id="inputAnimalId" name="animal_id" placeholder="Yukarıdan seçin" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Hayvan Adı</label>
-                    <input type="text" id="inputAnimalName" name="name" placeholder="Örn: White Chicken" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Hayvan Seviyesi</label>
-                    <select id="inputAnimalLevel" name="level">
-                        <option value="1">Lv 1 (Common - Gri)</option>
-                        <option value="2">Lv 2 (Uncommon - Yeşil)</option>
-                        <option value="3">Lv 3 (Rare - Mavi)</option>
-                        <option value="4">Lv 4 (Epic - Pembe)</option>
-                        <option value="5">Lv 5 (Legendary - Altın)</option>
-                    </select>
-                </div>
-                <button type="submit" id="btnAddAnimalSubmit" class="btn-modal-submit">Hayvanı Ekle</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Akıllı Yem Ekleme Modalı -->
-    <div id="foodModal" class="modal-overlay">
-        <div class="modal">
-            <div class="modal-header">
-                <h3>🥩 Yeni Yem Ekle</h3>
-                <button type="button" class="modal-close" onclick="closeFoodModal()">×</button>
-            </div>
-            <form id="newFoodForm">
-                <input type="hidden" id="inputFoodKey" name="original_key" value="">
-                
-                <div class="modal-form-group">
-                    <label style="color:#00d2d3;">⚡ REFERANS LİSTEDEN YEM SEÇİN</label>
-                    <select id="libraryFoodSelect" onchange="onLibraryFoodChange()">
-                        <option value="">Bir yem seçin...</option>
-                        __FOOD_LIBRARY_OPTIONS__
-                    </select>
-                </div>
-
-                <div class="modal-form-group">
-                    <label>YEM ADI</label>
-                    <input type="text" id="inputFoodName" name="food_name" placeholder="Örn: Bee Food" required>
-                </div>
-
-                <div class="modal-form-group">
-                    <label>SEVİYE (TİER)</label>
-                    <select id="inputFoodTier" name="tier" onchange="onFoodTierChange()">
-                        <option value="1">Lv 1 (Common - Gri)</option>
-                        <option value="2">Lv 2 (Uncommon - Yeşil)</option>
-                        <option value="3">Lv 3 (Rare - Mavi)</option>
-                        <option value="4">Lv 4 (Epic - Pembe)</option>
-                        <option value="5">Lv 5 (Legendary - Sarı)</option>
-                    </select>
-                </div>
-
-                <div class="modal-form-group">
-                    <label>ÜRETİM SÜRESİ</label>
-                    <input type="text" id="inputFoodTimeStr" name="time_str" placeholder="Örn: 30m" value="30m">
-                </div>
-
-                <div class="modal-form-group">
-                    <label>BP / DAKİKA VERİMİ</label>
-                    <input type="number" step="0.01" id="inputFoodBp" name="bp_min" placeholder="Örn: 25.44" value="0.00">
-                </div>
-
-                <div class="modal-form-group">
-                    <label>GÖRSEL LİNKİ</label>
-                    <input type="text" id="inputFoodImg" name="image_url" placeholder="https://...">
-                </div>
-
-                <div class="modal-form-group">
-                    <label style="color:#f1c40f;">🔑 ITEM ID (YEM ID) - ENVANTERDEKİ 24 HANELİ KOD</label>
-                    <input type="text" id="inputFoodId" name="food_id" placeholder="Envanterdeki 24 haneli itemID" required>
-                </div>
-
-                <div class="modal-form-group">
-                    <label>EKİN KODU (ITEM CODE)</label>
-                    <input type="text" id="inputFoodCode" name="code_key" placeholder="Örn: common_bee_food" required>
-                </div>
-
-                <div class="modal-form-group">
-                    <label>BAŞLANGIÇ STOĞU</label>
-                    <input type="number" id="inputFoodStock" name="stock" value="10" min="0">
-                </div>
-
-                <button type="submit" id="btnSaveFoodSubmit" class="btn-modal-submit">Kaydet</button>
             </form>
         </div>
     </div>
@@ -1136,211 +801,6 @@ HTML_PAGE = """<!DOCTYPE html>
             sel.addEventListener('change', updateTicks);
         });
         updateTicks();
-    
-        const YEM_REF_DATA = __FOOD_LIBRARY_JSON__;
-
-        function openAnimalModal() {
-            document.getElementById('animalModal').style.display = 'flex';
-            const selectEl = document.getElementById('untrackedAnimalsSelect');
-            selectEl.innerHTML = '<option value="">Hayvanlar taranıyor...</option>';
-
-            fetch('/untracked_animals')
-                .then(r => r.json())
-                .then(data => {
-                    if (!data || data.length === 0) {
-                        selectEl.innerHTML = '<option value="">Oyunda eklenmemiş hayvan bulunamadı</option>';
-                    } else {
-                        let opts = '<option value="">Bir hayvan seçin...</option>';
-                        data.forEach(item => {
-                            opts += `<option value="${item.id}" data-lvl="${item.level}" data-name="${item.name}">${item.label}</option>`;
-                        });
-                        selectEl.innerHTML = opts;
-                    }
-                })
-                .catch(() => {
-                    selectEl.innerHTML = '<option value="">Tarama hatası</option>';
-                });
-        }
-
-        function onAnimalSelectChange(el) {
-            const opt = el.options[el.selectedIndex];
-            if (opt && opt.value) {
-                document.getElementById('inputAnimalId').value = opt.value;
-                document.getElementById('inputAnimalLevel').value = opt.getAttribute('data-lvl') || "1";
-                document.getElementById('inputAnimalName').value = opt.getAttribute('data-name') || "Hayvan";
-            }
-        }
-
-        function closeAnimalModal() { document.getElementById('animalModal').style.display = 'none'; }
-
-        function deleteAnimal(a_id, a_name) {
-            if (!confirm(`"${a_name}" hayvanını kaldırmak istiyor musunuz?`)) return;
-            fetch('/delete_animal', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'animal_id=' + encodeURIComponent(a_id)
-            }).then(() => location.reload());
-        }
-
-        function openFoodModal() {
-            document.getElementById('foodModal').style.display = 'flex';
-            document.getElementById('newFoodForm').reset();
-            document.getElementById('inputFoodKey').value = "";
-        }
-
-        function closeFoodModal() { document.getElementById('foodModal').style.display = 'none'; }
-
-        function onFoodTierChange() {
-            onLibraryFoodChange();
-        }
-
-        function onLibraryFoodChange() {
-            const sel = document.getElementById('libraryFoodSelect');
-            const selectedKey = sel.value;
-            if (!selectedKey) return;
-
-            const tierLvl = parseInt(document.getElementById('inputFoodTier').value) || 1;
-            const tierMap = { 1: "Common", 2: "Uncommon", 3: "Rare", 4: "Epic", 5: "Legendary" };
-            const targetNadirlik = tierMap[tierLvl];
-
-            const animalData = YEM_REF_DATA.find(h => h.kod_anahtari === selectedKey);
-            if (!animalData || !animalData.yemler) return;
-
-            let yem = animalData.yemler.find(y => y.nadirlik.toLowerCase() === targetNadirlik.toLowerCase());
-            if (!yem && animalData.yemler.length > 0) {
-                yem = animalData.yemler[0];
-            }
-
-            if (yem) {
-                let cleanFoodName = yem.yem_tam_adi.replace(/^(Common|Uncommon|Rare|Epic|Legendary)\\s+/i, '');
-                document.getElementById('inputFoodName').value = cleanFoodName;
-                document.getElementById('inputFoodTimeStr').value = yem.sure;
-                document.getElementById('inputFoodBp').value = yem.bp_dk;
-                document.getElementById('inputFoodCode').value = yem.item_code;
-                document.getElementById('inputFoodImg').value = yem.gorsel || "";
-                document.getElementById('inputFoodId').value = yem.item_id || "";
-            }
-        }
-
-        function editFood(btn) {
-            const key = btn.getAttribute('data-key');
-            document.getElementById('inputFoodKey').value = key;
-            document.getElementById('inputFoodName').value = btn.getAttribute('data-name') || '';
-            document.getElementById('inputFoodTier').value = btn.getAttribute('data-tier') || '1';
-            document.getElementById('inputFoodTimeStr').value = btn.getAttribute('data-time') || '30m';
-            document.getElementById('inputFoodBp').value = btn.getAttribute('data-bp') || '0.00';
-            document.getElementById('inputFoodImg').value = btn.getAttribute('data-img') || '';
-            document.getElementById('inputFoodId').value = btn.getAttribute('data-id') || '';
-            document.getElementById('inputFoodCode').value = btn.getAttribute('data-code') || '';
-            document.getElementById('inputFoodStock').value = btn.getAttribute('data-stock') || '0';
-            document.getElementById('foodModal').style.display = 'flex';
-        }
-
-        function changeFoodStock(key, delta) {
-            fetch('/update_food_stock', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'food_key=' + encodeURIComponent(key) + '&delta=' + delta
-            }).then(r => r.json()).then(res => {
-                if (res.success) {
-                    document.getElementById('food-stock-val-' + key).textContent = 'Stok: ' + res.new_stock;
-                }
-            });
-        }
-
-        function deleteFood(key, name) {
-            if (!confirm(`"${name}" yemini silmek istiyor musunuz?`)) return;
-            fetch('/delete_food', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: 'food_key=' + encodeURIComponent(key)
-            }).then(() => location.reload());
-        }
-
-        let currentAnimalSort = { column: 'level', asc: false };
-
-        function sortAnimalTable(column) {
-            const table = document.getElementById('animalTable');
-            const tbody = document.getElementById('animalBody');
-            const rows = Array.from(tbody.querySelectorAll('tr'));
-
-            if (currentAnimalSort.column === column) {
-                currentAnimalSort.asc = !currentAnimalSort.asc;
-            } else {
-                currentAnimalSort.column = column;
-                currentAnimalSort.asc = (column === 'time');
-            }
-
-            rows.sort((a, b) => {
-                let valA, valB;
-                if (column === 'level') {
-                    valA = parseInt(a.getAttribute('data-level')) || 1;
-                    valB = parseInt(b.getAttribute('data-level')) || 1;
-                } else if (column === 'time') {
-                    const cellA = a.querySelector('.countdown-cell');
-                    const cellB = b.querySelector('.countdown-cell');
-                    valA = cellA ? parseInt(cellA.getAttribute('data-remaining')) || 0 : 0;
-                    valB = cellB ? parseInt(cellB.getAttribute('data-remaining')) || 0 : 0;
-                } else if (column === 'bp') {
-                    const selA = a.querySelector('select');
-                    const selB = b.querySelector('select');
-                    const optA = selA && selA.selectedIndex >= 0 ? selA.options[selA.selectedIndex] : null;
-                    const optB = selB && selB.selectedIndex >= 0 ? selB.options[selB.selectedIndex] : null;
-                    valA = optA ? parseFloat(optA.getAttribute('data-bp')) || 0 : 0;
-                    valB = optB ? parseFloat(optB.getAttribute('data-bp')) || 0 : 0;
-                }
-                return currentAnimalSort.asc ? valA - valB : valB - valA;
-            });
-
-            rows.forEach(r => tbody.appendChild(r));
-
-            ['level', 'time', 'bp'].forEach(col => {
-                const icon = document.getElementById(`sort-animal-icon-${col}`);
-                if (icon) {
-                    if (col === currentAnimalSort.column) {
-                        icon.textContent = currentAnimalSort.asc ? '▲' : '▼';
-                    } else {
-                        icon.textContent = '↕';
-                    }
-                }
-            });
-        }
-
-        document.getElementById('animalTargetsForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('btnSaveAnimals');
-            btn.textContent = '⏳ Kaydediliyor...';
-            const formData = new URLSearchParams(new FormData(this)).toString();
-            fetch('/save_animals', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: formData
-            }).then(() => {
-                btn.textContent = '✓ Hayvan Hedefleri Kaydedildi!';
-                setTimeout(() => { btn.textContent = '💾 Hayvan Hedeflerini Kaydet'; }, 2000);
-            });
-        });
-
-        document.getElementById('newAnimalForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new URLSearchParams(new FormData(this)).toString();
-            fetch('/add_animal', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: formData
-            }).then(() => location.reload());
-        });
-
-        document.getElementById('newFoodForm')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new URLSearchParams(new FormData(this)).toString();
-            fetch('/add_food', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: formData
-            }).then(() => location.reload());
-        });
-
     </script>
 </body>
 </html>"""
@@ -1447,169 +907,10 @@ class PanelHandler(BaseHTTPRequestHandler):
             for c_name in sorted(CROPS_LIBRARY.keys()):
                 lib_options_html += f'<option value="{c_name}">{c_name}</option>'
 
-                        # Hayvan Yönetimi Tablosu Üretimi
-            animals = fetch_live_animals() or []
-            animals.sort(key=lambda x: -ACTIVE_ANIMALS.get(x.get("userBedsID"), {}).get("level", 1))
-
-            animal_rows_html = ""
-            for idx, an in enumerate(animals):
-                a_id = an.get("userBedsID")
-                meta_info = ACTIVE_ANIMALS.get(a_id, {})
-                level_num = meta_info.get("level", 1)
-                a_name = meta_info.get("name", get_animal_name_from_code(an.get("itemCode", "")))
-                tier_badge = f"<span class='badge badge-lv{level_num}'>Lv {level_num}</span>"
-
-                p_seed = an.get("plantedSeed", {})
-                date_str = p_seed.get("dateGrowth")
-                rem_seconds = 0
-                if date_str:
-                    fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
-                    rem_seconds = max(0, int(fts - now_ts))
-
-                target_saved = ANIMAL_TARGETS.get(a_id, "Boş")
-                sel_empty = "selected" if target_saved == "Boş" else ""
-                options = f"<option value='Boş' data-bp='-1' {sel_empty}>[Boş / Yem Verme]</option>"
-
-                h_name_lower = a_name.lower()
-                matched_root = ""
-                for a_key, root in ANIMAL_TO_EXACT_ROOT.items():
-                    if a_key in h_name_lower:
-                        matched_root = root
-                        break
-
-                for f_key, f_meta in FOODS_DB.items():
-                    f_code = (f_meta.get("code_key") or f_key).lower()
-                    f_name_lower = f_meta.get("name", "").lower().strip()
-                    
-                    # White Chicken sadece tam 'Bird Food' yer, 'Firebird' yiyemez
-                    if matched_root == "domestic_bird":
-                        if "firebird" in f_code or "firebird" in f_name_lower or "bird" not in f_name_lower:
-                            continue
-                    elif matched_root:
-                        if matched_root not in f_code and matched_root not in f_name_lower:
-                            # İsim üzerinden alternatif kontrol (örn: bee -> bee food)
-                            alt_name = matched_root.rstrip('s')
-                            if alt_name not in f_code and alt_name not in f_name_lower:
-                                continue
-
-                    f_stk = int(f_meta.get("stock", 0))
-                    f_name = f_meta.get("name", "Yem")
-                    f_tier = f_meta.get("tier", 1)
-                    f_time = f_meta.get("time_str", "30m")
-                    f_bp = f_meta.get("bp_min", 0)
-                    sel = "selected" if target_saved == f_key else ""
-                    
-                    # [Lv1] Firebird Food (5h 53m - 85.18 BP/dk) [Stok: 74] formatı
-                    label_str = f"[Lv{f_tier}] {f_name} ({f_time} - {f_bp} BP/dk) [Stok: {f_stk}]"
-                    options += f"<option value='{f_key}' data-bp='{f_bp}' {sel}>{label_str}</option>"
-
-
-                animal_rows_html += f"""<tr id='animal-row-{a_id}' data-level='{level_num}'>
-                    <td>{tier_badge}</td>
-                    <td><b>{a_name}</b></td>
-                    <td class='countdown-cell' id='timer-animal-{idx}' data-remaining='{rem_seconds}'>Hesaplanıyor...</td>
-                    <td>
-                        <select name="{a_id}">
-                            {options}
-                        </select>
-                    </td>
-                    <td>
-                        <button type="button" class="btn-action-seed btn-del-seed" style="padding:2px 8px;" onclick="deleteAnimal('{a_id}', '{a_name}')">Sil</button>
-                    </td>
-                </tr>"""
-
-            # Yem Kataloğu Üretimi (Tohum kartı yapısıyla birebir aynı)
-            food_catalog_html = ""
-            sorted_foods = sorted(FOODS_DB.items(), key=lambda item: (-item[1].get("tier", 1), -float(item[1].get("bp_min", 0))))
-            for key, meta in sorted_foods:
-                tier = meta.get("tier", 1)
-                t_badge = f"<span class='badge badge-lv{tier}'>Lv {tier}</span>"
-                stock_count = int(meta.get("stock", 0))
-                img_url = meta.get("image_url", "")
-                if img_url:
-                    icon_content = f'<img src="{img_url}" width="44" height="44" style="object-fit:contain;" />'
-                else:
-                    icon_content = '<svg viewBox="0 0 64 64" width="44" height="44"><circle cx="32" cy="32" r="16" fill="#e17055"/></svg>'
-
-                f_name_esc = meta.get('name', '').replace('"', '&quot;')
-                f_img_esc = meta.get('image_url', '').replace('"', '&quot;')
-                f_code_esc = meta.get('code_key', '').replace('"', '&quot;')
-                f_id_esc = meta.get('food_id', '').replace('"', '&quot;')
-
-                food_catalog_html += f"""<div class="crop-card" id="food-card-{key}">
-                    <div class="card-actions">
-                        <button type="button" class="btn-action-seed btn-del-seed" title="Yemi Sil" onclick="deleteFood('{key}', '{f_name_esc}')">×</button>
-                        <button type="button" class="btn-action-seed btn-edit-seed" title="Düzenle"
-                            data-key="{key}"
-                            data-name="{f_name_esc}"
-                            data-tier="{tier}"
-                            data-time="{meta.get('time_str', '30m')}"
-                            data-bp="{meta.get('bp_min', 0)}"
-                            data-img="{f_img_esc}"
-                            data-id="{f_id_esc}"
-                            data-code="{f_code_esc}"
-                            data-stock="{stock_count}"
-                            onclick="editFood(this)">✏️</button>
-                    </div>
-                    <div class="crop-icon-wrapper">
-                        {icon_content}
-                    </div>
-                    <div class="crop-title">{meta.get('name')} {t_badge}</div>
-                    <div class="crop-time">⏱ {meta.get('time_str', '30m')}</div>
-                    <div class="bp-badge">⭐ {meta.get('bp_min', 0)} BP/dk</div>
-                    <div class="stock-control">
-                        <button type="button" class="stock-btn" onclick="changeFoodStock('{key}', -1)">-</button>
-                        <span class="stock-value" id="food-stock-val-{key}">Stok: {stock_count}</span>
-                        <button type="button" class="stock-btn" onclick="changeFoodStock('{key}', 1)">+</button>
-                    </div>
-                </div>"""
-
-            # Kütüphane Yem Seçenekleri (A'dan Z'ye Sıralı)
-            food_options_html = ""
-            sorted_yem_lib = sorted(YEM_REF_LIB, key=lambda x: x.get("hayvan_oyun_adi", "").lower())
-            for h in sorted_yem_lib:
-                k_key = h.get("kod_anahtari")
-                h_name = h.get("hayvan_oyun_adi")
-                y_root = h.get("yem_koku", "Food")
-                food_options_html += f'<option value="{k_key}">{h_name} ({y_root} Food)</option>'
-
             full_html = HTML_PAGE.replace("__ROWS_HTML__", rows_html).replace("__CATALOG_HTML__", catalog_html)
-            full_html = full_html.replace("__ANIMAL_ROWS_HTML__", animal_rows_html).replace("__FOOD_CATALOG_HTML__", food_catalog_html)
-            full_html = full_html.replace("__FOOD_LIBRARY_OPTIONS__", food_options_html)
-            full_html = full_html.replace("__FOOD_LIBRARY_JSON__", json.dumps(YEM_REF_LIB, ensure_ascii=False))
             full_html = full_html.replace("__LIBRARY_OPTIONS__", lib_options_html)
             full_html = full_html.replace("__LIBRARY_JSON__", json.dumps(CROPS_LIBRARY, ensure_ascii=False))
             self.wfile.write(full_html.encode("utf-8"))
-
-        
-        elif self.path == "/untracked_animals":
-            raw_beds = []
-            try:
-                res = SESSION.get(URL_GARDENS, timeout=5)
-                if res.status_code == 200:
-                    raw_beds = res.json().get("data", [])[0].get("placedBeds", [])
-            except Exception:
-                pass
-
-            untracked = []
-            for b in raw_beds:
-                b_id = b.get("userBedsID")
-                code = b.get("itemCode", "").lower()
-                if "plot" not in code and "pool" not in code and b_id not in ACTIVE_ANIMALS:
-                    lvl = get_animal_level_from_code(code)
-                    name = get_animal_name_from_code(code)
-                    status = "Boş" if not b.get("plantedSeed") else "Beslenmiş"
-                    untracked.append({
-                        "id": b_id,
-                        "level": lvl,
-                        "name": name,
-                        "label": f"[Lv {lvl}] {name} (...{b_id[-6:]}) - {status}"
-                    })
-
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(json.dumps(untracked).encode("utf-8"))
 
         elif self.path == "/untracked_beds":
             raw_beds = []
@@ -1685,99 +986,6 @@ class PanelHandler(BaseHTTPRequestHandler):
                 ACTIVE_BEDS[b_id] = {"level": level}
                 save_beds()
                 log(f"🌾 Panelden yeni tarla eklendi: {b_id} (Lv {level})")
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(b'{"success":true}')
-
-        
-        elif self.path == "/save_animals":
-            for a_id in ACTIVE_ANIMALS.keys():
-                ANIMAL_TARGETS[a_id] = params.get(a_id, ["Boş"])[0]
-            save_animal_targets()
-            log("🐾 Panelden yeni hayvan yem hedefleri kaydedildi!")
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(b'{"success":true}')
-
-        elif self.path == "/add_animal":
-            a_id = params.get("animal_id", [""])[0].strip()
-            level = int(params.get("level", [1])[0])
-            name = params.get("name", ["Hayvan"])[0].strip()
-            if a_id:
-                ACTIVE_ANIMALS[a_id] = {"level": level, "name": name}
-                if a_id not in ANIMAL_TARGETS:
-                    ANIMAL_TARGETS[a_id] = "Boş"
-                save_animals()
-                save_animal_targets()
-                log(f"🐾 Yeni Hayvan Eklendi: {name} (Lv {level})")
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(b'{"success":true}')
-
-        elif self.path == "/delete_animal":
-            a_id = params.get("animal_id", [""])[0].strip()
-            if a_id in ACTIVE_ANIMALS:
-                del ACTIVE_ANIMALS[a_id]
-                ANIMAL_TARGETS.pop(a_id, None)
-                save_animals()
-                save_animal_targets()
-                log(f"🐾 Hayvan Çıkarıldı: {a_id}")
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(b'{"success":true}')
-
-        elif self.path == "/add_food":
-            f_code = params.get("code_key", [""])[0].strip()
-            f_name = params.get("food_name", [""])[0].strip()
-            f_tier = int(params.get("tier", [1])[0])
-            f_time = params.get("time_str", ["30m"])[0].strip()
-            f_bp = float(params.get("bp_min", [0.0])[0])
-            f_img = params.get("image_url", [""])[0].strip()
-            f_stk = int(params.get("stock", [0])[0])
-            f_id = params.get("food_id", [""])[0].strip()
-
-            if f_code:
-                FOODS_DB[f_code] = {
-                    "name": f_name,
-                    "food_id": f_id,
-                    "tier": f_tier,
-                    "time_str": f_time,
-                    "bp_min": f_bp,
-                    "image_url": f_img,
-                    "stock": f_stk,
-                    "code_key": f_code
-                }
-                save_foods()
-                log(f"🥩 Kataloğa Yeni Yem Eklendi: {f_name} (Lv {f_tier})")
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(b'{"success":true}')
-
-        elif self.path == "/update_food_stock":
-            f_key = params.get("food_key", [""])[0].strip()
-            delta = int(params.get("delta", [0])[0])
-            new_stk = 0
-            if f_key in FOODS_DB:
-                cur = int(FOODS_DB[f_key].get("stock", 0))
-                new_stk = max(0, cur + delta)
-                FOODS_DB[f_key]["stock"] = new_stk
-                save_foods()
-            self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(json.dumps({"success": True, "new_stock": new_stk}).encode("utf-8"))
-
-        elif self.path == "/delete_food":
-            f_key = params.get("food_key", [""])[0].strip()
-            if f_key in FOODS_DB:
-                del FOODS_DB[f_key]
-                save_foods()
-                log(f"🥩 Yem Silindi: {f_key}")
             self.send_response(200)
             self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
@@ -1873,17 +1081,14 @@ def start_server():
     server.serve_forever()
 
 def run_farm():
-    check_auto_backup()  # Başlangıçta 6 saatlik yedek gecikme kontrolü
     global TOTAL_ACTIONS, NEXT_BREAK_ACTION
     load_targets()
     load_seeds()
-    load_animals()
     threading.Thread(target=start_server, daemon=True).start()
     log("🌐 Canlı Envanter & Tarla Paneli: http://localhost:5000")
     log("🛡️ Anti-Bot Güvenlik Katmanı ve Canlı Token Güncelleyici Devrede!")
 
     while True:
-        check_auto_backup()  # Rutin 6 saatlik yedek kontrolü
         if TOTAL_ACTIONS >= NEXT_BREAK_ACTION:
             break_time = random.randint(120, 300)
             log(f"☕ Anti-Bot: Doğal oyuncu molası veriliyor ({break_time // 60} dakika)...")
@@ -1947,70 +1152,6 @@ def run_farm():
                 })
             else:
                 active_crops.append({"name": cur_name, "diff": diff})
-
-        
-                # --- HAYVAN YÖNETİMİ DÖNGÜSÜ ---
-        animals_live = fetch_live_animals()
-        if animals_live:
-            ready_animals = []
-            for an in animals_live:
-                a_id = an.get("userBedsID")
-                p_seed = an.get("plantedSeed", {})
-                a_name = ACTIVE_ANIMALS.get(a_id, {}).get("name", "Hayvan")
-                target_food = ANIMAL_TARGETS.get(a_id, "Boş")
-                farming_id = p_seed.get("userFarmingID")
-                date_str = p_seed.get("dateGrowth")
-
-                diff = 0
-                if date_str:
-                    fts = datetime.fromisoformat(date_str.replace("Z", "+00:00")).timestamp()
-                    diff = max(0, int(fts - now_ts))
-
-                # Eğer toplanacak hasat varsa (farming_id var ve süre bitti) VEYA 
-                # hasat yok ama hayvana verilmek üzere seçilmiş geçerli bir yem hedefi varsa hazır say
-                is_harvest_ready = bool(farming_id and diff <= 0)
-                is_need_feed = bool(not farming_id and target_food != "Boş" and target_food in FOODS_DB)
-
-                if is_harvest_ready or is_need_feed:
-                    ready_animals.append({
-                        "bed_id": a_id,
-                        "name": a_name,
-                        "farming_id": farming_id if is_harvest_ready else None,
-                        "target_food": target_food
-                    })
-
-            if ready_animals:
-                jitter_a = random.uniform(30.0, 90.0)
-                log(f"🐾 Hayvan hazır! Doğal insan tepkisi için {int(jitter_a)} sn bekleniyor...")
-                time.sleep(jitter_a)
-
-                for ra in ready_animals:
-                    a_name = ra["name"]
-                    a_id = ra["bed_id"]
-                    farming_id = ra["farming_id"]
-                    target_food = ra["target_food"]
-
-                    if farming_id:
-                        log(f"🧺 {a_name} hasat ediliyor...")
-                        harvest_crop(farming_id)
-                        TOTAL_ACTIONS += 1
-                        human_delay(30.0, 60.0)
-
-                    if target_food != "Boş" and target_food in FOODS_DB:
-                        f_meta = FOODS_DB[target_food]
-                        f_stk = int(f_meta.get("stock", 0))
-                        if f_stk > 0:
-                            f_target_id = f_meta.get("food_id") or f_meta.get("code_key", target_food)
-                            log(f"🥩 Yem Veriliyor: {a_name} -> {f_meta.get('name')}...")
-                            if plant_seed(a_id, f_target_id, f_meta.get("name")):
-                                f_meta["stock"] = max(0, f_stk - 1)
-                                save_foods()
-                                TOTAL_ACTIONS += 1
-                                human_delay(15.0, 30.0)
-                        else:
-                            log(f"⚠️ Yem Stoğu Tükendi: {f_meta.get('name')} ({a_name} beklemede)")
-                    elif target_food == "Boş":
-                        log(f"⏹️ Hayvan ({a_name}) için hedef 'Boş' seçili, yem verilmeden bırakılıyor.")
 
         print("\n" + "="*50, flush=True)
         for c in active_crops:
@@ -2088,7 +1229,12 @@ def run_farm():
             time.sleep(random.uniform(10.0, 20.0))
 
 if __name__ == "__main__":
+    run_farm()
+
+# Tokenı gizli dosyadan dinamik okuma
+if os.path.exists("token.txt"):
     try:
-        run_farm()
-    except KeyboardInterrupt:
-        print("\n👋 Bot kullanıcı tarafından güvenle durduruldu.")
+        with open("token.txt", "r", encoding="utf-8") as f:
+            GITHUB_TOKEN = f.read().strip()
+    except Exception:
+        pass
