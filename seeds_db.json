@@ -460,5 +460,19 @@
         "code_key": "rare_li̇ght_tree_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
+    },
+    "67dc227a59b878f195998dd6": {
+        "name": "Oni̇on",
+        "seed_id": "67dc227a59b878f195998dd6",
+        "duration": 900,
+        "hours": 0,
+        "minutes": 15,
+        "time_str": "15 dk",
+        "tier": 3,
+        "bp_min": "1.73",
+        "stock": 1,
+        "code_key": "rare_oni̇on_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/onion/shared/images/onion_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/onion/shared/images/onion_shared_icon.webp\" alt=\"Oni̇on\">"
     }
 }
