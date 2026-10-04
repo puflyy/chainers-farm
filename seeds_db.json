@@ -516,5 +516,19 @@
         "code_key": "common_jack_pumpki̇n_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp\" alt=\"Jack pumpki̇n\">"
+    },
+    "673e0c942c7bfd708b35249b": {
+        "name": "Black lotus",
+        "seed_id": "673e0c942c7bfd708b35249b",
+        "duration": 43200,
+        "hours": 12,
+        "minutes": 0,
+        "time_str": "12 sa 0 dk",
+        "tier": 1,
+        "bp_min": "0.56",
+        "stock": 1,
+        "code_key": "common_black_lotus_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/black_lotus/shared/images/black_lotus_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/black_lotus/shared/images/black_lotus_shared_icon.webp\" alt=\"Black lotus\">"
     }
 }
