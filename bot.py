@@ -421,7 +421,7 @@ def live_countdown(target_name, seconds):
         m = int((seconds % 3600) // 60)
         s = int(seconds % 60)
         time_str = f"{h:02d}:{m:02d}:{s:02d}" if h > 0 else f"{m:02d}:{s:02d}"
-        print(f"\r⏳ [{target_name}] Hasadına Kalan Canlı Süre: {time_str} ", end="", flush=True)
+        pass
         time.sleep(1)
         seconds -= 1
     print("\n")
