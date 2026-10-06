@@ -4929,3 +4929,532 @@
 
 
 [17:59:53] 📦 GitHub Yedeklemesi Başlatılıyor [Geçen Süre: 6.3 saat]...
+[17:59:53] ⚠️ Bağlantı Hatası: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[17:59:56] ✅ GitHub Yedeklemesi Başarıyla Tamamlandı! (Tüm hayvan, ekin ve ayarlar güncel)
+
+==================================================
+[18:00:05] 🌱 Li̇ght tree      -> Kalan: 4 sa 54 dk 43 sn
+[18:00:05] 🌱 Melon            -> Kalan: 1 sa 25 dk 20 sn
+[18:00:05] 🌱 White Lily       -> Kalan: 40 dk 11 sn
+[18:00:05] 🌱 Bell pepper      -> Kalan: 23 dk 42 sn
+[18:00:05] 🌱 Fi̇ery barberry  -> Kalan: 8 sa 1 dk 36 sn
+[18:00:05] 🌱 Li̇ght tree      -> Kalan: 2 sa 4 dk 12 sn
+[18:00:05] 🌱 Dragon Fruit     -> Kalan: 19 sa 12 dk 7 sn
+[18:00:05] 🌱 Li̇ght tree      -> Kalan: 6 sa 54 dk 2 sn
+==================================================
+[18:00:05] 🕒 Ekin hazır! Doğal insan tepkisi için 37 sn bekleniyor...
+[18:00:42] ⚡ Sunflower hasat ediliyor...
+[18:00:52] 🌱 Tohum hazırlığı: 51.8 saniye bekleniyor...
+[18:01:44] 🌱 [Lv3] Sunflower ekiliyor...
+[18:01:45] 🌱 Tohum hazırlığı: 38.1 saniye bekleniyor...
+
+==================================================
+[18:02:26] 🌱 Li̇ght tree      -> Kalan: 4 sa 52 dk 21 sn
+[18:02:26] 🌱 Sunflower        -> Kalan: 59 dk 18 sn
+[18:02:26] 🌱 Melon            -> Kalan: 1 sa 22 dk 58 sn
+[18:02:26] 🌱 Bell pepper      -> Kalan: 21 dk 21 sn
+[18:02:26] 🌱 White Lily       -> Kalan: 37 dk 49 sn
+[18:02:26] 🌱 Fi̇ery barberry  -> Kalan: 7 sa 59 dk 15 sn
+[18:02:26] 🌱 Li̇ght tree      -> Kalan: 2 sa 1 dk 51 sn
+[18:02:26] 🌱 Dragon Fruit     -> Kalan: 19 sa 9 dk 46 sn
+[18:02:26] 🌱 Li̇ght tree      -> Kalan: 6 sa 51 dk 40 sn
+==================================================
+
+
+[18:24:15] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Max retries exceeded with url: /api/farm/user/gardens (Caused by NameResolutionError("HTTPSConnection(host='chainers.io', port=443): Failed to resolve 'chainers.io' ([Errno 7] No address associated with hostname)"))
+[18:24:29] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Max retries exceeded with url: /api/farm/user/gardens (Caused by NameResolutionError("HTTPSConnection(host='chainers.io', port=443): Failed to resolve 'chainers.io' ([Errno 7] No address associated with hostname)"))
+
+==================================================
+[18:24:38] 🌱 Li̇ght tree      -> Kalan: 4 sa 30 dk 10 sn
+[18:24:38] 🌱 Sunflower        -> Kalan: 37 dk 7 sn
+[18:24:38] 🌱 Melon            -> Kalan: 1 sa 0 dk 46 sn
+[18:24:38] 🌱 White Lily       -> Kalan: 15 dk 37 sn
+[18:24:38] 🌱 Fi̇ery barberry  -> Kalan: 7 sa 37 dk 3 sn
+[18:24:38] 🌱 Li̇ght tree      -> Kalan: 1 sa 39 dk 39 sn
+[18:24:38] 🌱 Dragon Fruit     -> Kalan: 18 sa 47 dk 34 sn
+[18:24:38] 🌱 Li̇ght tree      -> Kalan: 6 sa 29 dk 28 sn
+==================================================
+[18:24:38] 🕒 Ekin hazır! Doğal insan tepkisi için 52 sn bekleniyor...
+[18:25:30] ⚡ Bell pepper hasat ediliyor...
+[18:25:31] 🌱 Tohum hazırlığı: 59.7 saniye bekleniyor...
+[18:26:31] 🌱 [Lv3] Bell pepper ekiliyor...
+[18:26:31] 🌱 Tohum hazırlığı: 30.8 saniye bekleniyor...
+
+==================================================
+[18:27:05] 🌱 Li̇ght tree      -> Kalan: 4 sa 27 dk 42 sn
+[18:27:05] 🌱 Melon            -> Kalan: 58 dk 19 sn
+[18:27:05] 🌱 White Lily       -> Kalan: 13 dk 10 sn
+[18:27:05] 🌱 Sunflower        -> Kalan: 34 dk 39 sn
+[18:27:05] 🌱 Bell pepper      -> Kalan: 1 sa 2 dk 26 sn
+[18:27:05] 🌱 Fi̇ery barberry  -> Kalan: 7 sa 34 dk 36 sn
+[18:27:05] 🌱 Li̇ght tree      -> Kalan: 1 sa 37 dk 12 sn
+[18:27:05] 🌱 Dragon Fruit     -> Kalan: 18 sa 45 dk 7 sn
+[18:27:05] 🌱 Li̇ght tree      -> Kalan: 6 sa 27 dk 1 sn
+==================================================
+
+
+[18:40:35] ⚠️ Bağlantı Hatası: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+==================================================
+[18:40:44] 🌱 Li̇ght tree      -> Kalan: 4 sa 14 dk 4 sn
+[18:40:44] 🌱 Sunflower        -> Kalan: 21 dk 1 sn
+[18:40:44] 🌱 Melon            -> Kalan: 44 dk 40 sn
+[18:40:44] 🌱 Bell pepper      -> Kalan: 48 dk 47 sn
+[18:40:44] 🌱 Fi̇ery barberry  -> Kalan: 7 sa 20 dk 57 sn
+[18:40:44] 🌱 Li̇ght tree      -> Kalan: 1 sa 23 dk 33 sn
+[18:40:44] 🌱 Dragon Fruit     -> Kalan: 18 sa 31 dk 28 sn
+[18:40:44] 🌱 Li̇ght tree      -> Kalan: 6 sa 13 dk 22 sn
+==================================================
+[18:40:44] 🕒 Ekin hazır! Doğal insan tepkisi için 33 sn bekleniyor...
+[18:41:17] ⚡ White Lily hasat ediliyor...
+[18:41:18] 🌱 Tohum hazırlığı: 45.4 saniye bekleniyor...
+[18:42:03] 🌱 [Lv3] White Lily ekiliyor...
+[18:42:04] 🌱 Tohum hazırlığı: 59.5 saniye bekleniyor...
+[18:43:06] ☕ Anti-Bot: Doğal oyuncu molası veriliyor (4 dakika)...
+
+==================================================
+[18:47:23] 🌱 Li̇ght tree      -> Kalan: 4 sa 7 dk 25 sn
+[18:47:23] 🌱 Melon            -> Kalan: 38 dk 2 sn
+[18:47:23] 🌱 White Lily       -> Kalan: 4 sa 54 dk 41 sn
+[18:47:23] 🌱 Sunflower        -> Kalan: 14 dk 22 sn
+[18:47:23] 🌱 Bell pepper      -> Kalan: 42 dk 9 sn
+[18:47:23] 🌱 Fi̇ery barberry  -> Kalan: 7 sa 14 dk 18 sn
+[18:47:23] 🌱 Li̇ght tree      -> Kalan: 1 sa 16 dk 54 sn
+[18:47:23] 🌱 Dragon Fruit     -> Kalan: 18 sa 24 dk 50 sn
+[18:47:23] 🌱 Li̇ght tree      -> Kalan: 6 sa 6 dk 44 sn
+==================================================
+
+
+
+==================================================
+[19:02:14] 🌱 Li̇ght tree      -> Kalan: 3 sa 52 dk 34 sn
+[19:02:14] 🌱 Melon            -> Kalan: 23 dk 11 sn
+[19:02:14] 🌱 Bell pepper      -> Kalan: 27 dk 18 sn
+[19:02:14] 🌱 White Lily       -> Kalan: 4 sa 39 dk 50 sn
+[19:02:14] 🌱 Fi̇ery barberry  -> Kalan: 6 sa 59 dk 27 sn
+[19:02:14] 🌱 Li̇ght tree      -> Kalan: 1 sa 2 dk 3 sn
+[19:02:14] 🌱 Dragon Fruit     -> Kalan: 18 sa 9 dk 59 sn
+[19:02:14] 🌱 Li̇ght tree      -> Kalan: 5 sa 51 dk 53 sn
+==================================================
+[19:02:14] 🕒 Ekin hazır! Doğal insan tepkisi için 76 sn bekleniyor...
+[19:03:30] ⚡ Sunflower hasat ediliyor...
+[19:03:31] 🌱 Tohum hazırlığı: 51.4 saniye bekleniyor...
+[19:04:22] 🌱 [Lv3] Sunflower ekiliyor...
+[19:04:24] 🌱 Tohum hazırlığı: 47.5 saniye bekleniyor...
+
+==================================================
+[19:05:14] 🌱 Li̇ght tree      -> Kalan: 3 sa 49 dk 34 sn
+[19:05:14] 🌱 Sunflower        -> Kalan: 59 dk 9 sn
+[19:05:14] 🌱 Melon            -> Kalan: 20 dk 10 sn
+[19:05:14] 🌱 Bell pepper      -> Kalan: 24 dk 17 sn
+[19:05:14] 🌱 White Lily       -> Kalan: 4 sa 36 dk 50 sn
+[19:05:14] 🌱 Fi̇ery barberry  -> Kalan: 6 sa 56 dk 27 sn
+[19:05:14] 🌱 Li̇ght tree      -> Kalan: 59 dk 3 sn
+[19:05:14] 🌱 Dragon Fruit     -> Kalan: 18 sa 6 dk 58 sn
+[19:05:14] 🌱 Li̇ght tree      -> Kalan: 5 sa 48 dk 52 sn
+==================================================
+
+
+
+==================================================
+[19:25:54] 🌱 Li̇ght tree      -> Kalan: 3 sa 28 dk 54 sn
+[19:25:54] 🌱 Sunflower        -> Kalan: 38 dk 29 sn
+[19:25:54] 🌱 Bell pepper      -> Kalan: 3 dk 38 sn
+[19:25:54] 🌱 White Lily       -> Kalan: 4 sa 16 dk 10 sn
+[19:25:54] 🌱 Fi̇ery barberry  -> Kalan: 6 sa 35 dk 47 sn
+[19:25:54] 🌱 Li̇ght tree      -> Kalan: 38 dk 23 sn
+[19:25:54] 🌱 Dragon Fruit     -> Kalan: 17 sa 46 dk 18 sn
+[19:25:54] 🌱 Li̇ght tree      -> Kalan: 5 sa 28 dk 12 sn
+==================================================
+[19:25:54] 🕒 Ekin hazır! Doğal insan tepkisi için 63 sn bekleniyor...
+[19:26:57] ⚡ Melon hasat ediliyor...
+[19:26:57] 🌱 Tohum hazırlığı: 34.3 saniye bekleniyor...
+[19:27:32] 🌱 [Lv4] Melon ekiliyor...
+[19:27:32] 🌱 Tohum hazırlığı: 40.9 saniye bekleniyor...
+
+==================================================
+[19:28:16] 🌱 Li̇ght tree      -> Kalan: 3 sa 26 dk 31 sn
+[19:28:16] 🌱 Sunflower        -> Kalan: 36 dk 7 sn
+[19:28:16] 🌱 Melon            -> Kalan: 4 sa 19 dk 16 sn
+[19:28:16] 🌱 Bell pepper      -> Kalan: 1 dk 15 sn
+[19:28:16] 🌱 White Lily       -> Kalan: 4 sa 13 dk 48 sn
+[19:28:16] 🌱 Fi̇ery barberry  -> Kalan: 6 sa 33 dk 25 sn
+[19:28:16] 🌱 Li̇ght tree      -> Kalan: 36 dk 1 sn
+[19:28:16] 🌱 Dragon Fruit     -> Kalan: 17 sa 43 dk 56 sn
+[19:28:16] 🌱 Li̇ght tree      -> Kalan: 5 sa 25 dk 50 sn
+==================================================
+
+
+
+==================================================
+[19:29:42] 🌱 Li̇ght tree      -> Kalan: 3 sa 25 dk 5 sn
+[19:29:42] 🌱 Sunflower        -> Kalan: 34 dk 41 sn
+[19:29:42] 🌱 Melon            -> Kalan: 4 sa 17 dk 50 sn
+[19:29:42] 🌱 White Lily       -> Kalan: 4 sa 12 dk 22 sn
+[19:29:42] 🌱 Fi̇ery barberry  -> Kalan: 6 sa 31 dk 59 sn
+[19:29:42] 🌱 Li̇ght tree      -> Kalan: 34 dk 35 sn
+[19:29:42] 🌱 Dragon Fruit     -> Kalan: 17 sa 42 dk 30 sn
+[19:29:42] 🌱 Li̇ght tree      -> Kalan: 5 sa 24 dk 24 sn
+==================================================
+[19:29:42] 🕒 Ekin hazır! Doğal insan tepkisi için 74 sn bekleniyor...
+[19:30:56] ⚡ Bell pepper hasat ediliyor...
+[19:30:57] 🌱 Tohum hazırlığı: 49.7 saniye bekleniyor...
+[19:31:47] 🌱 [Lv3] Bell pepper ekiliyor...
+[19:31:48] 🌱 Tohum hazırlığı: 47.5 saniye bekleniyor...
+
+==================================================
+[19:32:38] 🌱 Li̇ght tree      -> Kalan: 3 sa 22 dk 10 sn
+[19:32:38] 🌱 Melon            -> Kalan: 4 sa 14 dk 54 sn
+[19:32:38] 🌱 White Lily       -> Kalan: 4 sa 9 dk 26 sn
+[19:32:38] 🌱 Sunflower        -> Kalan: 31 dk 45 sn
+[19:32:38] 🌱 Bell pepper      -> Kalan: 1 sa 2 dk 10 sn
+[19:32:38] 🌱 Fi̇ery barberry  -> Kalan: 6 sa 29 dk 3 sn
+[19:32:38] 🌱 Li̇ght tree      -> Kalan: 31 dk 39 sn
+[19:32:38] 🌱 Dragon Fruit     -> Kalan: 17 sa 39 dk 34 sn
+[19:32:38] 🌱 Li̇ght tree      -> Kalan: 5 sa 21 dk 28 sn
+==================================================
+[19:41:45] 🗑️ Panelden tohum silindi: 67dc227a59b878f195998ede
+[19:42:57] 🌱 Panelden tohum kaydedildi: Mangold (Lv3)
+[19:43:14] 🌱 Panelden tohum kaydedildi: Whi̇te li̇ly (Lv1)
+
+
+
+==================================================
+[20:04:40] 🌱 Li̇ght tree      -> Kalan: 2 sa 50 dk 8 sn
+[20:04:40] 🌱 Melon            -> Kalan: 3 sa 42 dk 52 sn
+[20:04:40] 🌱 White Lily       -> Kalan: 3 sa 37 dk 24 sn
+[20:04:40] 🌱 Bell pepper      -> Kalan: 30 dk 8 sn
+[20:04:40] 🌱 Fi̇ery barberry  -> Kalan: 5 sa 57 dk 1 sn
+[20:04:40] 🌱 Dragon Fruit     -> Kalan: 17 sa 7 dk 32 sn
+[20:04:40] 🌱 Li̇ght tree      -> Kalan: 4 sa 49 dk 27 sn
+==================================================
+[20:04:40] 🕒 Ekin hazır! Doğal insan tepkisi için 77 sn bekleniyor...
+[20:05:57] ⚡ Sunflower hasat ediliyor...
+[20:05:58] 🌱 Tohum hazırlığı: 58.9 saniye bekleniyor...
+[20:06:57] 🌱 [Lv3] Sunflower ekiliyor...
+[20:06:58] 🌱 Tohum hazırlığı: 53.0 saniye bekleniyor...
+[20:07:50] ⚡ Li̇ght tree hasat ediliyor...
+[20:07:51] 🌱 Tohum hazırlığı: 52.3 saniye bekleniyor...
+[20:08:43] 🌱 [Lv5] Li̇ght tree ekiliyor...
+[20:08:44] 🌱 Tohum hazırlığı: 30.4 saniye bekleniyor...
+
+==================================================
+[20:09:17] 🌱 Li̇ght tree      -> Kalan: 2 sa 45 dk 31 sn
+[20:09:17] 🌱 Melon            -> Kalan: 3 sa 38 dk 15 sn
+[20:09:17] 🌱 White Lily       -> Kalan: 3 sa 32 dk 47 sn
+[20:09:17] 🌱 Sunflower        -> Kalan: 57 dk 41 sn
+[20:09:17] 🌱 Bell pepper      -> Kalan: 25 dk 31 sn
+[20:09:17] 🌱 Fi̇ery barberry  -> Kalan: 5 sa 52 dk 24 sn
+[20:09:17] 🌱 Li̇ght tree      -> Kalan: 14 sa 38 dk 18 sn
+[20:09:17] 🌱 Dragon Fruit     -> Kalan: 17 sa 2 dk 55 sn
+[20:09:17] 🌱 Li̇ght tree      -> Kalan: 4 sa 44 dk 50 sn
+==================================================
+
+
+[20:35:21] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+
+==================================================
+[20:35:30] 🌱 Li̇ght tree      -> Kalan: 2 sa 19 dk 17 sn
+[20:35:30] 🌱 Melon            -> Kalan: 3 sa 12 dk 2 sn
+[20:35:30] 🌱 White Lily       -> Kalan: 3 sa 6 dk 34 sn
+[20:35:30] 🌱 Sunflower        -> Kalan: 31 dk 27 sn
+[20:35:30] 🌱 Fi̇ery barberry  -> Kalan: 5 sa 26 dk 10 sn
+[20:35:30] 🌱 Li̇ght tree      -> Kalan: 14 sa 12 dk 4 sn
+[20:35:30] 🌱 Dragon Fruit     -> Kalan: 16 sa 36 dk 42 sn
+[20:35:30] 🌱 Li̇ght tree      -> Kalan: 4 sa 18 dk 36 sn
+==================================================
+[20:35:30] 🕒 Ekin hazır! Doğal insan tepkisi için 39 sn bekleniyor...
+[20:36:10] ⚡ Bell pepper hasat ediliyor...
+[20:36:10] 🌱 Tohum hazırlığı: 35.6 saniye bekleniyor...
+[20:36:46] 🌱 [Lv3] Bell pepper ekiliyor...
+[20:36:46] 🌱 Tohum hazırlığı: 34.2 saniye bekleniyor...
+
+==================================================
+[20:37:23] 🌱 Li̇ght tree      -> Kalan: 2 sa 17 dk 24 sn
+[20:37:23] 🌱 Sunflower        -> Kalan: 29 dk 34 sn
+[20:37:23] 🌱 Melon            -> Kalan: 3 sa 10 dk 9 sn
+[20:37:23] 🌱 Bell pepper      -> Kalan: 1 sa 2 dk 23 sn
+[20:37:23] 🌱 White Lily       -> Kalan: 3 sa 4 dk 41 sn
+[20:37:23] 🌱 Fi̇ery barberry  -> Kalan: 5 sa 24 dk 18 sn
+[20:37:23] 🌱 Li̇ght tree      -> Kalan: 14 sa 10 dk 11 sn
+[20:37:23] 🌱 Dragon Fruit     -> Kalan: 16 sa 34 dk 49 sn
+[20:37:23] 🌱 Li̇ght tree      -> Kalan: 4 sa 16 dk 43 sn
+==================================================
+
+
+[21:07:39] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+
+==================================================
+[21:07:48] 🌱 Li̇ght tree      -> Kalan: 1 sa 47 dk 0 sn
+[21:07:48] 🌱 Melon            -> Kalan: 2 sa 39 dk 45 sn
+[21:07:48] 🌱 White Lily       -> Kalan: 2 sa 34 dk 16 sn
+[21:07:48] 🌱 Bell pepper      -> Kalan: 31 dk 59 sn
+[21:07:48] 🌱 Fi̇ery barberry  -> Kalan: 4 sa 53 dk 53 sn
+[21:07:48] 🌱 Li̇ght tree      -> Kalan: 13 sa 39 dk 47 sn
+[21:07:48] 🌱 Dragon Fruit     -> Kalan: 16 sa 4 dk 24 sn
+[21:07:48] 🌱 Li̇ght tree      -> Kalan: 3 sa 46 dk 19 sn
+==================================================
+[21:07:48] 🕒 Ekin hazır! Doğal insan tepkisi için 70 sn bekleniyor...
+[21:08:58] ⚡ Sunflower hasat ediliyor...
+[21:08:58] 🌱 Tohum hazırlığı: 46.1 saniye bekleniyor...
+[21:09:44] 🌱 [Lv3] Sunflower ekiliyor...
+[21:09:45] 🌱 Tohum hazırlığı: 59.4 saniye bekleniyor...
+
+==================================================
+[21:10:47] 🌱 Li̇ght tree      -> Kalan: 1 sa 44 dk 1 sn
+[21:10:47] 🌱 Melon            -> Kalan: 2 sa 36 dk 45 sn
+[21:10:47] 🌱 White Lily       -> Kalan: 2 sa 31 dk 17 sn
+[21:10:47] 🌱 Sunflower        -> Kalan: 58 dk 58 sn
+[21:10:47] 🌱 Bell pepper      -> Kalan: 28 dk 59 sn
+[21:10:47] 🌱 Fi̇ery barberry  -> Kalan: 4 sa 50 dk 54 sn
+[21:10:47] 🌱 Li̇ght tree      -> Kalan: 13 sa 36 dk 47 sn
+[21:10:47] 🌱 Dragon Fruit     -> Kalan: 16 sa 1 dk 25 sn
+[21:10:47] 🌱 Li̇ght tree      -> Kalan: 3 sa 43 dk 19 sn
+==================================================
+
+
+[21:40:18] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+
+==================================================
+[21:40:28] 🌱 Li̇ght tree      -> Kalan: 1 sa 14 dk 20 sn
+[21:40:28] 🌱 Melon            -> Kalan: 2 sa 7 dk 4 sn
+[21:40:28] 🌱 White Lily       -> Kalan: 2 sa 1 dk 36 sn
+[21:40:28] 🌱 Sunflower        -> Kalan: 29 dk 17 sn
+[21:40:28] 🌱 Fi̇ery barberry  -> Kalan: 4 sa 21 dk 13 sn
+[21:40:28] 🌱 Li̇ght tree      -> Kalan: 13 sa 7 dk 7 sn
+[21:40:28] 🌱 Dragon Fruit     -> Kalan: 15 sa 31 dk 44 sn
+[21:40:28] 🌱 Li̇ght tree      -> Kalan: 3 sa 13 dk 39 sn
+==================================================
+[21:40:28] 🕒 Ekin hazır! Doğal insan tepkisi için 56 sn bekleniyor...
+[21:41:24] ⚡ Bell pepper hasat ediliyor...
+[21:41:25] 🌱 Tohum hazırlığı: 49.8 saniye bekleniyor...
+[21:42:15] 🌱 [Lv3] Bell pepper ekiliyor...
+[21:42:15] 🌱 Tohum hazırlığı: 33.7 saniye bekleniyor...
+[21:42:51] ☕ Anti-Bot: Doğal oyuncu molası veriliyor (3 dakika)...
+
+==================================================
+[21:46:21] 🌱 Li̇ght tree      -> Kalan: 1 sa 8 dk 27 sn
+[21:46:21] 🌱 Melon            -> Kalan: 2 sa 1 dk 11 sn
+[21:46:21] 🌱 White Lily       -> Kalan: 1 sa 55 dk 43 sn
+[21:46:21] 🌱 Sunflower        -> Kalan: 23 dk 24 sn
+[21:46:21] 🌱 Bell pepper      -> Kalan: 58 dk 54 sn
+[21:46:21] 🌱 Fi̇ery barberry  -> Kalan: 4 sa 15 dk 20 sn
+[21:46:21] 🌱 Li̇ght tree      -> Kalan: 13 sa 1 dk 14 sn
+[21:46:21] 🌱 Dragon Fruit     -> Kalan: 15 sa 25 dk 51 sn
+[21:46:21] 🌱 Li̇ght tree      -> Kalan: 3 sa 7 dk 45 sn
+==================================================
+
+
+[22:10:12] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+
+==================================================
+[22:10:22] 🌱 Li̇ght tree      -> Kalan: 44 dk 26 sn
+[22:10:22] 🌱 Melon            -> Kalan: 1 sa 37 dk 10 sn
+[22:10:22] 🌱 White Lily       -> Kalan: 1 sa 31 dk 42 sn
+[22:10:22] 🌱 Bell pepper      -> Kalan: 34 dk 53 sn
+[22:10:22] 🌱 Fi̇ery barberry  -> Kalan: 3 sa 51 dk 19 sn
+[22:10:22] 🌱 Li̇ght tree      -> Kalan: 12 sa 37 dk 13 sn
+[22:10:22] 🌱 Dragon Fruit     -> Kalan: 15 sa 1 dk 50 sn
+[22:10:22] 🌱 Li̇ght tree      -> Kalan: 2 sa 43 dk 45 sn
+==================================================
+[22:10:22] 🕒 Ekin hazır! Doğal insan tepkisi için 77 sn bekleniyor...
+[22:11:39] ⚡ Sunflower hasat ediliyor...
+[22:11:40] 🌱 Tohum hazırlığı: 38.9 saniye bekleniyor...
+[22:12:19] 🌱 [Lv3] Sunflower ekiliyor...
+[22:12:20] 🌱 Tohum hazırlığı: 51.8 saniye bekleniyor...
+
+==================================================
+[22:13:15] 🌱 Li̇ght tree      -> Kalan: 41 dk 33 sn
+[22:13:15] 🌱 Sunflower        -> Kalan: 59 dk 5 sn
+[22:13:15] 🌱 Melon            -> Kalan: 1 sa 34 dk 17 sn
+[22:13:15] 🌱 Bell pepper      -> Kalan: 32 dk 0 sn
+[22:13:15] 🌱 White Lily       -> Kalan: 1 sa 28 dk 49 sn
+[22:13:15] 🌱 Fi̇ery barberry  -> Kalan: 3 sa 48 dk 26 sn
+[22:13:15] 🌱 Li̇ght tree      -> Kalan: 12 sa 34 dk 20 sn
+[22:13:15] 🌱 Dragon Fruit     -> Kalan: 14 sa 58 dk 57 sn
+[22:13:15] 🌱 Li̇ght tree      -> Kalan: 2 sa 40 dk 52 sn
+==================================================
+
+
+[22:45:43] ⚠️ Bağlantı Hatası: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+==================================================
+[22:45:55] 🌱 Li̇ght tree      -> Kalan: 8 dk 52 sn
+[22:45:55] 🌱 Melon            -> Kalan: 1 sa 1 dk 37 sn
+[22:45:55] 🌱 White Lily       -> Kalan: 56 dk 9 sn
+[22:45:55] 🌱 Sunflower        -> Kalan: 26 dk 25 sn
+[22:45:55] 🌱 Fi̇ery barberry  -> Kalan: 3 sa 15 dk 45 sn
+[22:45:55] 🌱 Li̇ght tree      -> Kalan: 12 sa 1 dk 39 sn
+[22:45:55] 🌱 Dragon Fruit     -> Kalan: 14 sa 26 dk 17 sn
+[22:45:55] 🌱 Li̇ght tree      -> Kalan: 2 sa 8 dk 11 sn
+==================================================
+[22:45:55] 🕒 Ekin hazır! Doğal insan tepkisi için 83 sn bekleniyor...
+[22:47:19] ⚡ Bell pepper hasat ediliyor...
+[22:47:19] 🌱 Tohum hazırlığı: 47.0 saniye bekleniyor...
+[22:48:06] 🌱 [Lv3] Bell pepper ekiliyor...
+[22:48:07] 🌱 Tohum hazırlığı: 59.5 saniye bekleniyor...
+[22:49:09] 🐾 Hayvan hazır! Doğal insan tepkisi için 76 sn bekleniyor...
+[22:50:26] 🧺 Pyronet hasat ediliyor...
+[22:50:26] 🌱 Tohum hazırlığı: 43.4 saniye bekleniyor...
+[22:51:10] 🥩 Yem Veriliyor: Pyronet -> Firebird Food...
+[22:51:10] 🌱 Tohum hazırlığı: 28.4 saniye bekleniyor...
+
+==================================================
+[22:51:39] 🌱 Li̇ght tree      -> Kalan: 5 dk 39 sn
+[22:51:39] 🌱 Sunflower        -> Kalan: 23 dk 11 sn
+[22:51:39] 🌱 Melon            -> Kalan: 58 dk 23 sn
+[22:51:39] 🌱 Bell pepper      -> Kalan: 1 sa 1 dk 58 sn
+[22:51:39] 🌱 White Lily       -> Kalan: 52 dk 55 sn
+[22:51:39] 🌱 Fi̇ery barberry  -> Kalan: 3 sa 12 dk 32 sn
+[22:51:39] 🌱 Li̇ght tree      -> Kalan: 11 sa 58 dk 26 sn
+[22:51:39] 🌱 Dragon Fruit     -> Kalan: 14 sa 23 dk 3 sn
+[22:51:39] 🌱 Li̇ght tree      -> Kalan: 2 sa 4 dk 57 sn
+==================================================
+
+
+[22:57:39] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+[22:57:49] 🐾 Hayvan hazır! Doğal insan tepkisi için 45 sn bekleniyor...
+[22:58:35] 🧺 Pyronet hasat ediliyor...
+[22:58:36] 🌱 Tohum hazırlığı: 45.5 saniye bekleniyor...
+[22:59:21] 🥩 Yem Veriliyor: Pyronet -> Firebird Food...
+[22:59:23] 🌱 Tohum hazırlığı: 24.2 saniye bekleniyor...
+
+==================================================
+[22:59:48] 🌱 Sunflower        -> Kalan: 14 dk 30 sn
+[22:59:48] 🌱 Melon            -> Kalan: 49 dk 43 sn
+[22:59:48] 🌱 Bell pepper      -> Kalan: 53 dk 17 sn
+[22:59:48] 🌱 White Lily       -> Kalan: 44 dk 14 sn
+[22:59:48] 🌱 Fi̇ery barberry  -> Kalan: 3 sa 3 dk 51 sn
+[22:59:48] 🌱 Li̇ght tree      -> Kalan: 11 sa 49 dk 45 sn
+[22:59:48] 🌱 Dragon Fruit     -> Kalan: 14 sa 14 dk 23 sn
+[22:59:48] 🌱 Li̇ght tree      -> Kalan: 1 sa 56 dk 17 sn
+==================================================
+[22:59:48] 🕒 Ekin hazır! Doğal insan tepkisi için 54 sn bekleniyor...
+[23:00:42] ⚡ Li̇ght tree hasat ediliyor...
+[23:00:42] 🌱 Tohum hazırlığı: 32.7 saniye bekleniyor...
+[23:01:15] 🌱 [Lv2] Li̇ght tree ekiliyor...
+[23:01:16] 🌱 Tohum hazırlığı: 51.5 saniye bekleniyor...
+
+==================================================
+[23:02:10] 🌱 Li̇ght tree      -> Kalan: 6 sa 54 dk 38 sn
+[23:02:10] 🌱 Melon            -> Kalan: 45 dk 22 sn
+[23:02:10] 🌱 White Lily       -> Kalan: 39 dk 54 sn
+[23:02:10] 🌱 Sunflower        -> Kalan: 10 dk 10 sn
+[23:02:10] 🌱 Bell pepper      -> Kalan: 48 dk 57 sn
+[23:02:10] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 59 dk 31 sn
+[23:02:10] 🌱 Li̇ght tree      -> Kalan: 11 sa 45 dk 24 sn
+[23:02:10] 🌱 Dragon Fruit     -> Kalan: 14 sa 10 dk 2 sn
+[23:02:10] 🌱 Li̇ght tree      -> Kalan: 1 sa 51 dk 56 sn
+==================================================
+
+
+[23:12:46] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+
+==================================================
+[23:12:56] 🌱 Li̇ght tree      -> Kalan: 6 sa 43 dk 53 sn
+[23:12:56] 🌱 Melon            -> Kalan: 34 dk 37 sn
+[23:12:56] 🌱 White Lily       -> Kalan: 29 dk 8 sn
+[23:12:56] 🌱 Bell pepper      -> Kalan: 38 dk 11 sn
+[23:12:56] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 48 dk 45 sn
+[23:12:56] 🌱 Li̇ght tree      -> Kalan: 11 sa 34 dk 39 sn
+[23:12:56] 🌱 Dragon Fruit     -> Kalan: 13 sa 59 dk 16 sn
+[23:12:56] 🌱 Li̇ght tree      -> Kalan: 1 sa 41 dk 11 sn
+==================================================
+[23:12:56] 🕒 Ekin hazır! Doğal insan tepkisi için 61 sn bekleniyor...
+[23:13:58] ⚡ Sunflower hasat ediliyor...
+[23:13:58] 🌱 Tohum hazırlığı: 32.6 saniye bekleniyor...
+[23:14:31] 🌱 [Lv3] Sunflower ekiliyor...
+[23:14:32] 🌱 Tohum hazırlığı: 42.1 saniye bekleniyor...
+
+==================================================
+[23:15:17] 🌱 Li̇ght tree      -> Kalan: 6 sa 41 dk 32 sn
+[23:15:17] 🌱 Melon            -> Kalan: 32 dk 15 sn
+[23:15:17] 🌱 White Lily       -> Kalan: 26 dk 47 sn
+[23:15:17] 🌱 Sunflower        -> Kalan: 59 dk 15 sn
+[23:15:17] 🌱 Bell pepper      -> Kalan: 35 dk 50 sn
+[23:15:17] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 46 dk 24 sn
+[23:15:17] 🌱 Li̇ght tree      -> Kalan: 11 sa 32 dk 18 sn
+[23:15:17] 🌱 Dragon Fruit     -> Kalan: 13 sa 56 dk 55 sn
+[23:15:17] 🌱 Li̇ght tree      -> Kalan: 1 sa 38 dk 49 sn
+==================================================
+
+
+[23:42:28] ⚠️ Bağlantı Hatası: HTTPSConnectionPool(host='chainers.io', port=443): Read timed out. (read timeout=10)
+
+==================================================
+[23:42:37] 🌱 Li̇ght tree      -> Kalan: 6 sa 14 dk 11 sn
+[23:42:37] 🌱 Melon            -> Kalan: 4 dk 55 sn
+[23:42:37] 🌱 Sunflower        -> Kalan: 31 dk 54 sn
+[23:42:37] 🌱 Bell pepper      -> Kalan: 8 dk 29 sn
+[23:42:37] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 19 dk 3 sn
+[23:42:37] 🌱 Li̇ght tree      -> Kalan: 11 sa 4 dk 57 sn
+[23:42:37] 🌱 Dragon Fruit     -> Kalan: 13 sa 29 dk 35 sn
+[23:42:37] 🌱 Li̇ght tree      -> Kalan: 1 sa 11 dk 29 sn
+==================================================
+[23:42:37] 🕒 Ekin hazır! Doğal insan tepkisi için 44 sn bekleniyor...
+[23:43:22] ⚡ White Lily hasat ediliyor...
+[23:43:22] 🌱 Tohum hazırlığı: 49.3 saniye bekleniyor...
+[23:44:12] 🌱 [Lv3] White Lily ekiliyor...
+[23:44:13] 🌱 Tohum hazırlığı: 48.2 saniye bekleniyor...
+
+==================================================
+[23:45:04] 🌱 Li̇ght tree      -> Kalan: 6 sa 11 dk 45 sn
+[23:45:04] 🌱 Melon            -> Kalan: 2 dk 28 sn
+[23:45:04] 🌱 White Lily       -> Kalan: 4 sa 59 dk 8 sn
+[23:45:04] 🌱 Sunflower        -> Kalan: 29 dk 28 sn
+[23:45:04] 🌱 Bell pepper      -> Kalan: 6 dk 3 sn
+[23:45:04] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 16 dk 37 sn
+[23:45:04] 🌱 Li̇ght tree      -> Kalan: 11 sa 2 dk 31 sn
+[23:45:04] 🌱 Dragon Fruit     -> Kalan: 13 sa 27 dk 8 sn
+[23:45:04] 🌱 Li̇ght tree      -> Kalan: 1 sa 9 dk 2 sn
+==================================================
+
+
+
+==================================================
+[23:47:52] 🌱 Li̇ght tree      -> Kalan: 6 sa 8 dk 56 sn
+[23:47:52] 🌱 White Lily       -> Kalan: 4 sa 56 dk 20 sn
+[23:47:52] 🌱 Sunflower        -> Kalan: 26 dk 39 sn
+[23:47:52] 🌱 Bell pepper      -> Kalan: 3 dk 15 sn
+[23:47:52] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 13 dk 49 sn
+[23:47:52] 🌱 Li̇ght tree      -> Kalan: 10 sa 59 dk 42 sn
+[23:47:52] 🌱 Dragon Fruit     -> Kalan: 13 sa 24 dk 20 sn
+[23:47:52] 🌱 Li̇ght tree      -> Kalan: 1 sa 6 dk 14 sn
+==================================================
+[23:47:52] 🕒 Ekin hazır! Doğal insan tepkisi için 35 sn bekleniyor...
+[23:48:28] ⚡ Melon hasat ediliyor...
+[23:48:28] 🌱 Tohum hazırlığı: 51.3 saniye bekleniyor...
+[23:49:20] 🌱 [Lv4] Melon ekiliyor...
+[23:49:20] 🌱 Tohum hazırlığı: 57.1 saniye bekleniyor...
+[23:50:19] ☕ Anti-Bot: Doğal oyuncu molası veriliyor (3 dakika)...
+
+==================================================
+[23:54:16] 🌱 Li̇ght tree      -> Kalan: 6 sa 2 dk 32 sn
+[23:54:16] 🌱 Sunflower        -> Kalan: 20 dk 15 sn
+[23:54:16] 🌱 Melon            -> Kalan: 4 sa 15 dk 4 sn
+[23:54:16] 🌱 White Lily       -> Kalan: 4 sa 49 dk 56 sn
+[23:54:16] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 7 dk 24 sn
+[23:54:16] 🌱 Li̇ght tree      -> Kalan: 10 sa 53 dk 18 sn
+[23:54:16] 🌱 Dragon Fruit     -> Kalan: 13 sa 17 dk 56 sn
+[23:54:16] 🌱 Li̇ght tree      -> Kalan: 59 dk 50 sn
+==================================================
+[23:54:16] 🕒 Ekin hazır! Doğal insan tepkisi için 59 sn bekleniyor...
+[23:55:16] ⚡ Bell pepper hasat ediliyor...
+[23:55:16] 🌱 Tohum hazırlığı: 55.3 saniye bekleniyor...
+[23:56:12] 🌱 [Lv3] Bell pepper ekiliyor...
+[23:56:12] 🌱 Tohum hazırlığı: 53.3 saniye bekleniyor...
+
+==================================================
+[23:57:08] 🌱 Li̇ght tree      -> Kalan: 5 sa 59 dk 40 sn
+[23:57:08] 🌱 Sunflower        -> Kalan: 17 dk 23 sn
+[23:57:08] 🌱 Melon            -> Kalan: 4 sa 12 dk 12 sn
+[23:57:08] 🌱 Bell pepper      -> Kalan: 1 sa 2 dk 4 sn
+[23:57:08] 🌱 White Lily       -> Kalan: 4 sa 47 dk 4 sn
+[23:57:08] 🌱 Fi̇ery barberry  -> Kalan: 2 sa 4 dk 32 sn
+[23:57:08] 🌱 Li̇ght tree      -> Kalan: 10 sa 50 dk 26 sn
+[23:57:08] 🌱 Dragon Fruit     -> Kalan: 13 sa 15 dk 4 sn
+[23:57:08] 🌱 Li̇ght tree      -> Kalan: 56 dk 58 sn
+==================================================
+
+
+[00:14:58] 📦 GitHub Yedeklemesi Başlatılıyor [Geçen Süre: 6.3 saat]...

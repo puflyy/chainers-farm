@@ -41,20 +41,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp\" alt=\"Dragon Fruit\">"
     },
-    "67dc227a59b878f195998ede": {
-        "name": "Mangold",
-        "seed_id": "67dc227a59b878f195998ede",
-        "duration": 5400,
-        "hours": 1,
-        "minutes": 30,
-        "time_str": "1 sa 30 dk",
-        "tier": 1,
-        "bp_min": "0.46",
-        "stock": 1,
-        "code_key": "common_mangold_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp\" alt=\"Mangold\">"
-    },
     "673e0c942c7bfd708b352483": {
         "name": "Watermelon",
         "seed_id": "673e0c942c7bfd708b352483",
@@ -600,5 +586,33 @@
         "code_key": "common_bell_pepper_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp\" alt=\"Bell pepper\">"
+    },
+    "67dc227a59b878f195998ee4": {
+        "name": "Mangold",
+        "seed_id": "67dc227a59b878f195998ee4",
+        "duration": 5400,
+        "hours": 1,
+        "minutes": 30,
+        "time_str": "1 sa 30 dk",
+        "tier": 3,
+        "bp_min": "1.81",
+        "stock": 1,
+        "code_key": "rare_mangold_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp\" alt=\"Mangold\">"
+    },
+    "\"6801032feafb0e6b32164700": {
+        "name": "Whi̇te li̇ly",
+        "seed_id": "\"6801032feafb0e6b32164700",
+        "duration": 18000,
+        "hours": 5,
+        "minutes": 0,
+        "time_str": "5 sa 0 dk",
+        "tier": 1,
+        "bp_min": "0.63",
+        "stock": 1,
+        "code_key": "common_whi̇te_li̇ly_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp\" alt=\"Whi̇te li̇ly\">"
     }
 }
