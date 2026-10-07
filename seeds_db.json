@@ -41,20 +41,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp\" alt=\"Dragon Fruit\">"
     },
-    "673e0c942c7bfd708b352483": {
-        "name": "Watermelon",
-        "seed_id": "673e0c942c7bfd708b352483",
-        "duration": 6720,
-        "hours": 1,
-        "minutes": 52,
-        "time_str": "1 sa 52 dk",
-        "tier": 2,
-        "bp_min": "0.89",
-        "stock": 1,
-        "code_key": "uncommon_watermelon_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp\" alt=\"Watermelon\">"
-    },
     "67dc227a59b878f195998e66": {
         "name": "Ginger",
         "seed_id": "67dc227a59b878f195998e66",
@@ -194,20 +180,6 @@
         "code_key": "common_garlic_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garlic\">"
-    },
-    "673e0c942c7bfd708b35247d": {
-        "name": "Watermelon",
-        "seed_id": "673e0c942c7bfd708b35247d",
-        "duration": 6720,
-        "hours": 1,
-        "minutes": 52,
-        "time_str": "1 sa 52 dk",
-        "tier": 1,
-        "bp_min": "0.46",
-        "stock": 1,
-        "code_key": "common_watermelon_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp\" alt=\"Watermelon\">"
     },
     "67dc227a59b878f195998e06": {
         "name": "Chili Pepper",
@@ -456,7 +428,7 @@
         "time_str": "6 sa 8 dk",
         "tier": 1,
         "bp_min": "1.80",
-        "stock": 1,
+        "stock": 2,
         "code_key": "common_li̇ght_tree_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
@@ -614,5 +586,33 @@
         "code_key": "common_whi̇te_li̇ly_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp\" alt=\"Whi̇te li̇ly\">"
+    },
+    "673e0c942c7bfd708b352489": {
+        "name": "Watermelon",
+        "seed_id": "673e0c942c7bfd708b352489",
+        "duration": 6720,
+        "hours": 1,
+        "minutes": 52,
+        "time_str": "1 sa 52 dk",
+        "tier": 3,
+        "bp_min": "1.75",
+        "stock": 1,
+        "code_key": "rare_watermelon_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp\" alt=\"Watermelon\">"
+    },
+    "673e0c942c7bfd708b3524b9": {
+        "name": "Sunflower",
+        "seed_id": "673e0c942c7bfd708b3524b9",
+        "duration": 3600,
+        "hours": 1,
+        "minutes": 0,
+        "time_str": "1 sa 0 dk",
+        "tier": 1,
+        "bp_min": "0.53",
+        "stock": 1,
+        "code_key": "common_sunflower_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
     }
 }
