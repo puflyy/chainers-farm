@@ -614,5 +614,33 @@
         "code_key": "common_sunflower_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
+    },
+    "673e0c942c7bfd708b35245f": {
+        "name": "Peas",
+        "seed_id": "673e0c942c7bfd708b35245f",
+        "duration": 240,
+        "hours": 0,
+        "minutes": 4,
+        "time_str": "4 dk",
+        "tier": 1,
+        "bp_min": "0.25",
+        "stock": 1,
+        "code_key": "common_peas_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/peas/shared/images/peas_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/peas/shared/images/peas_shared_icon.webp\" alt=\"Peas\">"
+    },
+    "673e0c942c7bfd708b352405": {
+        "name": "Corn",
+        "seed_id": "673e0c942c7bfd708b352405",
+        "duration": 360,
+        "hours": 0,
+        "minutes": 6,
+        "time_str": "6 dk",
+        "tier": 1,
+        "bp_min": "0.33",
+        "stock": 1,
+        "code_key": "common_corn_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/corn/shared/images/corn_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/corn/shared/images/corn_shared_icon.webp\" alt=\"Corn\">"
     }
 }
