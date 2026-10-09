@@ -214,7 +214,7 @@ load_seeds()
 
 BED_TARGETS = {}
 TOTAL_ACTIONS = 0
-NEXT_BREAK_ACTION = random.randint(12, 18)
+NEXT_BREAK_ACTION = random.randint(8, 15)
 
 
 ANIMAL_NAME_MAP = {
@@ -234,6 +234,7 @@ ANIMAL_NAME_MAP = {
     "peacock_feather": "Max Peace",
     "proto_peacock": "Max Peace (Proto)",
     "ghosts": "Ghosty",
+    "ghost": "Ghosty",
     "ectoplasm": "Ghosty",
     "otters": "Otto",
     "shell": "Otto",
@@ -291,7 +292,7 @@ ANIMAL_TO_EXACT_ROOT = {
     "rookie dasher": "deers",
     "charlotte": "piggies",
     "max peace": "peacocks",
-    "ghosty": "ghosts",
+    "ghosty": "ectoplasm",
     "otto": "otters",
     "cthulhu watcher": "mirror_watchers"
 }
@@ -1885,11 +1886,11 @@ def run_farm():
     while True:
         check_auto_backup()  # Rutin 6 saatlik yedek kontrolü
         if TOTAL_ACTIONS >= NEXT_BREAK_ACTION:
-            break_time = random.randint(120, 300)
+            break_time = random.randint(480, 1080)
             log(f"☕ Anti-Bot: Doğal oyuncu molası veriliyor ({break_time // 60} dakika)...")
             time.sleep(break_time)
             TOTAL_ACTIONS = 0
-            NEXT_BREAK_ACTION = random.randint(12, 18)
+            NEXT_BREAK_ACTION = random.randint(8, 15)
 
         beds = fetch_live_garden()
         if beds is None:
@@ -2082,7 +2083,7 @@ def run_farm():
 
         if active_crops:
             target_crop = min(active_crops, key=lambda x: x["diff"])
-            sleep_time = max(int(target_crop["diff"]) + random.randint(10, 30), 5)
+            sleep_time = min(max(int(target_crop["diff"]) + random.randint(10, 20), 5), random.randint(60, 90))
             live_countdown(target_crop["name"], sleep_time)
         else:
             time.sleep(random.uniform(10.0, 20.0))

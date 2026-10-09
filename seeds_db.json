@@ -41,20 +41,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp\" alt=\"Dragon Fruit\">"
     },
-    "67dc227a59b878f195998e66": {
-        "name": "Ginger",
-        "seed_id": "67dc227a59b878f195998e66",
-        "duration": 28140,
-        "hours": 7,
-        "minutes": 49,
-        "time_str": "7 sa 49 dk",
-        "tier": 2,
-        "bp_min": "0.86",
-        "stock": 1,
-        "code_key": "uncommon_ginger_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp\" alt=\"Ginger\">"
-    },
     "67dc227a59b878f195998d76": {
         "name": "Broccoli",
         "seed_id": "67dc227a59b878f195998d76",
@@ -223,34 +209,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cabbage/shared/images/cabbage_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cabbage/shared/images/cabbage_shared_icon.webp\" alt=\"Cabbage\">"
     },
-    "67dc227a59b878f195998dac": {
-        "name": "Cauliflower",
-        "seed_id": "67dc227a59b878f195998dac",
-        "duration": 1920,
-        "hours": 0,
-        "minutes": 32,
-        "time_str": "32 dk",
-        "tier": 1,
-        "bp_min": "0.47",
-        "stock": 1,
-        "code_key": "common_cauliflower_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauliflower\">"
-    },
-    "67dc227a59b878f195998e24": {
-        "name": "Sweet Potato",
-        "seed_id": "67dc227a59b878f195998e24",
-        "duration": 14640,
-        "hours": 4,
-        "minutes": 4,
-        "time_str": "4 sa 4 dk",
-        "tier": 1,
-        "bp_min": "0.44",
-        "stock": 1,
-        "code_key": "common_sweet_potato_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp\" alt=\"Sweet Potato\">"
-    },
     "67dc227a59b878f195998d70": {
         "name": "Broccoli",
         "seed_id": "67dc227a59b878f195998d70",
@@ -358,7 +316,7 @@
         "time_str": "9 sa 11 dk",
         "tier": 3,
         "bp_min": "28.46",
-        "stock": 1,
+        "stock": 2,
         "code_key": "rare_li̇ght_tree_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
@@ -475,20 +433,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/black_lotus/shared/images/black_lotus_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/black_lotus/shared/images/black_lotus_shared_icon.webp\" alt=\"Black lotus\">"
     },
-    "67dc227a59b878f195998db2": {
-        "name": "Cauli̇flower",
-        "seed_id": "67dc227a59b878f195998db2",
-        "duration": 1920,
-        "hours": 0,
-        "minutes": 32,
-        "time_str": "32 dk",
-        "tier": 2,
-        "bp_min": "0.84",
-        "stock": 1,
-        "code_key": "uncommon_cauli̇flower_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauli̇flower\">"
-    },
     "673e0c942c7bfd708b352447": {
         "name": "Strawberry",
         "seed_id": "673e0c942c7bfd708b352447",
@@ -502,20 +446,6 @@
         "code_key": "uncommon_strawberry_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp\" alt=\"Strawberry\">"
-    },
-    "67dc227a59b878f195998e60": {
-        "name": "Gi̇nger",
-        "seed_id": "67dc227a59b878f195998e60",
-        "duration": 28140,
-        "hours": 7,
-        "minutes": 49,
-        "time_str": "7 sa 49 dk",
-        "tier": 1,
-        "bp_min": "0.42",
-        "stock": 1,
-        "code_key": "common_gi̇nger_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp\" alt=\"Gi̇nger\">"
     },
     "683dbe2ba9ec974575a4bf2a": {
         "name": "Melon",
@@ -642,5 +572,61 @@
         "code_key": "common_corn_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/corn/shared/images/corn_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/corn/shared/images/corn_shared_icon.webp\" alt=\"Corn\">"
+    },
+    "67dc227a59b878f195998e6c": {
+        "name": "Gi̇nger",
+        "seed_id": "67dc227a59b878f195998e6c",
+        "duration": 28140,
+        "hours": 7,
+        "minutes": 49,
+        "time_str": "7 sa 49 dk",
+        "tier": 3,
+        "bp_min": "1.69",
+        "stock": 1,
+        "code_key": "rare_gi̇nger_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp\" alt=\"Gi̇nger\">"
+    },
+    "67dc227a59b878f195998db8": {
+        "name": "Cauli̇flower",
+        "seed_id": "67dc227a59b878f195998db8",
+        "duration": 1920,
+        "hours": 0,
+        "minutes": 32,
+        "time_str": "32 dk",
+        "tier": 3,
+        "bp_min": "1.91",
+        "stock": 1,
+        "code_key": "rare_cauli̇flower_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauli̇flower\">"
+    },
+    "67dc227a59b878f195998e2a": {
+        "name": "Sweet potato",
+        "seed_id": "67dc227a59b878f195998e2a",
+        "duration": 14640,
+        "hours": 4,
+        "minutes": 4,
+        "time_str": "4 sa 4 dk",
+        "tier": 2,
+        "bp_min": "0.88",
+        "stock": 1,
+        "code_key": "uncommon_sweet_potato_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp\" alt=\"Sweet potato\">"
+    },
+    "67dc227a59b878f195998eba": {
+        "name": "Spi̇nach",
+        "seed_id": "67dc227a59b878f195998eba",
+        "duration": 1380,
+        "hours": 0,
+        "minutes": 23,
+        "time_str": "23 dk",
+        "tier": 1,
+        "bp_min": "0.48",
+        "stock": 1,
+        "code_key": "common_spi̇nach_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp\" alt=\"Spi̇nach\">"
     }
 }

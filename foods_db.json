@@ -33,7 +33,7 @@
         "name": "Ectoplasm Food",
         "food_id": "6abce61e4256b50d4349e7ee",
         "tier": 1,
-        "time_str": "30m",
+        "time_str": "5h 44m",
         "bp_min": 49.93,
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/common/images/ectoplasm_common_previewimageurl.webp",
         "stock": 30,
@@ -48,5 +48,25 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/fire_feathers/common/images/fire_feathers_common_previewimageurl.webp",
         "stock": 37,
         "code_key": "common_firebird_food"
+    },
+    "epic_ectoplasm_food": {
+        "name": "Ectoplasm Food",
+        "food_id": "6abce61e4256b50d4349e800",
+        "tier": 4,
+        "time_str": "5h 44m",
+        "bp_min": 109.79,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/epic/images/ectoplasm_epic_previewimageurl.webp",
+        "stock": 19,
+        "code_key": "epic_ectoplasm_food"
+    },
+    "common_bird_food": {
+        "name": "Bird Food",
+        "food_id": "665f2698534176fcd32f9a7d",
+        "tier": 1,
+        "time_str": "30m",
+        "bp_min": 0.6,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/common/images/egg_common_previewimageurl.webp",
+        "stock": 10,
+        "code_key": "common_bird_food"
     }
 }
