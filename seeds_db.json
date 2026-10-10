@@ -628,5 +628,19 @@
         "code_key": "common_spi̇nach_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp\" alt=\"Spi̇nach\">"
+    },
+    "67dc227a59b878f195998ed8": {
+        "name": "Mangold",
+        "seed_id": "67dc227a59b878f195998ed8",
+        "duration": 5400,
+        "hours": 1,
+        "minutes": 30,
+        "time_str": "1 sa 30 dk",
+        "tier": 1,
+        "bp_min": "0.46",
+        "stock": 1,
+        "code_key": "common_mangold_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp\" alt=\"Mangold\">"
     }
 }
