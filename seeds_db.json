@@ -41,20 +41,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/dragon_fruit/shared/images/dragon_fruit_shared_icon.webp\" alt=\"Dragon Fruit\">"
     },
-    "67dc227a59b878f195998d76": {
-        "name": "Broccoli",
-        "seed_id": "67dc227a59b878f195998d76",
-        "duration": 19680,
-        "hours": 5,
-        "minutes": 28,
-        "time_str": "5 sa 28 dk",
-        "tier": 2,
-        "bp_min": "0.85",
-        "stock": 1,
-        "code_key": "uncommon_broccoli_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli\">"
-    },
     "67dc227a59b878f195998dd0": {
         "name": "Onion",
         "seed_id": "67dc227a59b878f195998dd0",
@@ -208,20 +194,6 @@
         "code_key": "common_cabbage_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cabbage/shared/images/cabbage_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cabbage/shared/images/cabbage_shared_icon.webp\" alt=\"Cabbage\">"
-    },
-    "67dc227a59b878f195998d70": {
-        "name": "Broccoli",
-        "seed_id": "67dc227a59b878f195998d70",
-        "duration": 19680,
-        "hours": 5,
-        "minutes": 28,
-        "time_str": "5 sa 28 dk",
-        "tier": 1,
-        "bp_min": "0.43",
-        "stock": 1,
-        "code_key": "common_broccoli_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli\">"
     },
     "69285140f803f06b82ab22e0": {
         "name": "Patisson",
@@ -642,5 +614,19 @@
         "code_key": "common_mangold_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/mangold/shared/images/mangold_shared_icon.webp\" alt=\"Mangold\">"
+    },
+    "67dc227a59b878f195998d7c": {
+        "name": "Broccoli̇",
+        "seed_id": "67dc227a59b878f195998d7c",
+        "duration": 19680,
+        "hours": 5,
+        "minutes": 28,
+        "time_str": "5 sa 28 dk",
+        "tier": 3,
+        "bp_min": "1.73",
+        "stock": 1,
+        "code_key": "rare_broccoli̇_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli̇\">"
     }
 }
