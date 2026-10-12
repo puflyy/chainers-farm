@@ -384,6 +384,11 @@ def fetch_live_garden():
             log("❌ [401/403] Oturum/Token Süresi Dolmuş! Panelden cURL yapıştırıp güncelleyin.")
         else:
             log(f"⚠️ Bahçe API Hatası ({res.status_code}): {res.text[:120]}")
+        if res.status_code == 503 or "<!DOCTYPE html>" in res.text:
+            import time, random
+            bekleme = random.randint(1200, 1980)
+            log(f"💤 Bakım (503) algılandı! Güvenlik için {bekleme//60} dk {bekleme%60} sn uykudayız...")
+            time.sleep(bekleme)
     except Exception as e:
         log(f"⚠️ Bağlantı Hatası: {e}")
     return None
