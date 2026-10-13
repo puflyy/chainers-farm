@@ -106,7 +106,7 @@
         "time_str": "20 sa",
         "tier": 1,
         "bp_min": "1.14",
-        "stock": 2,
+        "stock": 3,
         "code_key": "common_fiery_barberry_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/fiery_barberry/shared/images/fiery_barberry_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/fiery_barberry/shared/images/fiery_barberry_shared_icon.webp\" alt=\"Fiery Barberry\">"
@@ -503,20 +503,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp\" alt=\"Watermelon\">"
     },
-    "673e0c942c7bfd708b3524b9": {
-        "name": "Sunflower",
-        "seed_id": "673e0c942c7bfd708b3524b9",
-        "duration": 3600,
-        "hours": 1,
-        "minutes": 0,
-        "time_str": "1 sa 0 dk",
-        "tier": 1,
-        "bp_min": "0.53",
-        "stock": 1,
-        "code_key": "common_sunflower_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
-    },
     "673e0c942c7bfd708b35245f": {
         "name": "Peas",
         "seed_id": "673e0c942c7bfd708b35245f",
@@ -628,5 +614,19 @@
         "code_key": "rare_broccoli̇_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli̇\">"
+    },
+    "673e0c942c7bfd708b352507": {
+        "name": "Sunflower",
+        "seed_id": "673e0c942c7bfd708b352507",
+        "duration": 3600,
+        "hours": 1,
+        "minutes": 0,
+        "time_str": "1 sa 0 dk",
+        "tier": 2,
+        "bp_min": "1.17",
+        "stock": 1,
+        "code_key": "uncommon_sunflower_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
     }
 }
