@@ -628,5 +628,19 @@
         "code_key": "uncommon_sunflower_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
+    },
+    "67dc227a59b878f195998e7e": {
+        "name": "Radi̇sh",
+        "seed_id": "67dc227a59b878f195998e7e",
+        "duration": 480,
+        "hours": 0,
+        "minutes": 8,
+        "time_str": "8 dk",
+        "tier": 1,
+        "bp_min": "0.25",
+        "stock": 1,
+        "code_key": "common_radi̇sh_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/radish/shared/images/radish_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/radish/shared/images/radish_shared_icon.webp\" alt=\"Radi̇sh\">"
     }
 }
