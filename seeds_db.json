@@ -642,5 +642,19 @@
         "code_key": "common_radi̇sh_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/radish/shared/images/radish_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/radish/shared/images/radish_shared_icon.webp\" alt=\"Radi̇sh\">"
+    },
+    "67dc227a59b878f195998e60": {
+        "name": "Gi̇nger",
+        "seed_id": "67dc227a59b878f195998e60",
+        "duration": 28140,
+        "hours": 7,
+        "minutes": 49,
+        "time_str": "7 sa 49 dk",
+        "tier": 1,
+        "bp_min": "0.42",
+        "stock": 1,
+        "code_key": "common_gi̇nger_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp\" alt=\"Gi̇nger\">"
     }
 }
