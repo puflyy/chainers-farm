@@ -190,7 +190,7 @@
         "time_str": "4 sa",
         "tier": 1,
         "bp_min": "0.10",
-        "stock": 2,
+        "stock": 3,
         "code_key": "common_patisson_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp\" alt=\"Patisson\">"
