@@ -139,20 +139,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/eggplant/shared/images/eggplant_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/eggplant/shared/images/eggplant_shared_icon.webp\" alt=\"Eggplant\">"
     },
-    "67dc227a59b878f195998e06": {
-        "name": "Chili Pepper",
-        "seed_id": "67dc227a59b878f195998e06",
-        "duration": 10860,
-        "hours": 3,
-        "minutes": 1,
-        "time_str": "3 sa 1 dk",
-        "tier": 1,
-        "bp_min": "0.45",
-        "stock": 1,
-        "code_key": "common_chili_pepper_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp\" alt=\"Chili Pepper\">"
-    },
     "6a3e7e10c9263d5e1dac306e": {
         "name": "Physalis",
         "seed_id": "6a3e7e10c9263d5e1dac306e",
@@ -302,7 +288,7 @@
         "time_str": "7 sa 9 dk",
         "tier": 2,
         "bp_min": "5.59",
-        "stock": 1,
+        "stock": 2,
         "code_key": "uncommon_li̇ght_tree_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
@@ -335,20 +321,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp\" alt=\"Melon\">"
     },
-    "6ab282d700c19f4431021f91": {
-        "name": "Li̇ght tree",
-        "seed_id": "6ab282d700c19f4431021f91",
-        "duration": 22080,
-        "hours": 6,
-        "minutes": 8,
-        "time_str": "6 sa 8 dk",
-        "tier": 1,
-        "bp_min": "1.80",
-        "stock": 2,
-        "code_key": "common_li̇ght_tree_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
-    },
     "6ab282d700c19f4431021fa9": {
         "name": "Li̇ght tree",
         "seed_id": "6ab282d700c19f4431021fa9",
@@ -362,20 +334,6 @@
         "code_key": "legendary_li̇ght_tree_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
-    },
-    "6900ddfce2a48c502f309993": {
-        "name": "Jack pumpki̇n",
-        "seed_id": "6900ddfce2a48c502f309993",
-        "duration": 86400,
-        "hours": 24,
-        "minutes": 0,
-        "time_str": "24 sa 0 dk",
-        "tier": 1,
-        "bp_min": "0.52",
-        "stock": 1,
-        "code_key": "common_jack_pumpki̇n_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp\" alt=\"Jack pumpki̇n\">"
     },
     "673e0c942c7bfd708b35249b": {
         "name": "Black lotus",
@@ -559,20 +517,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp\" alt=\"Sweet potato\">"
     },
-    "67dc227a59b878f195998eba": {
-        "name": "Spi̇nach",
-        "seed_id": "67dc227a59b878f195998eba",
-        "duration": 1380,
-        "hours": 0,
-        "minutes": 23,
-        "time_str": "23 dk",
-        "tier": 1,
-        "bp_min": "0.48",
-        "stock": 1,
-        "code_key": "common_spi̇nach_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp\" alt=\"Spi̇nach\">"
-    },
     "67dc227a59b878f195998ed8": {
         "name": "Mangold",
         "seed_id": "67dc227a59b878f195998ed8",
@@ -656,5 +600,75 @@
         "code_key": "common_garli̇c_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garli̇c\">"
+    },
+    "67dc227a59b878f195998ec0": {
+        "name": "Spi̇nach",
+        "seed_id": "67dc227a59b878f195998ec0",
+        "duration": 1380,
+        "hours": 0,
+        "minutes": 23,
+        "time_str": "23 dk",
+        "tier": 2,
+        "bp_min": "0.96",
+        "stock": 1,
+        "code_key": "uncommon_spi̇nach_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp\" alt=\"Spi̇nach\">"
+    },
+    "6900ddfce2a48c502f309999": {
+        "name": "Jack pumpki̇n",
+        "seed_id": "6900ddfce2a48c502f309999",
+        "duration": 72000,
+        "hours": 20,
+        "minutes": 0,
+        "time_str": "20 sa 0 dk",
+        "tier": 2,
+        "bp_min": "1.21",
+        "stock": 1,
+        "code_key": "uncommon_jack_pumpki̇n_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp\" alt=\"Jack pumpki̇n\">"
+    },
+    "67dc227a59b878f195998e42": {
+        "name": "Garli̇c",
+        "seed_id": "67dc227a59b878f195998e42",
+        "duration": 4680,
+        "hours": 1,
+        "minutes": 18,
+        "time_str": "1 sa 18 dk",
+        "tier": 1,
+        "bp_min": "0.46",
+        "stock": 1,
+        "code_key": "common_garli̇c_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garli̇c\">"
+    },
+    "67dc227a59b878f195998e0c": {
+        "name": "Chi̇li̇ pepper",
+        "seed_id": "67dc227a59b878f195998e0c",
+        "duration": 10860,
+        "hours": 3,
+        "minutes": 1,
+        "time_str": "3 sa 1 dk",
+        "tier": 2,
+        "bp_min": "0.88",
+        "stock": 1,
+        "code_key": "uncommon_chi̇li̇_pepper_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp\" alt=\"Chi̇li̇ pepper\">"
+    },
+    "67dc227a59b878f195998ef6": {
+        "name": "Leek",
+        "seed_id": "67dc227a59b878f195998ef6",
+        "duration": 2700,
+        "hours": 0,
+        "minutes": 45,
+        "time_str": "45 dk",
+        "tier": 1,
+        "bp_min": "0.47",
+        "stock": 1,
+        "code_key": "common_leek_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/leek/shared/images/leek_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/leek/shared/images/leek_shared_icon.webp\" alt=\"Leek\">"
     }
 }
