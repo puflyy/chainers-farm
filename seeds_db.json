@@ -111,20 +111,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/fiery_barberry/shared/images/fiery_barberry_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/fiery_barberry/shared/images/fiery_barberry_shared_icon.webp\" alt=\"Fiery Barberry\">"
     },
-    "68824771915623f3dcc1fafd": {
-        "name": "Pineapple",
-        "seed_id": "68824771915623f3dcc1fafd",
-        "duration": 25200,
-        "hours": 7,
-        "minutes": 0,
-        "time_str": "7 sa",
-        "tier": 1,
-        "bp_min": "0.60",
-        "stock": 1,
-        "code_key": "common_pineapple_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp\" alt=\"Pineapple\">"
-    },
     "673e0c942c7bfd708b352423": {
         "name": "Eggplant",
         "seed_id": "673e0c942c7bfd708b352423",
@@ -656,5 +642,19 @@
         "code_key": "rare_garli̇c_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garli̇c\">"
+    },
+    "68824771915623f3dcc1fb03": {
+        "name": "Pi̇neapple",
+        "seed_id": "68824771915623f3dcc1fb03",
+        "duration": 23400,
+        "hours": 6,
+        "minutes": 30,
+        "time_str": "6 sa 30 dk",
+        "tier": 2,
+        "bp_min": "1.28",
+        "stock": 1,
+        "code_key": "uncommon_pi̇neapple_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp\" alt=\"Pi̇neapple\">"
     }
 }
