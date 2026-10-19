@@ -56,7 +56,7 @@
         "time_str": "5h 44m",
         "bp_min": 109.79,
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/epic/images/ectoplasm_epic_previewimageurl.webp",
-        "stock": 39,
+        "stock": 37,
         "code_key": "epic_ectoplasm_food"
     },
     "common_bird_food": {
@@ -66,7 +66,7 @@
         "time_str": "30m",
         "bp_min": 0.6,
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/egg/common/images/egg_common_previewimageurl.webp",
-        "stock": 8,
+        "stock": 95,
         "code_key": "common_bird_food"
     },
     "rare_ectoplasm_food": {

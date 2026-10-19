@@ -656,5 +656,19 @@
         "code_key": "uncommon_pi̇neapple_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/pineapple/shared/images/pineapple_shared_icon.webp\" alt=\"Pi̇neapple\">"
+    },
+    "6a87292a1c0d284dcab6e185": {
+        "name": "Juveni̇le spectral trout",
+        "seed_id": "6a87292a1c0d284dcab6e185",
+        "duration": 1740,
+        "hours": 0,
+        "minutes": 29,
+        "time_str": "29 dk",
+        "tier": 1,
+        "bp_min": "26.14",
+        "stock": 1,
+        "code_key": "common_juveni̇le_spectral_trout_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spectral_trout/shared/images/spectral_trout_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spectral_trout/shared/images/spectral_trout_shared_icon.webp\" alt=\"Juveni̇le spectral trout\">"
     }
 }
