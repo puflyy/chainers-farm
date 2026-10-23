@@ -176,7 +176,7 @@
         "time_str": "12 dk",
         "tier": 1,
         "bp_min": "0.17",
-        "stock": 1,
+        "stock": 2,
         "code_key": "common_star_anise_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/star_anise/shared/images/star_anise_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/star_anise/shared/images/star_anise_shared_icon.webp\" alt=\"Star Anise\">"

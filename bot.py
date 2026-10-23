@@ -850,24 +850,64 @@ HTML_PAGE = """<!DOCTYPE html>
         let sortDirections = { level: 1, time: 1, bp: 1 };
 
         function onLibrarySelectChange() {
-            const cropName = document.getElementById('libraryCropSelect').value;
+            const cropName = document.getElementById("libraryCropSelect").value;
             if (!cropName || !CROPS_LIB[cropName]) return;
 
             const cData = CROPS_LIB[cropName];
-            const tier = document.getElementById('inputSeedTier').value || "1";
+            const tier = document.getElementById("inputSeedTier").value || "1";
             
-            document.getElementById('inputSeedName').value = cropName;
-            document.getElementById('inputSeedImage').value = cData.image || '';
+            document.getElementById("inputSeedName").value = cropName;
+            document.getElementById("inputSeedImage").value = cData.image || "";
+
+            const tierPrefixes = { "1": "common_", "2": "uncommon_", "3": "rare_", "4": "epic_", "5": "legendary_" };
+            
+            // Noktalı i ve aksanlı gizli Unicode karakterlerini standart ASCII harflere çevir
+            const cleanSlug = cropName.normalize("NFD")
+                                      .replace(/[\u0300-\u036f]/g, "")
+                                      .toLowerCase()
+                                      .trim()
+                                      .replace(/\s+/g, "_");
+
+            const pref = tierPrefixes[tier] || "common_";
+            
+            const codeCand1 = pref + cleanSlug + "_seeds";
+            const codeCand2 = pref + cleanSlug;
 
             if (cData.tiers && cData.tiers[tier]) {
                 const tInfo = cData.tiers[tier];
-                document.getElementById('inputSeedHours').value = tInfo.hours || 0;
-                document.getElementById('inputSeedMinutes').value = tInfo.minutes || 0;
-                document.getElementById('inputSeedBp').value = tInfo.bp_min || '0.50';
-                document.getElementById('inputSeedCode').value = tInfo.code || '';
+                document.getElementById("inputSeedHours").value = tInfo.hours || 0;
+                document.getElementById("inputSeedMinutes").value = tInfo.minutes || 0;
+                document.getElementById("inputSeedBp").value = tInfo.bp_min || "0.50";
+                
+                let resolvedCode = tInfo.code || "";
+                if (!resolvedCode) {
+                    if (typeof SEED_CATALOG_IDS !== "undefined" && SEED_CATALOG_IDS[codeCand1]) {
+                        resolvedCode = codeCand1;
+                    } else if (typeof SEED_CATALOG_IDS !== "undefined" && SEED_CATALOG_IDS[codeCand2]) {
+                        resolvedCode = codeCand2;
+                    } else {
+                        resolvedCode = codeCand1;
+                    }
+                }
+                document.getElementById("inputSeedCode").value = resolvedCode;
+
+                let autoId = "";
+                if (typeof SEED_CATALOG_IDS !== "undefined") {
+                    autoId = SEED_CATALOG_IDS[resolvedCode] || SEED_CATALOG_IDS[codeCand1] || SEED_CATALOG_IDS[codeCand2] || "";
+                }
+                if (!autoId && tInfo.id) autoId = tInfo.id;
+                if (!autoId && tInfo.seed_id) autoId = tInfo.seed_id;
+
+                document.getElementById("inputSeedId").value = autoId;
+            } else {
+                let autoId = "";
+                if (typeof SEED_CATALOG_IDS !== "undefined") {
+                    autoId = SEED_CATALOG_IDS[codeCand1] || SEED_CATALOG_IDS[codeCand2] || "";
+                }
+                document.getElementById("inputSeedCode").value = codeCand1;
+                document.getElementById("inputSeedId").value = autoId;
             }
         }
-
         function onTierChange() {
             onLibrarySelectChange();
         }
