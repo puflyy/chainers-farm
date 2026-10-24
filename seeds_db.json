@@ -670,5 +670,33 @@
         "code_key": "epic_cauli̇flower_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauli̇flower\">"
+    },
+    "673e0c942c7bfd708b3524b9": {
+        "name": "Sunflower",
+        "seed_id": "673e0c942c7bfd708b3524b9",
+        "duration": 3600,
+        "hours": 1,
+        "minutes": 0,
+        "time_str": "1 sa 0 dk",
+        "tier": 1,
+        "bp_min": "0.53",
+        "stock": 1,
+        "code_key": "common_sunflower_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
+    },
+    "67dc227a59b878f195998db2": {
+        "name": "Cauli̇flower",
+        "seed_id": "67dc227a59b878f195998db2",
+        "duration": 1920,
+        "hours": 0,
+        "minutes": 32,
+        "time_str": "32 dk",
+        "tier": 2,
+        "bp_min": "0.84",
+        "stock": 1,
+        "code_key": "uncommon_cauli̇flower_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauli̇flower\">"
     }
 }
