@@ -377,20 +377,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/snowdrop/shared/images/snowdrop_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/snowdrop/shared/images/snowdrop_shared_icon.webp\" alt=\"Snowdrop\">"
     },
-    "67dc227a59b878f195998de8": {
-        "name": "Bell pepper",
-        "seed_id": "67dc227a59b878f195998de8",
-        "duration": 3780,
-        "hours": 1,
-        "minutes": 3,
-        "time_str": "1 sa 3 dk",
-        "tier": 1,
-        "bp_min": "0.46",
-        "stock": 1,
-        "code_key": "common_bell_pepper_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp\" alt=\"Bell pepper\">"
-    },
     "67dc227a59b878f195998ee4": {
         "name": "Mangold",
         "seed_id": "67dc227a59b878f195998ee4",
@@ -698,5 +684,19 @@
         "code_key": "uncommon_cauli̇flower_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauli̇flower\">"
+    },
+    "67dc227a59b878f195998dee": {
+        "name": "Bell pepper",
+        "seed_id": "67dc227a59b878f195998dee",
+        "duration": 3780,
+        "hours": 1,
+        "minutes": 3,
+        "time_str": "1 sa 3 dk",
+        "tier": 2,
+        "bp_min": "0.92",
+        "stock": 1,
+        "code_key": "uncommon_bell_pepper_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp\" alt=\"Bell pepper\">"
     }
 }
