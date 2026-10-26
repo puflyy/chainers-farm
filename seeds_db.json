@@ -78,7 +78,7 @@
         "time_str": "3 sa 50 dk",
         "tier": 2,
         "bp_min": "0.50",
-        "stock": 1,
+        "stock": 2,
         "code_key": "uncommon_patisson_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp\" alt=\"Patisson\">"
@@ -92,7 +92,7 @@
         "time_str": "7 sa 55 dk",
         "tier": 1,
         "bp_min": "26.95",
-        "stock": 2,
+        "stock": 3,
         "code_key": "common_sugarcane_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sugarcane/shared/images/sugarcane_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sugarcane/shared/images/sugarcane_shared_icon.webp\" alt=\"Sugarcane\">"
@@ -698,5 +698,61 @@
         "code_key": "uncommon_bell_pepper_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/bell_pepper/shared/images/bell_pepper_shared_icon.webp\" alt=\"Bell pepper\">"
+    },
+    "6a7c6ec3e0ba09e95a5531b6": {
+        "name": "Juveni̇le trout",
+        "seed_id": "6a7c6ec3e0ba09e95a5531b6",
+        "duration": 900,
+        "hours": 0,
+        "minutes": 15,
+        "time_str": "15 dk",
+        "tier": 1,
+        "bp_min": "25.40",
+        "stock": 1,
+        "code_key": "common_juveni̇le_trout_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/trout/shared/images/trout_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/trout/shared/images/trout_shared_icon.webp\" alt=\"Juveni̇le trout\">"
+    },
+    "6900ddfce2a48c502f309993": {
+        "name": "Jack pumpki̇n",
+        "seed_id": "6900ddfce2a48c502f309993",
+        "duration": 86400,
+        "hours": 24,
+        "minutes": 0,
+        "time_str": "24 sa 0 dk",
+        "tier": 1,
+        "bp_min": "0.52",
+        "stock": 1,
+        "code_key": "common_jack_pumpki̇n_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/jack_pumpkin/shared/images/jack_pumpkin_shared_icon.webp\" alt=\"Jack pumpki̇n\">"
+    },
+    "6ab282d700c19f4431021f91": {
+        "name": "Li̇ght tree",
+        "seed_id": "6ab282d700c19f4431021f91",
+        "duration": 22080,
+        "hours": 6,
+        "minutes": 8,
+        "time_str": "6 sa 8 dk",
+        "tier": 1,
+        "bp_min": "1.80",
+        "stock": 2,
+        "code_key": "common_li̇ght_tree_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
+    },
+    "67dc227a59b878f195998e42": {
+        "name": "Garli̇c",
+        "seed_id": "67dc227a59b878f195998e42",
+        "duration": 4680,
+        "hours": 1,
+        "minutes": 18,
+        "time_str": "1 sa 18 dk",
+        "tier": 1,
+        "bp_min": "0.46",
+        "stock": 1,
+        "code_key": "common_garli̇c_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garli̇c\">"
     }
 }
