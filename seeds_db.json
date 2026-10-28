@@ -349,20 +349,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp\" alt=\"Strawberry\">"
     },
-    "683dbe2ba9ec974575a4bf2a": {
-        "name": "Melon",
-        "seed_id": "683dbe2ba9ec974575a4bf2a",
-        "duration": 18000,
-        "hours": 5,
-        "minutes": 0,
-        "time_str": "5 sa 0 dk",
-        "tier": 1,
-        "bp_min": "0.57",
-        "stock": 1,
-        "code_key": "common_melon_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp\" alt=\"Melon\">"
-    },
     "67dc227a59b878f195998e9c": {
         "name": "Snowdrop",
         "seed_id": "67dc227a59b878f195998e9c",
@@ -754,5 +740,19 @@
         "code_key": "common_garli̇c_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garli̇c\">"
+    },
+    "683dbe2ba9ec974575a4bf30": {
+        "name": "Melon",
+        "seed_id": "683dbe2ba9ec974575a4bf30",
+        "duration": 17400,
+        "hours": 4,
+        "minutes": 50,
+        "time_str": "4 sa 50 dk",
+        "tier": 2,
+        "bp_min": "1.10",
+        "stock": 1,
+        "code_key": "uncommon_melon_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp\" alt=\"Melon\">"
     }
 }
