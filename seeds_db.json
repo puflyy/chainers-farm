@@ -13,20 +13,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp\" alt=\"White Lily\">"
     },
-    "673e0c942c7bfd708b3524c5": {
-        "name": "Sunflower",
-        "seed_id": "673e0c942c7bfd708b3524c5",
-        "duration": 3600,
-        "hours": 1,
-        "minutes": 0,
-        "time_str": "1 sa",
-        "tier": 3,
-        "bp_min": "2.77",
-        "stock": 1,
-        "code_key": "rare_sunflower_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
-    },
     "69945ab309abeb19e22a83ff": {
         "name": "Dragon Fruit",
         "seed_id": "69945ab309abeb19e22a83ff",
@@ -274,7 +260,7 @@
         "time_str": "7 sa 9 dk",
         "tier": 2,
         "bp_min": "5.59",
-        "stock": 3,
+        "stock": 4,
         "code_key": "uncommon_li̇ght_tree_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/luminous_sap/shared/images/luminous_sap_shared_icon.webp\" alt=\"Li̇ght tree\">"
@@ -489,20 +475,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli̇\">"
     },
-    "673e0c942c7bfd708b352507": {
-        "name": "Sunflower",
-        "seed_id": "673e0c942c7bfd708b352507",
-        "duration": 3600,
-        "hours": 1,
-        "minutes": 0,
-        "time_str": "1 sa 0 dk",
-        "tier": 2,
-        "bp_min": "1.17",
-        "stock": 1,
-        "code_key": "uncommon_sunflower_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
-    },
     "67dc227a59b878f195998e7e": {
         "name": "Radi̇sh",
         "seed_id": "67dc227a59b878f195998e7e",
@@ -643,20 +615,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/cauliflower/shared/images/cauliflower_shared_icon.webp\" alt=\"Cauli̇flower\">"
     },
-    "673e0c942c7bfd708b3524b9": {
-        "name": "Sunflower",
-        "seed_id": "673e0c942c7bfd708b3524b9",
-        "duration": 3600,
-        "hours": 1,
-        "minutes": 0,
-        "time_str": "1 sa 0 dk",
-        "tier": 1,
-        "bp_min": "0.53",
-        "stock": 1,
-        "code_key": "common_sunflower_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
-    },
     "67dc227a59b878f195998db2": {
         "name": "Cauli̇flower",
         "seed_id": "67dc227a59b878f195998db2",
@@ -754,5 +712,33 @@
         "code_key": "uncommon_melon_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp\" alt=\"Melon\">"
+    },
+    "673e0c942c7bfd708b3524cb": {
+        "name": "Sunflower",
+        "seed_id": "673e0c942c7bfd708b3524cb",
+        "duration": 3600,
+        "hours": 1,
+        "minutes": 0,
+        "time_str": "1 sa 0 dk",
+        "tier": 4,
+        "bp_min": "6.27",
+        "stock": 1,
+        "code_key": "epic_sunflower_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sunflower/shared/images/sunflower_shared_icon.webp\" alt=\"Sunflower\">"
+    },
+    "67dc227a59b878f195998d70": {
+        "name": "Broccoli̇",
+        "seed_id": "67dc227a59b878f195998d70",
+        "duration": 19680,
+        "hours": 5,
+        "minutes": 28,
+        "time_str": "5 sa 28 dk",
+        "tier": 1,
+        "bp_min": "0.43",
+        "stock": 1,
+        "code_key": "common_broccoli̇_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli̇\">"
     }
 }
