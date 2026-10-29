@@ -433,20 +433,6 @@
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/ginger/shared/images/ginger_shared_icon.webp\" alt=\"Gi̇nger\">"
     },
-    "67dc227a59b878f195998e2a": {
-        "name": "Sweet potato",
-        "seed_id": "67dc227a59b878f195998e2a",
-        "duration": 14640,
-        "hours": 4,
-        "minutes": 4,
-        "time_str": "4 sa 4 dk",
-        "tier": 2,
-        "bp_min": "0.88",
-        "stock": 1,
-        "code_key": "uncommon_sweet_potato_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp\" alt=\"Sweet potato\">"
-    },
     "67dc227a59b878f195998ed8": {
         "name": "Mangold",
         "seed_id": "67dc227a59b878f195998ed8",
@@ -740,5 +726,19 @@
         "code_key": "common_broccoli̇_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/broccoli/shared/images/broccoli_shared_icon.webp\" alt=\"Broccoli̇\">"
+    },
+    "67dc227a59b878f195998e30": {
+        "name": "Sweet potato",
+        "seed_id": "67dc227a59b878f195998e30",
+        "duration": 14640,
+        "hours": 4,
+        "minutes": 4,
+        "time_str": "4 sa 4 dk",
+        "tier": 3,
+        "bp_min": "1.73",
+        "stock": 1,
+        "code_key": "rare_sweet_potato_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/sweet_potato/shared/images/sweet_potato_shared_icon.webp\" alt=\"Sweet potato\">"
     }
 }
