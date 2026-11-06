@@ -36,7 +36,7 @@
         "time_str": "5h 44m",
         "bp_min": 49.93,
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/common/images/ectoplasm_common_previewimageurl.webp",
-        "stock": 26,
+        "stock": 39,
         "code_key": "common_ectoplasm_food"
     },
     "common_firebird_food": {
@@ -56,7 +56,7 @@
         "time_str": "5h 44m",
         "bp_min": 109.79,
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/epic/images/ectoplasm_epic_previewimageurl.webp",
-        "stock": 85,
+        "stock": 83,
         "code_key": "epic_ectoplasm_food"
     },
     "common_bird_food": {
@@ -76,7 +76,27 @@
         "time_str": "30m",
         "bp_min": 70.98,
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/rare/images/ectoplasm_rare_previewimageurl.webp",
-        "stock": 25,
+        "stock": 33,
         "code_key": "rare_ectoplasm_food"
+    },
+    "legendary_ectoplasm_food": {
+        "name": "Ectoplasm Food",
+        "food_id": "6abce61e4256b50d4349e806",
+        "tier": 5,
+        "time_str": "30m",
+        "bp_min": 116.5,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/legendary/images/ectoplasm_legendary_previewimageurl.webp",
+        "stock": 32,
+        "code_key": "legendary_ectoplasm_food"
+    },
+    "uncommon_ectoplasm_food": {
+        "name": "Ectoplasm Food",
+        "food_id": "6abce61e4256b50d4349e7f4",
+        "tier": 2,
+        "time_str": "30m",
+        "bp_min": 61.21,
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/animal_food/ectoplasm/uncommon/images/ectoplasm_uncommon_previewimageurl.webp",
+        "stock": 30,
+        "code_key": "uncommon_ectoplasm_food"
     }
 }
