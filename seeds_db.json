@@ -768,5 +768,47 @@
         "code_key": "uncommon_garli̇c_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/garlic/shared/images/garlic_shared_icon.webp\" alt=\"Garli̇c\">"
+    },
+    "67dc227a59b878f195998e12": {
+        "name": "Chi̇li̇ pepper",
+        "seed_id": "67dc227a59b878f195998e12",
+        "duration": 10860,
+        "hours": 3,
+        "minutes": 1,
+        "time_str": "3 sa 1 dk",
+        "tier": 3,
+        "bp_min": "1.77",
+        "stock": 1,
+        "code_key": "rare_chi̇li̇_pepper_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp\" alt=\"Chi̇li̇ pepper\">"
+    },
+    "67dc227a59b878f195998efc": {
+        "name": "Leek",
+        "seed_id": "67dc227a59b878f195998efc",
+        "duration": 2700,
+        "hours": 0,
+        "minutes": 45,
+        "time_str": "45 dk",
+        "tier": 2,
+        "bp_min": "0.96",
+        "stock": 1,
+        "code_key": "uncommon_leek_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/leek/shared/images/leek_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/leek/shared/images/leek_shared_icon.webp\" alt=\"Leek\">"
+    },
+    "673e0c942c7bfd708b352441": {
+        "name": "Strawberry",
+        "seed_id": "673e0c942c7bfd708b352441",
+        "duration": 120,
+        "hours": 0,
+        "minutes": 2,
+        "time_str": "2 dk",
+        "tier": 1,
+        "bp_min": "0.50",
+        "stock": 1,
+        "code_key": "common_strawberry_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/strawberry/shared/images/strawberry_shared_icon.webp\" alt=\"Strawberry\">"
     }
 }
