@@ -824,5 +824,47 @@
         "code_key": "common_watermelon_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/watermelon/shared/images/watermelon_shared_icon.webp\" alt=\"Watermelon\">"
+    },
+    "6ae8863e99b448e3b8a1e1da": {
+        "name": "Glowing grass",
+        "seed_id": "6ae8863e99b448e3b8a1e1da",
+        "duration": 2460,
+        "hours": 0,
+        "minutes": 41,
+        "time_str": "41 dk",
+        "tier": 1,
+        "bp_min": "30.30",
+        "stock": 1,
+        "code_key": "common_glowing_grass_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/glowing_grass/shared/images/glowing_grass_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/glowing_grass/shared/images/glowing_grass_shared_icon.webp\" alt=\"Glowing grass\">"
+    },
+    "6abfafd83202113b4293f231": {
+        "name": "Dark tree",
+        "seed_id": "6abfafd83202113b4293f231",
+        "duration": 22080,
+        "hours": 6,
+        "minutes": 8,
+        "time_str": "6 sa 8 dk",
+        "tier": 1,
+        "bp_min": "30.13",
+        "stock": 1,
+        "code_key": "common_shadow_sap_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/shadow_sap/shared/images/shadow_sap_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/shadow_sap/shared/images/shadow_sap_shared_icon.webp\" alt=\"Dark tree\">"
+    },
+    "6aec62fde661def7703b43c3": {
+        "name": "Radiant calla lily",
+        "seed_id": "6aec62fde661def7703b43c3",
+        "duration": 51600,
+        "hours": 14,
+        "minutes": 20,
+        "time_str": "14 sa 20 dk",
+        "tier": 1,
+        "bp_min": "2.00",
+        "stock": 1,
+        "code_key": "common_radiant_calla_lily_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/radiant_calla_lily/shared/images/radiant_calla_lily_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/radiant_calla_lily/shared/images/radiant_calla_lily_shared_icon.webp\" alt=\"Radiant calla lily\">"
     }
 }

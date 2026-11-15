@@ -5,31 +5,33 @@
             "1": {
                 "hours": 0,
                 "minutes": 15,
-                "bp_min": "25.40",
-                "code": "common_juveni̇le_trout_seeds"
+                "bp_min": "26.10",
+                "code": "common_juveni̇le_trout_seeds",
+                "id": "6a7c6ec3e0ba09e95a5531b6",
+                "seed_id": "6a7c6ec3e0ba09e95a5531b6"
             },
             "2": {
                 "hours": 0,
                 "minutes": 30,
-                "bp_min": "25.60",
+                "bp_min": "26.30",
                 "code": "uncommon_juveni̇le_trout_seeds"
             },
             "3": {
                 "hours": 0,
                 "minutes": 59,
-                "bp_min": "26.32",
+                "bp_min": "26.59",
                 "code": "rare_juveni̇le_trout_seeds"
             },
             "4": {
                 "hours": 1,
                 "minutes": 57,
-                "bp_min": "26.96",
+                "bp_min": "27.00",
                 "code": "epic_juveni̇le_trout_seeds"
             },
             "5": {
                 "hours": 3,
                 "minutes": 54,
-                "bp_min": "27.45",
+                "bp_min": "27.50",
                 "code": "legendary_juveni̇le_trout_seeds"
             }
         }
@@ -40,19 +42,21 @@
             "1": {
                 "hours": 0,
                 "minutes": 29,
-                "bp_min": "26.14",
-                "code": "common_juveni̇le_spectral_trout_seeds"
+                "bp_min": "26.32",
+                "code": "common_juveni̇le_spectral_trout_seeds",
+                "id": "6a87292a1c0d284dcab6e185",
+                "seed_id": "6a87292a1c0d284dcab6e185"
             },
             "2": {
                 "hours": 0,
                 "minutes": 59,
-                "bp_min": "26.58",
+                "bp_min": "26.67",
                 "code": "uncommon_juveni̇le_spectral_trout_seeds"
             },
             "3": {
                 "hours": 1,
                 "minutes": 57,
-                "bp_min": "26.85",
+                "bp_min": "26.99",
                 "code": "rare_juveni̇le_spectral_trout_seeds"
             },
             "4": {
@@ -64,7 +68,7 @@
             "5": {
                 "hours": 7,
                 "minutes": 47,
-                "bp_min": "27.65",
+                "bp_min": "27.66",
                 "code": "legendary_juveni̇le_spectral_trout_seeds"
             }
         }
@@ -75,7 +79,7 @@
             "1": {
                 "hours": 7,
                 "minutes": 55,
-                "bp_min": "26.95",
+                "bp_min": "27.00",
                 "code": "common_sugarcane_seeds",
                 "id": "6a6b1e1913ccd7c96918bf6b",
                 "seed_id": "6a6b1e1913ccd7c96918bf6b"
@@ -228,7 +232,9 @@
                 "hours": 0,
                 "minutes": 8,
                 "bp_min": "0.25",
-                "code": "common_radi̇sh_seeds"
+                "code": "common_radi̇sh_seeds",
+                "id": "67dc227a59b878f195998e7e",
+                "seed_id": "67dc227a59b878f195998e7e"
             },
             "2": {
                 "hours": 0,
@@ -263,19 +269,25 @@
                 "hours": 1,
                 "minutes": 18,
                 "bp_min": "0.46",
-                "code": "common_garli̇c_seeds"
+                "code": "common_garli̇c_seeds",
+                "id": "67dc227a59b878f195998e42",
+                "seed_id": "67dc227a59b878f195998e42"
             },
             "2": {
                 "hours": 1,
                 "minutes": 18,
                 "bp_min": "0.76",
-                "code": "uncommon_garli̇c_seeds"
+                "code": "uncommon_garli̇c_seeds",
+                "id": "67dc227a59b878f195998e48",
+                "seed_id": "67dc227a59b878f195998e48"
             },
             "3": {
                 "hours": 1,
                 "minutes": 18,
                 "bp_min": "1.50",
-                "code": "rare_garli̇c_seeds"
+                "code": "rare_garli̇c_seeds",
+                "id": "67dc227a59b878f195998e4e",
+                "seed_id": "67dc227a59b878f195998e4e"
             },
             "4": {
                 "hours": 1,
@@ -306,7 +318,9 @@
                 "hours": 1,
                 "minutes": 3,
                 "bp_min": "0.92",
-                "code": "uncommon_bell_pepper_seeds"
+                "code": "uncommon_bell_pepper_seeds",
+                "id": "67dc227a59b878f195998dee",
+                "seed_id": "67dc227a59b878f195998dee"
             },
             "3": {
                 "hours": 1,
@@ -337,7 +351,9 @@
                 "hours": 0,
                 "minutes": 2,
                 "bp_min": "0.50",
-                "code": "common_strawberry_seeds"
+                "code": "common_strawberry_seeds",
+                "id": "673e0c942c7bfd708b352441",
+                "seed_id": "673e0c942c7bfd708b352441"
             },
             "2": {
                 "hours": 0,
@@ -374,7 +390,9 @@
                 "hours": 7,
                 "minutes": 49,
                 "bp_min": "0.42",
-                "code": "common_gi̇nger_seeds"
+                "code": "common_gi̇nger_seeds",
+                "id": "67dc227a59b878f195998e60",
+                "seed_id": "67dc227a59b878f195998e60"
             },
             "2": {
                 "hours": 7,
@@ -386,7 +404,9 @@
                 "hours": 7,
                 "minutes": 49,
                 "bp_min": "1.69",
-                "code": "rare_gi̇nger_seeds"
+                "code": "rare_gi̇nger_seeds",
+                "id": "67dc227a59b878f195998e6c",
+                "seed_id": "67dc227a59b878f195998e6c"
             },
             "4": {
                 "hours": 7,
@@ -409,13 +429,17 @@
                 "hours": 0,
                 "minutes": 32,
                 "bp_min": "0.47",
-                "code": "common_cauli̇flower_seeds"
+                "code": "common_cauli̇flower_seeds",
+                "id": "67dc227a59b878f195998dac",
+                "seed_id": "67dc227a59b878f195998dac"
             },
             "2": {
                 "hours": 0,
                 "minutes": 32,
                 "bp_min": "0.84",
-                "code": "uncommon_cauli̇flower_seeds"
+                "code": "uncommon_cauli̇flower_seeds",
+                "id": "67dc227a59b878f195998db2",
+                "seed_id": "67dc227a59b878f195998db2"
             },
             "3": {
                 "hours": 0,
@@ -427,7 +451,9 @@
                 "hours": 0,
                 "minutes": 32,
                 "bp_min": "3.53",
-                "code": "epic_cauli̇flower_seeds"
+                "code": "epic_cauli̇flower_seeds",
+                "id": "67dc227a59b878f195998f48",
+                "seed_id": "67dc227a59b878f195998f48"
             },
             "5": {
                 "hours": 0,
@@ -444,7 +470,9 @@
                 "hours": 5,
                 "minutes": 28,
                 "bp_min": "0.43",
-                "code": "common_broccoli̇_seeds"
+                "code": "common_broccoli̇_seeds",
+                "id": "67dc227a59b878f195998d70",
+                "seed_id": "67dc227a59b878f195998d70"
             },
             "2": {
                 "hours": 5,
@@ -456,7 +484,9 @@
                 "hours": 5,
                 "minutes": 28,
                 "bp_min": "1.73",
-                "code": "rare_broccoli̇_seeds"
+                "code": "rare_broccoli̇_seeds",
+                "id": "67dc227a59b878f195998d7c",
+                "seed_id": "67dc227a59b878f195998d7c"
             },
             "4": {
                 "hours": 5,
@@ -479,7 +509,9 @@
                 "hours": 4,
                 "minutes": 4,
                 "bp_min": "0.44",
-                "code": "common_sweet_potato_seeds"
+                "code": "common_sweet_potato_seeds",
+                "id": "67dc227a59b878f195998e24",
+                "seed_id": "67dc227a59b878f195998e24"
             },
             "2": {
                 "hours": 4,
@@ -493,7 +525,9 @@
                 "hours": 4,
                 "minutes": 4,
                 "bp_min": "1.73",
-                "code": "rare_sweet_potato_seeds"
+                "code": "rare_sweet_potato_seeds",
+                "id": "67dc227a59b878f195998e30",
+                "seed_id": "67dc227a59b878f195998e30"
             },
             "4": {
                 "hours": 4,
@@ -522,13 +556,17 @@
                 "hours": 3,
                 "minutes": 1,
                 "bp_min": "0.88",
-                "code": "uncommon_chi̇li̇_pepper_seeds"
+                "code": "uncommon_chi̇li̇_pepper_seeds",
+                "id": "67dc227a59b878f195998e0c",
+                "seed_id": "67dc227a59b878f195998e0c"
             },
             "3": {
                 "hours": 3,
                 "minutes": 1,
                 "bp_min": "1.77",
-                "code": "rare_chi̇li̇_pepper_seeds"
+                "code": "rare_chi̇li̇_pepper_seeds",
+                "id": "67dc227a59b878f195998e12",
+                "seed_id": "67dc227a59b878f195998e12"
             },
             "4": {
                 "hours": 3,
@@ -631,7 +669,9 @@
                 "hours": 1,
                 "minutes": 30,
                 "bp_min": "0.89",
-                "code": "uncommon_mangold_seeds"
+                "code": "uncommon_mangold_seeds",
+                "id": "67dc227a59b878f195998ede",
+                "seed_id": "67dc227a59b878f195998ede"
             },
             "3": {
                 "hours": 1,
@@ -662,19 +702,25 @@
                 "hours": 0,
                 "minutes": 15,
                 "bp_min": "0.47",
-                "code": "common_oni̇on_seeds"
+                "code": "common_oni̇on_seeds",
+                "id": "67dc227a59b878f195998dca",
+                "seed_id": "67dc227a59b878f195998dca"
             },
             "2": {
                 "hours": 0,
                 "minutes": 15,
                 "bp_min": "0.87",
-                "code": "uncommon_oni̇on_seeds"
+                "code": "uncommon_oni̇on_seeds",
+                "id": "67dc227a59b878f195998dd0",
+                "seed_id": "67dc227a59b878f195998dd0"
             },
             "3": {
                 "hours": 0,
                 "minutes": 15,
                 "bp_min": "1.73",
-                "code": "rare_oni̇on_seeds"
+                "code": "rare_oni̇on_seeds",
+                "id": "67dc227a59b878f195998dd6",
+                "seed_id": "67dc227a59b878f195998dd6"
             },
             "4": {
                 "hours": 0,
@@ -697,7 +743,9 @@
                 "hours": 1,
                 "minutes": 52,
                 "bp_min": "0.46",
-                "code": "common_watermelon_seeds"
+                "code": "common_watermelon_seeds",
+                "id": "673e0c942c7bfd708b35247d",
+                "seed_id": "673e0c942c7bfd708b35247d"
             },
             "2": {
                 "hours": 1,
@@ -742,7 +790,9 @@
                 "hours": 0,
                 "minutes": 45,
                 "bp_min": "0.96",
-                "code": "uncommon_leek_seeds"
+                "code": "uncommon_leek_seeds",
+                "id": "67dc227a59b878f195998efc",
+                "seed_id": "67dc227a59b878f195998efc"
             },
             "3": {
                 "hours": 0,
@@ -814,7 +864,9 @@
                 "hours": 0,
                 "minutes": 23,
                 "bp_min": "0.96",
-                "code": "uncommon_spi̇nach_seeds"
+                "code": "uncommon_spi̇nach_seeds",
+                "id": "67dc227a59b878f195998ec0",
+                "seed_id": "67dc227a59b878f195998ec0"
             },
             "3": {
                 "hours": 0,
@@ -878,7 +930,9 @@
                 "hours": 2,
                 "minutes": 53,
                 "bp_min": "0.80",
-                "code": "common_physali̇s_seeds"
+                "code": "common_physali̇s_seeds",
+                "id": "6a3e7e10c9263d5e1dac306e",
+                "seed_id": "6a3e7e10c9263d5e1dac306e"
             },
             "2": {
                 "hours": 8,
@@ -901,7 +955,7 @@
             "5": {
                 "hours": 12,
                 "minutes": 6,
-                "bp_min": "26.17",
+                "bp_min": "26.20",
                 "code": "legendary_physali̇s_seeds"
             }
         }
@@ -912,7 +966,7 @@
             "1": {
                 "hours": 0,
                 "minutes": 25,
-                "bp_min": "1.48",
+                "bp_min": "1.52",
                 "code": "common_basi̇l_seeds"
             },
             "2": {
@@ -948,7 +1002,9 @@
                 "hours": 20,
                 "minutes": 0,
                 "bp_min": "1.14",
-                "code": "common_fi̇ery_barberry_seeds"
+                "code": "common_fi̇ery_barberry_seeds",
+                "id": "6a997a87146b5c4a5f9c2811",
+                "seed_id": "6a997a87146b5c4a5f9c2811"
             },
             "2": {
                 "hours": 16,
@@ -960,7 +1016,9 @@
                 "hours": 13,
                 "minutes": 0,
                 "bp_min": "13.70",
-                "code": "rare_fi̇ery_barberry_seeds"
+                "code": "rare_fi̇ery_barberry_seeds",
+                "id": "6a997a87146b5c4a5f9c281d",
+                "seed_id": "6a997a87146b5c4a5f9c281d"
             },
             "4": {
                 "hours": 11,
@@ -983,31 +1041,39 @@
                 "hours": 6,
                 "minutes": 8,
                 "bp_min": "1.80",
-                "code": "common_li̇ght_tree_seeds"
+                "code": "common_li̇ght_tree_seeds",
+                "id": "6ab282d700c19f4431021f91",
+                "seed_id": "6ab282d700c19f4431021f91"
             },
             "2": {
                 "hours": 7,
                 "minutes": 9,
-                "bp_min": "5.59",
-                "code": "uncommon_li̇ght_tree_seeds"
+                "bp_min": "5.60",
+                "code": "uncommon_li̇ght_tree_seeds",
+                "id": "6ab282d700c19f4431021f97",
+                "seed_id": "6ab282d700c19f4431021f97"
             },
             "3": {
                 "hours": 9,
                 "minutes": 11,
-                "bp_min": "28.46",
-                "code": "rare_li̇ght_tree_seeds"
+                "bp_min": "28.50",
+                "code": "rare_li̇ght_tree_seeds",
+                "id": "6ab282d700c19f4431021f9d",
+                "seed_id": "6ab282d700c19f4431021f9d"
             },
             "4": {
                 "hours": 12,
                 "minutes": 4,
-                "bp_min": "29.06",
+                "bp_min": "29.10",
                 "code": "epic_li̇ght_tree_seeds"
             },
             "5": {
                 "hours": 15,
                 "minutes": 7,
-                "bp_min": "30.02",
-                "code": "legendary_li̇ght_tree_seeds"
+                "bp_min": "30.05",
+                "code": "legendary_li̇ght_tree_seeds",
+                "id": "6ab282d700c19f4431021fa9",
+                "seed_id": "6ab282d700c19f4431021fa9"
             }
         }
     },
@@ -1023,25 +1089,25 @@
             "2": {
                 "hours": 3,
                 "minutes": 28,
-                "bp_min": "40.92",
+                "bp_min": "41.00",
                 "code": "uncommon_fern_seeds"
             },
             "3": {
                 "hours": 5,
                 "minutes": 12,
-                "bp_min": "42.92",
+                "bp_min": "43.00",
                 "code": "rare_fern_seeds"
             },
             "4": {
                 "hours": 7,
                 "minutes": 48,
-                "bp_min": "45.94",
+                "bp_min": "46.00",
                 "code": "epic_fern_seeds"
             },
             "5": {
                 "hours": 11,
                 "minutes": 42,
-                "bp_min": "49.96",
+                "bp_min": "50.00",
                 "code": "legendary_fern_seeds"
             }
         }
@@ -1134,7 +1200,7 @@
             "3": {
                 "hours": 1,
                 "minutes": 20,
-                "bp_min": "3.13",
+                "bp_min": "3.12",
                 "code": "rare_blueberry_seeds"
             },
             "4": {
@@ -1230,7 +1296,9 @@
                 "hours": 1,
                 "minutes": 0,
                 "bp_min": "0.53",
-                "code": "common_sunflower_seeds"
+                "code": "common_sunflower_seeds",
+                "id": "673e0c942c7bfd708b3524b9",
+                "seed_id": "673e0c942c7bfd708b3524b9"
             },
             "2": {
                 "hours": 1,
@@ -1283,7 +1351,9 @@
                 "hours": 4,
                 "minutes": 40,
                 "bp_min": "2.36",
-                "code": "rare_melon_seeds"
+                "code": "rare_melon_seeds",
+                "id": "683dbe2ba9ec974575a4bf36",
+                "seed_id": "683dbe2ba9ec974575a4bf36"
             },
             "4": {
                 "hours": 4,
@@ -1308,13 +1378,17 @@
                 "hours": 7,
                 "minutes": 0,
                 "bp_min": "0.60",
-                "code": "common_pi̇neapple_seeds"
+                "code": "common_pi̇neapple_seeds",
+                "id": "68824771915623f3dcc1fafd",
+                "seed_id": "68824771915623f3dcc1fafd"
             },
             "2": {
                 "hours": 6,
                 "minutes": 30,
                 "bp_min": "1.28",
-                "code": "uncommon_pi̇neapple_seeds"
+                "code": "uncommon_pi̇neapple_seeds",
+                "id": "68824771915623f3dcc1fb03",
+                "seed_id": "68824771915623f3dcc1fb03"
             },
             "3": {
                 "hours": 6,
@@ -1343,19 +1417,25 @@
                 "hours": 5,
                 "minutes": 0,
                 "bp_min": "0.63",
-                "code": "common_whi̇te_li̇ly_seeds"
+                "code": "common_whi̇te_li̇ly_seeds",
+                "id": "6801032feafb0e6b32164700",
+                "seed_id": "6801032feafb0e6b32164700"
             },
             "2": {
                 "hours": 5,
                 "minutes": 0,
                 "bp_min": "1.33",
-                "code": "uncommon_whi̇te_li̇ly_seeds"
+                "code": "uncommon_whi̇te_li̇ly_seeds",
+                "id": "6801032feafb0e6b32164706",
+                "seed_id": "6801032feafb0e6b32164706"
             },
             "3": {
                 "hours": 5,
                 "minutes": 0,
                 "bp_min": "3.23",
-                "code": "rare_whi̇te_li̇ly_seeds"
+                "code": "rare_whi̇te_li̇ly_seeds",
+                "id": "6801032feafb0e6b3216470c",
+                "seed_id": "6801032feafb0e6b3216470c"
             },
             "4": {
                 "hours": 5,
@@ -1378,13 +1458,17 @@
                 "hours": 24,
                 "minutes": 0,
                 "bp_min": "0.52",
-                "code": "common_jack_pumpki̇n_seeds"
+                "code": "common_jack_pumpki̇n_seeds",
+                "id": "6900ddfce2a48c502f309993",
+                "seed_id": "6900ddfce2a48c502f309993"
             },
             "2": {
                 "hours": 20,
                 "minutes": 0,
                 "bp_min": "1.21",
-                "code": "uncommon_jack_pumpki̇n_seeds"
+                "code": "uncommon_jack_pumpki̇n_seeds",
+                "id": "6900ddfce2a48c502f309999",
+                "seed_id": "6900ddfce2a48c502f309999"
             },
             "3": {
                 "hours": 16,
@@ -1413,13 +1497,17 @@
                 "hours": 4,
                 "minutes": 0,
                 "bp_min": "0.10",
-                "code": "common_pati̇sson_seeds"
+                "code": "common_pati̇sson_seeds",
+                "id": "69285140f803f06b82ab22e0",
+                "seed_id": "69285140f803f06b82ab22e0"
             },
             "2": {
                 "hours": 3,
                 "minutes": 50,
                 "bp_min": "0.50",
-                "code": "uncommon_pati̇sson_seeds"
+                "code": "uncommon_pati̇sson_seeds",
+                "id": "69285140f803f06b82ab22e6",
+                "seed_id": "69285140f803f06b82ab22e6"
             },
             "3": {
                 "hours": 3,
@@ -1448,18 +1536,22 @@
                 "hours": 0,
                 "minutes": 12,
                 "bp_min": "0.17",
-                "code": "common_star_ani̇se_seeds"
+                "code": "common_star_ani̇se_seeds",
+                "id": "6970f73d4297528ed0eb352d",
+                "seed_id": "6970f73d4297528ed0eb352d"
             },
             "2": {
                 "hours": 0,
                 "minutes": 29,
-                "bp_min": "0.55",
-                "code": "uncommon_star_ani̇se_seeds"
+                "bp_min": "0.56",
+                "code": "uncommon_star_ani̇se_seeds",
+                "id": "6970f73d4297528ed0eb3533",
+                "seed_id": "6970f73d4297528ed0eb3533"
             },
             "3": {
                 "hours": 1,
                 "minutes": 24,
-                "bp_min": "1.69",
+                "bp_min": "1.70",
                 "code": "rare_star_ani̇se_seeds"
             },
             "4": {
@@ -1483,13 +1575,17 @@
                 "hours": 25,
                 "minutes": 0,
                 "bp_min": "0.90",
-                "code": "common_dragon_frui̇t_seeds"
+                "code": "common_dragon_frui̇t_seeds",
+                "id": "69945ab309abeb19e22a83f9",
+                "seed_id": "69945ab309abeb19e22a83f9"
             },
             "2": {
                 "hours": 21,
                 "minutes": 0,
                 "bp_min": "1.83",
-                "code": "uncommon_dragon_frui̇t_seeds"
+                "code": "uncommon_dragon_frui̇t_seeds",
+                "id": "69945ab309abeb19e22a83ff",
+                "seed_id": "69945ab309abeb19e22a83ff"
             },
             "3": {
                 "hours": 17,
@@ -1699,24 +1795,30 @@
                 "hours": 0,
                 "minutes": 3,
                 "bp_min": "0.33",
-                "code": "common_mari̇gold_seeds"
+                "code": "common_mari̇gold_seeds",
+                "id": "6582e209591717d062d19e25",
+                "seed_id": "6582e209591717d062d19e25"
             },
             "2": {
                 "hours": 0,
                 "minutes": 3,
-                "bp_min": "0.67",
-                "code": "uncommon_mari̇gold_seeds"
+                "bp_min": "0.80",
+                "code": "uncommon_mari̇gold_seeds",
+                "id": "65d38d0cda839cd1e0f7ec61",
+                "seed_id": "65d38d0cda839cd1e0f7ec61"
             },
             "3": {
                 "hours": 0,
                 "minutes": 2,
                 "bp_min": "3.50",
-                "code": "rare_mari̇gold_seeds"
+                "code": "rare_mari̇gold_seeds",
+                "id": "65d38d0cda839cd1e0f7ec67",
+                "seed_id": "65d38d0cda839cd1e0f7ec67"
             },
             "4": {
                 "hours": 0,
                 "minutes": 2,
-                "bp_min": "6.50",
+                "bp_min": "8.67",
                 "code": "epic_mari̇gold_seeds"
             },
             "5": {
@@ -1774,7 +1876,7 @@
             "1": {
                 "hours": 0,
                 "minutes": 1,
-                "bp_min": "6.00",
+                "bp_min": "24.00",
                 "code": "common_protoflower_seeds"
             },
             "2": {
@@ -1800,6 +1902,502 @@
                 "minutes": 0,
                 "bp_min": "30.00",
                 "code": "legendary_protoflower_seeds"
+            }
+        }
+    },
+    "Carrot": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/carrot/shared/images/carrot_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 6,
+                "bp_min": "0.33",
+                "code": "common_carrot_seeds"
+            },
+            "2": {
+                "hours": 0,
+                "minutes": 6,
+                "bp_min": "0.67",
+                "code": "uncommon_carrot_seeds"
+            },
+            "3": {
+                "hours": 0,
+                "minutes": 6,
+                "bp_min": "1.33",
+                "code": "rare_carrot_seeds"
+            },
+            "4": {
+                "hours": 0,
+                "minutes": 6,
+                "bp_min": "3.33",
+                "code": "epic_carrot_seeds"
+            },
+            "5": {
+                "hours": 0,
+                "minutes": 6,
+                "bp_min": "9.67",
+                "code": "legendary_carrot_seeds"
+            }
+        }
+    },
+    "Cfb tree": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/cfb_fruit/shared/images/cfb_fruit_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 6,
+                "minutes": 8,
+                "bp_min": "30.35",
+                "code": "common_cfb_fruit_seeds"
+            },
+            "2": {
+                "hours": 7,
+                "minutes": 9,
+                "bp_min": "30.45",
+                "code": "uncommon_cfb_fruit_seeds"
+            },
+            "3": {
+                "hours": 9,
+                "minutes": 11,
+                "bp_min": "30.55",
+                "code": "rare_cfb_fruit_seeds"
+            },
+            "4": {
+                "hours": 12,
+                "minutes": 3,
+                "bp_min": "30.65",
+                "code": "epic_cfb_fruit_seeds"
+            },
+            "5": {
+                "hours": 15,
+                "minutes": 6,
+                "bp_min": "30.75",
+                "code": "legendary_cfb_fruit_seeds"
+            }
+        }
+    },
+    "Dark fern": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/dark_fern/shared/images/dark_fern_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 2,
+                "minutes": 34,
+                "bp_min": "40.20",
+                "code": "common_dark_fern_seeds",
+                "id": "6acf93679e89090bba1be81e",
+                "seed_id": "6acf93679e89090bba1be81e"
+            },
+            "2": {
+                "hours": 3,
+                "minutes": 51,
+                "bp_min": "41.40",
+                "code": "uncommon_dark_fern_seeds"
+            },
+            "3": {
+                "hours": 5,
+                "minutes": 46,
+                "bp_min": "43.60",
+                "code": "rare_dark_fern_seeds"
+            },
+            "4": {
+                "hours": 8,
+                "minutes": 39,
+                "bp_min": "46.80",
+                "code": "epic_dark_fern_seeds"
+            },
+            "5": {
+                "hours": 12,
+                "minutes": 58,
+                "bp_min": "50.20",
+                "code": "legendary_dark_fern_seeds"
+            }
+        }
+    },
+    "Dark tree": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/shadow_sap/shared/images/shadow_sap_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 6,
+                "minutes": 8,
+                "bp_min": "30.13",
+                "code": "common_shadow_sap_seeds"
+            },
+            "2": {
+                "hours": 7,
+                "minutes": 9,
+                "bp_min": "30.36",
+                "code": "uncommon_shadow_sap_seeds"
+            },
+            "3": {
+                "hours": 9,
+                "minutes": 11,
+                "bp_min": "30.75",
+                "code": "rare_shadow_sap_seeds"
+            },
+            "4": {
+                "hours": 12,
+                "minutes": 3,
+                "bp_min": "31.31",
+                "code": "epic_shadow_sap_seeds"
+            },
+            "5": {
+                "hours": 15,
+                "minutes": 6,
+                "bp_min": "32.07",
+                "code": "legendary_shadow_sap_seeds"
+            }
+        }
+    },
+    "Glowing grass": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/glowing_grass/shared/images/glowing_grass_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 41,
+                "bp_min": "30.30",
+                "code": "common_glowing_grass_seeds",
+                "id": "6ae8863e99b448e3b8a1e1da",
+                "seed_id": "6ae8863e99b448e3b8a1e1da"
+            },
+            "2": {
+                "hours": 1,
+                "minutes": 41,
+                "bp_min": "30.99",
+                "code": "uncommon_glowing_grass_seeds"
+            },
+            "3": {
+                "hours": 3,
+                "minutes": 41,
+                "bp_min": "31.66",
+                "code": "rare_glowing_grass_seeds"
+            },
+            "4": {
+                "hours": 6,
+                "minutes": 41,
+                "bp_min": "32.33",
+                "code": "epic_glowing_grass_seeds"
+            },
+            "5": {
+                "hours": 10,
+                "minutes": 41,
+                "bp_min": "33.00",
+                "code": "legendary_glowing_grass_seeds"
+            }
+        }
+    },
+    "Harvest pumpkin": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/harvest_pumpkins/shared/images/harvest_pumpkins_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 3,
+                "minutes": 54,
+                "bp_min": "26.20",
+                "code": "common_harvest_pumpkins_seeds"
+            },
+            "2": {
+                "hours": 7,
+                "minutes": 54,
+                "bp_min": "27.20",
+                "code": "uncommon_harvest_pumpkins_seeds"
+            },
+            "3": {
+                "hours": 11,
+                "minutes": 54,
+                "bp_min": "28.25",
+                "code": "rare_harvest_pumpkins_seeds"
+            },
+            "4": {
+                "hours": 15,
+                "minutes": 54,
+                "bp_min": "29.35",
+                "code": "epic_harvest_pumpkins_seeds"
+            },
+            "5": {
+                "hours": 19,
+                "minutes": 54,
+                "bp_min": "30.50",
+                "code": "legendary_harvest_pumpkins_seeds"
+            }
+        }
+    },
+    "Juvenile salmon": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/salmon/shared/images/salmon_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 29,
+                "bp_min": "27.99",
+                "code": "common_salmon_seeds"
+            },
+            "2": {
+                "hours": 0,
+                "minutes": 59,
+                "bp_min": "28.32",
+                "code": "uncommon_salmon_seeds"
+            },
+            "3": {
+                "hours": 1,
+                "minutes": 57,
+                "bp_min": "28.65",
+                "code": "rare_salmon_seeds"
+            },
+            "4": {
+                "hours": 3,
+                "minutes": 55,
+                "bp_min": "28.98",
+                "code": "epic_salmon_seeds"
+            },
+            "5": {
+                "hours": 7,
+                "minutes": 50,
+                "bp_min": "29.31",
+                "code": "legendary_salmon_seeds"
+            }
+        }
+    },
+    "Potato": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/potato/shared/images/potato_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 30,
+                "bp_min": "0.17",
+                "code": "common_potato_seeds"
+            },
+            "2": {
+                "hours": 0,
+                "minutes": 30,
+                "bp_min": "0.33",
+                "code": "uncommon_potato_seeds"
+            },
+            "3": {
+                "hours": 0,
+                "minutes": 30,
+                "bp_min": "0.73",
+                "code": "rare_potato_seeds"
+            },
+            "4": {
+                "hours": 0,
+                "minutes": 30,
+                "bp_min": "1.83",
+                "code": "epic_potato_seeds"
+            },
+            "5": {
+                "hours": 0,
+                "minutes": 30,
+                "bp_min": "5.33",
+                "code": "legendary_potato_seeds"
+            }
+        }
+    },
+    "Pumpkin": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/pumpkin/shared/images/pumpkin_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 3,
+                "minutes": 20,
+                "bp_min": "0.16",
+                "code": "common_pumpkin_seeds"
+            },
+            "2": {
+                "hours": 3,
+                "minutes": 20,
+                "bp_min": "0.32",
+                "code": "uncommon_pumpkin_seeds"
+            },
+            "3": {
+                "hours": 3,
+                "minutes": 20,
+                "bp_min": "0.70",
+                "code": "rare_pumpkin_seeds"
+            },
+            "4": {
+                "hours": 3,
+                "minutes": 20,
+                "bp_min": "1.76",
+                "code": "epic_pumpkin_seeds"
+            },
+            "5": {
+                "hours": 3,
+                "minutes": 20,
+                "bp_min": "5.12",
+                "code": "legendary_pumpkin_seeds"
+            }
+        }
+    },
+    "Radiant calla lily": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/radiant_calla_lily/shared/images/radiant_calla_lily_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 14,
+                "minutes": 20,
+                "bp_min": "2.00",
+                "code": "common_radiant_calla_lily_seeds",
+                "id": "6aec62fde661def7703b43c3",
+                "seed_id": "6aec62fde661def7703b43c3"
+            },
+            "2": {
+                "hours": 9,
+                "minutes": 20,
+                "bp_min": "5.00",
+                "code": "uncommon_radiant_calla_lily_seeds"
+            },
+            "3": {
+                "hours": 6,
+                "minutes": 20,
+                "bp_min": "10.00",
+                "code": "rare_radiant_calla_lily_seeds"
+            },
+            "4": {
+                "hours": 4,
+                "minutes": 20,
+                "bp_min": "20.00",
+                "code": "epic_radiant_calla_lily_seeds"
+            },
+            "5": {
+                "hours": 3,
+                "minutes": 20,
+                "bp_min": "30.00",
+                "code": "legendary_radiant_calla_lily_seeds"
+            }
+        }
+    },
+    "Rose": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/rose/shared/images/rose_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 5,
+                "minutes": 0,
+                "bp_min": "0.22",
+                "code": "common_rose_seeds"
+            },
+            "2": {
+                "hours": 5,
+                "minutes": 0,
+                "bp_min": "0.43",
+                "code": "uncommon_rose_seeds"
+            },
+            "3": {
+                "hours": 5,
+                "minutes": 0,
+                "bp_min": "0.95",
+                "code": "rare_rose_seeds"
+            },
+            "4": {
+                "hours": 5,
+                "minutes": 0,
+                "bp_min": "2.38",
+                "code": "epic_rose_seeds"
+            },
+            "5": {
+                "hours": 5,
+                "minutes": 0,
+                "bp_min": "6.91",
+                "code": "legendary_rose_seeds"
+            }
+        }
+    },
+    "Spooky cauldron": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/spooky_potion/shared/images/spooky_potion_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 41,
+                "bp_min": "41.89",
+                "code": "common_spooky_potion_seeds"
+            },
+            "2": {
+                "hours": 1,
+                "minutes": 21,
+                "bp_min": "42.91",
+                "code": "uncommon_spooky_potion_seeds"
+            },
+            "3": {
+                "hours": 2,
+                "minutes": 41,
+                "bp_min": "44.41",
+                "code": "rare_spooky_potion_seeds"
+            },
+            "4": {
+                "hours": 5,
+                "minutes": 22,
+                "bp_min": "46.66",
+                "code": "epic_spooky_potion_seeds"
+            },
+            "5": {
+                "hours": 10,
+                "minutes": 44,
+                "bp_min": "49.91",
+                "code": "legendary_spooky_potion_seeds"
+            }
+        }
+    },
+    "Tulip": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/tulips/shared/images/tulips_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 3,
+                "bp_min": "0.33",
+                "code": "common_tulips_seeds"
+            },
+            "2": {
+                "hours": 0,
+                "minutes": 3,
+                "bp_min": "0.67",
+                "code": "uncommon_tulips_seeds"
+            },
+            "3": {
+                "hours": 0,
+                "minutes": 3,
+                "bp_min": "1.33",
+                "code": "rare_tulips_seeds"
+            },
+            "4": {
+                "hours": 0,
+                "minutes": 3,
+                "bp_min": "3.00",
+                "code": "epic_tulips_seeds"
+            },
+            "5": {
+                "hours": 0,
+                "minutes": 3,
+                "bp_min": "7.67",
+                "code": "legendary_tulips_seeds"
+            }
+        }
+    },
+    "Wheat": {
+        "image": "https://api.minaryganar.com/assets/chainers/seeds/wheat/shared/images/wheat_shared_icon.webp",
+        "tiers": {
+            "1": {
+                "hours": 0,
+                "minutes": 18,
+                "bp_min": "0.22",
+                "code": "common_wheat_seeds"
+            },
+            "2": {
+                "hours": 0,
+                "minutes": 18,
+                "bp_min": "0.44",
+                "code": "uncommon_wheat_seeds"
+            },
+            "3": {
+                "hours": 0,
+                "minutes": 18,
+                "bp_min": "1.00",
+                "code": "rare_wheat_seeds"
+            },
+            "4": {
+                "hours": 0,
+                "minutes": 18,
+                "bp_min": "2.50",
+                "code": "epic_wheat_seeds"
+            },
+            "5": {
+                "hours": 0,
+                "minutes": 18,
+                "bp_min": "7.28",
+                "code": "legendary_wheat_seeds"
             }
         }
     }

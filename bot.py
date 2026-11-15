@@ -1,3 +1,20 @@
+
+def sync_foods_from_minaryganar():
+    try:
+        url = "https://api.minaryganar.com/api/public/chainers/seeds?all=true"
+        import requests
+        res = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+        if res.status_code == 200:
+            data = res.json()
+            items = data if isinstance(data, list) else data.get("data", {}).get("items", [])
+            print(f"🔄 Minaryganar Tohum Senkronizasyonu Başarılı: {len(items)} öğe işlendi.")
+            return {"success": True, "count": len(items)}
+        return {"success": False, "error": "API Yanıt Vermedi"}
+    except Exception as e:
+        print(f"⚠️ Senkronizasyon Hatası: {e}")
+        return {"success": False, "error": str(e)}
+
+
 import os
 import re
 import json
@@ -151,6 +168,111 @@ def load_library():
     return {}
 
 CROPS_LIBRARY = load_library()
+
+def sync_crops_from_minaryganar():
+    """Minaryganar public API'sinden tüm güncel tohumları çekip crops_library.json ile birleştirir."""
+    url = "https://api.minaryganar.com/api/public/chainers/seeds?all=true"
+    try:
+        res = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36", "Accept": "application/json", "Origin": "https://minaryganar.com", "Referer": "https://minaryganar.com/"}, timeout=15)
+        if res.status_code != 200:
+            log(f"⚠️ Minaryganar API yanıt vermedi (Kod: {res.status_code})")
+            return {"success": False, "added": 0, "updated": 0}
+
+        payload = res.json()
+        items = (payload.get("items") or payload.get("data", {}).get("items") or []) if isinstance(payload, dict) else payload
+        if not items:
+            return {"success": False, "added": 0, "updated": 0}
+
+        lib = load_library()
+        import unicodedata
+        def norm(s):
+            return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode("utf-8").lower().strip()
+
+        existing_norm_map = {norm(k): k for k in lib.keys()}
+        tier_map = {"common": "1", "uncommon": "2", "rare": "3", "epic": "4", "legendary": "5"}
+        pref_map = {"1": "common_", "2": "uncommon_", "3": "rare_", "4": "epic_", "5": "legendary_"}
+
+        added = 0
+        updated = 0
+
+        for item in items:
+            raw_name = (item.get("name") or "").strip()
+            base_code = (item.get("base_code") or "").strip().lower()
+            if not raw_name:
+                continue
+
+            # İsim standardizasyonu (İlk harf büyük, kalanı küçük)
+            std_name = raw_name[0].upper() + raw_name[1:].lower()
+            n_key = norm(std_name)
+
+            target_key = existing_norm_map.get(n_key, std_name)
+            is_new = target_key not in lib
+
+            img_path = item.get("icon_image_path") or item.get("preview_image_path") or ""
+            if img_path and not img_path.startswith("http"):
+                img_path = "https://api.minaryganar.com/assets" + ("" if img_path.startswith("/") else "/") + img_path
+
+            rarities = item.get("rarities", [])
+            order = ["common", "uncommon", "rare", "epic", "legendary"]
+            rarities_sorted = sorted(rarities, key=lambda x: order.index(x.get("rarity", "").lower()) if x.get("rarity", "").lower() in order else 99)
+
+            tiers_dict = lib.get(target_key, {}).get("tiers", {})
+            last_valid_sec = 0
+
+            for r in rarities_sorted:
+                r_name = (r.get("rarity") or "").lower().strip()
+                t_num = tier_map.get(r_name)
+                if not t_num:
+                    continue
+
+                bp = float(r.get("biopoints") or 0)
+                sec = int(r.get("growth_time_seconds") or 0)
+                if sec > 1:
+                    last_valid_sec = sec
+                elif last_valid_sec > 1:
+                    sec = last_valid_sec
+
+                if bp <= 0 or sec <= 1:
+                    continue
+
+                total_min = (sec + 59) // 60
+                h = total_min // 60
+                m = total_min % 60
+                bp_min_str = f"{bp / (sec / 60.0):.2f}"
+
+                slug = base_code if base_code else norm(std_name).replace(" ", "_")
+                default_code = f"{pref_map[t_num]}{slug}_seeds"
+
+                old_tier = tiers_dict.get(t_num, {})
+                old_tier["hours"] = h
+                old_tier["minutes"] = m
+                old_tier["bp_min"] = bp_min_str
+                if not old_tier.get("code"):
+                    old_tier["code"] = default_code
+                tiers_dict[t_num] = old_tier
+
+            if tiers_dict:
+                if is_new:
+                    lib[target_key] = {"image": img_path, "tiers": tiers_dict}
+                    existing_norm_map[n_key] = target_key
+                    added += 1
+                else:
+                    if img_path:
+                        lib[target_key]["image"] = img_path
+                    lib[target_key]["tiers"] = tiers_dict
+                    updated += 1
+
+        with open(LIBRARY_FILE, "w", encoding="utf-8") as f:
+            json.dump(lib, f, indent=4, ensure_ascii=False)
+
+        global CROPS_LIBRARY
+        CROPS_LIBRARY = lib
+        log(f"🔄 Minaryganar Kütüphane Senkronizasyonu: {added} yeni ekin eklendi, {updated} ekin güncellendi (Toplam: {len(lib)}).")
+        return {"success": True, "added": added, "updated": updated, "total": len(lib)}
+    except Exception as e:
+        log(f"⚠️ Minaryganar senkronizasyon hatası: {e}")
+        return {"success": False, "error": str(e)}
+
 
 SEEDS_DB = {}
 SEED_ID_TO_NAME = {}
@@ -582,7 +704,10 @@ HTML_PAGE = """<!DOCTYPE html>
         <div class="panel-card">
             <div class="card-header-flex">
                 <h2>📦 Tohum Kataloğu</h2>
-                <button type="button" class="btn-add" onclick="openSeedModal()">➕ Tohum Ekle</button>
+                <div style="display:flex; gap:8px;">
+                    <button type="button" class="btn-add" id="btnSyncLib" style="background:#3b82f6;" onclick="syncLibraryFromSite()">🔄 Siteden Güncelle</button>
+                    <button type="button" class="btn-add" onclick="openSeedModal()">➕ Tohum Ekle</button>
+                </div>
             </div>
             <div class="subtext">Deponuzdaki tohumlar ve <b>dakika başı BP verimleri</b>.</div>
             <div class="catalog-grid" id="catalogGrid">
@@ -844,7 +969,7 @@ HTML_PAGE = """<!DOCTYPE html>
     </div>
 
     <script>
-        const SEED_CATALOG_IDS = {"epic_ghost_food": "6abce61e4256b50d4349e800", "common_onion_seeds": "67dc227a59b878f195998dca", "rare_onion_seeds": "67dc227a59b878f195998dd6", "legendary_ghost_food": "6abce61e4256b50d4349e806", "common_hyacinths_seeds": "6582e209591717d062d19e3d", "uncommon_hyacinths_seeds": "65d38d0cda839cd1e0f7ecc1", "rare_hyacinths_seeds": "65d38d0cda839cd1e0f7ecc7", "uncommon_spinach_seeds": "67dc227a59b878f195998ec0", "common_melon_seeds": "683dbe2ba9ec974575a4bf2a", "epic_melon_seeds": "683dbe2ba9ec974575a4bf3c", "common_cabbage_seeds": "67dc227a59b878f195998d8e", "common_proto_flower_seeds": "6a1832bb8745e0fa5293bb94", "uncommon_proto_flower_seeds": "6a1832bb8745e0fa5293bb9a", "rare_proto_flower_seeds": "6a1832bb8745e0fa5293bba0", "epic_proto_flower_seeds": "6a1832bb8745e0fa5293bba6", "common_light_tree_seeds": "6ab282d700c19f4431021f91", "common_ghost_food": "6abce61e4256b50d4349e7ee", "uncommon_ghost_food": "6abce61e4256b50d4349e7f4", "rare_ghost_food": "6abce61e4256b50d4349e7fa", "uncommon_star_anise_seeds": "6970f73d4297528ed0eb3533", "common_cauliflower_seeds": "67dc227a59b878f195998dac", "epic_cauliflower_seeds": "67dc227a59b878f195998dbe", "common_dark_fern_seeds": "6acf93679e89090bba1be81e", "common_spooky_cauldron_seeds": "6abce62cc7313e5d05935bc3", "uncommon_spooky_cauldron_seeds": "6abce62cc7313e5d05935bc9", "rare_spooky_cauldron_seeds": "6abce62cc7313e5d05935bcf", "uncommon_dragon_fruit_seeds": "69945ab309abeb19e22a83ff", "uncommon_sunflower_seeds": "673e0c942c7bfd708b3524bf", "rare_sunflower_seeds": "673e0c942c7bfd708b3524c5", "common_bell_pepper_seeds": "67dc227a59b878f195998de8", "rare_bell_pepper_seeds": "67dc227a59b878f195998df4", "common_white_lily_seeds": "6801032feafb0e6b32164700", "rare_white_lily_seeds": "6801032feafb0e6b3216470c", "rare_watermelon_seeds": "673e0c942c7bfd708b352489", "common_mangold_seeds": "67dc227a59b878f195998ed8", "rare_mangold_seeds": "67dc227a59b878f195998ee4", "common_dark_tree_seeds": "6abfafd83202113b4293f231", "uncommon_strawberry_seeds": "673e0c942c7bfd708b352447", "common_marigold_seeds": "6582e209591717d062d19e25", "uncommon_marigold_seeds": "65d38d0cda839cd1e0f7ec61", "rare_marigold_seeds": "65d38d0cda839cd1e0f7ec67", "common_tomato_seeds": "6582e209591717d062d19e1f", "uncommon_tomato_seeds": "65d38d0cda839cd1e0f7ec49", "rare_tomato_seeds": "65d38d0cda839cd1e0f7ec4f", "rare_broccoli_seeds": "67dc227a59b878f195998d7c", "common_bird_food": "665f2698534176fcd32f9a7d", "common_corn_seeds": "673e0c942c7bfd708b352405", "uncommon_corn_seeds": "673e0c942c7bfd708b35240b", "common_peas_seeds": "673e0c942c7bfd708b35245f", "rare_peas_seeds": "673e0c942c7bfd708b35246b", "common_spectral_trout_seeds": "6a87292a1c0d284dcab6e185", "common_bamboo_seeds": "6582e209591717d062d19e2b", "uncommon_bamboo_seeds": "65d38d0cda839cd1e0f7ec79", "rare_bamboo_seeds": "65d38d0cda839cd1e0f7ec7f", "legendary_jack_piggy_food": "69b9558333072e7b647f38d0", "uncommon_pineapple_seeds": "68824771915623f3dcc1fb03", "common_eggplant_seeds": "673e0c942c7bfd708b352423", "rare_garlic_seeds": "67dc227a59b878f195998e4e", "common_firebird_food": "6a9014f3b52f06fb05edff76", "uncommon_chili_pepper_seeds": "67dc227a59b878f195998e0c", "common_leek_seeds": "67dc227a59b878f195998ef6", "uncommon_jack_pumpkin_seeds": "6900ddfce2a48c502f309999", "common_patisson_seeds": "69285140f803f06b82ab22e0", "uncommon_patisson_seeds": "69285140f803f06b82ab22e6", "common_radish_seeds": "67dc227a59b878f195998e7e", "common_ginger_seeds": "67dc227a59b878f195998e60", "common_fiery_barberry_seeds": "6a997a87146b5c4a5f9c2811", "common_black_lotus_seeds": "673e0c942c7bfd708b35249b", "uncommon_sweet_potato_seeds": "67dc227a59b878f195998e2a", "common_bee_food": "6a73475964ee63b1f4561ca1", "common_otter_food": "6a6b1b0ab16630f880986663", "common_snowdrop_seeds": "67dc227a59b878f195998e9c", "common_physalis_seeds": "6a3e7e10c9263d5e1dac306e", "common_sugarcane_seeds": "6a6b1e1913ccd7c96918bf6b", "uncommon_onion_seeds": "67dc227a59b878f195998dd0", "common_star_anise_seeds": "6970f73d4297528ed0eb352d", "common_oni̇on_seeds": "67dc227a59b878f195998dca", "rare_li̇ght_tree_seeds": "6ab282d700c19f4431021f9d", "rare_oni̇on_seeds": "67dc227a59b878f195998dd6", "uncommon_li̇ght_tree_seeds": "6ab282d700c19f4431021f97", "rare_fi̇ery_barberry_seeds": "6a997a87146b5c4a5f9c281d", "legendary_li̇ght_tree_seeds": "6ab282d700c19f4431021fa9", "rare_gi̇nger_seeds": "67dc227a59b878f195998e6c", "rare_broccoli̇_seeds": "67dc227a59b878f195998d7c", "common_radi̇sh_seeds": "67dc227a59b878f195998e7e", "common_gi̇nger_seeds": "67dc227a59b878f195998e60", "uncommon_spi̇nach_seeds": "67dc227a59b878f195998ec0", "uncommon_jack_pumpki̇n_seeds": "6900ddfce2a48c502f309999", "uncommon_chi̇li̇_pepper_seeds": "67dc227a59b878f195998e0c", "rare_garli̇c_seeds": "67dc227a59b878f195998e4e", "uncommon_pi̇neapple_seeds": "68824771915623f3dcc1fb03", "common_juveni̇le_spectral_trout_seeds": "6a87292a1c0d284dcab6e185", "epic_cauli̇flower_seeds": "67dc227a59b878f195998f48", "common_sunflower_seeds": "673e0c942c7bfd708b3524b9", "uncommon_cauli̇flower_seeds": "67dc227a59b878f195998db2", "uncommon_bell_pepper_seeds": "67dc227a59b878f195998dee", "common_juveni̇le_trout_seeds": "6a7c6ec3e0ba09e95a5531b6", "common_jack_pumpki̇n_seeds": "6900ddfce2a48c502f309993"};
+        const SEED_CATALOG_IDS = {"epic_ghost_food": "6abce61e4256b50d4349e800", "common_onion_seeds": "67dc227a59b878f195998dca", "rare_onion_seeds": "67dc227a59b878f195998dd6", "legendary_ghost_food": "6abce61e4256b50d4349e806", "common_hyacinths_seeds": "6582e209591717d062d19e3d", "uncommon_hyacinths_seeds": "65d38d0cda839cd1e0f7ecc1", "rare_hyacinths_seeds": "65d38d0cda839cd1e0f7ecc7", "uncommon_spinach_seeds": "67dc227a59b878f195998ec0", "common_melon_seeds": "683dbe2ba9ec974575a4bf2a", "epic_melon_seeds": "683dbe2ba9ec974575a4bf3c", "common_cabbage_seeds": "67dc227a59b878f195998d8e", "common_proto_flower_seeds": "6a1832bb8745e0fa5293bb94", "uncommon_proto_flower_seeds": "6a1832bb8745e0fa5293bb9a", "rare_proto_flower_seeds": "6a1832bb8745e0fa5293bba0", "epic_proto_flower_seeds": "6a1832bb8745e0fa5293bba6", "common_light_tree_seeds": "6ab282d700c19f4431021f91", "common_ghost_food": "6abce61e4256b50d4349e7ee", "uncommon_ghost_food": "6abce61e4256b50d4349e7f4", "rare_ghost_food": "6abce61e4256b50d4349e7fa", "uncommon_star_anise_seeds": "6970f73d4297528ed0eb3533", "common_cauliflower_seeds": "67dc227a59b878f195998dac", "epic_cauliflower_seeds": "67dc227a59b878f195998dbe", "common_dark_fern_seeds": "6acf93679e89090bba1be81e", "common_spooky_cauldron_seeds": "6abce62cc7313e5d05935bc3", "uncommon_spooky_cauldron_seeds": "6abce62cc7313e5d05935bc9", "rare_spooky_cauldron_seeds": "6abce62cc7313e5d05935bcf", "uncommon_dragon_fruit_seeds": "69945ab309abeb19e22a83ff", "uncommon_sunflower_seeds": "673e0c942c7bfd708b3524bf", "rare_sunflower_seeds": "673e0c942c7bfd708b3524c5", "common_bell_pepper_seeds": "67dc227a59b878f195998de8", "rare_bell_pepper_seeds": "67dc227a59b878f195998df4", "common_white_lily_seeds": "6801032feafb0e6b32164700", "rare_white_lily_seeds": "6801032feafb0e6b3216470c", "rare_watermelon_seeds": "673e0c942c7bfd708b352489", "common_mangold_seeds": "67dc227a59b878f195998ed8", "rare_mangold_seeds": "67dc227a59b878f195998ee4", "common_dark_tree_seeds": "6abfafd83202113b4293f231", "uncommon_strawberry_seeds": "673e0c942c7bfd708b352447", "common_marigold_seeds": "6582e209591717d062d19e25", "uncommon_marigold_seeds": "65d38d0cda839cd1e0f7ec61", "rare_marigold_seeds": "65d38d0cda839cd1e0f7ec67", "common_tomato_seeds": "6582e209591717d062d19e1f", "uncommon_tomato_seeds": "65d38d0cda839cd1e0f7ec49", "rare_tomato_seeds": "65d38d0cda839cd1e0f7ec4f", "rare_broccoli_seeds": "67dc227a59b878f195998d7c", "common_bird_food": "665f2698534176fcd32f9a7d", "common_corn_seeds": "673e0c942c7bfd708b352405", "uncommon_corn_seeds": "673e0c942c7bfd708b35240b", "common_peas_seeds": "673e0c942c7bfd708b35245f", "rare_peas_seeds": "673e0c942c7bfd708b35246b", "common_spectral_trout_seeds": "6a87292a1c0d284dcab6e185", "common_bamboo_seeds": "6582e209591717d062d19e2b", "uncommon_bamboo_seeds": "65d38d0cda839cd1e0f7ec79", "rare_bamboo_seeds": "65d38d0cda839cd1e0f7ec7f", "legendary_jack_piggy_food": "69b9558333072e7b647f38d0", "uncommon_pineapple_seeds": "68824771915623f3dcc1fb03", "common_eggplant_seeds": "673e0c942c7bfd708b352423", "rare_garlic_seeds": "67dc227a59b878f195998e4e", "common_firebird_food": "6a9014f3b52f06fb05edff76", "uncommon_chili_pepper_seeds": "67dc227a59b878f195998e0c", "common_leek_seeds": "67dc227a59b878f195998ef6", "uncommon_jack_pumpkin_seeds": "6900ddfce2a48c502f309999", "common_patisson_seeds": "69285140f803f06b82ab22e0", "uncommon_patisson_seeds": "69285140f803f06b82ab22e6", "common_radish_seeds": "67dc227a59b878f195998e7e", "common_ginger_seeds": "67dc227a59b878f195998e60", "common_fiery_barberry_seeds": "6a997a87146b5c4a5f9c2811", "common_black_lotus_seeds": "673e0c942c7bfd708b35249b", "uncommon_sweet_potato_seeds": "67dc227a59b878f195998e2a", "common_bee_food": "6a73475964ee63b1f4561ca1", "common_otter_food": "6a6b1b0ab16630f880986663", "common_snowdrop_seeds": "67dc227a59b878f195998e9c", "common_physalis_seeds": "6a3e7e10c9263d5e1dac306e", "common_sugarcane_seeds": "6a6b1e1913ccd7c96918bf6b", "uncommon_onion_seeds": "67dc227a59b878f195998dd0", "common_star_anise_seeds": "6970f73d4297528ed0eb352d", "common_oni̇on_seeds": "67dc227a59b878f195998dca", "rare_li̇ght_tree_seeds": "6ab282d700c19f4431021f9d", "rare_oni̇on_seeds": "67dc227a59b878f195998dd6", "uncommon_li̇ght_tree_seeds": "6ab282d700c19f4431021f97", "rare_fi̇ery_barberry_seeds": "6a997a87146b5c4a5f9c281d", "legendary_li̇ght_tree_seeds": "6ab282d700c19f4431021fa9", "rare_gi̇nger_seeds": "67dc227a59b878f195998e6c", "rare_broccoli̇_seeds": "67dc227a59b878f195998d7c", "common_radi̇sh_seeds": "67dc227a59b878f195998e7e", "common_gi̇nger_seeds": "67dc227a59b878f195998e60", "uncommon_spi̇nach_seeds": "67dc227a59b878f195998ec0", "uncommon_jack_pumpki̇n_seeds": "6900ddfce2a48c502f309999", "uncommon_chi̇li̇_pepper_seeds": "67dc227a59b878f195998e0c", "rare_garli̇c_seeds": "67dc227a59b878f195998e4e", "uncommon_pi̇neapple_seeds": "68824771915623f3dcc1fb03", "common_juveni̇le_spectral_trout_seeds": "6a87292a1c0d284dcab6e185", "epic_cauli̇flower_seeds": "67dc227a59b878f195998f48", "common_sunflower_seeds": "673e0c942c7bfd708b3524b9", "uncommon_cauli̇flower_seeds": "67dc227a59b878f195998db2", "uncommon_bell_pepper_seeds": "67dc227a59b878f195998dee", "common_juveni̇le_trout_seeds": "6a7c6ec3e0ba09e95a5531b6", "common_jack_pumpki̇n_seeds": "6900ddfce2a48c502f309993", "rare_ginger_seeds": "67dc227a59b878f195998e6c", "uncommon_light_tree_seeds": "6ab282d700c19f4431021f97", "common_pufferfish_food": "6ad9f925a598ffe738bc42c2", "common_crystal_eagle_food": "6af5a22f40e5d277ce8494b0", "common_garlic_seeds": "67dc227a59b878f195998e42", "common_sweet_potato_seeds": "67dc227a59b878f195998e24", "common_radiant_calla_lily_seeds": "6aec62fde661def7703b43c3", "common_pineapple_seeds": "68824771915623f3dcc1fafd", "common_watermelon_seeds": "673e0c942c7bfd708b35247d", "rare_melon_seeds": "683dbe2ba9ec974575a4bf36", "common_broccoli_seeds": "67dc227a59b878f195998d70", "rare_chili_pepper_seeds": "67dc227a59b878f195998e12", "uncommon_leek_seeds": "67dc227a59b878f195998efc", "common_strawberry_seeds": "673e0c942c7bfd708b352441", "common_jack_pumpkin_seeds": "6900ddfce2a48c502f309993", "rare_sweet_potato_seeds": "67dc227a59b878f195998e30", "common_glowing_grass_seeds": "6ae8863e99b448e3b8a1e1da", "common_aurora_dragon_food": "6aec62ead6f343f8bda2e32b", "uncommon_garlic_seeds": "67dc227a59b878f195998e48", "common_peacock_food": "69fb464a6011b66560c7b437", "uncommon_white_lily_seeds": "6801032feafb0e6b32164706", "common_dragon_fruit_seeds": "69945ab309abeb19e22a83f9", "common_dark_watcher_food": "6acf932cce916ef21d35f1f4", "legendary_proto_flower_seeds": "6a1832bb8745e0fa5293bbac", "uncommon_mangold_seeds": "67dc227a59b878f195998ede", "uncommon_cauliflower_seeds": "67dc227a59b878f195998db2", "epic_spooky_cauldron_seeds": "6abce62cc7313e5d05935bd5", "rare_fiery_barberry_seeds": "6a997a87146b5c4a5f9c281d", "common_trout_seeds": "6a7c6ec3e0ba09e95a5531b6"};
 
         const CROPS_LIB = __LIBRARY_JSON__;
         let sortDirections = { level: 1, time: 1, bp: 1 };
@@ -944,6 +1069,29 @@ HTML_PAGE = """<!DOCTYPE html>
         }
 
         function closeBedModal() { document.getElementById('bedModal').style.display = 'none'; }
+
+        
+        function syncLibraryFromSite() {
+            const btn = document.getElementById('btnSyncLib');
+            btn.textContent = '⏳ Çekiliyor...';
+            btn.disabled = true;
+            fetch('/sync_library', { method: 'POST' })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(`✅ Kütüphane Güncellendi!\n• Yeni Eklenen: ${data.added} ekin\n• Güncellenen: ${data.updated} ekin\n• Toplam Kütüphane: ${data.total} ekin`);
+                        location.reload();
+                    } else {
+                        alert('⚠️ Hata: ' + (data.error || 'API yanıt vermedi'));
+                        btn.textContent = '🔄 Siteden Güncelle';
+                        btn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    btn.textContent = '🔄 Siteden Güncelle';
+                    btn.disabled = false;
+                });
+        }
 
         function openSeedModal() {
             document.getElementById('seedModalTitle').textContent = '🌱 Yeni Tohum Ekle';
@@ -1880,6 +2028,14 @@ class PanelHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"success": True, "key": new_key or original_key, "seed": saved_meta}).encode("utf-8"))
 
+        
+        elif self.path == "/sync_library":
+            res_data = sync_crops_from_minaryganar()
+            self.send_response(200)
+            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(json.dumps(res_data, ensure_ascii=False).encode("utf-8"))
+
         elif self.path == "/delete_seed":
             s_key = params.get("seed_key", [""])[0].strip()
             if s_key in SEEDS_DB:
@@ -1925,6 +2081,7 @@ def run_farm():
     global TOTAL_ACTIONS, NEXT_BREAK_ACTION
     load_targets()
     load_seeds()
+    threading.Thread(target=sync_crops_from_minaryganar, daemon=True).start()
     load_animals()
     threading.Thread(target=start_server, daemon=True).start()
     log("🌐 Canlı Envanter & Tarla Paneli: http://localhost:5000")
