@@ -866,5 +866,19 @@
         "code_key": "common_radiant_calla_lily_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/radiant_calla_lily/shared/images/radiant_calla_lily_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/radiant_calla_lily/shared/images/radiant_calla_lily_shared_icon.webp\" alt=\"Radiant calla lily\">"
+    },
+    "683dbe2ba9ec974575a4bf30": {
+        "name": "Melon",
+        "seed_id": "683dbe2ba9ec974575a4bf30",
+        "duration": 17400,
+        "hours": 4,
+        "minutes": 50,
+        "time_str": "4 sa 50 dk",
+        "tier": 2,
+        "bp_min": "1.10",
+        "stock": 1,
+        "code_key": "uncommon_melon_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp\" alt=\"Melon\">"
     }
 }
