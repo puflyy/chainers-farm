@@ -880,5 +880,19 @@
         "code_key": "uncommon_melon_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/melon/shared/images/melon_shared_icon.webp\" alt=\"Melon\">"
+    },
+    "67dc227a59b878f195998e06": {
+        "name": "Chi̇li̇ pepper",
+        "seed_id": "67dc227a59b878f195998e06",
+        "duration": 10860,
+        "hours": 3,
+        "minutes": 1,
+        "time_str": "3 sa 1 dk",
+        "tier": 1,
+        "bp_min": "0.45",
+        "stock": 1,
+        "code_key": "common_chi̇li̇_pepper_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp\" alt=\"Chi̇li̇ pepper\">"
     }
 }
