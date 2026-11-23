@@ -148,7 +148,7 @@
         "time_str": "4 sa",
         "tier": 1,
         "bp_min": "0.10",
-        "stock": 2,
+        "stock": 3,
         "code_key": "common_patisson_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/patisson/shared/images/patisson_shared_icon.webp\" alt=\"Patisson\">"
@@ -894,5 +894,19 @@
         "code_key": "common_chi̇li̇_pepper_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/chili_pepper/shared/images/chili_pepper_shared_icon.webp\" alt=\"Chi̇li̇ pepper\">"
+    },
+    "67dc227a59b878f195998eba": {
+        "name": "Spi̇nach",
+        "seed_id": "67dc227a59b878f195998eba",
+        "duration": 1380,
+        "hours": 0,
+        "minutes": 23,
+        "time_str": "23 dk",
+        "tier": 1,
+        "bp_min": "0.48",
+        "stock": 1,
+        "code_key": "common_spi̇nach_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp\" alt=\"Spi̇nach\">"
     }
 }
