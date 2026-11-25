@@ -1,18 +1,4 @@
 {
-    "6801032feafb0e6b3216470c": {
-        "name": "White Lily",
-        "seed_id": "6801032feafb0e6b3216470c",
-        "duration": 18000,
-        "hours": 5,
-        "minutes": 0,
-        "time_str": "5 sa",
-        "tier": 3,
-        "bp_min": "3.23",
-        "stock": 1,
-        "code_key": "rare_white_lily_seeds",
-        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp",
-        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp\" alt=\"White Lily\">"
-    },
     "69945ab309abeb19e22a83ff": {
         "name": "Dragon Fruit",
         "seed_id": "69945ab309abeb19e22a83ff",
@@ -908,5 +894,19 @@
         "code_key": "common_spi̇nach_seeds",
         "image_url": "https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp",
         "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/spinach/shared/images/spinach_shared_icon.webp\" alt=\"Spi̇nach\">"
+    },
+    "6abce61e4256b50d4349e800": {
+        "name": "Whi̇te li̇ly",
+        "seed_id": "6abce61e4256b50d4349e800",
+        "duration": 18000,
+        "hours": 5,
+        "minutes": 0,
+        "time_str": "5 sa 0 dk",
+        "tier": 4,
+        "bp_min": "7.23",
+        "stock": 1,
+        "code_key": "epic_whi̇te_li̇ly_seeds",
+        "image_url": "https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp",
+        "icon": "<img src=\"https://api.minaryganar.com/assets/chainers/seeds/lily/shared/images/lily_shared_icon.webp\" alt=\"Whi̇te li̇ly\">"
     }
 }
